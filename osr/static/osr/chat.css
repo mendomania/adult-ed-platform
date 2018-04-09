@@ -1,0 +1,54 @@
+body {
+  margin-top:2% !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding:0 !important;
+  background:#fff !important;
+  font-family: 'PT Sans', serif !important;
+}
+table {
+  border-collapse: collapse !important; 
+}
+td { 
+  width: 4.1667% !important; 
+  padding-left: 1% !important;
+  padding-right: 1% !important;
+}
+img {
+  width: 35px !important;
+  height: 35px !important;
+}
+.sname {
+  font-size: 150% !important; 
+  font-weight: 600 !important; 
+  padding-top: 0.5% !important;
+}
+.pname {
+  text-align: center !important; 
+  font-size: 120% !important; 
+  color: #fff !important; 
+  margin-top: 1% !important;
+  margin-bottom: 1% !important;
+  padding-top: 1% !important;
+  padding-bottom: 1% !important;
+  padding-left: 2.2% !important;
+  padding-right: 2.2% !important;
+}
+.cname {
+  text-align: center !important; 
+  font-size: 100% !important; 
+  color: #fff !important; 
+  margin-top: 1% !important;
+  margin-bottom: 1% !important;
+  padding-top: 1% !important;
+  padding-bottom: 1% !important;
+  padding-left: 2.2% !important;
+  padding-right: 2.2% !important;
+  border-radius: 3px !important;
+}
+.right {
+  text-align: right !important;
+}
+.perks {
+  border-top: 2px solid #fff !important;
+}
