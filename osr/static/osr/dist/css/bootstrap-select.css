@@ -123,6 +123,7 @@ select.selectpicker {
   width: 100%;
   text-align: left;
   color: #FFF;
+  font-size: 15px;
 }
 .bootstrap-select.btn-group .dropdown-toggle .caret {
   position: absolute;
@@ -280,8 +281,14 @@ select.selectpicker {
 }
 .bs-actionsbox .btn-group button {
   width: 50%;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 .bs-donebutton {
+  font-weight: bold;
   float: left;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -290,6 +297,9 @@ select.selectpicker {
 }
 .bs-donebutton .btn-group button {
   width: 100%;
+  color: #FFFFFF;
+  background: #000000;
+  font-size: 14px;
 }
 .bs-searchbox + .bs-actionsbox {
   padding: 0 8px 4px;

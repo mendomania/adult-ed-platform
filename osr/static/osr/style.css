@@ -1,0 +1,100 @@
+input[type=checkbox].css-checkbox {
+     position:absolute;
+     z-index:-1000;
+     left:-1000px;
+     overflow: hidden;
+     clip: rect(0 0 0 0);
+     height:1px;
+     width:1px;
+     margin:-1px;
+     padding:0;
+     border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-labelcheck {
+     padding-left:30px;
+     height:25px;
+     display:inline-block;
+     line-height:25px;
+     background-repeat:no-repeat;
+     background-position: 0 0;
+     vertical-align:middle;
+     cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-labelcheck {
+     background-position: 0 -25px;
+}
+
+label.css-labelcheck {
+     background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+ 
+input[type=radio].css-radio {
+     position:absolute;
+     z-index:-1000;
+     left:-1000px;
+     overflow: hidden;
+     clip: rect(0 0 0 0);
+     height:1px;
+     width:1px;
+     margin:-1px;
+     padding:0;
+     border:0;
+}
+ 
+input[type=radio].css-radio + label.css-labelradio {
+     padding-left:27px;
+     height:23px;
+     display:inline-block;
+     line-height:23px;
+     background-repeat:no-repeat;
+     background-position: 0 0;
+     vertical-align:middle;
+     cursor:pointer;
+}
+ 
+input[type=radio].css-radio:checked + label.css-labelradio {
+     background-position: 0 -23px;
+}
+ 
+label.css-labelradio {
+     background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_73face735936ee95d8552d16980facf9.png);
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -khtml-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+}
+a.button7{
+ display:inline-block;
+ padding:0.7em 1.7em;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.2em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:400;
+ color:#FFFFFF;
+ background-color:#3369ff;
+ box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+ text-align:center;
+ position:relative;
+}
+a.button7:active{
+ box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}
+@media all and (max-width:30em){
+ a.button7{
+  display:block;
+  margin:0.4em auto;
+ }
+}
+ 

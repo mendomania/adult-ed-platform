@@ -1,6 +1,7 @@
 {% load url_replace %}
-{% load static %}   
+{% load static %}
 
+<link rel="icon" href="{% static 'osr/images/favicon.ico' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'osr/chat.css' %}" />
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT Sans">
 
@@ -15,7 +16,7 @@
   <tr style="border-bottom: 5px solid #fff">
     <td colspan="2" align="center" style="width: 25%;">
       <select name="outsel" id="outsel" class="selectpicker" multiple data-style="btn-primary" title="Outcomes" data-actions-box="true" data-width="94%" multiple data-selected-text-format="static">
-        {% for e in all_outcomes %}
+        {% for e in outcomes %}
         <option id="{{ e.id }}" value="{{ e.id }}">{{ e.text }}</option>
         {% endfor %}
       </select>
@@ -25,44 +26,35 @@
       <input type="text" value=" M5H 2N2" disabled="true">
     </td>
   </tr>
-  {% if not start %}   
+  {% if not start %}
   <tr style="border-top: 5px solid #fff;">
-    <td align="center" style="width: 25%;">
-      <select name="prosel" id="prosel" class="selectpicker" multiple data-style="btn-success" title="Programs" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
-        {% for p in all_programs %}
-        <option id="{{ p.id }}" value="{{ p.id }}">{{ p.name_official }}</option>
+    <td align="center" style="width: 50%;">
+      <select name="sersel" id="sersel" class="selectpicker" multiple data-style="btn-success" title="Services" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
+        {% for f in features %}
+        <option id="{{ f.id }}" value="{{ f.id }}">{{ f.text }}</option>
         {% endfor %}
       </select>
     </td>
     <td align="center" style="width: 25%;">
       <select name="elesel" id="elesel" class="selectpicker" multiple data-style="btn-success" title="Eligibility" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
-        {% for e in all_eligibilities %}
+        {% for e in eligibilities %}
         <option value="{{ e.id }}">{{ e.text }}</option>
         {% endfor %}
       </select>
     </td>
     <td align="center" style="width: 25%;">
-      <select name="sersel" id="sersel" class="selectpicker" multiple data-style="btn-success" title="Services" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
-        <option value="1">Childcare</option>
-        <option value="2">Counselling</option>
-        <option value="3">Employment</option>
+      <select name="prosel" id="prosel" class="selectpicker" multiple data-style="btn-success" title="Programs" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
+        {% for p in programs %}
+        <option id="{{ p.id }}" value="{{ p.id }}">{{ p.name_official }} - {{ p.code }}</option>
+        {% endfor %}
       </select>
-    </td>
-    <td align="center" style="width: 25%;">
-      <select name="facsel" id="facsel" class="selectpicker" multiple data-style="btn-success" title="Facilities" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
-        <option value="1">Access to computers</option>
-        <option value="2">Access to libraries</option>
-        <option value="3">Access to kitchen</option>
-        <option value="4">Access to parking</option>
-        <option value="5">Wheelchair access</option>
-      </select>
-    </td>            
+    </td>    
   </tr>
-  {% endif %}   
+  {% endif %}
 </table>
 <br/>
 
-{% if all_offerings %}   
+{% if offerings %}
 <table align="center" width="91.5%" border="0">
   <tr>
     <td style="font-size: 120%; ">
@@ -72,10 +64,10 @@
 </table>
 <br/>
 
-  {% for o in all_offerings %}
-  <table align="center" width="90%" border="0" style="background: #eee; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);">    
+  {% for o in offerings %}
+  <table align="center" width="90%" border="0" style="background: #eee; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);">
     <tr>
-      <td colspan="18" class="sname">{{ o.service_provider.name }}</td>
+      <td colspan="18" class="sname">{{ o.service_delivery_site.head.name }}: {{ o.service_delivery_site.name }}</td>
       <td colspan="6">
         <table width="100%">
           <tr>
@@ -86,117 +78,63 @@
     </tr>
     <tr>
       <td colspan="20"></td>
-      <td colspan="4" class="right">{{ o.service_provider.address_street }}</td>
+      <td colspan="4" class="right">{{ o.service_delivery_site.address_street }}</td>
     </tr>
     <tr>
       <td colspan="20"><b>Classes on:</b></td>
-      <td colspan="4" class="right">{{ o.service_provider.address_city }}, {{ o.service_provider.address_province }}</td>
-    </tr>      
+      <td colspan="4" class="right">{{ o.service_delivery_site.address_city }}, {{ o.service_delivery_site.address_province }}</td>
+    </tr>
     <tr style="border-bottom: 8px solid #eee">
-      <td colspan="24">{{ o.dow }}: {{ o.str_time }} to {{ o.end_time }}</td>
-    </tr>                  
+      <td colspan="24">
+        {{ o.get_schedules }}        
+      </td>
+    </tr>
     <tr style="border-bottom: 2px solid #eee">
-      {% if o.has_access_libraries %}  
+      {% for f in o.offeringfeature_set.all %}
         <td colspan="1">
-          <img src="../../static/osr/images/library.png" alt="" style="width: 30px; height: 30px;">
+          <img src="../../static/osr/images/{{ f.feature.image }}" alt="{{ f.feature.image }}" style="width: 30px; height: 30px;">
         </td>
         <td colspan="2" style="text-align: center">
-          Access to libraries
-        </td>          
-      {% endif %}
-      {% if o.has_access_computers %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/computer.png" alt="" style="width: 30px; height: 30px;">
+          {{ f.feature.text }}
         </td>
-        <td colspan="2" style="text-align: center">
-          Access to computers
-        </td>
-      {% endif %}
-      {% if o.has_childcare %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/childcare.png" alt="" style="width: 30px; height: 30px;">
-        </td>
-        <td colspan="2" style="text-align: center">          
-          Childcare services
-        </td>
-      {% endif %}
-      {% if o.has_counselling %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/counselling.png" alt="" style="width: 30px; height: 30px;">
-        </td>
-        <td colspan="2" style="text-align: center">          
-          Counselling services
-        </td>
-      {% endif %}
-      {% if o.has_employment %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/employment.png" alt="" style="width: 30px; height: 30px;">
-        </td>
-        <td colspan="2" style="text-align: center">          
-          Employment services
-        </td>
-      {% endif %}
-      {% if o.has_access_kitchen %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/kitchen.png" alt="" style="width: 30px; height: 30px;">
-        </td>
-        <td colspan="2" style="text-align: center">          
-          Access to kitchen
-        </td>
-      {% endif %}
-      {% if o.has_access_parking %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/parking.png" alt="" style="width: 30px; height: 30px;">
-        </td>
-        <td colspan="2" style="text-align: center">          
-          Access to parking
-        </td>
-      {% endif %}
-      {% if o.has_access_wheelchair %}  
-        <td colspan="1">
-          <img src="../../static/osr/images/wheelchair.png" alt="" style="width: 30px; height: 30px;">
-        </td>
-        <td colspan="2" style="text-align: center">          
-         Wheelchair access
-        </td>
-      {% endif %}   
-      {% for i in o.get_number_of_perks %}
-        <td colspan="3"></td>   
       {% endfor %}
-    </tr>    
+      {% for i in o.get_number_of_perks %}
+        <td colspan="3"></td>
+      {% endfor %}
+    </tr>
     <tr class="perks">
-      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>      
       <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-    </tr>     
+      <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
     <tr style="border-top: 3px solid #eee; border-bottom: 3px solid #eee">
-      {% for g in o.get_outcomes %}
+      {% for g in o.outcomes.all %}
         <td colspan="3">
           <table width="100%">
             <tr>
-              <td class="cname" style="background: {{ g.outcome.colour }};">
-                {{ g.outcome }}
+              <td class="cname" style="background: {{ g.colour }};">
+                {{ g.text }}
               </td>
             </tr>
           </table>
         </td>
       {% endfor %}
       {% for i in o.get_number_of_outcomes %}
-        <td colspan="3"></td>   
+        <td colspan="3"></td>
       {% endfor %}
-    </tr>      
+    </tr>
   </table>
   <br/>
   {% endfor %}
- 
+
   {% if is_paginated %}
   <div align="center" class="pagination">
-    <table align="center" width="18%" border="0">   
+    <table align="center" width="18%" border="0">
       <span class="page-links">
         <tr>
-          {% if page_obj.has_previous %}        
+          {% if page_obj.has_previous %}
             <td style="width: 25%;" align="right">
               <a href="?{% url_replace page=page_obj.previous_page_number %}" }}"><img src="../../static/osr/images/prev.png" alt=""></a>
-            </td>        
+            </td>
           {% endif %}
           <span class="page-current">
             <td style="width: 40%;" align="center">
@@ -238,7 +176,6 @@
 
 <script>
   function createURL(elem, data) {
-    // PRENDRE EN COMPTE AUSSI LES AUTRES PARAMS
     switch (elem) {
       case 'pro':
         var components = [];
@@ -255,7 +192,7 @@
           //alert(arr[i]);
           components.push('e='+ arr[i])
         }
-        return components.join('&'); 
+        return components.join('&');
       case 'ser':
         var components = [];
         var arr = data.split(',');
@@ -263,15 +200,7 @@
           //alert(arr[i]);
           components.push('s='+ arr[i])
         }
-        return components.join('&');        
-      case 'fac':
-        var components = [];
-        var arr = data.split(',');
-        for (var i = 0; i < arr.length; i++) {
-          //alert(arr[i]);
-          components.push('f='+ arr[i])
-        }
-        return components.join('&'); 
+        return components.join('&');
       case 'out':
         var components = [];
         var arr = data.split(',');
@@ -279,7 +208,7 @@
           //alert(arr[i]);
           components.push('o='+ arr[i])
         }
-        return components.join('&');                                
+        return components.join('&');
     }
   }
 
@@ -289,7 +218,7 @@
     values = []
     for (var i = 0; i < sURLVariables.length; i++) {
       var sParameterName = sURLVariables[i].split('=');
-      if (sParameterName[0] == pname) {      
+      if (sParameterName[0] == pname) {
         values.push(sParameterName[1]);
         //alert('PARAM:' + sParameterName[1]);
         //$('select[name=' + name + ']').val(sParameterName[1]);
@@ -306,18 +235,13 @@
     var selpro = $('#prosel').val();
     var selele = $('#elesel').val();
     var selser = $('#sersel').val();
-    var selfac = $('#facsel').val();
-    //alert('[C-PRO]: ' + selpro);
-    //alert('[C-ELE]: ' + selele);
-    //alert('[C-SER]: ' + selser);
-    //alert('[C-FAC]: ' + selfac);
 
     var url = '';
-    if ((selout != null) || (selpro != null) || (selele != null) || (selser != null) || (selfac != null)) {
+    if ((selout != null) || (selpro != null) || (selele != null) || (selser != null)) {
       var out = null;
       if (selout != null) {
         out = createURL('out', selout.toString());
-      }      
+      }
       var pro = null;
       if (selpro != null) {
         pro = createURL('pro', selpro.toString());
@@ -330,10 +254,6 @@
       if (selser != null) {
         ser = createURL('ser', selser.toString());
       }
-      var fac = null;
-      if (selfac != null) {
-        fac = createURL('fac', selfac.toString());
-      }                
 
       if (out != null) {
         url = url + out;
@@ -344,53 +264,37 @@
           url = url + '&' + pro;
         } else {
           url = pro;
-        }          
-      }      
-      //alert('[U-PRO]: ' + url);
+        }
+      }
 
       if (ele != null) {
         if (url) {
           url = url + '&' + ele;
         } else {
           url = ele;
-        }          
+        }
       }
-      //alert('[U-ELE]: ' + url);
 
       if (ser != null) {
         if (url) {
           url = url + '&' + ser;
         } else {
           url = ser;
-        }          
+        }
       }
-      //alert('[U-SER]: ' + url);
-
-      if (fac != null) {
-        if (url) {
-          url = url + '&' + fac;
-        } else {
-          url = fac;
-        }          
-      }
-      //alert('[U-FAC]: ' + url);
     }
 
-    // alert('[U-FIN]: ' + url);
     window.location = '?' + url;
   }
 
-  $(document).ready(function () {    
-    // SELECT
+  $(document).ready(function () {
     var url = window.location.search.substring(1);
-    // alert('[I]: ' + url);     
 
     if (url) {
       toggleParameters('o', 'outsel');
       toggleParameters('program', 'prosel');
       toggleParameters('e', 'elesel');
       toggleParameters('s', 'sersel');
-      toggleParameters('f', 'facsel');
     }
 
     $('#outsel').on('change', function(){
@@ -405,9 +309,7 @@
     $('#sersel').on('change', function(){
       filter();
     });
-    $('#facsel').on('change', function(){
-      filter();
-    });        
+
 
   });
 </script>

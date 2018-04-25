@@ -1,0 +1,1783 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {
+        margin-top:10%;
+        margin-left:0;
+        margin-right:0;
+        padding:0;
+        background:#fff;
+        font-family: 'Verdana', serif;
+      }
+      td {
+        padding-left: 5%;
+        padding-right: 5%;
+        border-color: #f2f2f2;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="icon" href="{% static 'osr/images/favicon.ico' %}">
+  </head>
+  <body>
+
+    <table align="center" width="70%" style="border-collapse: collapse; background-color: #f2f2f2;">
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card01row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>PLAN YOUR FUTURE EDUCATION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card01row02">
+        <td style="padding-bottom: 2%;">
+          <b>Why do you want to invest in your education?</b>
+        </td>
+      </tr>
+      <tr id="card01row03">
+        <td style="padding-bottom: 2%;">
+          <span style="font-size: 80%">
+            Pick a goal or more. Knowing what's important to you will help us to find programs that fit your needs.
+          </span>
+        </td>
+      </tr>
+      <tr id="card01row04">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card01row04check01" class="css-checkbox"/>
+            <label for="card01row04check01" class="css-labelcheck">Improve my English or French</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card01row04check02" class="css-checkbox"/>
+            <label for="card01row04check02" class="css-labelcheck">Get a high school diploma or certificate</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card01row04check03" class="css-checkbox"/>
+            <label for="card01row04check03" class="css-labelcheck">Get missing credits or upgrade marks needed to enter college/university</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card01row04check04" class="css-checkbox"/>
+            <label for="card01row04check04" class="css-labelcheck">Refresh essential skills before going to college/university (No credits granted)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card01row04check05" class="css-checkbox"/>
+            <label for="card01row04check05" class="css-labelcheck">Refresh essential skills for better employment opportunities (No credits granted)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card01row04check06" class="css-checkbox"/>
+            <label for="card01row04check06" class="css-labelcheck">Adapt international professional/trade work experience into the Canadian workforce</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card01row05">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card01row05button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: FILL IN THE BLANKS ––>
+      <tr id="card02row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%">
+            <u>Tell us about yourself</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card02row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>What's your age?</b>
+        </td>
+      </tr>
+      <tr id="card02row03">
+        <td>
+          <span style="font-size: 80%">
+            Most programs have age requirements. We'll show you programs you're eligible for.
+          </span>
+        </td>
+      </tr>
+      <tr id="card02row04">
+        <td style="font-size: 80%">
+          <label for="age">I'm</label>
+          <input type="text" id="age" name="age" size="3">
+          <label for="age">years old</label>
+        </td>
+      </tr>
+      <tr id="card02row05">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card02row05button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card03row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%">
+            <u>Tell us about yourself</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card03row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>What's your residency or citizenship status?</b>
+        </td>
+      </tr>
+      <tr id="card03row03">
+        <td>
+          <span style="font-size: 80%">
+            Most free programs have residency and citizensip requirements. We'll show you programs you're eligible for. Select all that apply.
+          </span>
+        </td>
+      </tr>
+      <tr id="card03row04">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check01" class="css-checkbox"/>
+            <label for="card03row04check01" class="css-labelcheck">Resident of Ontario.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check02" class="css-checkbox"/>
+            <label for="card03row04check02" class="css-labelcheck">Canadian citizen.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check03" class="css-checkbox"/>
+            <label for="card03row04check03" class="css-labelcheck">Premanent resident.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check04" class="css-checkbox"/>
+            <label for="card03row04check04" class="css-labelcheck">Not yet a Permanent resident but have initial approval from Citizensihp and Immigration Canada</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check05" class="css-checkbox"/>
+            <label for="card03row04check05" class="css-labelcheck">Convention refugee</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check06" class="css-checkbox"/>
+            <label for="card03row04check06" class="css-labelcheck">Live-in Caregiver</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card03row04check07" class="css-checkbox"/>
+            <label for="card03row04check07" class="css-labelcheck">Provincial nominee</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card03row05">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card03row05button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+<!-- Outcome #1 - Language -->
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card04row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>GOAL: IMPROVE ENGLISH OR FRENCH</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card04row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Which language(s) do you want to improve?</b>
+        </td>
+      </tr>
+      <tr id="card04row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card04row03check01" class="css-checkbox"/>
+            <label for="card04row03check01" class="css-labelcheck">English</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card04row03check02" class="css-checkbox"/>
+            <label for="card04row03check02" class="css-labelcheck">French</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card04row04">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card04row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card05row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color:grey;">
+            <b>IMPROVE ENGLISH OR FRENCH</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card05row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Why do you want to improve your English/French?</b>
+        </td>
+      </tr>
+      <tr id="card05row03">
+        <td>
+          <span style="font-size: 80%">
+            Knowing why you want to improve this skill will help us to find programs that fit your needs.
+          </span>
+        </td>
+      </tr>
+      <tr id="card05row04">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card05row04check01" class="css-checkbox"/>
+            <label for="card05row04check01" class="css-labelcheck">Prepare for the TOEFL test.</label>
+          </div>
+            <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card05row04check02" class="css-checkbox"/>
+            <label for="card05row04check02" class="css-labelcheck">Prepare for the citizenship test.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card05row04check03" class="css-checkbox"/>
+            <label for="card05row04check03" class="css-labelcheck">Prepare to get my Ontario Secondary School Diploma</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card05row04check04" class="css-checkbox"/>
+            <label for="card05row04check04" class="css-labelcheck">Improve everyday communication.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card05row04check05" class="css-checkbox"/>
+            <label for="card05row04check05" class="css-labelcheck">Prepare for future studies.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card05row05">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card05row05button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card06row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color:grey;">
+            <b>IMPROVE ENGLISH OR FRENCH</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card06row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Have you done a language assessment before?</b>
+        </td>
+      </tr>
+      <tr id="card06row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card06row03radio" id="card06row03radio01" class="css-radio" />
+            <label for="card06row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card06row03radio" id="card06row03radio02" class="css-radio"/>
+            <label for="card06row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card06row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card06row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+       <!–– CARD XX: PICK ONE ––>
+      <tr id="card07row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>IMPROVE ENGLISH OR FRENCH</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card07row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Is your Canadian Language Benchmark (CLB) a Level 6 or higher?</b>
+        </td>
+      </tr>
+      <tr id="card07row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card07row03radio" id="card07row03radio01" class="css-radio" />
+            <label for="card07row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card07row03radio" id="card07row03radio02" class="css-radio"/>
+            <label for="card07row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card07row03radio" id="card07row03radio03" class="css-radio"/>
+            <label for="card07row03radio03" class="css-labelradio radGroup2">I don't remember</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card07row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card07row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card08row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color:grey;">
+            <b>IMPROVE ENGLISH OR FRENCH</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card08row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Improve listening and understanding.</b>
+        </td>
+      </tr>
+      <tr id="card08row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card08row03radio" id="card08row03radio01" class="css-radio" />
+            <label for="card08row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card08row03radio" id="card08row03radio02" class="css-radio"/>
+            <label for="card08row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card08row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card08row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card09row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>IMPROVE ENGLISH OR FRENCH</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card09row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Articulate thoughts more clearly.</b>
+        </td>
+      </tr>
+      <tr id="card09row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card09row03radio" id="card09row03radio01" class="css-radio" />
+            <label for="card09row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card09row03radio" id="card09row03radio02" class="css-radio"/>
+            <label for="card09row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card09row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card09row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!-- This is the same as Outcome #4/5 Refresh skills -->
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card10row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card10row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to ... Improve reading and understanding.</b>
+        </td>
+      </tr>
+      <tr id="card10row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card10row03radio" id="card10row03radio01" class="css-radio" />
+            <label for="card10row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card10row03radio" id="card10row03radio02" class="css-radio"/>
+            <label for="card10row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card10row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card10row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card11row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card11row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Improve writing skills.</b>
+        </td>
+      </tr>
+      <tr id="card11row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card11row03radio" id="card11row03radio01" class="css-radio" />
+            <label for="card11row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card11row03radio" id="card11row03radio02" class="css-radio"/>
+            <label for="card11row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card11row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card11row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card12row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card12row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Calculate math easily and with accuracy.</b>
+        </td>
+      </tr>
+      <tr id="card12row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card12row03radio" id="card12row03radio01" class="css-radio" />
+            <label for="card12row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card12row03radio" id="card12row03radio02" class="css-radio"/>
+            <label for="card12row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card12row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card12row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card13row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card13row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Improve digital skills.</b>
+        </td>
+      </tr>
+      <tr id="card13row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card13row03radio" id="card13row03radio01" class="css-radio" />
+            <label for="card13row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card13row03radio" id="card13row03radio02" class="css-radio"/>
+            <label for="card13row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card13row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card13row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card14row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card14row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Do you want to study in a college environment? </b>
+        </td>
+      </tr>
+      <tr id="card14row03">
+        <td>
+          <span style="font-size: 80%">
+            Knowing your preference helps us to find programs that fit your needs.
+          </span>
+        </td>
+      </tr>
+      <tr id="card14row04">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card14row04radio" id="card14row04radio01" class="css-radio" />
+            <label for="card14row04radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card14row04radio" id="card14row04radio02" class="css-radio"/>
+            <label for="card14row04radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card14row04radio" id="card14row04radio03" class="css-radio" />
+            <label for="card14row04radio03" class="css-labelradio radGroup2">No preference</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card14row05">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card14row05button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+
+<!-- Outcome #2 - High School Completion -->
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card15row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card15row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>In the past, did you go to high school?</b>
+        </td>
+      </tr>
+      <tr id="card15row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card15row03radio" id="card15row03radio01" class="css-radio" />
+            <label for="card15row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card15row03radio" id="card15row03radio02" class="css-radio"/>
+            <label for="card15row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card15row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card15row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card16row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card16row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Where did you go to high school?</b>
+        </td>
+      </tr>
+      <tr id="card16row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card16row03radio" id="card16row03radio01" class="css-radio" />
+            <label for="card16row03radio01" class="css-labelradio radGroup2">Ontario</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card16row03radio" id="card16row03radio02" class="css-radio"/>
+            <label for="card16row03radio02" class="css-labelradio radGroup2">Somewhere else in Canada</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card16row03radio" id="card16row03radio03" class="css-radio"/>
+            <label for="card16row03radio03" class="css-labelradio radGroup2">Outside of Canada</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card16row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card16row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card17row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card17row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Did you graduate high school?</b>
+        </td>
+      </tr>
+      <tr id="card17row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card17row03radio" id="card17row03radio01" class="css-radio" />
+            <label for="card17row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card17row03radio" id="card17row03radio02" class="css-radio"/>
+            <label for="card17row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card17row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card17row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card18row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card18row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Did you have an Academic and Career Entrance (ACE) or General Educational Development (GED) certificate?</b>
+        </td>
+      </tr>
+      <tr id="card18row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card18row03radio" id="card18row03radio01" class="css-radio" />
+            <label for="card18row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card18row03radio" id="card18row03radio02" class="css-radio"/>
+            <label for="card18row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card18row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card18row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card19row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card19row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Which high school diploma or certificate do you have?</b>
+        </td>
+      </tr>
+      <tr id="card19row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card19row03check01" class="css-checkbox"/>
+            <label for="card19row03check01" class="css-labelcheck">Ontario Secondary School Diploma (OSSD)</label>
+          </div>
+            <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card19row03check02" class="css-checkbox"/>
+            <label for="card19row03check02" class="css-labelcheck">Ontario Secondary School Certificate (OSSC)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card19row03check03" class="css-checkbox"/>
+            <label for="card19row03check03" class="css-labelcheck">Academic and Career Entrance certificate (ACE)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card19row03check04" class="css-checkbox"/>
+            <label for="card19row03check04" class="css-labelcheck">General Educational Development certificate (GED)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card19row03check05" class="css-checkbox"/>
+            <label for="card19row03check05" class="css-labelcheck">None</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card19row04">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card19row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card20row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card20row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Hmm... It seems like you already have some proof of high school-level knowledge.</b>
+        </td>
+      </tr>
+      <tr id="card20row03">
+        <td>
+          <span style="font-size: 80%">
+            An Ontario Secondary School Dimplma (OSSD) is an official Ontario Secondary School Diploma and is proof that you completed high school.
+          </span>
+        </td>
+      </tr>
+      <tr id="card20row04">
+        <td>
+          <span style="font-size: 80%">
+            An Academic and Career Entrance (ACE) certificate is an alternative form of proof of high school-level knowledge. This certificate is equivalent to the Ontario Secondary School Diploma.
+          </span>
+        </td>
+      </tr>
+      <tr id="card20row05">
+        <td>
+          <span style="font-size: 80%">
+            An General Educational Development (GED) certificate is an alternative form of proof of high school-level knowledge. This certificate is equivalent to the Ontario Secondary School Diploma.
+          </span>
+        </td>
+      </tr>
+      <tr id="card20row06">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card20row06radio" id="card20row06radio01" class="css-radio" />
+            <label for="card20row06radio01" class="css-labelradio radGroup2">Ok. Skip this goal.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card20row06radio" id="card20row06radio02" class="css-radio"/>
+            <label for="card20row06radio02" class="css-labelradio radGroup2">Keep looking for more high school certificates/diplomas.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card20row07">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card20row07button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card21row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card21row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Since you attended an Ontario high school in the past, do you want to...</b>
+        </td>
+      </tr>
+      <tr id="card21row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card21row03radio" id="card21row03radio01" class="css-radio" />
+            <label for="card21row03radio01" class="css-labelradio radGroup2">Work towards completing your Ontario Secondary School Diploma (OSSD). </label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card21row03radio" id="card21row03radio02" class="css-radio"/>
+            <label for="card21row03radio02" class="css-labelradio radGroup2">Look into alternative options for proof of highschool-level knowlege.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card21row03radio" id="card21row03radio03" class="css-radio"/>
+            <label for="card21row03radio03" class="css-labelradio radGroup2">I'm not sure yet. Show me all relevant options.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card21row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card21row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card22row01">
+        <td style="padding-bottom: 0.5%;">
+          <span style="font-size: 80%">
+            <u>High School Completion</u>
+          </span>
+        </td>
+      </tr>
+      <tr id="card22row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Since you have your Ontario Secondary School Certificate (OSSC), do you want to...</b>
+        </td>
+      </tr>
+      <tr id="card22row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card22row03radio" id="card22row03radio01" class="css-radio" />
+            <label for="card22row03radio01" class="css-labelradio radGroup2">Work towards upgrading your OSSC into a Ontario Seconary School Dimploma (OSSD). </label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card22row03radio" id="card22row03radio02" class="css-radio"/>
+            <label for="card22row03radio02" class="css-labelradio radGroup2">Look into alternative options for proof of highschool-level knowlege.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card22row03radio" id="card22row03radio03" class="css-radio"/>
+            <label for="card22row03radio03" class="css-labelradio radGroup2">I'm not sure yet. Show me all relevant options.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card22row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card22row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+
+<!-- Outcome #3 - Get missing credits or upgrade marks needed to enter college/university -->
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card23row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>COLLEGE/UNIVERSITY ENTRANCE</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card23row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Which institution(s) do you want to attend?</b>
+        </td>
+      </tr>
+      <tr id="card23row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card23row03check01" class="css-checkbox"/>
+            <label for="card23row03check01" class="css-labelcheck">College</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card23row03check02" class="css-checkbox"/>
+            <label for="card23row03check02" class="css-labelcheck">University</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card23row04">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card23row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!-- This is the same as Outcome #2 flow here -->
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card24row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card24row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>In the past, did you go to high school?</b>
+        </td>
+      </tr>
+      <tr id="card24row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card24row03radio" id="card24row03radio01" class="css-radio" />
+            <label for="card24row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card24row03radio" id="card24row03radio02" class="css-radio"/>
+            <label for="card24row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card24row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card24row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card25row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card25row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Where did you go to high school?</b>
+        </td>
+      </tr>
+      <tr id="card25row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card25row03radio" id="card25row03radio01" class="css-radio" />
+            <label for="card25row03radio01" class="css-labelradio radGroup2">Ontario</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card25row03radio" id="card25row03radio02" class="css-radio"/>
+            <label for="card25row03radio02" class="css-labelradio radGroup2">Somewhere else in Canada</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card25row03radio" id="card25row03radio03" class="css-radio"/>
+            <label for="card25row03radio03" class="css-labelradio radGroup2">Outside of Canada</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card25row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card25row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card26row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card26row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Did you graduate high school?</b>
+        </td>
+      </tr>
+      <tr id="card26row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card26row03radio" id="card26row03radio01" class="css-radio" />
+            <label for="card26row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card26row03radio" id="card26row03radio02" class="css-radio"/>
+            <label for="card26row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card26row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card26row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card27row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card27row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Did you have an Academic and Career Entrance (ACE) or General Educational Development (GED) certificate?</b>
+        </td>
+      </tr>
+      <tr id="card27row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card27row03radio" id="card27row03radio01" class="css-radio" />
+            <label for="card27row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card27row03radio" id="card27row03radio02" class="css-radio"/>
+            <label for="card27row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card27row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card27row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card28row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card28row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Which high school diploma or certificate do you have?</b>
+        </td>
+      </tr>
+      <tr id="card28row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card28row03check01" class="css-checkbox"/>
+            <label for="card28row03check01" class="css-labelcheck">Ontario Secondary School Diploma (OSSD)</label>
+          </div>
+            <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card28row03check02" class="css-checkbox"/>
+            <label for="card28row03check02" class="css-labelcheck">Ontario Secondary School Certificate (OSSC)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card28row03check03" class="css-checkbox"/>
+            <label for="card28row03check03" class="css-labelcheck">Academic and Career Entrance certificate (ACE)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card28row03check04" class="css-checkbox"/>
+            <label for="card28row03check04" class="css-labelcheck">General Educational Development certificate (GED)</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="checkbox" id="card28row03check05" class="css-checkbox"/>
+            <label for="card28row03check05" class="css-labelcheck">None.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card28row04">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card28row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK MANY ––>
+      <tr id="card29row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card29row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Hmm... It seems like you already have some proof of high school-level knowledge.</b>
+        </td>
+      </tr>
+      <tr id="card29row03">
+        <td>
+          <span style="font-size: 80%">
+            An Ontario Secondary School Dimplma (OSSD) is an official Ontario Secondary School Diploma and is proof that you completed high school.
+          </span>
+        </td>
+      </tr>
+      <tr id="card29row04">
+        <td>
+          <span style="font-size: 80%">
+            An Academic and Career Entrance (ACE) certificate is an alternative form of proof of high school-level knowledge. This certificate is equivalent to the Ontario Secondary School Diploma.
+          </span>
+        </td>
+      </tr>
+      <tr id="card29row05">
+        <td>
+          <span style="font-size: 80%">
+            An General Educational Development (GED) certificate is an alternative form of proof of high school-level knowledge. This certificate is equivalent to the Ontario Secondary School Diploma.
+          </span>
+        </td>
+      </tr>
+      <tr id="card29row06">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card29row06radio" id="card29row06radio01" class="css-radio" />
+            <label for="card29row06radio01" class="css-labelradio radGroup2">Ok. Skip this goal.</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card29row06radio" id="card29row06radio02" class="css-radio"/>
+            <label for="card29row06radio02" class="css-labelradio radGroup2">Keep looking for more high school certificates/diplomas.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card29row07">
+        <td align="center">
+          <div style="padding-bottom: 1.5%;">
+            <img id="card29row07button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+          </div>
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card30row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card30row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Since you attended an Ontario high school in the past, do you want to...</b>
+        </td>
+      </tr>
+      <tr id="card30row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card30row03radio" id="card30row03radio01" class="css-radio" />
+            <label for="card30row03radio01" class="css-labelradio radGroup2">Work towards completing your Ontario Secondary School Diploma (OSSD) </label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card30row03radio" id="card30row03radio02" class="css-radio"/>
+            <label for="card30row03radio02" class="css-labelradio radGroup2">Look into alternative options for proof of highschool-level knowlege</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card30row03radio" id="card30row03radio03" class="css-radio"/>
+            <label for="card30row03radio03" class="css-labelradio radGroup2">I'm not sure yet. Show me all relevant options</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card30row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card30row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card31row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>HIGH SCHOOL COMPLETION</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card31row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Since you have your Ontario Secondary School Certificate (OSSC), do you want to...</b>
+        </td>
+      </tr>
+      <tr id="card31row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card31row03radio" id="card31row03radio01" class="css-radio" />
+            <label for="card31row03radio01" class="css-labelradio radGroup2">Work towards upgrading your OSSC into a Ontario Seconary School Dimploma (OSSD) </label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card31row03radio" id="card31row03radio02" class="css-radio"/>
+            <label for="card31row03radio02" class="css-labelradio radGroup2">Look into alternative options for proof of highschool-level knowlege</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card31row03radio" id="card31row03radio03" class="css-radio"/>
+            <label for="card31row03radio03" class="css-labelradio radGroup2">I'm not sure yet. Show me all relevant options.</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card31row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card31row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+<!-- Outcome #4 and #5 - Refresh essential skills -->
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card32row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>      </tr>
+      <tr id="card32row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Improve reading and understanding.</b>
+        </td>
+      </tr>
+      <tr id="card32row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card32row03radio" id="card32row03radio01" class="css-radio" />
+            <label for="card32row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card32row03radio" id="card32row03radio02" class="css-radio"/>
+            <label for="card32row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card32row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card32row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card33row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>      </tr>
+      <tr id="card33row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Improve writing skills.</b>
+        </td>
+      </tr>
+      <tr id="card33row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card33row03radio" id="card33row03radio01" class="css-radio" />
+            <label for="card33row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card33row03radio" id="card33row03radio02" class="css-radio"/>
+            <label for="card33row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card33row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card33row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card34row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>      </tr>
+      <tr id="card34row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Calculate math easily and with accuracy.</b>
+        </td>
+      </tr>
+      <tr id="card34row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card34row03radio" id="card34row03radio01" class="css-radio" />
+            <label for="card34row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card34row03radio" id="card34row03radio02" class="css-radio"/>
+            <label for="card34row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card34row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card34row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card35row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>
+      </tr>
+      <tr id="card35row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>I want to... Improve digital skills.</b>
+        </td>
+      </tr>
+      <tr id="card35row03">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card35row03radio" id="card35row03radio01" class="css-radio" />
+            <label for="card35row03radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card35row03radio" id="card35row03radio02" class="css-radio"/>
+            <label for="card35row03radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card35row04">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card35row04button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+
+      <!–– CARD XX: PICK ONE ––>
+      <tr id="card36row01">
+        <td style="padding-bottom: 0.5%; padding-top:5%">
+          <span style="font-size: 80%; color: grey;">
+            <b>REFRESH SKILLS</b>
+          </span>
+        </td>      </tr>
+      <tr id="card36row02">
+        <td style="padding-bottom: 0.5%;">
+          <b>Do you want to study in a college environment? </b>
+        </td>
+      </tr>
+      <tr id="card36row03">
+        <td>
+          <span style="font-size: 80%">
+            Knowing your preference helps us to find programs that fit your needs.
+          </span>
+        </td>
+      </tr>
+      <tr id="card36row04">
+        <td>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card36row04radio" id="card36row04radio01" class="css-radio" />
+            <label for="card36row04radio01" class="css-labelradio radGroup2">Yes</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card36row04radio" id="card36row04radio02" class="css-radio"/>
+            <label for="card36row04radio02" class="css-labelradio radGroup2">No</label>
+          </div>
+          <div style="padding-left: 0.5%; padding-top: 0.5%; padding-bottom: 0.5%; font-size: 80%;">
+            <input type="radio" name="card36row04radio" id="card36row04radio03" class="css-radio" />
+            <label for="card36row04radio03" class="css-labelradio radGroup2">No preference</label>
+          </div>
+        </td>
+      </tr>
+      <tr id="card36row05">
+        <td align="center" style="padding-bottom: 1.5%;">
+          <img id="card36row05button" src="../../static/osr/images/next_w.png" width="40px" height="40px">
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      const matches = new Set([]);
+      var isInterestedinPSE = false;
+      var wantsGrade12Proof = false;
+      var isInterestedInRefresher = false;
+
+      function padZeroLeft(number) {
+        return ('00' + number.toString()).slice(-2)
+      }
+
+      function showCard(cardNum) {
+        for (j = 1; j <= 7; j++) {
+          $('#card' + padZeroLeft(cardNum) + 'row' + padZeroLeft(j)).show();
+        }
+      }
+
+      function hideCard(cardNum) {
+        for (j = 1; j <= 7; j++) {
+          $('#card' + padZeroLeft(cardNum) + 'row' + padZeroLeft(j)).hide();
+        }
+      }
+
+      function hideAll() {
+        var i;
+        for (i = 1; i <= 36; i++) {
+          var j;
+          for (j = 1; j <= 7; j++) {
+              $('#card' + padZeroLeft(i) + 'row' + padZeroLeft(j)).hide();
+          }
+        }
+      }
+
+      function hideAllButFirst() {
+        var i;
+          for (i = 2; i <= 36; i++) {
+            var j;
+            for (j = 1; j <= 7; j++) {
+                $('#card' + padZeroLeft(i) + 'row' + padZeroLeft(j)).hide();
+            }
+          }
+      }
+
+      function assertOptionSelected(cardNum) {
+        return true;
+        // var rowNumRadio = 0;
+        // var rowNumCheck = 0;
+        // var i;
+
+        // // Look for check or radio options in card
+        // for (i = 1; i <= 7; i++) {
+        //   if ($("#card" + cardNum + "row" + padZeroLeft(i)).find("label.css-labelradio").length > 0) {
+        //     rowNumRadio = i;
+        //   }
+        //   if ($("#card" + cardNum + "row" + padZeroLeft(i)).find("label.css-labelcheck").length > 0) {
+        //     rowNumCheck = i;
+        //   }
+        // }
+
+        // // If card has no check or radio options
+        // if (rowNumRadio == 0 && rowNumCheck == 0) {
+        //   return true;
+        // }
+
+        // // Check one of the radio options is selected
+        // if (rowNumRadio) {
+        //   var i;
+        //   for (i = 1; i <= 5; i++) {
+        //     if ($("#card" + padZeroLeft(cardNum) + "row" + padZeroLeft(rowNumRadio) + "radio" + padZeroLeft(i)).is(':checked')) {
+        //       return true;
+        //     }
+        //   }
+        //   return false;
+        // }
+        // // Check at least one of the check options is selected
+        // // $("#card28row03check03").is(':checked')
+        // else {
+        //   var i;
+        //   for (i = 1; i <= 5; i++) {
+        //     if ($("#card" + padZeroLeft(cardNum) + "row" + padZeroLeft(rowNumCheck) + "check" + padZeroLeft(i)).is(':checked')) {
+        //       return true;
+        //     }
+        //   }
+        //   return false;
+        // }
+      }
+
+      function flipCard(cardNum, cardRow, hideNum, showNum) {
+        $("#card" + cardNum + "row" + cardRow + "button").click(function(){
+          if (assertOptionSelected(cardNum)) {
+            hideCard(hideNum);
+            showCard(showNum);
+          }
+        });
+      }
+
+      function doGrade12Flow(extra) {
+        hideCard(1);
+        if (extra) {
+          showCard(23);
+        } else {
+          showCard(24);
+        }
+
+        flipCard('23', '04', 23, 24);
+        flipCard('25', '04', 25, 26);
+
+        $("#card24row04button").click(function(){
+          if (assertOptionSelected('24')) {
+            if($("#card24row03radio01").is(':checked')) {
+              hideCard(24);
+              showCard(25);
+            } else {
+              hideCard(24);
+              showCard(27);
+            }
+          }
+        });
+
+        $("#card26row04button").click(function(){
+          if (assertOptionSelected('26')) {
+            if($("#card26row03radio01").is(':checked')) {
+              hideCard(26);
+              showCard(28);
+            } else {
+              hideCard(26);
+              // If the user went to highschool in Ontario
+              var card25 = $("#card25row03radio01").is(':checked');
+              if (card25) {
+                showCard(30);
+              } else {
+                showCard(27);
+              }
+            }
+          }
+        });
+
+        $("#card27row04button").click(function(){
+          if (assertOptionSelected('27')) {
+            if ($("#card27row03radio01").is(':checked')) {
+              hideCard(27);
+              showCard(29);
+            } else {
+              matches.add('ADC');
+              matches.add('ACE');
+              matches.add('GED');
+              toggleNextStep(2)
+              return
+            }
+          }
+        });
+
+        $("#card28row04button").click(function(){
+          if (assertOptionSelected('28')) {
+            if($("#card28row03check01").is(':checked') || $("#card28row03check03").is(':checked') || $("#card28row03check04").is(':checked')) {
+              // If OSSD or ACE or GED
+              hideCard(28);
+              showCard(29);
+            } else if ($("#card28row03check02").is(':checked')) {
+              // OSSC
+              hideCard(28);
+              showCard(31);
+            } else {
+              matches.add('ADC');
+              matches.add('ACE');
+              matches.add('GED');
+              toggleNextStep(2)
+              return
+            }
+          }
+        });
+
+        $("#card29row07button").click(function(){
+          if (assertOptionSelected('29')) {
+            if ($("#card29row06radio01").is(':checked')) {
+              // Skip this goal
+              toggleNextStep(2)
+              return
+            } else {
+              // Alternative options
+              matches.add('ADC');
+              matches.add('ACE');
+              matches.add('GED');
+              toggleNextStep(2)
+              return
+            }
+          }
+        });
+
+        $("#card30row04button").click(function(){
+          if (assertOptionSelected('30')) {
+            if ($("#card30row03radio01").is(':checked')) {
+              // Complete OSSD
+              matches.add('ADC');
+              toggleNextStep(2)
+              return
+            } else {
+              // Alternative options
+              matches.add('ADC');
+              matches.add('ACE');
+              matches.add('GED');
+              toggleNextStep(2)
+              return
+            }
+          }
+        });
+
+        $("#card31row04button").click(function(){
+          if (assertOptionSelected('31')) {
+            if ($("#card31row03radio01").is(':checked')) {
+              // OSSC to OSSD
+              matches.add('ADC');
+              toggleNextStep(2)
+              return
+            } else {
+              // Alternative options
+              matches.add('ADC');
+              matches.add('ACE');
+              matches.add('GED');
+              toggleNextStep(2)
+              return
+            }
+          }
+        });
+
+      }
+
+      function doLanguageFlow() {
+        hideCard(1);
+        showCard(4);
+
+        flipCard('04', '04', 4, 5);
+        flipCard('05', '05', 5, 6);
+        flipCard('07', '04', 7, 8);
+        flipCard('08', '04', 8, 9);
+        flipCard('09', '04', 9, 10);
+        flipCard('10', '04', 10, 11);
+        flipCard('11', '04', 11, 12);
+        flipCard('12', '04', 12, 13);
+
+        $("#card06row04button").click(function(){
+          if (assertOptionSelected('06')) {
+            if($("#card06row03radio01").is(':checked')) {
+              hideCard(6);
+              showCard(7);
+            } else {
+              hideCard(6);
+              showCard(8);
+            }
+          }
+        });
+
+        $("#card13row04button").click(function(){
+
+          if (assertOptionSelected('13')) {
+            // If this is true it means the user has a CLB level lower than 6
+            var card07 = $("#card07row03radio02").is(':checked');
+            // These cards correspond to the last 6 YES or NO questions in the flow
+            var card08 = $("#card08row03radio01").is(':checked');
+            var card09 = $("#card09row03radio01").is(':checked');
+            var card10 = $("#card10row03radio01").is(':checked');
+            var card11 = $("#card11row03radio01").is(':checked');
+            var card12 = $("#card12row03radio01").is(':checked');
+            var card13 = $("#card13row03radio01").is(':checked');
+
+            // User not qualified for LBS
+            if (card07) {
+              // User not interested in ESL
+              if (!card08 && !card09) {
+                toggleNextStep(1)
+                return
+              } else {
+                matches.add('ESL');
+                toggleNextStep(1)
+                return
+              }
+            }
+
+            // User not interested in LBS
+            if (!card10 && !card11 && !card12 && !card13) {
+              // User interested in ESL
+              if (card08 || card09) {
+                matches.add('ESL');
+                toggleNextStep(1)
+                return
+              } else {
+                toggleNextStep(1)
+                return
+              }
+            } else {
+              // User interested in ESL
+              if (card08 || card09) {
+                matches.add('LBS');
+                matches.add('ESL');
+                toggleNextStep(1)
+                return
+              } else {
+                matches.add('LBS');
+                toggleNextStep(1)
+                return
+              }
+            }
+          }
+        });
+      }
+
+      function doRefreshFlow() {
+        hideCard(1);
+        showCard(32);
+
+        flipCard('32', '04', 32, 33);
+        flipCard('33', '04', 33, 34);
+        flipCard('34', '04', 34, 35);
+        flipCard('35', '04', 35, 36);
+
+        $("#card36row05button").click(function(){
+          if (assertOptionSelected('36')) {
+            // If this is true then it means user is not interested in LBS
+            var card32 = $("#card32row03radio02").is(':checked');
+            var card33 = $("#card33row03radio02").is(':checked');
+            var card34 = $("#card34row03radio02").is(':checked');
+            var card35 = $("#card35row03radio02").is(':checked');
+
+            // User not interested in LBS
+            if (card32 && card33 && card34 && card35) {
+              toggleNextStep(3)
+              return
+            } else {
+              matches.add('LBS');
+              toggleNextStep(3)
+              return
+            }
+          }
+        });
+      }
+
+      function getURL() {
+        var components = [];
+        for (var it = matches.values(), val=null; val=it.next().value;) {
+          components.push('program='+ val)
+        }
+        return components.join('&');
+      }
+
+      function toggleNextStep(level) {
+        switch (level) {
+          case 1: {
+            // If we're coming from the Language flow...
+            if (wantsGrade12Proof || isInterestedinPSE) {
+              if (wantsGrade12Proof && isInterestedinPSE) {
+                hideCard(13);
+                doGrade12Flow(true);
+              } else if (isInterestedinPSE) {
+                hideCard(13);
+                doGrade12Flow(true);
+              } else {
+                hideCard(13);
+                doGrade12Flow(false);
+              }
+            } else {
+              var url = "{% url 'osr:results' %}".slice(0, -1) + "?" + getURL();
+              window.location = url;
+            }
+            break;
+          }
+          case 2: {
+            // If we're coming from the Grade 12 flow...
+            if (isInterestedInRefresher) {
+                hideAll();
+                doRefreshFlow();
+            } else {
+                var url = "{% url 'osr:results' %}".slice(0, -1) + "?" + getURL();
+                window.location = url;
+            }
+            break;
+          }
+          case 3: {
+            var url = "{% url 'osr:results' %}".slice(0, -1) + "?" + getURL();
+            window.location = url;
+          }
+        }
+      }
+
+      $(document).ready(function () {
+        hideAllButFirst();
+
+        $("#card01row05button").click(function(){
+          var g1 = $("#card01row04check01").is(':checked');
+          var g2 = $("#card01row04check02").is(':checked');
+          var g3 = $("#card01row04check03").is(':checked');
+          var g4 = $("#card01row04check04").is(':checked');
+          var g5 = $("#card01row04check05").is(':checked');
+          var g6 = $("#card01row04check06").is(':checked');
+
+          wantsGrade12Proof = g2;
+          isInterestedinPSE = g3;
+          isInterestedInRefresher = (g4 || g5) ? true : false;
+
+          // Special case for Bridge Training
+          if (g6) {
+            matches.add('BTP')
+            if (!g1 && !g2 && !g3 && !g4 && !g5) {
+              var url = "{% url 'osr:results' %}".slice(0, -1) + "?" + getURL();
+              window.location = url;
+            }
+          }
+
+          if (g1) {
+            isInterestedInRefresher = false;
+            doLanguageFlow();
+          } else {
+            if (g2 || g3) {
+              if (g2 && g3) {
+                doGrade12Flow(true);
+              } else if (g3) {
+                doGrade12Flow(true);
+              } else {
+                doGrade12Flow(false);
+              }
+            } else {
+              if (g4 || g5) {
+                doRefreshFlow();
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body></html>

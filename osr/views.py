@@ -1,33 +1,78 @@
 # -*- coding: utf-8 -*-
 from django.http import HttpResponse
 from django.template import loader
-from .models import Offering, ProgramOutcome, Program, ProgramEligibility, Eligibility, Outcome
+from .models import Offering, Program, Outcome, Eligibility, Feature
 from django.views import generic
 from django.db.models import Q
+from django.db.models import Count
  
-
-def search(request):
-    user_list = User.objects.all()
-    user_filter = UserFilter(request.GET, queryset=user_list)
-    return render(request, 'osr/userlist.html', {'filter': user_filter})
-
 def index(request):
     return HttpResponse("Hello, world. You're at the OSR index.")
 
+class WidgetView(generic.ListView):
+  """ Widget cards """
+  template_name = 'osr/widget.html'
+  context_object_name = 'cards'
+
+  def get_queryset(self):
+    items = Program.objects.all();
+
+class ResultsView(generic.ListView):
+  """ Results of widget """
+  template_name = 'osr/results.html'
+  context_object_name = 'matches'
+
+  def get_queryset(self):
+    items = Program.objects.all();
+    return items
+
+  def get_context_data(self, **kwargs):
+    context = super(ResultsView, self).get_context_data(**kwargs)
+    pro_filter = self.request.GET.getlist('program')
+    context['eslbool'] = False
+    context['fslbool'] = False
+    context['lbsbool'] = False
+    context['adcbool'] = False
+    context['acebool'] = False
+    context['gedbool'] = False
+    context['btpbool'] = False
+
+    print 'PRO:', pro_filter
+
+    if pro_filter and pro_filter[0]:
+      for val in pro_filter:
+        var = val.lower()        
+        if var == 'esl':
+          print '>>> ESL'
+          context['eslbool'] = True
+        if var == 'fsl':
+          print '>>> FSL'
+          context['fslbool'] = True
+        if var == 'lbs':
+          print '>>> LBS'
+          context['lbsbool'] = True
+        if var == 'adc':
+          print '>>> ADC'
+          context['adcbool'] = True
+        if var == 'ace':
+          print '>>> ACE'
+          context['acebool'] = True
+        if var == 'ged':
+          print '>>> GED'
+          context['gedbool'] = True                                                  
+        if var == 'btp':
+          print '>>> BTP'
+          context['btpbool'] = True  
+    return context                                                            
+
 class OfferingsView(generic.ListView):
   template_name = 'osr/offerings.html'
-  context_object_name = 'all_offerings'
-  paginate_by = 2
+  context_object_name = 'offerings'
+  paginate_by = 5
 
   def get_queryset(self):
     """ Return offerings """
-    items = Offering.objects.order_by('str_date')  
-
-    # Setting up filters...
-    requirements = ProgramEligibility.objects.all();
-    outcomes = ProgramOutcome.objects.distinct();
-    programs = Program.objects.order_by('name_official').distinct('name_official')
-    print '[R1]:', requirements
+    items = Offering.objects.order_by('str_date') 
 
     print '%%%%%'
     print self.request.GET
@@ -40,147 +85,136 @@ class OfferingsView(generic.ListView):
     print 'ELE:', ele_filter
     ser_filter = self.request.GET.getlist('s')
     print 'SER:', ser_filter
-    fac_filter = self.request.GET.getlist('f')
-    print 'FAC:', fac_filter
     out_filter = self.request.GET.getlist('o')
     print 'OUT:', out_filter
 
-    # if not out_filter:
-    #   print '*********************'
-    #   print Offering.objects.none()
+    programs = Program.objects.order_by('name_official')
 
-    # IF NO PROGRAMS SELECTED...? SHOW NOTHING?
-    if pro_filter and pro_filter[0]:      
-      print "YES - PRO"
+    # Filter offerings by programs selected
+    if pro_filter and pro_filter[0]:
+      print ">>> YES - PRO"
       query = Q()
-      # Filter offerings by programs selectec
       for val in pro_filter:
         query = query | Q(program=val)
       items = items.filter(query)
-      print items
+    
+    print ">>> END - PRO"
+    print items
 
-    if ele_filter and ele_filter[0]:      
-      print "YES - ELE"
-      query = Q()
-      # Map eligibility requirements to programs
+    print '-------------------------------------'
+    for item in items:
+      print item
+      print '%%%%%%%%%%%%%%%%%'
+      print type(item.requirements.all())
+      for val in item.requirements.all():
+        print val
+        print val.id
+
+    # Filter offerings by eligibility requirements selected
+    if ele_filter and ele_filter[0]: 
+      print ">>> YES - ELE"
+      reqs = []
       for val in ele_filter:
-        query = query | Q(eligibility_id=val)
-      requirements = requirements.filter(query)      
-      print '[R2]:', requirements
+        reqs.append(str(val))
+      print reqs
+      # In [30]: Photo.objects.filter(tags__in=[t1, t2]).annotate(num_tags=Count('tags')).filter(num_tags=2)
+      items = items.filter(requirements__in=reqs)
+      # AND: items = items.filter(requirements__in=reqs).annotate(num_reqs=Count('requirements')).filter(num_reqs=len(reqs))
+    print ">>> END - ELE"
+    print items
 
-      if requirements:
-        query = Q()
-        # Filter offerings by programs selected
-        for val in requirements:
-          query = query | Q(program=val.program_id)
-        items = items.filter(query)  
-      else:
-        print '*********************'
-        print Offering.objects.none()
-        return Offering.objects.none()
-
-    # Filter support services
+    # Filter offerings by support services
     if ser_filter and ser_filter[0]:
-      print "YES - SER"
+      print ">>> YES - SER"
+      sers = []
       for val in ser_filter:
-        if val == '1':
-          items = items.filter(has_childcare=True)
-        if val == '2':
-          items = items.filter(has_counselling=True)          
-        if val == '3':
-          items = items.filter(has_employment=True)  
-      print items
+        sers.append(str(val))
+      print sers
+      #items.offeringfeature_set.filter(feature_id__in=sers);
+      #items.filter(offeringfeature_set_in=reqs)
+      #for val in ser_filter:
 
-    # Filter facilities
-    if fac_filter and fac_filter[0]:
-      print "YES - FAC"
-      for val in fac_filter:
-        if val == '1':
-          items = items.filter(has_access_computers=True)
-        if val == '2':
-          items = items.filter(has_access_libraries=True)          
-        if val == '3':
-          items = items.filter(has_access_kitchen=True)                            
-        if val == '4':
-          items = items.filter(has_access_parking=True)                            
-        if val == '5':
-          items = items.filter(has_access_wheelchair=True)
-      print items   
-
-    # Filter outcomes
-    if out_filter and out_filter[0]:  
-      print "YES - OUT"    
-      # Map outcomes to programs
-      query = Q()
+      items = items.filter(offeringfeature__feature_id__in=sers)
+    print ">>> END - SER"       
+    print items
+ 
+    # Filter offerings by outcomes selected
+    if out_filter and out_filter[0]: 
+      print ">>> YES - OUT"
+      outs = []
       for val in out_filter:
-        query = query | Q(outcome_id=val)
-      outcomes = outcomes.filter(query)  
-
-      if outcomes:
-        query = Q()
-        # Filter
-        for val in outcomes:
-          query = query | Q(id=val.program_id)
-        programs = programs.filter(query)  
-      else:
-        programs = Program.objects.none()
-
-      if programs:
-        query = Q()
-        # Filter
-        for val in programs:
-          query = query | Q(program=val.id)
-        items = items.filter(query) 
-      else:
-        print '*********************'
-        print Offering.objects.none()
-        return Offering.objects.none()
+        outs.append(str(val))
+      print outs
+      # In [30]: Photo.objects.filter(tags__in=[t1, t2]).annotate(num_tags=Count('tags')).filter(num_tags=2)
+      # AND: items = items.filter(outcomes__in=outs).annotate(num_outs=Count('outcomes')).filter(num_outs=len(outs))
+      items = items.filter(outcomes__in=outs)
     else:
-      print '*********************'
-      print Offering.objects.none()
-      return Offering.objects.none()
+      items = Offering.objects.none()
+
+    print ">>> END - OUT"
 
     print '*********************'
+    items = items.distinct();
     print items
-    return items
+    services = []
+    for item in items:
+      for service in item.offeringfeature_set.all():
+        services.append(service.id)
+    print '*********************'
 
+    return items
 
   def get_context_data(self, **kwargs):
     context = super(OfferingsView, self).get_context_data(**kwargs)
-    context['count'] = self.get_queryset().count()
-    context['all_outcomes'] = Outcome.objects.order_by('text').distinct('text')
-    context['start'] = True
 
-    # TODO
-    outcomes = ProgramOutcome.objects.distinct();
-    programs = Program.objects.order_by('name_official').distinct('name_official')
+    # Init
+    context['start'] = True
+    context['count'] = self.get_queryset().count()
+    context['outcomes'] = Outcome.objects.order_by('text')
+    context['programs'] = Program.objects.none()
+    context['eligibilities'] = Eligibility.objects.none();
+    context['eligibilities'] = Feature.objects.none();
+
     out_filter = self.request.GET.getlist('o')
 
+    # >>> From OUTCOMEs let's get PROGRAMs and ELIGIBILITIEs
+    outcomes = Outcome.objects.all();
+    print '@@@@@@@@@@@@@@@@@@@@@'
+    print outcomes
+    print '@@@@@@@@@@@@@@@@@@@@@'
+    print '@@@@@@@@@@@@@@@@@@@@@'
+
     print '----- GET:', out_filter
-    if out_filter and out_filter[0]:    
-      context['start'] = False  
-      # Map outcomes to programs
+    if out_filter and out_filter[0]:
+      context['start'] = False   
+      # Filter outcomes    
       query = Q()
       for val in out_filter:
-        query = query | Q(outcome_id=val)
+        query = query | Q(id=val)
       outcomes = outcomes.filter(query) 
       print '----- OUT:', outcomes 
 
       if outcomes:
-        query = Q()
-        # Filter
-        for val in outcomes:
-          query = query | Q(id=val.program_id)
-        programs = programs.filter(query)  
+        programs = Program.objects.none();
+        requirements = Eligibility.objects.none();
+        features = Feature.objects.all();
+        for outcome in outcomes:
+          programs = (programs | outcome.programs.all())
         print '----- PRO:', programs
-        context['all_programs'] = programs
-      else:
-        Program.objects.none()
+        print '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
+        query = Q()
+        for program in programs:
+          requirements = (requirements | program.eligibility_set.all())
+          for offering in program.offering_set.all():
+            for val in offering.offeringfeature_set.all():
+              query = query | Q(id=val.feature.id)
+        features = features.filter(query)
+        print '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
+        print '----- FEA:', features
+        print '----- REQ:', requirements
 
-    else:
-      context['all_programs'] = Program.objects.order_by('name_official').distinct('name_official')
+        context['features'] = features.order_by('text').distinct()
+        context['programs'] = programs.order_by('name_official').distinct()
+        context['eligibilities'] = requirements.order_by('text').distinct()
 
-
-    context['all_eligibilities'] = Eligibility.objects.order_by('text').distinct('text')
     return context  
-

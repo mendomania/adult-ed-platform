@@ -25,7 +25,7 @@ SECRET_KEY = '==o)@onzdbgawn#*_s=zzjsv1+nkhkxusyc8%zby@l&1odg!c7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'code4canada.pythonanywhere.com' ]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'smart_selects'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'adultedu',
+        'NAME': 'west',
         'USER': 'django',
         'PASSWORD': 'django',
         'HOST': '127.0.0.1',
@@ -111,18 +112,23 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
+LANGUAGE_CODE = 'en-ca'
 TIME_ZONE = 'America/Toronto'
-
 USE_I18N = True
-
-USE_L10N = True
-
+USE_L10N = False
 USE_TZ = True
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
+
+DEBUG_TOOLBAR_CONFIG = {
+    'JQUERY_URL': 'True',
+}
+
+#JQUERY_URL = 'True'
+#USE_DJANGO_JQUERY = 'True'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/Users/smendoza/Documents/Dev/web/app/osr/static'
