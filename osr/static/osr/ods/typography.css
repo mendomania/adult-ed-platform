@@ -1,0 +1,282 @@
+/* open-sans-regular - latin_latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('OpenSans'),
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-regular.woff') format('woff'), /* Modern Browsers */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+/* open-sans-600 - latin_latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-600.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../osr/ods/fonts/open-sans-v13-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-600.woff') format('woff'), /* Modern Browsers */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../osr/ods/fonts/open-sans-v13-latin_latin-ext-600.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-500 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../osr/ods/fonts/raleway-v11-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Raleway Medium'), local('Raleway-Medium'),
+       url('../../osr/ods/fonts/raleway-v11-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../osr/ods/fonts/raleway-v11-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../osr/ods/fonts/raleway-v11-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../../osr/ods/fonts/raleway-v11-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../osr/ods/fonts/raleway-v11-latin-500.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+/* raleway-800 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../osr/ods/fonts/raleway-v11-latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'),
+       url('../../osr/ods/fonts/raleway-v11-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../osr/ods/fonts/raleway-v11-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../../osr/ods/fonts/raleway-v11-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('../../osr/ods/fonts/raleway-v11-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../../osr/ods/fonts/raleway-v11-latin-800.svg#Raleway') format('svg'); /* Legacy iOS */
+}
+
+html {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;	
+  font-size: 1rem;
+  color: #4d4d4d;
+}
+
+p {
+  font-size: inherit;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility; 
+}
+
+em,
+i {
+  font-style: italic;
+  line-height: inherit; 
+}
+
+strong,
+b {
+  font-weight: bold;
+  line-height: inherit; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  font-weight: 600;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.4; 
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  line-height: 0; 
+}
+
+h1 {
+  font-size: 1.5rem; 
+}
+
+h2 {
+  font-size: 1.25rem; 
+}
+
+h3 {
+  font-size: 1.1875rem; 
+}
+
+h4 {
+  font-size: 1.125rem; 
+}
+
+h5 {
+  font-size: 1.0625rem; 
+}
+
+h6 {
+  font-size: 1rem; 
+}
+
+@media screen and (min-width: 40em) {
+  h1 {
+    font-size: 3rem; 
+  }
+  h2 {
+    font-size: 2.5rem; 
+  }
+  h3 {
+    font-size: 1.9375rem; 
+  }
+  h4 {
+    font-size: 1.5625rem; 
+  }
+  h5 {
+    font-size: 1.25rem; 
+  }
+  h6 {
+    font-size: 1rem; 
+  } 
+}
+
+.h3 h1, .h3 h2, .h3 h4, .h3 h5 {
+  font-size: 1.5rem;
+}
+
+.h4 h1, .h4 h2, .h4 h3, .h4 h5 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: #06c;
+  text-decoration: none;
+  line-height: inherit;
+  cursor: pointer; 
+}
+
+a:hover, a:focus {
+  color: #5798d8; 
+}
+
+a:visited {
+  color: #8138b3; 
+}
+
+a img {
+  border: 0; 
+}
+
+hr {
+  max-width: 62.5rem;
+  height: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #cacaca;
+  border-left: 0;
+  margin: 1.25rem auto;
+  clear: both; 
+}
+
+ul,
+ol,
+dl {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  list-style-position: outside; 
+}
+
+li {
+  font-size: inherit; 
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.25rem; 
+}
+
+ol {
+  margin-left: 1.25rem; 
+}
+
+ul ul, ol ul, ul ol, ol ol {
+  margin-left: 1.25rem;
+  margin-bottom: 0; 
+}
+
+.inline-list,
+.no-bullet {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.inline-list > li {
+  padding: 0 0.7rem 0.7rem 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+dl dd {
+  margin-bottom: 0.75rem;
+}
+
+dl dt {
+  font-weight: bold; 
+}
+
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted #0a0a0a; 
+}
+
+.small {
+  font-size: .9375rem;
+}
+
+.x-small {
+  font-size: .8125rem;
+}
+
+.smaller {
+  font-size: 90%;
+}
+
+.large {
+  font-size: 1.125rem;
+}
+
+.x-large {
+  font-size: 1.75rem;
+}
+
+.xx-large {
+  font-size: 2.375rem;
+}
+
+.larger {
+  font-size: 110%;
+}
+
+code {
+  background-color: #ededed;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: normal;
+  padding: 0.125rem 0.3125rem 0.0625rem;
+}
+
+hr {
+  border: solid #ebebeb;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin: 1.25rem 0 1.1875rem;
+}

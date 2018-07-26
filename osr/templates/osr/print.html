@@ -1,0 +1,115 @@
+{% extends "easy_pdf/base.html" %}
+{% load static %}
+
+{% block extra_style %}
+  <style type="text/css"> 
+    body {
+      font-family:'Raleway';
+    }
+    h1 {
+      font-size:18px;
+      text-align:center;
+    }
+    h2 {
+      font-size:14px;
+      text-align:center;
+    }  
+    p {
+      font-size:12px;
+    }  
+    .title {
+      font-size:24px;
+      text-align:center;
+    }
+    .bold {
+      font-weight:bold;
+    }
+    .header {
+      border-top:3px;
+      border-bottom:3px;
+      border-left:3px;
+      border-right:3px;
+      font-size:16px;
+    }
+    .link {
+      color:#1E6DAE;
+    }    
+    .right {
+      text-align:right;
+    }
+    .format {
+      font-size:14px;
+    }
+    .margin {            
+      margin-top:3px;       
+      margin-left:3px;
+      margin-right:3px;  
+      padding-top:5px;
+      padding-left:3px; 
+      padding-right:3px;            
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <body>
+    <div id="content">
+      <div class="title bold">
+        Adult Learning<br/>Program Matchmaker
+      </div>
+      <div>
+        <h1>Your Results</h1>
+        <h2>Based on your responses, we found {{ matches.count }} program{{ matches.count|pluralize:",s" }} that you might be interested in</h2>
+      </div>
+      <table border="1">
+        <tr>
+          <td class="margin header bold" colspan="4"><h1>My results</h1></td>
+        </tr>        
+        <tr>
+          <td class="margin header bold" colspan="1">Program</td>
+          <td class="margin header bold" colspan="3">Description and link</td>
+        </tr>
+        {% for m in matches %}
+        <tr>
+          <td class="margin format bold" colspan="1">{{ m.name_official }}</td>
+          <td class="margin format" colspan="3">
+            {{ m.description }} 
+            <br/> 
+            <span class="link">
+              {% filter force_escape|lower %}
+                {{ program_path }}/{{ m.code }}
+              {% endfilter %}
+            </span>
+          </td>
+        </tr>
+        {% endfor %}              
+      </table>
+      <br/>
+      <div>
+        <h1>Other Relevant Information</h1>
+      </div>
+      <table border="1"> 
+        <tr>
+          <td class="margin header bold" colspan="4"><h1>My recommendations</h1></td>
+        </tr>            
+        <tr>
+          <td class="margin header bold" colspan="1">Because you said...</td>
+          <td class="margin header bold" colspan="3">We recommend...</td>
+        </tr>
+        {% for r in recommendations %}
+        <tr>
+          <td class="margin format" colspan="1">{{ r.reason }}</td>
+          <td class="margin format" colspan="3">{{ r.text }}: <br/><span class="link">{{ r.link }}</span></td>
+        </tr>
+        {% endfor %}  
+      </table>
+      <br/>
+      <table>
+        <tr>
+          <td class="margin format">{{ results_path }}</td>
+          <td class="margin format right">{% now "jS F Y H:i" %}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+{% endblock %}

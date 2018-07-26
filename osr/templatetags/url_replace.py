@@ -33,5 +33,4 @@ def url_replace(context, **kwargs):
       queryelems.append("page=" + str(kwargs['page']))        
 
     query = '&'.join(queryelems)
-    print '+++ QUERY:', query
     return query

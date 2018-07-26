@@ -1,1 +1,5 @@
-Django==1.11
+django==1.11
+django_easy_pdf==0.1.1
+django_smart_selects==1.5.4
+django-modeltranslation==0.12.2
+psql==10.4

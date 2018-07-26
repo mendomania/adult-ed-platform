@@ -31,7 +31,10 @@
     <td align="center" style="width: 50%;">
       <select name="sersel" id="sersel" class="selectpicker" multiple data-style="btn-success" title="Services" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
         {% for f in features %}
-        <option id="{{ f.id }}" value="{{ f.id }}">{{ f.text }}</option>
+        <option id="f{{ f.id }}" value="f{{ f.id }}">{{ f.text }}</option>
+        {% endfor %}
+        {% for s in services %}
+        <option id="s{{ s.id }}" value="s{{ s.id }}">{{ s.text }}</option>
         {% endfor %}
       </select>
     </td>
@@ -45,16 +48,25 @@
     <td align="center" style="width: 25%;">
       <select name="prosel" id="prosel" class="selectpicker" multiple data-style="btn-success" title="Programs" data-actions-box="true" data-width="87%" multiple data-selected-text-format="static">
         {% for p in programs %}
-        <option id="{{ p.id }}" value="{{ p.id }}">{{ p.name_official }} - {{ p.code }}</option>
+        <option id="{{ p.id }}" value="{{ p.id }}">{{ p.code }} - {{ p.name_official }}</option>
         {% endfor %}
       </select>
-    </td>    
+    </td>
   </tr>
   {% endif %}
 </table>
 <br/>
 
 {% if offerings %}
+
+<table align="center" width="91.5%" border="0">
+  <tr>
+    <td style="font-size: 120%; padding-bottom: 20px;">  
+      <iframe id="map" width="1285" height="350" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+full_address+from+1LWgv0tAoiB4EfmtBu6yqvBQ6YzINvhQCmpkhKmvA&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=13&l=full_address&y=2&tmplt=2&hml=ONE_COL_LAT_LNG"></iframe>
+    </td>
+  </tr>
+</table>
+
 <table align="center" width="91.5%" border="0">
   <tr>
     <td style="font-size: 120%; ">
@@ -67,11 +79,11 @@
   {% for o in offerings %}
   <table align="center" width="90%" border="0" style="background: #eee; box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);">
     <tr>
-      <td colspan="18" class="sname">{{ o.service_delivery_site.head.name }}: {{ o.service_delivery_site.name }}</td>
+      <td colspan="18" class="sname">{{ o.service_delivery_site }}</td>
       <td colspan="6">
         <table width="100%">
           <tr>
-            <td class="pname" style="background: {{ o.program.colour }};">{{ o.program.name_official }}</td>
+            <td class="pname" style="color: {{ o.program.foreground_colour }} !important; background: {{ o.program.background_colour }};">{{ o.program.name_official }}</td>
           </tr>
         </table>
       </td>
@@ -81,12 +93,18 @@
       <td colspan="4" class="right">{{ o.service_delivery_site.address_street }}</td>
     </tr>
     <tr>
-      <td colspan="20"><b>Classes on:</b></td>
+      <td colspan="20"><b>Subjects:</b> {{ o.get_subjects }} </td>
       <td colspan="4" class="right">{{ o.service_delivery_site.address_city }}, {{ o.service_delivery_site.address_province }}</td>
+    </tr>
+    <tr>
+      <td colspan="24" style="padding-bottom: 2px;"></td>
+    </tr>
+    <tr>
+      <td colspan="24"><b>Classes on:</b></td>
     </tr>
     <tr style="border-bottom: 8px solid #eee">
       <td colspan="24">
-        {{ o.get_schedules }}        
+        {{ o.get_schedules }}
       </td>
     </tr>
     <tr style="border-bottom: 2px solid #eee">
@@ -96,6 +114,14 @@
         </td>
         <td colspan="2" style="text-align: center">
           {{ f.feature.text }}
+        </td>
+      {% endfor %}
+      {% for f in o.service_delivery_site.servicedeliverysitefacility_set.all %}
+        <td colspan="1">
+          <img src="../../static/osr/images/{{ f.facility.image }}" alt="{{ f.facility.image }}" style="width: 30px; height: 30px;">
+        </td>
+        <td colspan="2" style="text-align: center">
+          {{ f.facility.text }}
         </td>
       {% endfor %}
       {% for i in o.get_number_of_perks %}
@@ -111,7 +137,7 @@
         <td colspan="3">
           <table width="100%">
             <tr>
-              <td class="cname" style="background: {{ g.colour }};">
+              <td class="cname" style="color: {{ g.foreground_colour }} !important; background: {{ g.background_colour }};">
                 {{ g.text }}
               </td>
             </tr>
@@ -175,13 +201,14 @@
 {% endif %}
 
 <script>
+  const outcomes = new Set([]);
+
   function createURL(elem, data) {
     switch (elem) {
       case 'pro':
         var components = [];
         var arr = data.split(',');
         for (var i = 0; i < arr.length; i++) {
-          //alert(arr[i]);
           components.push('program='+ arr[i])
         }
         return components.join('&');
@@ -189,7 +216,6 @@
         var components = [];
         var arr = data.split(',');
         for (var i = 0; i < arr.length; i++) {
-          //alert(arr[i]);
           components.push('e='+ arr[i])
         }
         return components.join('&');
@@ -197,40 +223,134 @@
         var components = [];
         var arr = data.split(',');
         for (var i = 0; i < arr.length; i++) {
-          //alert(arr[i]);
-          components.push('s='+ arr[i])
+          // OSR facility
+          if (arr[i].charAt(0) == 's') {
+            components.push('s='+ arr[i].slice(1))
+          }
+          // OSR feature
+          if (arr[i].charAt(0) == 'f') {
+            components.push('f='+ arr[i].slice(1))
+          }
         }
         return components.join('&');
       case 'out':
         var components = [];
         var arr = data.split(',');
         for (var i = 0; i < arr.length; i++) {
-          //alert(arr[i]);
           components.push('o='+ arr[i])
         }
         return components.join('&');
     }
   }
 
-  function toggleParameters(pname, sname) {
+  function loadMap(srcurl) {
+    var $iframe = $('#map');
+    // https://fusiontables.google.com/embedviz?q=select+full_address+from+1Tj6gqMhoXTnXPEOnQEsRtoFAhpiA3MyfwFOSXtiD&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=13&l=full_address&y=2&tmplt=2&hml=ONE_COL_LAT_LNG
+    $iframe.attr('src', 'https://fusiontables.google.com/embedviz?q=' + srcurl + '&viz=MAP&h=false&lat=43.65672594057957&lng=-79.4046063711512&t=1&z=13&l=full_address&y=2&tmplt=2&hml=ONE_COL_LAT_LNG');
+  }
+
+  function toggleParameters() {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
-    values = []
+    var query = 'SELECT+full_address+FROM+1LWgv0tAoiB4EfmtBu6yqvBQ6YzINvhQCmpkhKmvA';
+    var where = [];
+    valuesO = [];
+    valuesP = [];
+    valuesS = [];
+    valuesE = [];
     for (var i = 0; i < sURLVariables.length; i++) {
       var sParameterName = sURLVariables[i].split('=');
-      if (sParameterName[0] == pname) {
-        values.push(sParameterName[1]);
-        //alert('PARAM:' + sParameterName[1]);
-        //$('select[name=' + name + ']').val(sParameterName[1]);
+      switch (sParameterName[0]) {
+        case "o": {
+          valuesO.push(sParameterName[1]);
+          outcomes.add(sParameterName[1]);
+          break;
+        }
+        case "e": {
+          valuesE.push(sParameterName[1]);
+          break;
+        }
+        case "s": {
+          valuesS.push("s" + sParameterName[1]);
+          break;
+        }
+        case "f": {
+          valuesS.push("f" + sParameterName[1]);
+          break;
+        }
+        case "program": {
+          valuesP.push(sParameterName[1]);
+        }
       }
     }
-    //alert('VALUES:' + values);
-    //alert(values);
-    $('select[name=' + sname + ']').val(values);
+
+    if (valuesO.length > 0) {
+      // var outs = [];
+      // var len = valuesO.length;
+      // for (var i = 0; i < len; i++) {
+      //   outs.push("o" + padZeroLeft(valuesO[i]) + "+=+'T'");
+      // }
+      // where.push(outs.join('+AND+'));      
+      $('select[name=outsel]').val(valuesO);
+    }
+    if (valuesE.length > 0) {
+      var reqs = [];
+      var len = valuesE.length;
+      for (var i = 0; i < len; i++) {
+        reqs.push("r" + padZeroLeft(valuesE[i]) + "+=+'T'");
+      }
+      where.push(reqs.join('+AND+'));
+      $('select[name=elesel]').val(valuesE);
+    }
+
+    if (valuesS.length > 0) {
+      var sers = [];
+      var len = valuesS.length;
+      for (var i = 0; i < len; i++) {
+        sers.push(valuesS[i].charAt(0) + padZeroLeft(valuesS[i].slice(1)) + "+=+'T'");
+      }
+      where.push(sers.join('+AND+'));
+      $('select[name=sersel]').val(valuesS);
+    }
+
+    if (valuesP.length > 0) {
+      where.push('program+IN+(' + valuesP.join(',') + ')');
+      $('select[name=prosel]').val(valuesP);
+    }
+
+    if (where.length > 0) {
+      query = query + '+WHERE+' + where.join('+AND+');
+    }
+    loadMap(query);
     $('.selectpicker').selectpicker('refresh');
   }
 
-  function filter() {
+  function padZeroLeft(number) {
+    return ('00' + number.toString()).slice(-2)
+  }
+
+  function eqSet(as, bs) {
+    if (as.size !== bs.size) return false;
+    for (var a of as) if (!bs.has(a)) return false;
+    return true;
+  }
+
+  function areOutcomesSame() {
+    var selout = $('#outsel').val();
+    // If not null
+    if (selout) {
+      var arr = selout.toString().split(',');
+      var current = new Set([]);
+      for (var i = 0; i < arr.length; i++) {
+        current.add(arr[i])
+      }
+      return eqSet(outcomes, current);
+    } else {
+      return (outcomes.length == 0);
+    }
+  }
+
+  function filter(resetPrograms) {
     var selout = $('#outsel').val();
     var selpro = $('#prosel').val();
     var selele = $('#elesel').val();
@@ -243,7 +363,7 @@
         out = createURL('out', selout.toString());
       }
       var pro = null;
-      if (selpro != null) {
+      if (selpro != null && !resetPrograms) {
         pro = createURL('pro', selpro.toString());
       }
       var ele = null;
@@ -288,28 +408,25 @@
   }
 
   $(document).ready(function () {
+    // SELECT
     var url = window.location.search.substring(1);
 
     if (url) {
-      toggleParameters('o', 'outsel');
-      toggleParameters('program', 'prosel');
-      toggleParameters('e', 'elesel');
-      toggleParameters('s', 'sersel');
+      toggleParameters();
     }
 
-    $('#outsel').on('change', function(){
-      filter();
+    $('.selectpicker').on('hidden.bs.select', function (e) {
+      // If outcomes were modified
+      if ($(this).attr('id') == "outsel") {
+        // Compare initial to current outcomes
+        // If there was a change in outcomes, reset the programs
+        if (!areOutcomesSame()) {
+          filter(true);
+        }
+      } else {
+        filter(false);
+      }
     });
-    $('#prosel').on('change', function(){
-      filter();
-    });
-    $('#elesel').on('change', function(){
-      filter();
-    });
-    $('#sersel').on('change', function(){
-      filter();
-    });
-
 
   });
 </script>

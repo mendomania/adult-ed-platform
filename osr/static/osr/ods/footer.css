@@ -1,0 +1,36 @@
+footer {
+  position: relative;
+  margin-top: -7px;
+}
+
+.logo-ontario-blk {
+  background: url(../../osr/ods/img/logo-ontario-blk.png) no-repeat;
+  ../../osr/ods/img/logo-ontario-blk.png
+  background-size: 102px 36px;
+  width: 102px;
+  height: 36px;
+  display: block;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-ontario-blk {
+    background: url(../../osr/ods/img/logo-ontario-blk@2x.png) no-repeat;
+  }
+}
+
+.footer-swoosh {
+  background: url(../../osr/ods/img/footer-swoosh-bg.png) repeat-x;
+  display: inline-block;
+  width: 80%;
+  height: 87px;
+  margin-top: -3rem;
+}
+
+.footer-swoosh--right {
+  background: url(../../osr/ods/img/footer-swoosh.png) no-repeat;
+  display: inline-block;
+  width: 20%;
+  height: 87px;
+  float: right;
+  margin-top: -3rem;
+}

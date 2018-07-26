@@ -1,0 +1,262 @@
+/*----- NEW -----*/
+
+.grey-in-table-bg {
+  background-color: rgba(244, 244, 244, .5);
+}
+
+.white-bg {
+  background-color: #FFFFFF;
+}
+
+.white-bg {
+  background-color: #FFFFFF;
+}
+
+.lblue-bg {
+  background-color: #F4F7FD;
+}
+
+/* grey scale colors */
+.greyscale-0,
+.light-text {
+  color: #fff !important;
+}
+
+.greyscale-7 {
+  color: #ededed;
+}
+
+.light-grey-bg {
+  background: #ededed;
+}
+
+.greyscale-70,
+.dark-text {
+  color: #4d4d4d !important;
+}
+
+.greyscale-80 {
+  background: #333333;
+}
+
+/* theme colors */
+.link-color {
+  color: #0066cc;
+}
+
+.link-visited-color {
+  color: #8138b3;
+}
+
+.link-hover-color {
+  color: #5798d8;
+}
+
+.service-ontario {
+  background: #006b3f;
+}
+
+.primary-button-color {
+  background: #0071A9;
+}
+
+.minty {
+  background: #DFF3F3 !important;
+}
+
+.pinky {
+  background: #FAD2D2 !important;
+}
+
+.limey {
+  background: #E6FAD2 !important;
+}
+
+.ducky {
+  background: #fafad2 !important;
+}
+
+.yellow-bg {
+  background-color: #ffc300 !important;
+  color: #fff; 
+}
+
+.yellow-bg a, .yellow-bg a:hover, .yellow-bg a:visited {
+  color: #d1ddeb !important; 
+}
+
+.yellow-bg a:focus, .yellow-bg a:active, .yellow-bg a.active {
+  color: #ededed !important; 
+}
+
+.orange-bg {
+  background-color: #f2671f !important;
+  color: #fff;
+}
+
+.orange-bg a, .orange-bg a:hover, .orange-bg a:visited {
+  color: #d1ddeb !important; 
+}
+
+.orange-bg a:focus, .orange-bg a:active, .orange-bg a.active {
+  color: #ededed !important; 
+}
+
+.red-bg {
+  background-color: #c91b26 !important;
+  color: #fff; }
+
+.red-bg a, .red-bg a:hover, .red-bg a:visited {
+  color: #d1ddeb !important; 
+}
+
+.red-bg a:focus, .red-bg a:active, .red-bg a.active {
+  color: #ededed !important; 
+}
+
+.magenta-bg {
+  background-color: #9c0f5f !important;
+  color: #fff; 
+}
+
+.magenta-bg a, .magenta-bg a:hover, .magenta-bg a:visited {
+  color: #d1ddeb !important; 
+}
+
+.magenta-bg a:focus, .magenta-bg a:active, .magenta-bg a.active {
+  color: #ededed !important; 
+}
+
+.purple-bg {
+  background-color: #60047a !important;
+  color: #fff; }
+
+.purple-bg a, .purple-bg a:hover, .purple-bg a:visited {
+  color: #d1ddeb !important; }
+
+.purple-bg a:focus, .purple-bg a:active, .purple-bg a.active {
+  color: #ededed !important; }
+
+.blue-bg {
+  background-color: #0087cb !important;
+  color: #fff; 
+}
+
+.blue-bg a, .blue-bg a:hover, .blue-bg a:visited {
+  color: #d1ddeb !important; 
+}
+
+.blue-bg a:focus, .blue-bg a:active, .blue-bg a.active {
+  color: #ededed !important; 
+}
+
+.green-bg {
+  background-color: #008b52 !important;
+  color: #fff; 
+}
+
+.green-bg a, .green-bg a:hover, .green-bg a:visited {
+  color: #d1ddeb !important; 
+}
+
+.green-bg a:focus, .green-bg a:active, .green-bg a.active {
+  color: #ededed !important; 
+}
+
+/* complementary theme colors */
+.light-blue-bg {
+  background: #D1DDEB !important;
+}
+
+.light-lavender-bg {
+  background: #D2D1EB !important;
+}
+
+.light-purple-bg {
+  background: #DFD1EB !important;
+}
+
+.light-magenta-bg {
+  background: #EBD1EA !important;
+}
+
+.light-pink-bg {
+  background: #EBD1DD !important;
+}
+
+.light-red-bg {
+  background: #EBD2D1 !important;
+}
+
+.light-orange-bg {
+  background: #EBDFD1 !important;
+}
+
+.light-yellow-bg {
+  background: #EAEBD1 !important;
+}
+
+
+.light-lime-bg { 
+  background: #DDEBD1 !important;
+}
+
+.light-green-bg { 
+  background: #D1EBD2 !important;
+}
+
+.light-mint-bg { 
+  background: #D1EBDF !important;
+}
+
+.light-aqua-bg { 
+  background: #D1EAEB !important;
+}
+
+.bright-yellow-bg { 
+  background: #FAFAD2 !important;
+}
+
+.bright-lime-bg { 
+  background: #E6FAD2 !important;
+}
+
+.bright-green-bg { 
+  background: #D2FAD2 !important;
+}
+
+.bright-mint-bg { 
+  background: #D2FAE6 !important;
+}
+
+.bright-aqua-bg { 
+  background: #D2FAFA !important;
+}
+
+.bright-blue-bg { 
+  background: #D2E6FA !important;
+}
+
+.bright-lavender-bg { 
+  background: #D2D2FA !important;
+}
+
+.bright-purple-bg { 
+  background: #E6D2FA !important;
+}
+
+.bright-magenta-bg { 
+  background: #FAD2FA !important;
+}
+
+.bright-pink-bg { 
+  background: #FAD2E6 !important;
+}
+
+.bright-red-bg { 
+  background: #FAD2D2 !important
+}
+
+.bright-orange-bg { 
+  background: #FAE6D2 !important;
+}

@@ -2,7 +2,6 @@
     "use strict";
 
     function initItem(item) {
-        //alert("B - INIT");
         var empty_label, chainfield = "#id_" + $(item).attr("data-chainfield"),
             url = $(item).attr("data-url"),
             id = "#" + $(item).attr("id"),
@@ -22,21 +21,18 @@
     }
 
     $(window).on('load', function () {
-        //alert("B - LOAD");
         $.each($(".chained"), function (index, item) {
             initItem(item);
         });
     });
 
     $(document).ready(function () {
-        //alert("B - READ");
         $.each($(".chained-fk"), function (index, item) {
             initItem(item);
         });
     });
 
     function initFormset(chained) {
-        //alert("B - FORM");
         var re = /\d+/g,
             prefix,
             match,
@@ -61,7 +57,6 @@
     }
 
     $(document).on('formset:added', function (event, $row, formsetName) {
-        //alert("B - ADDE");
         // Fired every time a new inline formset is created
 
         var chainedFK, chainedM2M, filteredM2M;

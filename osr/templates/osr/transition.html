@@ -1,0 +1,355 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Results{% endblocktrans %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+  </head>
+  <body class="lblue-bg">
+    <header>
+      <div class="row"">
+        <!-- Logo -->
+        <div class="small-6 columns">
+          <a href="https://ontario.ca/page/government-ontario">
+            <span class="logo-ontario" aria-hidden="true"></span>
+            <span class="visually-hidden">
+              {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+            </span>
+          </a>
+        </div>
+        <!-- Toggle language -->
+        <div class="small-6 columns">
+          <a onclick="toggleLanguage();" class="header-link right small">
+            {% blocktrans %}Français{% endblocktrans %}
+          </a>
+        </div> 
+      </div>
+    </header>
+
+    <div>
+
+      <div class="row intro">
+        <div class="columns small-12 text-center">
+          <h1>
+            {% blocktrans %}Adult Learning{% endblocktrans %}<br/>{% blocktrans %}Program Matchmaker{% endblocktrans %}
+          </h1>
+        </div>
+      </div>
+
+      {% if wasEmailSent %}
+      <div class="row">
+        <div class="columns small-12 text-center blue-bg">
+          {% blocktrans %}E-mail sent to{% endblocktrans %} {{ emailAddress }}
+        </div>
+        <br/>
+      </div>      
+      {% endif %}
+
+      {% if not showMatchingPrograms %}
+      <div class="row">
+        <div class="columns small-12 text-center">
+          <h4>{% blocktrans %}Your Results{% endblocktrans %}</h4>
+          {% if number == 1 %}
+          <p>{% blocktrans %}Based on your responses, we found 1 program that you might be interested in{% endblocktrans %}</p>
+          {% else %}
+          <p>{% blocktrans with number as number %}Based on your responses, we found {{ number }} programs that you might be interested in{% endblocktrans %}</p>
+          {% endif %}
+          
+        </div>
+      </div>         
+
+      <div class="row">
+        <br/>
+      </div>  
+
+      {% if groupOf3s %}
+      <div class="row">
+        {% for p in groupOf3s %}
+        <div id="col" class="columns small-12 medium-12 large-4 padding-outer">
+          <div class="text-center padding-inner-t" style="color: {{ p.foreground_colour }}; background-color: {{ p.background_colour }};"></div>         
+          <div class="text-center padding-inner-c" onmouseover="this.style.borderColor='{{ p.background_colour }}'">
+
+            <h5>{{ p.name_official }}</h5>
+            <br/>
+            {{ p.description_for_comparison_page|linebreaks }}
+          </div>          
+        </div>
+          {% if forloop.counter|divisibleby:3 %}
+      </div>
+        <br/>
+      <div class="row">
+          {% endif %}
+        {% endfor %} 
+      </div>
+      {% endif %}
+
+      {% if groupOf2s %}
+        {% for p in groupOf2s %} 
+        <div class="row"">
+          <div class="large-offset-2 columns small-12 medium-12 large-4 padding-outer">
+            <div class="text-center padding-inner-t" style="color: {{ p.tup1.foreground_colour }}; background-color: {{ p.tup1.background_colour }};"></div>         
+            <div class="text-center padding-inner-c" onmouseover="this.style.borderColor='{{ p.tup1.background_colour }}'">
+              <h5>{{ p.tup1.name_official }}</h5>
+              <br/>
+              {{ p.tup1.description_for_comparison_page|linebreaks }}
+            </div>                  
+          </div>
+          <div class="columns small-12 medium-12 large-4 padding-outer end">
+            <div class="text-center padding-inner-t" style="color: {{ p.tup2.foreground_colour }}; background-color: {{ p.tup2.background_colour }};"></div>     
+            <div class="text-center padding-inner-c" onmouseover="this.style.borderColor='{{ p.tup2.background_colour }}'">
+              <h5>{{ p.tup2.name_official }}</h5>
+              <br/>
+              {{ p.tup2.description_for_comparison_page|linebreaks }}
+            </div>          
+          </div>
+        </div>        
+        <br/>
+        {% endfor %}          
+      {% endif %}
+
+      {% if groupOf1s %}
+        {% for p in groupOf1s %} 
+      <div class="row"">
+        <div class="columns small-12 medium-12 large-4 padding-outer small-centered">
+          <div class="text-center padding-inner-t" style="color: {{ p.foreground_colour }}; background-color: {{ p.background_colour }};"></div>    
+          <div class="text-center padding-inner-c" onmouseover="this.style.borderColor='{{ p.background_colour }}'">
+            <h5>{{ p.name_official }}</h5>
+            <br/>
+            {{ p.description_for_comparison_page|linebreaks }}
+          </div> 
+        </div>                    
+      </div>     
+        {% endfor %}
+      <br/>    
+      {% endif %}
+
+      {% if number >= 1 %}
+      <div class="row">
+        <br/>
+        <div class="columns small-12 text-center">
+          {% if number == 1 %}
+          <a class="button" href="{% url 'osr:comparison' %}{{ paramLang }}{{ paramsPrograms }}">{% blocktrans %}Learn more{% endblocktrans %}</a>
+          {% else %}
+          <a class="button" href="{% url 'osr:comparison' %}{{ paramLang }}{{ paramsPrograms }}">{% blocktrans %}Compare programs{% endblocktrans %}</a>
+          {% endif %}
+        </div>
+        <br/>
+      </div>   
+      {% endif %} 
+      {% endif %}  
+    </div>     
+
+    {% if recommendations %}
+    <div class="white-bg">
+      <div class="row">
+        <br/>
+      </div>        
+      
+      <div class="row">
+        <div class="columns small-12 text-center">
+          <h4>{% blocktrans %}Other Relevant Information{% endblocktrans %}</h4>
+        </div>
+      </div> 
+
+      <div class="row">
+        <br/>
+      </div>  
+
+      <div class="row">
+        <div class="large-offset-2 columns small-12 medium-12 large-4">
+          <h5>{% blocktrans %}Because you said...{% endblocktrans %}</h5>            
+        </div>
+        <div class="columns small-12 medium-12 large-4 end">
+          <h5>{% blocktrans %}We recommend...{% endblocktrans %}</h5>     
+        </div>
+      </div> 
+
+      {% for recommendation in recommendations %}
+      <div class="row">
+        <div class="large-offset-2 columns small-12 medium-12 large-4">
+          <p> {{ recommendation.reason }} </p>      
+        </div>
+        <div class="columns small-12 medium-12 large-4 end">
+          <a href="{{ recommendation.link }}" target="_blank"> {{ recommendation.text }} </a>  
+        </div>
+        {% if not forloop.last %}
+        <hr/>
+        {% endif %}
+      </div>
+      {% endfor %}      
+
+      <div class="row">
+        <br/>
+      </div> 
+    </div>       
+    {% endif %}
+
+    <div class="lblue-bg">
+      <div class="row">
+        <br/>
+        <div class="columns small-12 text-center">
+          <h4>{% blocktrans %}Your Profile{% endblocktrans %}</h4>
+        </div>
+      </div>  
+
+      <div class="row">
+        <div class="columns small-12">
+          <h6>{% blocktrans %}Your personal information{% endblocktrans %}:</h6>
+          {% if request.session.age %}
+          {{ request.session.age }}<br/>
+          {% endif %}
+
+          {% if request.session.profile_basic_ontario_resident %}
+          {{ request.session.profile_basic_ontario_resident }}<br/>
+          {% endif %}   
+
+          {% if request.session.profile_basic_immigration_status %}
+          {{ request.session.profile_basic_immigration_status }}<br/>
+          {% endif %} 
+
+          {% if request.session.profile_basic_lang_source %}
+          {{ request.session.profile_basic_lang_source }}<br/>
+          {% endif %}                              
+
+          {% if request.session.highschool %}
+          {{ request.session.highschool }}<br/>
+          {% endif %}          
+
+          {% if request.session.ossd %}
+          {{ request.session.ossd }}<br/>
+          {% endif %}            
+          
+          {% if request.session.gedx %}
+          {{ request.session.gedx }}<br/>
+          {% endif %}                                        
+
+          {% if request.session.intl_edu %}
+          {{ request.session.intl_edu }}<br/>
+          {% endif %}                                        
+
+          {% if request.session.intl_job %}
+          {{ request.session.intl_job }}<br/>
+          {% endif %}          
+          <br/>                                                  
+          <h6>{% blocktrans %}Your goals{% endblocktrans %}:</h6>
+          {% if request.session.main_goals %}
+          {% for goal in request.session.main_goals %}
+            {{ goal }}<br/>
+          {% endfor %}
+          {% endif %} 
+          <br/>
+          <h6>{% blocktrans %}Your needs{% endblocktrans %}:</h6>
+          {% if request.session.need_goals %}
+          {{ request.session.need_goals }}<br/>
+          {% endif %}           
+        </div>
+      </div>        
+
+      <div class="row">
+        <br/>
+      </div>   
+
+      <div class="row">
+        <div class="columns small-12 text-center">
+          <a class="button" href="{% url 'osr:matchmaker' %}{{ paramLang }}">{% blocktrans %}Redo quiz{% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/redo.png" width="15px" height="15px" alt="Round arrow"/></a>
+          <a class="button" onclick="toggleSendButton()">{% blocktrans %}Get results by e-mail{% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/email.png" width="15px" height="15px" alt="Letter"/></a>
+          <a class="button" href="/osr/print/">{% blocktrans %}Download (PDF){% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/print.png" width="15px" height="15px" alt="Printer"/></a>
+        </div>              
+      </div> 
+
+      <div id="sendButton" class="row">
+        <div class="large-offset-2 columns small-12 medium-12 large-6">
+          <input id="email-address" type="text"/>
+        </div>
+        <div class="columns small-12 medium-12 large-4 end">          
+          <a class="button" onclick="sendEmail()" >{% blocktrans %}Send{% endblocktrans %}</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <br/><br/><br/>
+      </div>                        
+    </div>  
+
+    <form name="setLangEng" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="en"/>
+    </form>
+
+    <form name="setLangFre" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="fr"/>
+    </form>   
+
+  </body>
+</html>
+
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  function toggleLanguage() {
+    if ('{{ LANGUAGE_CODE|lower }}' == 'en') {
+      document.setLangFre.submit();
+    } else {
+      document.setLangEng.submit();
+    }    
+  }
+
+  function getMaxHeightOfAllElemsOfClass(commonClass) {
+    var maxHeight = Math.max.apply(null, $(commonClass).map(function ()
+    {
+      return $(this).height();
+    }).get()); 
+    return maxHeight;
+  }
+
+  function toggleSendButton() {
+    $('#sendButton').toggle();
+    $('#email-address').focus();
+  }
+
+  function sendEmail() {
+    var emailAddress = $('#email-address').val();
+    if (emailAddress) {
+      window.location.replace('{% url 'osr:email' %}' + '?emailAddress=' + emailAddress);
+    }
+  }  
+
+  $(document).ready(function() {
+    $('#sendButton').hide();
+
+    // Resize elements to be of the same height
+    // The height of the tallest element in each row      
+    $('.padding-inner-c').height(getMaxHeightOfAllElemsOfClass('.padding-inner-c'));
+
+    // Resize window after elements were resized
+    // Add code for IE
+    if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+     var evt = document.createEvent('UIEvents');
+     evt.initUIEvent('resize', true, false, window, 0);
+     window.dispatchEvent(evt);
+    } else {
+       window.dispatchEvent(new Event('resize'));
+    }        
+  });  
+</script>

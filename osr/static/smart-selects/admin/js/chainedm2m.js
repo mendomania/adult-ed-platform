@@ -1,6 +1,5 @@
 var chainedm2m = {
             fireEvent: function (element, event) {
-                //alert("M2M - FIRE");
                 var evt, rtn;
                 if (document.createEventObject) {
                     // dispatch for IE
@@ -17,7 +16,6 @@ var chainedm2m = {
             },
 
             dismissRelatedLookupPopup: function(win, chosenId) {
-                //alert("M2M - DISMISS");
                 var name = windowname_to_id(win.name),
                     elem = document.getElementById(name);
                 if (elem.className.indexOf('vManyToManyRawIdAdminField') !== -1 && elem.value) {
@@ -30,7 +28,6 @@ var chainedm2m = {
             },
 
             fill_field: function (val, initial_value, elem_id, url, initial_parent, auto_choose) {
-                //alert("M2M - FILL");
                 var $selectField = $(elem_id),
                     $selectedto = $(elem_id + '_to'),
                     cache_to = elem_id.replace('#', '') + '_to',
@@ -127,15 +124,12 @@ var chainedm2m = {
                         $selectField.width(width + 'px');
                     }
 
-                    //alert("M2M - TRIGGER");
                     $selectField.trigger('change');
-
                     trigger_chosen_updated();
                 });
             },
 
             init: function (chainfield, url, id, value, auto_choose) {
-                //alert("M2M - INIT");
                 var fill_field, val, initial_parent = $(chainfield).val(),
                     initial_value = value;
 

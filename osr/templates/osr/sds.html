@@ -1,0 +1,239 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontario.ca basic template</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="row">
+
+        <!-- logo -->
+        <div class="small-6 columns">
+          <a href="https://ontario.ca/page/government-ontario">
+            <span class="logo-ontario" aria-hidden="true"></span>
+            <span class="visually-hidden">
+              Government of Ontario home page
+            </span>
+          </a>
+        </div>
+
+        <div class="small-6 columns">
+          <a href="/fr/page/gouvernement-de-lontario" class="header-link right small"
+            lang="fr" hreflang="fr" rel="alternate">
+            français
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="row intro">
+      <div class="columns small-12">
+        <h1>{{ sds.head.name }}</h1>
+        <p>{{ sds.name }}</p>
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row h4">
+      <div class="columns small-12">
+        <h3>On this page</h3>
+        <div class="columns small-6">
+          <span>1. <a href="#about-the-location">About the location</a></span><br/>
+          <span>2. <a href="#facilities">Facilities</a></span><br/>
+        </div>
+        <div class="columns small-6">
+          <span>3. <a href="#programs">Programs</a></span><br/>
+          <span>4. <a href="#how-to-register">How to register</a></span><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>      
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="about-the-service-location">About the location</h3>
+        <iframe id="map" width="965" height="350" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+full_address+from+1LWgv0tAoiB4EfmtBu6yqvBQ6YzINvhQCmpkhKmvA+where+sd_id+=+{{ sds.id }}&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=15&l=full_address&y=2&tmplt=2&hml=ONE_COL_LAT_LNG"></iframe>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="facilities">Facilities</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for f in sds.servicedeliverysitefacility_set.all %}
+      <div class="columns small-3">
+          <img src="../../../static/osr/images/{{ f.facility.image }}" alt="{{ f.feature.image }}" style="width: 30px; height: 30px;"/>
+          {{ f.facility.text }}
+      </div>
+      {% endfor %} 
+      {% for i in sds.get_complement %}
+        <div class="columns small-3"></div>
+      {% endfor %}
+    </div>  
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>    
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="programs">Programs</h3>
+        {% for p in sds.get_programs %}
+          <div class="alert-box success">
+            <h4>{{ p.name_official }}</h4>
+            <p>{{ p.description }}</p>
+            {% for o in sds.offering_set.all %}
+              {% if p.id == o.program.id %}
+                <div class="accordion">
+                  <div class="accordion-section">
+                    <a class="accordion-section-title" href="#accordion-{{ forloop.counter }}">{{ o.get_subjects }}</a>
+                    <div id="accordion-{{ forloop.counter }}" class="accordion-section-content">  
+                      <div class="columns small-6">
+                        <h6>Schedule:</h6>
+                        <p>{{ o.get_schedules }}</p>
+                      </div>
+                      <div class="columns small-6">
+                        <h6>Features:</h6>
+                        {% for f in o.offeringfeature_set.all %}
+                          <img src="../../../static/osr/images/{{ f.feature.image }}" alt="{{ f.feature.image }}" style="width: 30px; height: 30px;"/>
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="how-to-register">How to register</h3>
+        <div class="alert-box warning">
+          <h4>Instructions</h4>
+        </div>      
+      </div>
+    </div>
+
+    <footer class="light-grey-bg bottom-padding">
+
+      <div class="row h3">
+        <div class="small-12 columns">
+          <h2 class="top-margin">Ministry of Advanced Education and Skills Development</h2>
+          <p class="larger"><a href="https://ontario.ca/page/osap-ontario-student-assistance-program">OSAP: Ontario Student Assistance Program</a></p>
+
+          <h2 class="visually-hidden">Legal notices</h2>
+          <ul class="inline-list smaller top-margin-double">
+            <li>
+              <a href="https://ontario.ca/page/about-ontario" target="_blank" class="no-wrap">about ontario
+                <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="no-wrap">contact us
+                <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://ontario.ca/page/accessibility" target="_blank">
+                accessibility <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://news.ontario.ca/newsroom/en" target="_blank">
+                news <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://ontario.ca/page/privacy-statement" target="_blank">
+                privacy <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://ontario.ca/page/terms-use" target="_blank">
+                terms of use <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+          </ul>
+          <p><small><a href="https://ontario.ca/page/copyright-information-c-queens-printer-ontario" target="_blank">
+                © Queen's Printer for Ontario, 2012-16 <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a></small></p>
+        </div>
+      </div>
+
+      <span class="footer-swoosh"></span>
+      <span class="footer-swoosh--right"></span>
+
+    </footer>
+
+  </body>
+</html>
+
+<script>
+  $(document).ready(function() {
+    function close_accordion_section() {
+      $('.accordion .accordion-section-title').removeClass('active');
+      $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    }
+
+    $('.accordion-section-title').click(function(e) {
+      // Grab current anchor value
+      var currentAttrValue = $(this).attr('href');
+      if($(e.target).is('.active')) {
+        close_accordion_section();
+      } else {
+        close_accordion_section();
+        // Add active class to section title
+        $(this).addClass('active');
+        // Open up the hidden content panel
+        $('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+      }
+      e.preventDefault();
+    });
+
+  });
+</script>

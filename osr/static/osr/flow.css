@@ -1,0 +1,55 @@
+body {
+  width: 100%;
+  font-family: Open Sans;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 280px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  font-size: 13px;
+  font-weight: normal;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.bar-con{
+  background-color:#ccc;
+  height:1em;
+  margin-bottom:1em;
+  border-radius:5em;
+}
+.bar{
+  float:left;
+  height:100%;
+  width:0%;
+  border-radius:5em;
+}
+.bar-one .bar{
+  background-color:#2EA39E;
+  .transition;
+}
+.transition (@animation: ease-in, @time: 3s) {
+  transition: width @animation @time;
+  -webkit-transition: width @animation @time;
+  -moz-transition: width @animation @time;
+  -o-transition: width @animation @time;
+}
+.no-margin {
+  margin-top:0.15rem; 
+  margin-bottom:0.15rem; 
+  padding-top:0.15rem; 
+  padding-bottom:0.15rem; 
+  border-top:0.15rem; 
+  border-bottom:0.15rem;
+}

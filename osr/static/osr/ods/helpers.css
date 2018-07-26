@@ -1,0 +1,139 @@
+.top-margin {
+  margin-top: 1rem !important;
+}
+.top-margin-double {
+  margin-top: 2rem !important;
+}
+.top-margin-half {
+  margin-top: 0.5rem !important;
+}
+
+.no-top-margin {
+  margin-top: 0 !important;
+}
+
+.right-margin {
+  margin-right: 1rem !important;
+}
+.right-margin-double {
+  margin-right: 2rem !important;
+}
+.right-margin-half {
+  margin-right: 0.5rem !important;
+}
+
+.no-right-margin {
+  margin-right: 0 !important;
+}
+
+.bottom-margin {
+  margin-bottom: 1rem !important;
+}
+.bottom-margin-double {
+  margin-bottom: 2rem !important;
+}
+.bottom-margin-half {
+  margin-bottom: 0.5rem !important;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+.left-margin {
+  margin-left: 1rem !important;
+}
+.left-margin-double {
+  margin-left: 2rem !important;
+}
+.left-margin-half {
+  margin-left: 0.5rem !important;
+}
+
+.no-left-margin {
+  margin-left: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.top-padding {
+  padding-top: 1rem !important;
+}
+.top-padding-double {
+  padding-top: 2rem !important;
+}
+.top-padding-half {
+  padding-top: 0.5rem !important;
+}
+
+.no-top-padding {
+  padding-top: 0 !important;
+}
+
+.right-padding {
+  padding-right: 1rem !important;
+}
+.right-padding-double {
+  padding-right: 2rem !important;
+}
+.right-padding-half {
+  padding-right: 0.5rem !important;
+}
+
+.no-right-padding {
+  padding-right: 0 !important;
+}
+
+.bottom-padding {
+  padding-bottom: 1rem !important;
+}
+.bottom-padding-double {
+  padding-bottom: 2rem !important;
+}
+.bottom-padding-half {
+  padding-bottom: 0.5rem !important;
+}
+
+.no-bottom-padding {
+  padding-bottom: 0 !important;
+}
+
+.left-padding {
+  padding-left: 1rem !important;
+}
+.left-padding-double {
+  padding-left: 2rem !important;
+}
+.left-padding-half {
+  padding-left: 0.5rem !important;
+}
+
+.no-left-padding {
+  padding-left: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.indent {
+  margin-left: 2rem !important;
+}
+
+.no-indent {
+  padding-left: 0 !important;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.thick {
+  border-top: 4px solid #ededed;
+}

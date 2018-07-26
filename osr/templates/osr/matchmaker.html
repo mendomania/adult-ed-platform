@@ -1,0 +1,101 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchmaker</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/flow.css' %}" />
+  </head>
+  <body>
+    <div id="matchmaker">
+
+      <header>
+        <div class="row">
+          <!-- logo -->
+          <div class="small-6 columns">
+            <a href="https://ontario.ca/page/government-ontario">
+              <span class="logo-ontario" aria-hidden="true"></span>
+              <span class="visually-hidden">
+                {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+              </span>
+            </a>
+          </div>
+          <!-- Toggle language -->
+          <div class="small-6 columns">
+            <a v-if="lang == 'en'" @click="updtLang" class="header-link right small">Français</a>
+            <a v-else @click="updtLang" class="header-link right small">English</a>
+          </div>      
+        </div>
+      </header>
+
+      <div class="row intro">
+        <div class="columns small-12 text-center">
+          <h1 v-if="lang == 'en'">
+            Adult Learning<br/>Program Matchmaker
+          </h1>
+          <h1 v-else>
+            Matchmaker de Programmes<br/>d'Éducation des Adultes
+          </h1>
+        </div>
+      </div>
+
+      <div class="row intro">
+        <div class="columns small-12">
+        </div>
+      </div>
+
+      <input type="hidden" id="lang" name="lang" value="{{ LANGUAGE_CODE|lower }}"/>
+
+      <div v-if="stageIntro">
+        <div class="row">
+          <div class="columns small-12 medium-7">
+            <img src="../../../static/osr/images/widget.png" width="550em" height="325em" alt="Matchmaker"/>
+          </div>
+          <div class="columns small-12 medium-5">
+            <p v-if="lang == 'en'"><br/><br/>If you're a resident of Ontario and looking to explore adult learning programs offered in the province, you're in the right place!
+            <br/>Answer a series of simple questions and we'll recommend programs that best match your situation.</p>
+            <p v-else><br/><br/>Si vous êtes résident de l'Ontario et vous cherchez à explorer des programmes d'éducation pour adultes qui sont offerts dans la province, vous êtes au bon endroit !
+            <br/>Répondez quelques questions et on vous recommandera des programmes adaptés à votre situation.</p>
+
+            <button v-if="lang == 'en'" @click="initQuiz" class="quiz-button btn">Start</button>
+            <button v-else @click="initQuiz" class="quiz-button btn">Commencez</button>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="stageCards">
+        <card :card="cards[currentCard]" :lang="lang" :dico="dico" :checkOpts="checkOpts" :radioOpts="radioOpts" :inputOpts="inputOpts" v-on:next="nextCard" v-on:back="backCard"></card>
+      </div>         
+
+      <form id="jsform" action="/osr/transition/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="dico" v-model="JSON.stringify(dico)" value="dico">
+      </form>        
+      </div>
+    </div>     
+
+  </body>
+</html>
+
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{% static 'osr/vue.min.js' %}"></script>
+<script src="{% static 'osr/flow.js' %}"></script>

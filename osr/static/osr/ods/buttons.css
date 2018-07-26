@@ -1,0 +1,73 @@
+button, .button, input[type="submit"], 
+button:visited, .button:visited,
+button:hover, .button:hover, 
+button:focus, .button:focus, 
+button:active, .button:active {
+  color: #FFFFFF;
+}
+
+button, .button, input[type="submit"] {
+  background: #0071A9;
+  box-shadow: 0 2px 4px #666666;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 1em 1.25em 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: .8125rem 1.5rem;
+  transition: background-color 300ms ease-out;
+}
+
+button:hover, .button:hover, input[type="submit"]:hover,
+button:focus, .button:focus, input[type="submit"]:focus, 
+button:active, .button:active, input[type="submit"]:active {
+  background: #0083c4;
+  box-shadow: 0 1px 3px #666666;
+}
+
+button[disabled], input[type='button'][disabled], input[type='submit'][disabled] {
+  background: #0083c4;
+}
+
+.secondary, 
+.secondary:hover, 
+.secondary:focus,
+.secondary:active {
+  color: #333333;
+}
+
+.secondary {
+  background: #d1ddeb;
+}
+
+.secondary:hover, 
+.secondary:focus,
+.secondary:active {
+  background: #b2c6de;
+  box-shadow: 0 1px 3px #666666;
+}
+
+.quiet {
+  text-decoration: underline;
+  display: inline-block; // to force underline on form button
+  color: #0066cc;
+  cursor: pointer;
+  padding: 0.5em;
+  background: transparent;
+  box-shadow: 0 0 0 #ffffff;
+}
+
+.quiet:hover, .quiet:focus, .quiet:active {
+  background: transparent;
+  box-shadow: 0 0 0 #ffffff;
+  color: #5798d8;
+  text-decoration: underline;
+}

@@ -1,14 +1,31 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import url, include
 from . import views
-from django.contrib import admin
+from django.conf.urls import url
 
 app_name = 'osr'
-urlpatterns = [
-    url(r'^$', views.index, name='index'),
+urlpatterns = [  
+
+    # Static landing page
+    url(r'intro/$', views.intro, name='intro'),
+    # Matchmaker page
+    url(r'matchmaker/$', views.matchmaker, name='matchmaker'),
+
+    # Results page
+    url(r'transition/$', views.transition, name='transition'),
+    # Comparison page
+    url(r'comparison/$', views.comparison, name='comparison'),
+
+    # Dynamic program pages
+    # ex: /program/adc/
+    url(r'program/(?P<program_code>[a-z]+)/$', views.detail_program, name='detail_program'),
+    # Print functionality
+    url(r'print/$', views.ResultsPDFView.as_view(), name='print'),
+    # Email functionality
+    url(r'email/$', views.email, name='email'),
+
+    # Deprecated: Dynamic offering page
     url(r'offerings/$', views.OfferingsView.as_view(), name='offerings'),
-    url(r'results/$', views.ResultsView.as_view(), name='results'),
-    url(r'widget/$', views.WidgetView.as_view(), name='widget'),
-    #url(r'^admin/', include(admin.site.urls)),
-    #url(r'^chaining/', include('smart_selects.urls')),
+    # Deprecated: Dynamic service provider pages
+    url(r'site/(?P<sds_id>[0-9]+)/$', views.detail_sds, name='detail_sds'), 
+
 ]

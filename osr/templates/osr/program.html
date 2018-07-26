@@ -1,0 +1,373 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ program.name_official }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+  </head>
+
+  <body>
+    <header>
+      <div class="row">
+        <!-- Logo -->
+        <div class="small-6 columns">
+          <a href="https://ontario.ca/page/government-ontario">
+            <span class="logo-ontario" aria-hidden="true"></span>
+            <span class="visually-hidden">
+              {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+            </span>
+          </a>
+        </div>
+        <!-- Toggle language -->
+        <div class="small-6 columns">
+          <a onclick="toggleLanguage();" class="header-link right small">
+            {% blocktrans %}Français{% endblocktrans %}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="row intro">
+      <div class="columns small-12">
+        <h1>{{ program.name_official }}</h1>
+        <p>{{ program.description }}</p>
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row h4">
+      <div class="columns small-12">
+        <h3>{% blocktrans %}On this page{% endblocktrans %}</h3>
+        <div class="columns small-6">
+          <span>1. <a href="#about-the-program">{% blocktrans %}About the program{% endblocktrans %}</a></span><br/>
+          <span>2. <a href="#eligibility">{% blocktrans %}Eligibility{% endblocktrans %}</a></span><br/>
+          <span>3. <a href="#financial-information">{% blocktrans %}Financial information{% endblocktrans %}</a></span><br/>
+        </div>
+        <div class="columns small-6">
+          <span>4. <a href="#how-to-register">{% blocktrans %}How to register{% endblocktrans %}</a></span><br/>          
+          <span>5. <a href="#service-provider-locations">{% blocktrans %}Service provider locations{% endblocktrans %}</a></span><br/>          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>   
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="about-the-program">{% blocktrans %}About the program{% endblocktrans %}</h3>   
+        <p>{{ program.details|linebreaks }}</p>
+        {% if program.programlinks_set.all %}
+        <ul>
+          {% for link in program.programlinks_set.all %}
+            <li>{{ link.text }} ({% blocktrans %}see{% endblocktrans %} <a href="{{ link.link }}">{% blocktrans %}link{% endblocktrans %}</a>)</li>
+          {% endfor %}
+        </ul> 
+        {% endif %}        
+      </div>
+      <div class="columns small-12">     
+        <br/>  
+      </div>      
+
+      {% if program.learning_options.all and program.schedule_options.all and program.length %}
+      <div class="small-12 medium-6 large-4 columns">
+        <img src="../../../static/osr/images/book.png" width="60px" height="60px" alt="Book"/>
+        <h5>{% blocktrans %}Learning options{% endblocktrans %}</h5>
+        <ul class="no-bullet">
+          {% for o in program.learning_options.all %}
+            <li>{{ o }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="small-12 medium-6 large-4 columns">
+        <img src="../../../static/osr/images/schedule.png" width="60px" height="60px" alt="Calendar"/>
+        <h5>{% blocktrans %}Schedule options{% endblocktrans %}</h5>
+        <ul class="no-bullet">
+          {% for o in program.schedule_options.all %}
+            <li>{{ o }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="small-12 medium-6 large-4 columns">
+        <img src="../../../static/osr/images/time.png" width="60px" height="60px" alt="Clock"/>
+        <h5>{% blocktrans %}Program length{% endblocktrans %}</h5>
+        <ul class="no-bullet">
+          <li>{{ program.length }}</li>
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if program.programbestforscenarios_set.all %}
+      <div class="columns small-12">
+        <br/>
+        <h5>{% blocktrans %}This might be good for you if{% endblocktrans %}:</h5>
+        <ul>
+        {% for q in program.programbestforscenarios_set.all %}
+          <li>{{ q.text }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="row">
+      <br/>
+      <div class="columns small-12">
+        {% for o in program.get_outcomes %}
+          <span class="label" style="color: {{ o.foreground_colour }}; background: {{ o.background_colour }};">{{ o }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="row">
+      <br>
+      <div class="columns small-12 text-center">
+        <a class="button" href="#service-provider-locations">{% blocktrans %}Find schools near me{% endblocktrans %}</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="eligibility">{% blocktrans %}Eligibility{% endblocktrans %}</h3>
+        <p>{% blocktrans %}You must{% endblocktrans %}:</p>
+        <ol>
+          {% for requirement in program.eligibility_set.all %}
+            <li>{{ requirement }}</li>
+          {% endfor %}
+          {% if program.eligible_immigration_status.all %}
+            <li>{% blocktrans %}And one of the following{% endblocktrans %}:</li>
+            <ul>
+              {% for status in program.eligible_immigration_status.all %}
+              <li>{{ status }}</li>
+              {% endfor %}              
+            </ul>
+        {% endif %}            
+        </ol>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="financial-information">{% blocktrans %}Financial information{% endblocktrans %}</h3>
+        <br/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-6">
+        {% if program.free %}
+        <img src="../../../static/osr/images/free.png" width="80px" height="80px" alt="Free"/>
+        {% else %}
+        <img src="../../../static/osr/images/paid.png" width="80px" height="80px" alt="Paid"/>        
+        {% endif %}
+        <p>{{ program.funding }}</p>
+      </div>
+      {% if program.fees %}
+      <div class="callout columns small-6">
+          <div class="columns small-9">            
+            <h6>{% blocktrans %}Disclaimer{% endblocktrans %}</h6>
+            {{ program.fees }}
+          </div>
+          <div class="columns small-3">
+            <img src="../../../static/osr/images/textbook.png" width="75px" height="75px" alt="Textbook"/>
+          </div>
+      </div>
+      {% endif %}
+    </div>
+
+    {% if program.subsidies %}
+    <div class="row">
+      <div class="columns small-12">
+        <h5>{% blocktrans %}Subsidies{% endblocktrans %}</h5>
+        <p>{{ program.subsidies|linebreaks }}</p>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if program.support %}
+    <div class="row">
+      <div class="columns small-12">
+        <h5>{% blocktrans %}Additional support{% endblocktrans %}</h5>
+        <p>{{ program.support|linebreaks }}</p>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="columns small-6">
+        <h3 id="how-to-register">{% blocktrans %}How to register{% endblocktrans %}</h3>
+        <br/>
+        {% for s in program.programregistrationsteps_set.all %}
+          <div class="row stats">
+            <div class="columns small-2">
+              <div class="circle--small yellow-bg dark-text"><span class="number">{{ forloop.counter }}</span></div>
+            </div>
+            <div class="columns small-10 stats-font">
+              <p>{{ s.text }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="columns small-6">
+        <img src="../../../static/osr/images/registration.png" width="470px" height="400px" alt="Registration"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="service-provider-locations">{% blocktrans %}Service provider locations{% endblocktrans %}</h3>
+        <br/>
+        <div class="text-center">
+        <iframe id="map" width="800" height="450" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col26+from+1ljG-Pww0VwGWBAYrmQofnMqMZTaYfyReL9GvzKAS&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=13&l=col26&y=2&tmplt=2&hml=TWO_COL_LAT_LNG"></iframe>      
+        </div>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div class="columns small-12">
+        <br/><br/>
+      </div>
+    </div>    
+
+    <!--<div class="row">
+      <br>
+      <div class="columns small-12 text-center">
+        <a class="button" href="https://www.ontario.ca/page/government">Show me schools near me</a>
+      </div>
+    </div>-->
+
+   <!--<div class="row">
+      <div class="columns small-12">
+        <hr/>
+      </div>
+    </div>-->
+
+    <!--{% if program.types_of_sps %}
+    <div class="row">
+      <div class="columns small-12">
+        <h3 id="types-of-service-providers">Service providers</h3>
+        <p>{{ program.types_of_sps|linebreaks }}</p>
+      </div>
+    </div> 
+    <br/>
+    <br/>   
+    {% endif %}-->
+
+    <footer class="light-grey-bg bottom-padding">
+
+      <div class="row h3">
+        <div class="small-12 columns">
+          <h2 class="top-margin">{% blocktrans %}Ministry of Training, Colleges and Universities{% endblocktrans %}</h2>
+          <h2 class="visually-hidden">{% blocktrans %}Legal notices{% endblocktrans %}</h2>
+          <ul class="inline-list smaller top-margin-double">
+            <li>
+              <a href="https://ontario.ca/page/about-ontario" target="_blank" class="no-wrap">{% blocktrans %}About Ontario{% endblocktrans %}
+                <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="no-wrap">contact us
+                <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://ontario.ca/page/accessibility" target="_blank">
+                {% blocktrans %}Accessibility{% endblocktrans %} <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://news.ontario.ca/newsroom/en" target="_blank">
+                {% blocktrans %}News{% endblocktrans %} <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://ontario.ca/page/privacy-statement" target="_blank">
+                {% blocktrans %}Privacy{% endblocktrans %} <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+            <li>
+              <a href="https://ontario.ca/page/terms-use" target="_blank">
+                {% blocktrans %}Terms of use{% endblocktrans %} <sup><img src="../../../static/osr/ods/img/new-tab.png" alt="opens new window" /><sup>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="footer-swoosh"></span>
+      <span class="footer-swoosh--right"></span>
+
+    </footer>
+
+    <form name="setLangEng" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="en"/>
+    </form>
+
+    <form name="setLangFre" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="fr"/>
+    </form> 
+
+  </body>
+</html>
+
+<!-- JavaScript -->
+<script>
+  function toggleLanguage() {
+    if ('{{ LANGUAGE_CODE|lower }}' == 'en') {
+      document.setLangFre.submit();
+    } else {
+      document.setLangEng.submit();
+    }    
+  }
+</script>

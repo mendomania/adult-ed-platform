@@ -1,0 +1,61 @@
+.intro {
+  margin: 1rem auto;
+  @media screen and (max-width: 39.9375em) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.intro p,
+.intro li {
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 40em) {
+  .intro p,
+  .intro li {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .intro p,
+  .intro li {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .intro .thumbnail img {
+      max-height: 100px;
+      margin: .5em 0;
+      width: auto;
+  }
+}
+
+.main-content {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 4px solid #ededed;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.menu-heading {
+  background: #ededed;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.menu-heading h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.menu-content {
+  padding: 0 1rem 0.5rem;
+}
+
+.menu-content li {
+  margin-bottom: 0.5rem;
+}

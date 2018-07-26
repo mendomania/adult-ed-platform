@@ -2,63 +2,91 @@
 from __future__ import unicode_literals
 from django.contrib import admin
 from django.forms import TextInput, Textarea
-#from .models import Outcome, Program, ServiceProvider, Outcome, Offering, ServiceDeliverySite, Profession, Feature, OfferingSchedule, OfferingProfession, OfferingFeature, ServiceProviderProgram#, Eligibility, Stream, Subject, ProgramEligibility, ProgramStream, ProgramSubject, OfferingStream, OfferingEligibility, OfferingSubject, OfferingOutcome
 from django.db.models import Q
-from .forms import OfferingForm
-#from .models import Continent, Country, Area, Location, Publication, Writer, Book
-from .models import Program, ServiceProvider, ServiceDeliverySite, Outcome, Eligibility, Subject, Stream
+from .models import Program, ServiceProvider, ServiceDeliverySite, Outcome, Eligibility, Subject, Stream, Recommendation
 from .models import Offering, OfferingSchedule, Profession, OfferingProfession, Feature, OfferingFeature
+from .models import Facility, ServiceDeliverySiteFacility, ProgramRegistrationSteps, ProgramBestForScenarios
+from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
+from django.utils.translation import ugettext_lazy as _
 
-admin.site.site_header = 'My administration'
+admin.site.site_header = _('My administration')
 
 # Subsets
-class AdminOfferingProgram(admin.ModelAdmin):
-  fields = ['program']
-
-class AdminProfession(admin.ModelAdmin):
-  fields = ['text']
-
-class AdminFeature(admin.ModelAdmin):
-  fields = ['text']   
-
-# Program
-class AdminProgram(admin.ModelAdmin):
-  fieldsets = [
-    ('Names',       {'fields': ['name_official', 'name_branding', 'code', 'colour']}),
-    ('Introduction',  {'fields': ['header', 'intro1', 'intro2', 'video']}),
-    ('Specifics',     {'fields': ['img_src1', 'img_txt1', 'img_src2', 'img_txt2', 'img_src3', 'img_txt3', 'img_src4', 'img_txt4']}),
-    ('Key information', {'fields': ['is_available_online', 'offers_ossd_credits']}),
-  ]    
-
 class AdminOfferingSchedule(admin.TabularInline):
   model = OfferingSchedule
   extra = 1  
-  verbose_name_plural = "Schedules"    
+  verbose_name_plural = _("Schedules")
   insert_after = "learning_style"
 
 class AdminOfferingProfession(admin.TabularInline):
   model = OfferingProfession
   extra = 1   
-  verbose_name_plural = "Is this offering relevant to any specific professions?" 
+  verbose_name_plural = _("Is this offering relevant to any specific professions?")
   insert_after = "learning_style"   
 
 class AdminOfferingFeature(admin.TabularInline):
   model = OfferingFeature
   extra = 1        
-  verbose_name_plural = "Services provided"    
+  verbose_name_plural = _("Services provided")    
   insert_after = "learning_style"
+
+class AdminServiceDeliverySiteFacility(admin.TabularInline):
+  model = ServiceDeliverySiteFacility
+  extra = 1        
+  verbose_name_plural = _("Facilities")
+
+class AdminProgramRegistrationSteps(TranslationTabularInline):
+  model = ProgramRegistrationSteps
+  extra = 1        
+  verbose_name_plural = _("Registration steps")
+
+class AdminProgramBestForScenarios(TranslationTabularInline):
+  model = ProgramBestForScenarios
+  extra = 1        
+  verbose_name_plural = _("Best for scenarios") 
+
+class AdminProgramProgramLinks(TranslationTabularInline):
+  model = ProgramLinks
+  extra = 1        
+  verbose_name_plural = _("Useful external links")      
+
+class AdminProgram(TranslationAdmin):
+  fieldsets = [
+    (_('BASIC INFORMATION'), {'fields': ['name_official', 'name_branding', 'code', 'order_id']}),
+    (_('COLOURS'),       {'fields': ['marker', 'foreground_colour', 'background_colour']}),
+    (_('TEXT FIELDS'),  {'fields': ['description', 'description_for_comparison_page', 'details', 'length', 'subsidies', 'support', 'funding', 'fees', 'free', 'types_of_sps']}),
+    (_('KEY BENEFITS'),  {'fields': ['benefits']}),
+    (_('OPTIONS'),  {'fields': ['learning_options', 'schedule_options']}),
+    (_('ELIGIBLE IMMIGRATION STATUS'),  {'fields': ['eligible_immigration_status']}),
+    (_('LOGO'),     {'fields': ['img_src', 'img_txt']})
+  ]    
+  inlines = [
+    AdminProgramRegistrationSteps,
+    AdminProgramBestForScenarios,
+    AdminProgramProgramLinks
+  ]
 
 class AdminSP(admin.ModelAdmin):
   fieldsets = [
-    ('BASIC INFORMATION', {'fields': ['name', 'logo']}),
-    ('REPRESENTATIVE OF SERVICE PROVIDER IN OUR SYSTEM', {'fields': ['user']}),
-    ('CONTACT', {'fields': ['phone', 'email']}),
-    ('ADDRESS', {'fields': ['address_street', 'address_city', 'address_province', 'address_zipcode']}),
-    ('PROGRAMS', {'fields': ['programs']}),
+    (_('BASIC INFORMATION'), {'fields': ['name', 'logo']}),
+    (_('REPRESENTATIVE OF SERVICE PROVIDER IN OUR SYSTEM'), {'fields': ['user']}),
+    (_('CONTACT'), {'fields': ['phone', 'email']}),
+    (_('ADDRESS'), {'fields': ['address_street', 'address_city', 'address_province', 'address_zipcode']}),
+    (_('PROGRAMS'), {'fields': ['programs']}),
   ]
   # inlines = [AdminServiceProviderProgram]  
 
 class AdminServiceDeliverySite(admin.ModelAdmin):
+  fieldsets = [
+    (_('MAIN BRANCH'), {'fields': ['head']}),
+    (_('NAME OF SITE'), {'fields': ['name']}),
+    (_('ADDRESS'), {'fields': ['address_street', 'address_city', 'address_province', 'address_zipcode']}),
+  ]
+
+  inlines = [
+    AdminServiceDeliverySiteFacility
+  ]
 
   def get_queryset(self, request):
     qs = super(AdminServiceDeliverySite, self).get_queryset(request)
@@ -83,14 +111,13 @@ class AdminServiceDeliverySite(admin.ModelAdmin):
     return field
 
 class AdminOffering(admin.ModelAdmin):
-  #form = OfferingForm
   fieldsets = [
-    ('BASIC INFORMATION', {'fields': ['program', 'service_delivery_site', 'str_date', 'end_date', 'class_size', 'learning_style']}),
-    ('SPECIFIC SUBJECTS OF THIS OFFERING', {'fields': ['subjects']}),
-    ('SPECIFIC OUTCOMES OF THIS OFFERING', {'fields': ['outcomes']}),
-    ('SPECIFIC REQUIREMENTS OF THIS OFFERING', {'fields': ['requirements']}),
-    ('SPECIFIC STREAMS OF THIS OFFERING', {'fields': ['streams']}),
-    ('CLB LEVELS', {'fields': ['clb_01', 'clb_02', 'clb_03', 'clb_04', 'clb_05', 'clb_06', 'clb_07', 'clb_08', 'clb_09', 'clb_10', 'clb_11', 'clb_12']}),
+    (_('BASIC INFORMATION'), {'fields': ['program', 'service_delivery_site', 'str_date', 'end_date', 'class_size', 'learning_style']}),
+    (_('SPECIFIC SUBJECTS OF THIS OFFERING'), {'fields': ['subjects']}),
+    (_('SPECIFIC OUTCOMES OF THIS OFFERING'), {'fields': ['outcomes']}),
+    (_('SPECIFIC REQUIREMENTS OF THIS OFFERING'), {'fields': ['requirements']}),
+    (_('SPECIFIC STREAMS OF THIS OFFERING'), {'fields': ['streams']}),
+    (_('CLB LEVELS'), {'fields': ['clb_01', 'clb_02', 'clb_03', 'clb_04', 'clb_05', 'clb_06', 'clb_07', 'clb_08', 'clb_09', 'clb_10', 'clb_11', 'clb_12']}),
   ]
   inlines = [
     AdminOfferingProfession, 
@@ -104,11 +131,25 @@ class AdminOffering(admin.ModelAdmin):
     #     'admin/css/admin.css',
     #   )
     # }  
-  
+
+  def get_queryset(self, request):
+    qs = super(AdminOffering, self).get_queryset(request)
+    if request.user.is_superuser:
+      return qs
+    else: 
+      # Find the service provider the logged in user belongs to
+      providers = ServiceProvider.objects.filter(user=request.user.id)
+      # Find the service delivery sites that service provider owns
+      sites = ServiceDeliverySite.objects.filter(head__in=providers)      
+
+      query = Q()
+      # Show only offerings by those service delivery sites
+      for site in sites:
+        query = query | Q(service_delivery_site=site.id)
+      return qs.filter(query)
+
   def formfield_for_foreignkey(self, db_field, request=None, **kwargs):
     field = super(AdminOffering, self).formfield_for_foreignkey(db_field, request, **kwargs)    
-
-    print '+++++++++++++++++++++ [FOREIGN-KEY] +++++++++++++++++++++'
 
     # Filter programs
     if db_field.name == 'program':
@@ -137,24 +178,47 @@ class AdminOffering(admin.ModelAdmin):
 
     return field
 
-admin.site.register(Program)
+class OutcomeAdmin(TranslationAdmin):
+  pass
+class EligibilityAdmin(TranslationAdmin):
+  pass
+class StreamAdmin(TranslationAdmin):
+  pass
+class SubjectAdmin(TranslationAdmin):
+  pass 
+class ProfessionAdmin(TranslationAdmin):
+  pass 
+class FeatureAdmin(TranslationAdmin):
+  pass  
+class FacilityAdmin(TranslationAdmin):
+  pass  
+class RecommendationAdmin(TranslationAdmin):
+  pass 
+class LearningOptionAdmin(TranslationAdmin):
+  pass  
+class ScheduleOptionAdmin(TranslationAdmin):
+  pass  
+class ProgramLinksAdmin(TranslationAdmin):
+  pass  
+class ImmigrationStatusAdmin(TranslationAdmin):
+  pass            
+class BenefitAdmin(TranslationAdmin):
+  pass              
+
+admin.site.register(Program, AdminProgram)
 admin.site.register(ServiceProvider, AdminSP)
 admin.site.register(ServiceDeliverySite, AdminServiceDeliverySite)
-
-admin.site.register(Outcome)
-admin.site.register(Eligibility)
-admin.site.register(Stream)
-admin.site.register(Subject)
-
 admin.site.register(Offering, AdminOffering)
-admin.site.register(Profession)
-admin.site.register(Feature)
 
-# admin.site.register(Continent)
-# admin.site.register(Country)
-# admin.site.register(Area)
-# admin.site.register(Location)
-
-# admin.site.register(Publication)
-# admin.site.register(Writer)
-# admin.site.register(Book)
+admin.site.register(Outcome, OutcomeAdmin)
+admin.site.register(Eligibility, EligibilityAdmin)
+admin.site.register(Stream, StreamAdmin)
+admin.site.register(Subject, SubjectAdmin)
+admin.site.register(Profession, ProfessionAdmin)
+admin.site.register(Feature, FeatureAdmin)
+admin.site.register(Facility, FacilityAdmin)
+admin.site.register(Recommendation, RecommendationAdmin)
+admin.site.register(LearningOption, LearningOptionAdmin)
+admin.site.register(ScheduleOption, ScheduleOptionAdmin)
+admin.site.register(ImmigrationStatus, ImmigrationStatusAdmin)
+admin.site.register(Benefit, BenefitAdmin)

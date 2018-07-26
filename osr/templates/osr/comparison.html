@@ -1,0 +1,212 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Comparison{% endblocktrans %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media="screen">    
+  </head>
+  <body class="white-bg">
+    <header>
+      <div class="row"">
+        <!-- logo -->
+        <div class="small-6 columns">
+          <a href="https://ontario.ca/page/government-ontario">
+            <span class="logo-ontario" aria-hidden="true"></span>
+            <span class="visually-hidden">
+              {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+            </span>
+          </a>
+        </div>
+        <!-- Toggle language -->
+        <div class="small-6 columns">
+          <a onclick="toggleLanguage();" class="header-link right small">
+            {% blocktrans %}Français{% endblocktrans %}
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="row intro">
+      <div class="columns small-12 text-center">
+        <h1>{% blocktrans %}Compare adult learning programs{% endblocktrans %}</h1>
+      </div>
+    </div>
+
+    {% if programs.count <= 3 %}
+    <div class="row main-carousel" data-flickity='{ "prevNextButtons": false, "pageDots": false, "freeScroll": true, "draggable": ">3", "cellAlign": "center", "contain": true }'>
+    {% else %}
+    <div class="row main-carousel" data-flickity='{ "pageDots": false, "freeScroll": true, "draggable": ">3", "cellAlign": "center", "contain": true }'>
+    {% endif %}
+      {% for p in programs %}
+      <div class="carousel-cell columns small-12 medium-12 large-4 padding-outer end">
+        <div class="row01 text-center padding-inner-e">
+          <h5>{{ p.name_official }}</h5>
+        </div>
+        <div class="row02 text-center padding-inner-hr1">
+          <hr style="border: 0.2rem solid {{ p.background_colour }};"/>
+        </div>
+        <div class="row03 text-center padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
+          {{ p.description_for_comparison_page }}
+        </div>
+
+        <div class="row04 align-bottom padding-inner-h {% cycle 'c-elem1' 'c-elem2' %}">
+          <br/>
+          {% if forloop.first %}
+          <h5>{% blocktrans %}Program details{% endblocktrans %}</h5>
+          {% endif %}
+        </div> 
+        <div class="row05 padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
+          <div class="text-center">
+            {% if p.free %}
+            <img src="../../static/osr/images/free.png" width="100px" height="100px" alt="Free"/>
+            {% else %}
+            <img src="../../static/osr/images/paid.png" width="100px" height="100px" alt="Paid"/>
+            {% endif %}
+          </div><br/>
+          <p>{{ p.types_of_sps }}</p>
+        </div> 
+
+        <div class="row06 padding-inner-h {% cycle 'c-elem1' 'c-elem2' %}">
+          <br/>
+          {% if forloop.first %}
+          <h5>{% blocktrans %}Key benefits{% endblocktrans %}</h5>
+          {% endif %}
+        </div> 
+        <div class="row07 padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
+          {% for b in p.benefits.all %}
+          &#8226; {{ b.text }} <br/>
+          {% endfor %}
+        </div>
+
+        <div class="row10 padding-inner-h {% cycle 'c-elem1' 'c-elem2' %}">
+          <br/>
+          {% if forloop.first %}
+          <h5>{% blocktrans %}Who can benefit?{% endblocktrans %}</h5>
+          {% endif %}
+        </div> 
+        <div class="row11 padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
+          {% for q in p.programbestforscenarios_set.all %}
+          &#8226; {{ q.text }} <br/>
+          {% endfor %}
+        </div>
+
+        <div class="row12 padding-inner-h {% cycle 'c-elem1' 'c-elem2' %}">
+          <br/>
+          {% if forloop.first %}
+          <h5>{% blocktrans %}Who can take this program?{% endblocktrans %}</h5>
+          {% endif %}
+        </div> 
+        <div class="row13 padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
+          <p>{% blocktrans %}You must{% endblocktrans %}:</p>
+          {% for requirement in p.eligibility_set.all %}
+            {{ forloop.counter }}. {{ requirement }} <br/>
+          {% endfor %}
+          {% if p.eligible_immigration_status.all %}
+            {{ p.eligibility_set.count|add:1 }}. And one of the following: <br/>
+              {% for status in p.eligible_immigration_status.all %}
+              &nbsp;&nbsp;&nbsp;&#8226; {{ status }} <br/>
+              {% endfor %}              
+          {% endif %}              
+        </div>   
+
+        <div class="row14 text-center padding-inner-hr2">
+          <hr style="border: 0.2rem solid {{ p.background_colour }};"/>
+        </div> 
+        <div class="row15 text-center padding-inner-e">
+          <a class="button" href="{% url 'osr:detail_program' p.code|lower %}{{ paramLang }}">{% blocktrans %}Find program providers{% endblocktrans %}</a>
+        </div>                                          
+      </div>
+      {% endfor %} 
+    </div>               
+
+    <div class="row">
+        <br/>
+    </div>      
+
+    <form name="setLangEng" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="en"/>
+    </form>
+
+    <form name="setLangFre" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="fr"/>
+    </form> 
+
+  </body>
+</html>
+
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  function getMaxHeightOfAllElemsOfClass(commonClass) {
+    var maxHeight = Math.max.apply(null, $(commonClass).map(function ()
+    {
+      return $(this).height();
+    }).get()); 
+    return maxHeight;
+  }
+
+  $(document).ready(function() {
+
+    // Resize rows in carousel to be of the same height
+    // The height of the tallest element in each row
+    $('.row01').height(getMaxHeightOfAllElemsOfClass('.row01'));
+    $('.row02').height(getMaxHeightOfAllElemsOfClass('.row02'));
+    $('.row03').height(getMaxHeightOfAllElemsOfClass('.row03'));
+    $('.row04').height(getMaxHeightOfAllElemsOfClass('.row04'));
+    $('.row05').height(getMaxHeightOfAllElemsOfClass('.row05'));
+    $('.row06').height(getMaxHeightOfAllElemsOfClass('.row06'));
+    $('.row07').height(getMaxHeightOfAllElemsOfClass('.row07'));
+    $('.row08').height(getMaxHeightOfAllElemsOfClass('.row08'));
+    $('.row09').height(getMaxHeightOfAllElemsOfClass('.row09'));
+    $('.row10').height(getMaxHeightOfAllElemsOfClass('.row10'));
+    $('.row11').height(getMaxHeightOfAllElemsOfClass('.row11'));
+    $('.row12').height(getMaxHeightOfAllElemsOfClass('.row12'));
+    $('.row13').height(getMaxHeightOfAllElemsOfClass('.row13'));
+    $('.row14').height(getMaxHeightOfAllElemsOfClass('.row14'));
+    $('.row15').height(getMaxHeightOfAllElemsOfClass('.row15'));
+
+    // Resize window after elements were resized
+    // Add code for IE
+    if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+     var evt = document.createEvent('UIEvents');
+     evt.initUIEvent('resize', true, false, window, 0);
+     window.dispatchEvent(evt);
+    } else {
+       window.dispatchEvent(new Event('resize'));
+    }
+  }); 
+</script>
+<script>
+  function toggleLanguage() {
+    if ('{{ LANGUAGE_CODE|lower }}' == 'en') {
+      document.setLangFre.submit();
+    } else {
+      document.setLangEng.submit();
+    }    
+  }
+</script>

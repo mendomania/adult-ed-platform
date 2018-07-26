@@ -1,0 +1,40 @@
+header {
+  background: #333333;
+  padding-top: 1rem;
+  min-height: 69px;
+}
+
+a.header-link {
+  margin-top: 0.5rem;
+  color: #ffffff;
+}
+
+.logo-ontario {
+  background: url(../../osr/ods/img/logo-ontario.png) no-repeat;
+  background-size: 120px 43px;
+  width: 120px;
+  height: 43px;
+  display: block;
+  margin-top: -.4rem;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-ontario {
+    background: url(../../osr/ods/img/logo-ontario.png) no-repeat;
+  }
+}
+
+.logo {
+  background: url(../../osr/ods/img/logo-generic.png) no-repeat;
+  background-size: 200px 64px;
+  display: block;
+  width: 200px;
+  height: 64px;
+  margin-top: 0.5rem !important;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background: url(../../osr/ods/img/logo-generic@2x.png) no-repeat;
+  }
+}

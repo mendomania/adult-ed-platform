@@ -1,6 +1,5 @@
 var chainedfk = {
     fireEvent: function (element, event) {
-                //alert("FIRE");
                 var evt, rtn;
                 if (document.createEventObject) {
                     // dispatch for IE
@@ -16,7 +15,6 @@ var chainedfk = {
                 return rtn;
     },
     dismissRelatedLookupPopup: function (win, chosenId) {
-                //alert("DISMISS");
                 var name = windowname_to_id(win.name),
                     elem = document.getElementById(name);
                 if (elem.className.indexOf('vManyToManyRawIdAdminField') !== -1 && elem.value) {
@@ -28,7 +26,6 @@ var chainedfk = {
                 win.close();
     },
     fill_field: function (val, init_value, elem_id, url, empty_label, auto_choose) {
-                //alert("FILL");
                 var $selectField = $(elem_id),
                     options = [];
                 url = url + "/" + val + "/";
@@ -74,13 +71,9 @@ var chainedfk = {
                     if (navigator.appVersion.indexOf("MSIE") !== -1) {
                         $selectField.width(width + 'px');
                     }
-
-                    alert("CFK - TRIGGER");
-                    //$selectField.trigger('change');
                 });
     },
     init: function (chainfield, url, id, init_value, empty_label, auto_choose) {
-                //alert("INIT");
                 var val, fill_field = this.fill_field;
 
                 if (!$(chainfield).hasClass("chained")) {

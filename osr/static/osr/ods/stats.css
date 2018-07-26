@@ -1,0 +1,53 @@
+.stats, .number, .stats-caption {
+  font-family: raleway;
+  font-weight: bold;
+}
+
+.stats .stats-caption {
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+.stats .number {
+  display: block;
+  font-size: 4.5rem;
+  margin: 20% auto;
+  text-align: center;
+  width: 11.25rem;
+}
+
+.stats .number.big {
+  font-size: 2.6rem;
+  margin-top: 35%;
+}
+
+.circle, .circle--small {
+  font-family: raleway;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  position: relative;
+  width: 12.1875rem;
+  height: 12.1875rem;
+}
+
+.circle--small {
+  width: 4.0625rem;
+  height: 4.0625rem;
+}
+
+.circle--small .number {
+  font-size: 4rem;
+  line-height: 3.5rem;
+  margin: 0 auto;
+  width: auto;
+}
+
+.stats-font {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  line-height: inherit; 
+  margin-top: 0.5rem;
+}

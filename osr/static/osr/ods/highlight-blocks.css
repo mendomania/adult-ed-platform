@@ -1,0 +1,278 @@
+.main-content aside, 
+.callout, 
+.alert-box,
+blockquote,
+.error, 
+span.error, 
+small.error {
+  font-family: raleway;
+  background: #ededed;
+  border-color: rgba(0, 0, 0, .1);
+  border-width: 0 0 0 .9375rem;
+  border-style: solid;
+  padding: .9375rem;
+  margin-bottom: 1.25rem;
+  color: #333333;
+  position: relative;
+}
+
+/*----- NEW -----*/
+
+input.button-add {
+  background-image: url(/images/buttons/add.png); /* 16px x 16px */
+  background-color: transparent; /* make the button transparent */
+  background-repeat: no-repeat;  /* make the background image appear only once */
+  background-position: 0px 0px;  /* equivalent to 'top left' */
+  border: none;           /* assuming we don't want any borders */
+  cursor: pointer;        /* make the cursor like hovering over an <a> element */
+  height: 16px;           /* make this the size of your image */
+  padding-left: 16px;     /* make text start to the right of the image */
+  vertical-align: middle; /* align the text vertically centered */
+}
+
+.flickity-prev-next-button.previous {
+  top: 15rem;
+}
+.flickity-prev-next-button.next {
+  top: 15rem;
+}
+
+.padding-outer {
+  padding-left: 0.4rem; 
+  padding-right: 0.4rem;
+}
+
+.padding-inner-t {
+  border-top-left-radius:1.5rem; 
+  border-top-right-radius:1.5rem; 
+  padding-top:0.5rem; 
+  padding-bottom:0.5rem;
+}
+
+.padding-inner-hr1 { 
+  padding-top:0rem; 
+  padding-bottom:0rem; 
+  padding-left:0rem; 
+  padding-right:0rem;   
+  background-color: #fff;
+}
+
+.padding-inner-hr2 { 
+  padding-top:0rem; 
+  padding-bottom:0rem; 
+  padding-left:0rem; 
+  padding-right:0rem;   
+  background-color: #fff;
+  margin-top:0rem;  
+}
+
+.padding-inner-h { 
+  padding-top:0rem; 
+  padding-bottom:0rem; 
+  padding-left:0rem; 
+  padding-right:0rem; 
+  background-color: #fff;
+  border-bottom:solid; 
+  border-color:#AAAAAA; 
+  border-width:1px;
+/*  border-style:solid; 
+  border-color:#000000;*/
+}
+
+.padding-inner-e { 
+  padding-top:1rem; 
+  padding-bottom:1rem; 
+  padding-left:2rem; 
+  padding-right:2rem; 
+  background-color: #fff;
+/*  border-style:solid; 
+  border-color:#000000;*/
+}
+
+.padding-inner-c {
+  border-bottom-left-radius:0.5rem; 
+  border-bottom-right-radius:0.5rem; 
+  padding-top:2rem; 
+  padding-bottom:1.5rem; 
+  padding-left:2rem; 
+  padding-right:2rem; 
+  background-color: #fff;
+  transform: scale(1);
+}
+
+.padding-inner-c:hover {
+  border-style:solid; 
+  padding-left:1.8rem; 
+  padding-right:1.8rem;   
+}
+
+.padding-inner-p { 
+  padding-top:0.5rem; 
+  padding-bottom:0.5rem; 
+  padding-left:2rem; 
+  padding-right:2rem; 
+  background-color:#FFFFF;
+  border-style:solid;
+  margin-bottom:1rem; 
+  transform: scale(1);
+}
+
+.hr-comparison-table {
+  margin-bottom:0.4rem;
+}
+
+.banner-setup {
+  background: url('../../../static/osr/images/health_banner_lrg.jpg'); 
+  background-size: 100% auto; 
+  background-repeat: no-repeat;
+}
+
+.banner-space {
+  margin-top:16rem; 
+  background-color:#FFFFFF; 
+  border-top-left-radius:1.5rem; 
+  border-top-right-radius:1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-space {
+    margin-top:5rem; 
+    background-color:#FFFFFF; 
+    border-top-left-radius:1.5rem; 
+    border-top-right-radius:1.5rem;
+  }
+}
+
+.c-elem1 {
+  background-color: #FFFFFF;
+}
+
+.c-elem2 {
+  background-color: rgba(244, 244, 244, .5);
+}
+
+.label {
+  display: inline-block;
+  border-radius: 0.2rem;
+  padding-left: 0.35rem !important; 
+  padding-right: 0.35rem !important; 
+  margin-top: 0.1rem !important;
+  margin-bottom: 0.1rem !important;
+  text-align:justify !important;
+}
+
+/*----- Accordion -----*/
+.accordion,
+.accordion * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.accordion {
+  overflow: hidden;
+  border-radius: 0.2rem;
+  background: #f7f7f7;
+}
+
+/*----- Section Titles -----*/
+.accordion-section {
+  margin-bottom:1px;
+}
+
+.accordion-section:last-child {
+  margin-bottom:none;
+}
+
+.accordion-section-title {
+  width:100%;
+  display:inline-block;
+  padding-top:0.25rem;
+  padding-bottom:0.25rem;
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  background:#333333;
+  transition:all linear 0.15s;
+  /* Type */
+  color:#FFFFFF !important;
+}
+.accordion-section-title.active,
+.accordion-section-title:hover {
+  color:#FFFFFF !important;
+  background:#4c4c4c;
+  /* Type */
+  text-decoration:none;
+}
+.accordion-section:last-child .accordion-section-title {
+  border-bottom:none;
+}
+
+/*----- Section Content -----*/
+.accordion-section-content {
+  padding-top:1rem;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-bottom:0rem;
+  display:none;
+}
+
+.callout {
+  background: #DFF3F3;
+}
+
+.alert-box {
+  background: #fafad2;
+}
+
+.alert-box.success {
+  background: #E6FAD2;
+}
+
+.alert-box.alert,
+.error, span.error, small.error {
+  background: #FAD2D2;
+}
+
+.alert-box .close {
+  color: #0066cc;
+  font-size: 1.875rem;
+  line-height: .9;
+  padding: 0 6px 6px;
+  margin-top: -0.9375rem;
+  position: absolute;
+  top: 30%;
+  right: 0.25rem;
+}
+
+blockquote {
+  background: whitesmoke;
+  color: #666666;
+  margin: 0 0 1.25rem;
+  padding-top: .46875rem;
+}
+
+blockquote:before {
+  font-size: 2rem;
+  font-family: georgia, serif;
+  content: open-quote;
+  color: #a1a1a1;
+  margin-left: -0.5rem;
+}
+
+blockquote cite {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+blockquote p:first-child {
+  margin-top: -1.5rem;
+}
+
+cite {
+  display: block;
+  font-size: 0.8125rem;
+}
+
+cite:before {
+  content: '\2014 \0020'; 
+}
