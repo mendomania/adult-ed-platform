@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import codecs
+import re
 import os.path
 from datetime import datetime
 from django.views import generic
@@ -10,7 +11,8 @@ from django.utils import translation
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail
 from easy_pdf.views import PDFTemplateView
-from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite, Recommendation
+from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite 
+from .models import Recommendation, ProfileSection
 
 ###########################################################################################
 #####                                      ALPHA                                      #####
@@ -72,27 +74,24 @@ def transition(request):
   wasEmailSent = False
   emailAddress = ''
 
-  # This variable will show or hide the section of the results page that shows matching programs
-  showMatchingPrograms = False
-
   if request.method == "GET":
-    print "***** [TRANSITION]-[G]"
     if 'wasEmailSent' in request.session and 'emailAddress' in request.session:
       wasEmailSent = True
       emailAddress = request.session['emailAddress']
 
     # If there are cached vars then proceed normally
     if 'matches' in request.session:
-      showMatchingPrograms = True
+      # TODO: Do these make sense? The template could load them straight from the cache
       programs = get_program_matches_from_cache(request)
       recommendations = get_recommendations_from_cache(request)
       groupOf1s, groupOf2s, groupOf3s, paramsPrograms = group_programs(programs)
+      profile_lines_basic, profile_lines_goals, profile_lines_needs = get_learner_profile_from_cache(request)
+
     # If there are no cached vars then redirect user to the matchmaker page  
     else:
       return redirect('/osr/matchmaker/')
 
   if request.method == "POST":
-    print "***** [TRANSITION]-[P]"      
     # Create dictionary from JSON created during the matchmaker experience
     dico = json.loads(request.POST.get("dico", "").encode('utf-8'))
     print '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
@@ -100,7 +99,7 @@ def transition(request):
     print '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
 
     reset_cache(request) 
-    translation.activate(dico['lang'])    
+    translation.activate(dico['lang'])  
 
     # Save program matches to cache
     programs = save_program_matches_to_cache(dico, request)
@@ -109,14 +108,15 @@ def transition(request):
     # Save recommendations to cache
     recommendations = save_recommendations_to_cache(dico, request)
     # Save learner profile to cache
-    save_learner_profile_to_cache(dico, request)
+    profile_lines_basic, profile_lines_goals, profile_lines_needs = save_learner_profile_to_cache(dico, request)
 
   paramLang = "?lang=%s" % (translation.get_language())
 
   return render(request, 'osr/transition.html', 
     {'number': programs.count, 'groupOf1s': groupOf1s, 'groupOf2s': groupOf2s, 'groupOf3s': groupOf3s, 
      'paramsPrograms': paramsPrograms, 'paramLang': paramLang, 'recommendations': recommendations, 
-     'showMatchingPrograms': showMatchingPrograms, 'wasEmailSent': wasEmailSent, 'emailAddress': emailAddress})
+     'proLinesBasic': profile_lines_basic, 'proLinesGoals': profile_lines_goals, 'proLinesNeeds': profile_lines_needs,
+     'wasEmailSent': wasEmailSent, 'emailAddress': emailAddress})
 
 def comparison(request):
   """ 
@@ -346,19 +346,6 @@ def save_program_matches_to_cache(dico, request):
 
 def save_recommendations_to_cache(dico, request):
   recolist = []
-  # TODO:
-  # if 'lang_skill_writing' in dico:
-  #   recolist.append('lang_skill_writing')
-  #   request.session['lang_skill_writing'] = 'T'
-  # if 'lang_skill_reading' in dico:
-  #   recolist.append('lang_skill_reading')
-  #   request.session['lang_skill_reading'] = 'T'
-  # if 'lang_skill_listening' in dico:
-  #   recolist.append('lang_skill_listening')
-  #   request.session['lang_skill_listening'] = 'T'
-  # if 'lang_skill_speaking' in dico:
-  #   recolist.append('lang_skill_speaking')    
-  #   request.session['lang_skill_speaking'] = 'T'
 
   if 'hs_goal_apprenticeship' in dico:
     recolist.append('apprenticeship')
@@ -376,152 +363,60 @@ def save_recommendations_to_cache(dico, request):
     recolist.append('hs_goal_work')
     request.session['hs_goal_work'] = 'T'        
 
-  print ">>> RECOMMENDATION CODEs"
   print recolist        
   return filter_recommendations(recolist)
 
 def save_learner_profile_to_cache(dico, request):
-  # PROFILE_BASIC  
-  if 'age' in dico:
-    request.session['profile_basic_age'] = "You are %s years old" % (dico['age'])
-  if 'ontario_resident' in dico:
-    if dico['ontario_resident'] == 'T':
-      request.session['profile_basic_ontario_resident'] = 'You are a resident of Ontario'
-    if dico['ontario_resident'] == 'F':
-      request.session['profile_basic_ontario_resident'] = 'You are not a resident of Ontario'    
+  sections = ProfileSection.objects.all()
+  profile_lines_basic, profile_lines_goals, profile_lines_needs = [], [], []
 
-  if 'status_can_citizen' in dico:
-    request.session['profile_basic_immigration_status'] = 'You were born in Canada'
-  if 'status_nat_citizen' in dico:
-    request.session['profile_basic_immigration_status'] = 'You are a naturalized citizen'
-  if 'status_pr' in dico:
-    request.session['profile_basic_immigration_status'] = 'You are a permanent resident'
-  if 'status_refugee' in dico:
-    request.session['profile_basic_immigration_status'] = 'You are a convention refugee'                
-  if 'status_claimant' in dico:
-    request.session['profile_basic_immigration_status'] = 'You are a refugee claimant'
-  if 'status_approval' in dico:
-    request.session['profile_basic_immigration_status'] = 'You have a letter of initial approval of PR from Citizenship and Immigration Canada'                        
-  if 'status_caregiver' in dico:
-    request.session['profile_basic_immigration_status'] = 'You are a foreign domestic worker admitted under the Live-In Caregiver Program'                            
-  if 'status_nominee' in dico:
-    request.session['profile_basic_immigration_status'] = 'You are a provincial nominee approved through Opportunities Ontario Provincial Nominee Program'                                
+  query = Q()
+  for key in dico:
+    if key.startswith('profile'):  
+      query = query | Q(code=key)
+  sections = sections.filter(query)
 
-  if 'lang_source' in dico:
-    lan = ''
-    if dico['lang_source'] == 'Other':
-      lan = 'not English nor French'
-    else:
-      lan = dico['lang_source']
-    request.session['profile_basic_lang_source'] = "Your native language is %s" % (lan)
+  # Replace placeholders
+  patObj = re.compile(r'#(.+?)#')
+  for section in sections:
+    text_en = section.text_en
+    text_fr = section.text_fr
 
-  if 'hs_complete' in dico: 
-    if 'plar' in dico:
-      request.session['highschool'] = "You completed high school outside of Ontario" 
-    else:
-      request.session['highschool'] = "You completed high school in Ontario" 
-  elif 'hs_incomplete' in dico:  
-    if 'plar' in dico:
-      request.session['highschool'] = "You have incomplete high school studies from outside of Ontario" 
-    else:
-      request.session['highschool'] = "You have incomplete high school studies in Ontario" 
-  else:
-    request.session['highschool'] = "You have not previously attended high school" 
+    if '%' in text_en:
+      text_en = text_en.replace('%', dico[section.code])
+    if '#' in text_en:
+      matches = re.findall(patObj, text_en)
+      if matches:        
+        for match in matches:
+          text_en = text_en.replace('#%s#' % (match), dico[match])            
 
-  if 'has_ossd' in dico:
-    request.session['ossd'] = "You have an OSSD"    
-  elif 'has_ossc' in dico:
-    request.session['ossd'] = "You have an OSSC"
-  else: 
-    request.session['ossd'] = "You have neither an OSSD nor an OSSC"
+    if '%' in text_fr:
+      text_fr = text_fr.replace('%', dico[section.code])
+    if '#' in text_fr:      
+      matches = re.findall(patObj, text_fr)
+      if matches:        
+        for match in matches:
+          text_fr = text_fr.replace('#%s#' % (match), dico[match])            
 
-  if 'has_ged' in dico:
-    request.session['gedx'] = "You have a GED"
-  else: 
-    request.session['gedx'] = "You don't have a GED"
+    if section.section == 'Information':
+      profile_lines_basic.append({ 'en': text_en, 'fr': text_fr })
+    if section.section == 'Goals':
+      profile_lines_goals.append({ 'en': text_en, 'fr': text_fr })
+    if section.section == 'Needs':
+      profile_lines_needs.append({ 'en': text_en, 'fr': text_fr })  
 
-  if 'international_edu' in dico:
-    request.session['intl_edu'] = "You have a post-secondary certificate or degree from outside of Canada"    
-  if 'international_job' in dico:
-    request.session['intl_job'] = "You have international work experience"        
+  request.session['profile_lines_basic'] = profile_lines_basic    
+  request.session['profile_lines_goals'] = profile_lines_goals
+  request.session['profile_lines_needs'] = profile_lines_needs
 
-  goals = []
-  if 'goal_language' in dico and 'lang_target' in dico:
-    subs = []
-    if 'lang_reason_everyday' in dico:
-      subs.append('for everyday communication')
-    if 'lang_reason_studies' in dico:
-      subs.append('to prepare for future studies') 
-    if 'lang_reason_employment' in dico:
-      subs.append('prepare for employment') 
-    if 'lang_reason_citizenship' in dico:
-      subs.append('prepare for the citizenship test') 
-    if 'lang_reason_tests' in dico:
-      subs.append('prepare for language tests') 
-    if 'lang_reason_ossd' in dico:
-      subs.append('prepare to get your OSSD')                              
-    txt = "Improve your %s for %s" % (dico['lang_target'], ', '.join(subs))    
-    goals.append(txt)
-  if 'goal_highschool' in dico:    
-    subs = []
-    if 'hs_goal_work' in dico:
-      subs.append('work')
-    if 'hs_goal_university' in dico:
-      subs.append('university')      
-    if 'hs_goal_college' in dico:
-      subs.append('college')            
-    if 'hs_goal_apprenticeship' in dico:
-      subs.append('apprenticeship')    
-    txt = 'Get a highschool diploma or equivalent certificate for %s' % (', '.join(subs))              
-    goals.append(txt)
-  if 'goal_upgrade_credits_marks' in dico:
-    subs = []
-    if 'hs_goal_work' in dico:
-      subs.append('work')
-    if 'hs_goal_university' in dico:
-      subs.append('university')      
-    if 'hs_goal_college' in dico:
-      subs.append('college')            
-    if 'hs_goal_apprenticeship' in dico:
-      subs.append('apprenticeship')    
-    txt = 'Get missing credits or upgrade marks for %s' % (', '.join(subs)) 
-    goals.append(txt)    
-  if 'goal_refresh_skills' in dico:
-    subs = []
-    if 'refresh_reason_everyday' in dico:
-      subs.append('for self-improvement')
-    if 'refresh_reason_employment' in dico:
-      subs.append('for better employment opportunities')      
-    if 'refresh_reason_studies' in dico:
-      subs.append('in preparation for further education')              
-    txt = 'Develop or refresh your skills %s' % (', '.join(subs))
-    goals.append(txt)
-  if 'goal_canadian_xp' in dico:    
-    goals.append('Adapt international professional or trade work experience to Canada')
-  request.session['main_goals'] = goals
+  return (profile_lines_basic, profile_lines_goals, profile_lines_needs)
 
-  lans = 'You want to get better at %s'
-  subs = []
-  if 'lang_skill_listening' in dico:
-    if dico['lang_source'] == 'ASL' or dico['lang_target'] == 'ASL':
-      subs.append('understanding ASL signs')
-    else:
-      subs.append('listening')
-  if 'lang_skill_speaking' in dico:
-    if dico['lang_source'] == 'ASL' or dico['lang_target'] == 'ASL':
-      subs.append('signing ASL')
-    else:
-      subs.append('speaking') 
-  if 'lang_skill_reading' in dico:
-    subs.append('reading')          
-  if 'lang_skill_writing' in dico:
-    subs.append('writing')
-  if 'skill_math' in dico:
-    subs.append('doing math')          
-  if 'skill_computer' in dico:
-    subs.append('using the computer')    
-  request.session['need_goals'] = lans % (', '.join(subs))
+def get_learner_profile_from_cache(request):
+  return (request.session['profile_lines_basic'], 
+          request.session['profile_lines_goals'], 
+          request.session['profile_lines_needs'])
 
+# TODO: 
 # Get me matches from dico
 def get_program_matches_from_cache(request):
   # Program matches
@@ -531,22 +426,11 @@ def get_program_matches_from_cache(request):
       codelist.append(match)
   print codelist
   return filter_program_matches(codelist)
-  #print recolist    
-  #return filter_recommendations(recolist)
 
 # Get me recommendations from dico
 def get_recommendations_from_cache(request):
   # Recommendations
   recolist = []
-  # TODO:
-  # if 'lang_skill_writing' in request.session:
-  #   recolist.append('lang_skill_writing')
-  # if 'lang_skill_reading' in request.session:
-  #   recolist.append('lang_skill_reading')
-  # if 'lang_skill_speaking' in request.session:
-  #   recolist.append('lang_skill_speaking')
-  # if 'lang_skill_listening' in request.session:
-  #   recolist.append('lang_skill_listening')
 
   if 'apprenticeship' in request.session:
     recolist.append('apprenticeship')
@@ -557,7 +441,6 @@ def get_recommendations_from_cache(request):
   if 'hs_goal_work' in request.session:
     recolist.append('hs_goal_work')            
  
-  print '########### RECO LIST #########'
   print recolist    
   return filter_recommendations(recolist)
 
