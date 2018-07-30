@@ -1,4 +1,4 @@
-const data = 'https://api.myjson.com/bins/vn3nm';
+const data = 'https://api.myjson.com/bins/omp8i';
 
 Vue.component('card', {
     template:`
