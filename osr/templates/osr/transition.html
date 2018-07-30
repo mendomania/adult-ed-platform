@@ -210,58 +210,42 @@
         </div>
       </div>  
 
+      {% if proLinesBasic or proLinesGoals or proLinesNeeds %}
       <div class="row">
         <div class="columns small-12">
           <h6>{% blocktrans %}Your personal information{% endblocktrans %}:</h6>
-          {% if request.session.age %}
-          {{ request.session.age }}<br/>
-          {% endif %}
-
-          {% if request.session.profile_basic_ontario_resident %}
-          {{ request.session.profile_basic_ontario_resident }}<br/>
-          {% endif %}   
-
-          {% if request.session.profile_basic_immigration_status %}
-          {{ request.session.profile_basic_immigration_status }}<br/>
-          {% endif %} 
-
-          {% if request.session.profile_basic_lang_source %}
-          {{ request.session.profile_basic_lang_source }}<br/>
-          {% endif %}                              
-
-          {% if request.session.highschool %}
-          {{ request.session.highschool }}<br/>
-          {% endif %}          
-
-          {% if request.session.ossd %}
-          {{ request.session.ossd }}<br/>
-          {% endif %}            
-          
-          {% if request.session.gedx %}
-          {{ request.session.gedx }}<br/>
-          {% endif %}                                        
-
-          {% if request.session.intl_edu %}
-          {{ request.session.intl_edu }}<br/>
-          {% endif %}                                        
-
-          {% if request.session.intl_job %}
-          {{ request.session.intl_job }}<br/>
-          {% endif %}          
-          <br/>                                                  
+          {% for line in proLinesBasic %}
+            {% for key, value in line.items %} 
+              {% if key == LANGUAGE_CODE %}
+                {{value}}<br/>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}          
+          <br/>                                                            
+          {% if proLinesGoals %}
           <h6>{% blocktrans %}Your goals{% endblocktrans %}:</h6>
-          {% if request.session.main_goals %}
-          {% for goal in request.session.main_goals %}
-            {{ goal }}<br/>
-          {% endfor %}
+          {% for line in proLinesGoals %}
+            {% for key, value in line.items %} 
+              {% if key == LANGUAGE_CODE %}
+                {{value}}<br/>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}  
           {% endif %} 
           <br/>
+          {% if proLinesNeeds %}
           <h6>{% blocktrans %}Your needs{% endblocktrans %}:</h6>
-          {% if request.session.need_goals %}
-          {{ request.session.need_goals }}<br/>
-          {% endif %}           
+          {% for line in proLinesNeeds %}
+            {% for key, value in line.items %} 
+              {% if key == LANGUAGE_CODE %}
+                {{value}}<br/>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}  
+          {% endif %}          
         </div>
-      </div>        
+      </div>  
+      {% endif %}      
 
       <div class="row">
         <br/>
