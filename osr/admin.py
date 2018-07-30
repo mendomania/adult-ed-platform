@@ -6,7 +6,7 @@ from django.db.models import Q
 from .models import Program, ServiceProvider, ServiceDeliverySite, Outcome, Eligibility, Subject, Stream, Recommendation
 from .models import Offering, OfferingSchedule, Profession, OfferingProfession, Feature, OfferingFeature
 from .models import Facility, ServiceDeliverySiteFacility, ProgramRegistrationSteps, ProgramBestForScenarios
-from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit
+from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit, ProfileSection
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from django.utils.translation import ugettext_lazy as _
 
@@ -194,6 +194,8 @@ class FacilityAdmin(TranslationAdmin):
   pass  
 class RecommendationAdmin(TranslationAdmin):
   pass 
+class ProfileSectionAdmin(TranslationAdmin):
+  pass   
 class LearningOptionAdmin(TranslationAdmin):
   pass  
 class ScheduleOptionAdmin(TranslationAdmin):
@@ -218,6 +220,7 @@ admin.site.register(Profession, ProfessionAdmin)
 admin.site.register(Feature, FeatureAdmin)
 admin.site.register(Facility, FacilityAdmin)
 admin.site.register(Recommendation, RecommendationAdmin)
+admin.site.register(ProfileSection, ProfileSectionAdmin)
 admin.site.register(LearningOption, LearningOptionAdmin)
 admin.site.register(ScheduleOption, ScheduleOptionAdmin)
 admin.site.register(ImmigrationStatus, ImmigrationStatusAdmin)
