@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-24 15:38-0400\n"
+"POT-Creation-Date: 2018-07-29 21:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,45 +218,59 @@ msgstr "Samedi"
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: osr/models.py:21 osr/models.py:124 osr/models.py:137 osr/models.py:150
-#: osr/models.py:281
+#: osr/models.py:16
+#, fuzzy
+#| msgid "Financial information"
+msgid "Information"
+msgstr "Information financière"
+
+#: osr/models.py:16
+msgid "Goals"
+msgstr ""
+
+#: osr/models.py:16
+msgid "Needs"
+msgstr ""
+
+#: osr/models.py:22 osr/models.py:119 osr/models.py:132 osr/models.py:145
+#: osr/models.py:276
 msgid "program"
 msgstr "programme"
 
-#: osr/models.py:22 osr/models.py:232 osr/models.py:244 osr/models.py:257
-#: osr/models.py:269
+#: osr/models.py:23 osr/models.py:227 osr/models.py:239 osr/models.py:252
+#: osr/models.py:264
 msgid "programs"
 msgstr "programmes"
 
-#: osr/models.py:27
+#: osr/models.py:28
 #, fuzzy
 msgid "official name"
 msgstr "nom officiel"
 
-#: osr/models.py:27
+#: osr/models.py:28
 #, fuzzy
 msgid "official name of the program"
 msgstr "nom officiel du programme"
 
-#: osr/models.py:28
+#: osr/models.py:29
 #, fuzzy
 msgid "branding name"
 msgstr "nom grand publique"
 
-#: osr/models.py:28
+#: osr/models.py:29
 #, fuzzy
 msgid "branding name of the program"
 msgstr "nom grand publique du programme"
 
-#: osr/models.py:29 osr/models.py:256 osr/models.py:447
+#: osr/models.py:30 osr/models.py:251 osr/models.py:443 osr/models.py:459
 msgid "code"
 msgstr "code"
 
-#: osr/models.py:30
+#: osr/models.py:31 osr/models.py:447 osr/models.py:461
 msgid "order id"
 msgstr ""
 
-#: osr/models.py:30
+#: osr/models.py:31 osr/models.py:447 osr/models.py:461
 msgid "a lower order id will show up first, min value is 1"
 msgstr ""
 
@@ -297,320 +311,336 @@ msgstr "frais"
 msgid "free"
 msgstr ""
 
-#: osr/models.py:50
+#: osr/models.py:43
 #, fuzzy
 #| msgid "service providers"
 msgid "types of service providers"
 msgstr "fournisseurs de service"
 
-#: osr/models.py:57
+#: osr/models.py:52
 msgid "marker"
 msgstr "indicateur"
 
-#: osr/models.py:58 osr/models.py:230
+#: osr/models.py:53 osr/models.py:225
 msgid "background colour"
 msgstr "couleur de fond"
 
-#: osr/models.py:59 osr/models.py:231
+#: osr/models.py:54 osr/models.py:226
 msgid "foreground colour"
 msgstr "couleur de premier plan"
 
-#: osr/models.py:73
+#: osr/models.py:68
 msgid "benefit"
 msgstr ""
 
-#: osr/models.py:74
+#: osr/models.py:69
 msgid "benefits"
 msgstr ""
 
-#: osr/models.py:79 osr/models.py:90 osr/models.py:101 osr/models.py:112
-#: osr/models.py:125 osr/models.py:138 osr/models.py:151 osr/models.py:229
-#: osr/models.py:243 osr/models.py:255 osr/models.py:268 osr/models.py:376
-#: osr/models.py:399 osr/models.py:423 osr/models.py:449
+#: osr/models.py:74 osr/models.py:85 osr/models.py:96 osr/models.py:107
+#: osr/models.py:120 osr/models.py:133 osr/models.py:146 osr/models.py:224
+#: osr/models.py:238 osr/models.py:250 osr/models.py:263 osr/models.py:371
+#: osr/models.py:394 osr/models.py:418 osr/models.py:445 osr/models.py:460
 msgid "text"
 msgstr "texte"
 
-#: osr/models.py:84 osr/models.py:85
+#: osr/models.py:79 osr/models.py:80
 #, fuzzy
 #| msgid "registration steps"
 msgid "immigration status"
 msgstr "Étapes d'inscription"
 
-#: osr/models.py:95
+#: osr/models.py:90
 #, fuzzy
 #| msgid "learning style"
 msgid "learning option"
 msgstr "style d'apprentissage"
 
-#: osr/models.py:96
+#: osr/models.py:91
 #, fuzzy
 #| msgid "learning style"
 msgid "learning options"
 msgstr "style d'apprentissage"
 
-#: osr/models.py:106
+#: osr/models.py:101
 #, fuzzy
 #| msgid "schedule"
 msgid "schedule option"
 msgstr "horaire"
 
-#: osr/models.py:107
+#: osr/models.py:102
 #, fuzzy
 #| msgid "schedules"
 msgid "schedule options"
 msgstr "horaires"
 
-#: osr/models.py:118
+#: osr/models.py:113
 msgid "registration step"
 msgstr "étape d'inscription"
 
-#: osr/models.py:119
+#: osr/models.py:114
 msgid "registration steps"
 msgstr "étapes d'inscription"
 
-#: osr/models.py:131
+#: osr/models.py:126
 msgid "best for scenario"
 msgstr "scénario best for"
 
-#: osr/models.py:132
+#: osr/models.py:127
 msgid "best for scenarios"
 msgstr "scénarios best for"
 
-#: osr/models.py:144
+#: osr/models.py:139
 #, fuzzy
 #| msgid "program"
 msgid "program link"
 msgstr "programme"
 
-#: osr/models.py:145
+#: osr/models.py:140
 #, fuzzy
 #| msgid "programs"
 msgid "program links"
 msgstr "programmes"
 
-#: osr/models.py:152 osr/models.py:450 osr/templates/osr/program.html:84
+#: osr/models.py:147 osr/models.py:446 osr/templates/osr/program.html:84
 msgid "link"
 msgstr ""
 
-#: osr/models.py:158
+#: osr/models.py:153
 msgid "service provider"
 msgstr "fournisseur de service"
 
-#: osr/models.py:159
+#: osr/models.py:154
 msgid "service providers"
 msgstr "fournisseurs de service"
 
-#: osr/models.py:164 osr/models.py:191
+#: osr/models.py:159 osr/models.py:186
 msgid "name"
 msgstr "nom"
 
-#: osr/models.py:170
+#: osr/models.py:165
 msgid "logo"
 msgstr "logo"
 
-#: osr/models.py:171 osr/models.py:210
+#: osr/models.py:166 osr/models.py:205
 msgid "phone number"
 msgstr "numéro de téléphone"
 
-#: osr/models.py:172 osr/models.py:211
+#: osr/models.py:167 osr/models.py:206
 msgid "e-mail"
 msgstr "adresse mail"
 
-#: osr/models.py:173 osr/models.py:212
+#: osr/models.py:168 osr/models.py:207
 #, fuzzy
 msgid "street"
 msgstr "rue"
 
-#: osr/models.py:174 osr/models.py:213
+#: osr/models.py:169 osr/models.py:208
 msgid "city"
 msgstr "ville"
 
-#: osr/models.py:175 osr/models.py:214
+#: osr/models.py:170 osr/models.py:209
 msgid "province"
 msgstr "province"
 
-#: osr/models.py:176 osr/models.py:215
+#: osr/models.py:171 osr/models.py:210
 msgid "zip code"
 msgstr "code postal"
 
-#: osr/models.py:181 osr/models.py:282 osr/models.py:435
+#: osr/models.py:176 osr/models.py:277 osr/models.py:430
 msgid "service delivery site"
 msgstr "lieu de prestation de services"
 
-#: osr/models.py:182
+#: osr/models.py:177
 msgid "service delivery sites"
 msgstr "lieux de prestations de services"
 
-#: osr/models.py:190
+#: osr/models.py:185
 msgid "head"
 msgstr "tête"
 
-#: osr/models.py:223
+#: osr/models.py:218
 msgid "outcome"
 msgstr "objectif"
 
-#: osr/models.py:224 osr/models.py:293
+#: osr/models.py:219 osr/models.py:288
 msgid "outcomes"
 msgstr "objectifs"
 
-#: osr/models.py:237
+#: osr/models.py:232
 msgid "eligibility"
 msgstr "critère d'éligibilité"
 
-#: osr/models.py:238
+#: osr/models.py:233
 msgid "eligibilities"
 msgstr "critères d'éligibilité"
 
-#: osr/models.py:249
+#: osr/models.py:244
 msgid "subject"
 msgstr "matière"
 
-#: osr/models.py:250 osr/models.py:316
+#: osr/models.py:245 osr/models.py:311
 msgid "subjects"
 msgstr "matières"
 
-#: osr/models.py:262 osr/models.py:309
+#: osr/models.py:257 osr/models.py:304
 msgid "stream"
 msgstr "cible"
 
-#: osr/models.py:263
+#: osr/models.py:258
 msgid "streams"
 msgstr "cibles"
 
-#: osr/models.py:274
+#: osr/models.py:269
 msgid "offering"
 msgstr "cours"
 
-#: osr/models.py:275
+#: osr/models.py:270
 msgid "offerings"
 msgstr "cours"
 
-#: osr/models.py:283
+#: osr/models.py:278
 msgid "start date"
 msgstr "date de début"
 
-#: osr/models.py:284
+#: osr/models.py:279
 msgid "end date"
 msgstr "date de fin"
 
-#: osr/models.py:287
+#: osr/models.py:282
 msgid "class size"
 msgstr "taille de la classe"
 
-#: osr/models.py:288
+#: osr/models.py:283
 msgid "learning style"
 msgstr "style d'apprentissage"
 
-#: osr/models.py:300
+#: osr/models.py:295
 msgid "requirements"
 msgstr "conditions"
 
-#: osr/models.py:338
+#: osr/models.py:333
 msgid "CLB level 1"
 msgstr "Niveau NCLC 1"
 
-#: osr/models.py:339
+#: osr/models.py:334
 msgid "CLB level 2"
 msgstr "Niveau NCLC 2"
 
-#: osr/models.py:340
+#: osr/models.py:335
 msgid "CLB level 3"
 msgstr "Niveau NCLC 3"
 
-#: osr/models.py:341
+#: osr/models.py:336
 msgid "CLB level 4"
 msgstr "Niveau NCLC 4"
 
-#: osr/models.py:342
+#: osr/models.py:337
 msgid "CLB level 5"
 msgstr "Niveau NCLC 5"
 
-#: osr/models.py:343
+#: osr/models.py:338
 msgid "CLB level 6"
 msgstr "Niveau NCLC 6"
 
-#: osr/models.py:344
+#: osr/models.py:339
 msgid "CLB level 7"
 msgstr "Niveau NCLC 7"
 
-#: osr/models.py:345
+#: osr/models.py:340
 msgid "CLB level 8"
 msgstr "Niveau NCLC 8"
 
-#: osr/models.py:346
+#: osr/models.py:341
 msgid "CLB level 9"
 msgstr "Niveau NCLC 9"
 
-#: osr/models.py:347
+#: osr/models.py:342
 msgid "CLB level 10"
 msgstr "Niveau NCLC 10"
 
-#: osr/models.py:348
+#: osr/models.py:343
 msgid "CLB level 11"
 msgstr "Niveau NCLC 11"
 
-#: osr/models.py:349
+#: osr/models.py:344
 msgid "CLB level 12"
 msgstr "Niveau NCLC 12"
 
-#: osr/models.py:354
+#: osr/models.py:349
 msgid "schedule"
 msgstr "horaire"
 
-#: osr/models.py:355
+#: osr/models.py:350
 msgid "schedules"
 msgstr "horaires"
 
-#: osr/models.py:363
+#: osr/models.py:358
 msgid "day of the week"
 msgstr "jour de la semaine"
 
-#: osr/models.py:364
+#: osr/models.py:359
 msgid "start time"
 msgstr "heure de début"
 
-#: osr/models.py:365
+#: osr/models.py:360
 msgid "end time"
 msgstr "heure de fin"
 
-#: osr/models.py:370 osr/models.py:381 osr/models.py:388
+#: osr/models.py:365 osr/models.py:376 osr/models.py:383
 msgid "profession"
 msgstr "profession"
 
-#: osr/models.py:371 osr/models.py:382
+#: osr/models.py:366 osr/models.py:377
 msgid "professions"
 msgstr "professions"
 
-#: osr/models.py:393 osr/models.py:405 osr/models.py:412
+#: osr/models.py:388 osr/models.py:400 osr/models.py:407
 msgid "feature"
 msgstr "service"
 
-#: osr/models.py:394 osr/models.py:406
+#: osr/models.py:389 osr/models.py:401
 msgid "features"
 msgstr "services"
 
-#: osr/models.py:400 osr/models.py:424
+#: osr/models.py:395 osr/models.py:419
 msgid "image"
 msgstr "image"
 
-#: osr/models.py:417 osr/models.py:429 osr/models.py:436
+#: osr/models.py:412 osr/models.py:424 osr/models.py:431
 msgid "facility"
 msgstr "équipement"
 
-#: osr/models.py:418 osr/models.py:430
+#: osr/models.py:413 osr/models.py:425
 msgid "facilities"
 msgstr "équipements"
 
-#: osr/models.py:441
+#: osr/models.py:436
 msgid "recommendation"
 msgstr ""
 
-#: osr/models.py:442
+#: osr/models.py:437
 msgid "recommendations"
 msgstr ""
 
-#: osr/models.py:448
+#: osr/models.py:444
 msgid "reason"
+msgstr ""
+
+#: osr/models.py:452
+#, fuzzy
+#| msgid "profession"
+msgid "profile section"
+msgstr "profession"
+
+#: osr/models.py:453
+#, fuzzy
+#| msgid "professions"
+msgid "profile sections"
+msgstr "professions"
+
+#: osr/models.py:462
+msgid "section in profile"
 msgstr ""
 
 #: osr/templates/admin/osr/filter.html:2
@@ -618,104 +648,128 @@ msgstr ""
 msgid " By %(filter_title)s "
 msgstr ""
 
-#: osr/templates/osr/compare.html:10
+#: osr/templates/osr/comparison.html:10
 msgid "Comparison"
 msgstr "Comparaison"
 
-#: osr/templates/osr/compare.html:40 osr/templates/osr/intro.html:34
-#: osr/templates/osr/program.html:35 osr/templates/osr/results.html:35
-#: osr/templates/osr/widget.html:37
+#: osr/templates/osr/comparison.html:36 osr/templates/osr/intro.html:35
+#: osr/templates/osr/matchmaker.html:37 osr/templates/osr/program.html:35
+#: osr/templates/osr/transition.html:34
 msgid "Government of Ontario home page"
 msgstr "Page d'accueil du Gouvernement de l'Ontario"
 
-#: osr/templates/osr/compare.html:47 osr/templates/osr/intro.html:41
-#: osr/templates/osr/program.html:42 osr/templates/osr/results.html:42
+#: osr/templates/osr/comparison.html:43 osr/templates/osr/intro.html:42
+#: osr/templates/osr/program.html:42 osr/templates/osr/transition.html:41
 msgid "Français"
 msgstr "English"
 
-#: osr/templates/osr/compare.html:55
+#: osr/templates/osr/comparison.html:51
 msgid "Compare adult learning programs"
 msgstr "Comparez les programmes d'éducation pour les adultes"
 
-#: osr/templates/osr/compare.html:79
+#: osr/templates/osr/comparison.html:75
 msgid "Program details"
 msgstr "Détails du programme"
 
-#: osr/templates/osr/compare.html:96
+#: osr/templates/osr/comparison.html:92
 msgid "Key benefits"
 msgstr "Avantages clés"
 
-#: osr/templates/osr/compare.html:108
+#: osr/templates/osr/comparison.html:104
 msgid "Who can benefit?"
 msgstr "Qui peut en bénéficier?"
 
-#: osr/templates/osr/compare.html:120
+#: osr/templates/osr/comparison.html:116
 msgid "Who can take this program?"
 msgstr "Qui peut étudier ce programme?"
 
-#: osr/templates/osr/compare.html:124 osr/templates/osr/program.html:159
+#: osr/templates/osr/comparison.html:120 osr/templates/osr/program.html:159
 msgid "You must"
 msgstr "Vous devez"
 
-#: osr/templates/osr/compare.html:140
+#: osr/templates/osr/comparison.html:136
 msgid "Find program providers"
 msgstr "Trouver des écoles où étudier"
 
-#: osr/templates/osr/intro.html:10 osr/templates/osr/intro.html:52
+#: osr/templates/osr/intro.html:10 osr/templates/osr/intro.html:53
 msgid "Adult learning"
 msgstr "Formation des adultes"
 
-#: osr/templates/osr/intro.html:82 osr/templates/osr/intro.html:145
+#: osr/templates/osr/intro.html:83 osr/templates/osr/intro.html:146
 msgid "Match me"
 msgstr "Matche-moi"
 
-#: osr/templates/osr/intro.html:92
+#: osr/templates/osr/intro.html:93
 msgid "Who can benefit from adult learning programs?"
 msgstr "Qui peut bénéficier de ces programmes?"
 
-#: osr/templates/osr/intro.html:106
+#: osr/templates/osr/intro.html:107
 msgid "Adult learning programs"
 msgstr "Programmes d'éducation pour les adultes"
 
-#: osr/templates/osr/intro.html:119 osr/templates/osr/results.html:151
+#: osr/templates/osr/intro.html:120 osr/templates/osr/transition.html:149
 msgid "Learn more"
 msgstr "En apprendre davantage"
 
-#: osr/templates/osr/intro.html:127
+#: osr/templates/osr/intro.html:128
 msgid "Compare all programs"
 msgstr "Comparez tous les programmes"
 
-#: osr/templates/osr/intro.html:135
+#: osr/templates/osr/intro.html:136
 msgid "Not sure which program is best for you?"
 msgstr "Vous n'êtes pas sûr quels programmes vous conviennent le plus?"
 
-#: osr/templates/osr/intro.html:154
+#: osr/templates/osr/intro.html:155
 msgid "Need help?"
 msgstr "Besoin d'aide?"
 
-#: osr/templates/osr/intro.html:158
+#: osr/templates/osr/intro.html:163
 msgid "Chat live with us"
 msgstr "Clavardez avec nous"
 
-#: osr/templates/osr/intro.html:162
-msgid "Meet with a counsellor"
-msgstr "Rencontrez un conseiller"
-
-#: osr/templates/osr/intro.html:166
-msgid "Dictionary"
-msgstr "Dictionnaire"
-
-#: osr/templates/osr/intro.html:186 osr/templates/osr/intro.html:188
+#: osr/templates/osr/intro.html:170 osr/templates/osr/intro.html:172
 msgid "Chat live"
 msgstr "Clavardez maintenant"
 
-#: osr/templates/osr/intro.html:192
+#: osr/templates/osr/intro.html:179
+msgid "Meet with a counsellor"
+msgstr "Rencontrez un conseiller"
+
+#: osr/templates/osr/intro.html:184
 msgid "Request an appointment"
 msgstr "Demande de rendez-vous"
 
-#: osr/templates/osr/intro.html:195
+#: osr/templates/osr/intro.html:190
+msgid "Dictionary"
+msgstr "Dictionnaire"
+
+#: osr/templates/osr/intro.html:194
 msgid "Read more"
 msgstr "En apprendre davantage"
+
+#: osr/templates/osr/matchmaker.html:52 osr/templates/osr/transition.html:52
+msgid "Adult Learning"
+msgstr "Matchmaker de Programmes"
+
+#: osr/templates/osr/matchmaker.html:52 osr/templates/osr/transition.html:52
+msgid "Program Matchmaker"
+msgstr "d'Éducation des Adultes"
+
+#: osr/templates/osr/matchmaker.html:70
+msgid ""
+"If you're a resident of Ontario and looking to explore adult learning "
+"programs offered in the province, you're in the right place!"
+msgstr "Si vous êtes résident de l'Ontario et vous cherchez à explorer des programmes d'éducation pour adultes qui sont offerts dans la province, vous êtes au bon endroit !"
+
+#: osr/templates/osr/matchmaker.html:71
+msgid ""
+"Answer a series of simple questions and we'll recommend programs that best "
+"match your situation"
+msgstr "Répondez quelques questions et on vous recommandera des programmes adaptés à votre situation"
+
+#: osr/templates/osr/matchmaker.html:72
+msgid "Start"
+msgstr "Commencez"
 
 #: osr/templates/osr/program.html:58
 msgid "On this page"
@@ -814,34 +868,26 @@ msgstr "Confidentialité"
 msgid "Terms of use"
 msgstr "Conditions d'utilisation"
 
-#: osr/templates/osr/results.html:10
+#: osr/templates/osr/transition.html:10
 msgid "Results"
 msgstr "Résultats"
 
-#: osr/templates/osr/results.html:53
-msgid "Adult Learning"
-msgstr "Matchmaker de Programmes"
-
-#: osr/templates/osr/results.html:53
-msgid "Program Matchmaker"
-msgstr "d'Éducation des Adultes"
-
-#: osr/templates/osr/results.html:61
+#: osr/templates/osr/transition.html:60
 msgid "E-mail sent to"
 msgstr "Email envoyé à"
 
-#: osr/templates/osr/results.html:70
+#: osr/templates/osr/transition.html:69
 msgid "Your Results"
 msgstr "Vos Résultats"
 
-#: osr/templates/osr/results.html:72
+#: osr/templates/osr/transition.html:71
 msgid ""
 "Based on your responses, we found 1 program that you might be interested in"
 msgstr ""
 "Compte tenu de vos réponses aux questions précédentes, nous avons trouvé 1 "
 "programme qui pourrais vous intéresser"
 
-#: osr/templates/osr/results.html:74
+#: osr/templates/osr/transition.html:73
 #, python-format
 msgid ""
 "Based on your responses, we found %(number)s programs that you might be "
@@ -850,67 +896,50 @@ msgstr ""
 "Compte tenu de vos réponses aux questions précédentes, nous avons trouvé "
 "%(number)s programmes qui pourraient vous intéresser"
 
-#: osr/templates/osr/results.html:153
+#: osr/templates/osr/transition.html:151
 msgid "Compare programs"
 msgstr "Comparez ces programmes"
 
-#: osr/templates/osr/results.html:169
+#: osr/templates/osr/transition.html:168
 msgid "Other Relevant Information"
 msgstr "Renseignements Utiles"
 
-#: osr/templates/osr/results.html:179
+#: osr/templates/osr/transition.html:178
 msgid "Because you said..."
 msgstr "Puisque vous avez indiqué..."
 
-#: osr/templates/osr/results.html:182
+#: osr/templates/osr/transition.html:181
 msgid "We recommend..."
 msgstr "On vous recommande..."
 
-#: osr/templates/osr/results.html:210
+#: osr/templates/osr/transition.html:209
 msgid "Your Profile"
 msgstr "Votre Profil"
 
-#: osr/templates/osr/results.html:216
+#: osr/templates/osr/transition.html:216
 msgid "Your personal information"
 msgstr "Votre information personnelle"
 
-#: osr/templates/osr/results.html:253
+#: osr/templates/osr/transition.html:260
 msgid "Your goals"
 msgstr "Vos buts"
 
-#: osr/templates/osr/results.html:260
+#: osr/templates/osr/transition.html:267
 msgid "Your needs"
 msgstr "Vos besoins"
 
-#: osr/templates/osr/results.html:273
+#: osr/templates/osr/transition.html:281
 msgid "Redo quiz"
 msgstr "Refaire le quiz"
 
-#: osr/templates/osr/results.html:274
+#: osr/templates/osr/transition.html:282
 msgid "Get results by e-mail"
 msgstr "Recevoir vos résultats par email"
 
-#: osr/templates/osr/results.html:275
+#: osr/templates/osr/transition.html:283
 msgid "Download (PDF)"
 msgstr "Télécharger (PDF)"
 
-#: osr/templates/osr/results.html:284
+#: osr/templates/osr/transition.html:292
 msgid "Send"
 msgstr "Envoyer"
-
-#~ msgid ""
-#~ "If you're looking to explore adult learning programs offered in Ontario, "
-#~ "you're in the right place!"
-#~ msgstr ""
-#~ "Si vous cherchez à explorer les programmes d'éducation pour adultes qui "
-#~ "sont offerts en Ontario, vous êtes au bon endroit !"
-
-#~ msgid ""
-#~ "Answer a series of simple questions and we'll recommend programs that "
-#~ "best match your situation"
-#~ msgstr ""
-#~ "Répondez quelques questions et on vous recommandera des programmes "
-#~ "adaptés à votre situation"
-
-#~ msgid "Start"
-#~ msgstr "Commencez"
