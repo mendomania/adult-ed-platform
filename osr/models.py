@@ -13,6 +13,7 @@ MARKER_TYPES = (('blu_circle', _('Blue circle')),('ltblu_circle', _('Light blue 
 CSIZE_RANGES = (('1 - 10', '1 - 10'),('11 - 20', '11 - 20'),('20+', '20+'))
 LEARN_STYLES = (('Online', _('Online')),('In-person', _('In-person')),('Blended', _('Blended')))
 DAYS_OF_WEEK = (('Monday', _('Monday')),('Tuesday', _('Tuesday')),('Wednesday', _('Wednesday')),('Thursday', _('Thursday')),('Friday', _('Friday')),('Saturday', _('Saturday')),('Sunday', _('Sunday')))
+PRO_SECTIONS = (('Information', _('Information')),('Goals', _('Goals')),('Needs', _('Needs')))
 
 @python_2_unicode_compatible
 class Program(models.Model):
@@ -46,10 +47,6 @@ class Program(models.Model):
   schedule_options = models.ManyToManyField('ScheduleOption')
   eligible_immigration_status = models.ManyToManyField('ImmigrationStatus', blank=True)
   benefits = models.ManyToManyField('Benefit')
-
-  # Specifics about program
-  img_src = models.ImageField(blank=True, null=True)
-  img_txt = models.CharField(max_length=100, blank=True, default="")
 
   # Colour
   marker = models.CharField(max_length=15, default="grn_circle", choices=MARKER_TYPES, verbose_name=_('marker'))
@@ -438,11 +435,28 @@ class Recommendation(models.Model):
   class Meta:
     verbose_name = _('recommendation')
     verbose_name_plural = _('recommendations')  
+    ordering = ['order_id']
 
   def __str__(self):
     return self.code 
     
-  code = models.CharField(max_length=20, verbose_name=_('code'))
+  code = models.CharField(max_length=100, verbose_name=_('code'))
   reason = models.CharField(max_length=100, verbose_name=_('reason'))
   text = models.CharField(max_length=100, verbose_name=_('text'))
   link = models.CharField(max_length=50, verbose_name=_('link'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
+
+@python_2_unicode_compatible
+class ProfileSection(models.Model):
+  class Meta:
+    verbose_name = _('profile section')
+    verbose_name_plural = _('profile sections')  
+    ordering = ['order_id']
+
+  def __str__(self):
+    return self.code 
+    
+  code = models.CharField(max_length=100, verbose_name=_('code'))
+  text = models.CharField(max_length=100, verbose_name=_('text'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
+  section = models.CharField(max_length=12, choices=PRO_SECTIONS, verbose_name=_('section in profile'))
