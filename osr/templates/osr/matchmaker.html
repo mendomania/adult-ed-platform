@@ -49,10 +49,7 @@
       <div class="row intro">
         <div class="columns small-12 text-center">
           <h1 v-if="lang == 'en'">
-            Adult Learning<br/>Program Matchmaker
-          </h1>
-          <h1 v-else>
-            Matchmaker de Programmes<br/>d'Éducation des Adultes
+            {% blocktrans %}Adult Learning{% endblocktrans %}<br/>{% blocktrans %}Program Matchmaker{% endblocktrans %}
           </h1>
         </div>
       </div>
@@ -70,13 +67,9 @@
             <img src="../../../static/osr/images/widget.png" width="550em" height="325em" alt="Matchmaker"/>
           </div>
           <div class="columns small-12 medium-5">
-            <p v-if="lang == 'en'"><br/><br/>If you're a resident of Ontario and looking to explore adult learning programs offered in the province, you're in the right place!
-            <br/>Answer a series of simple questions and we'll recommend programs that best match your situation.</p>
-            <p v-else><br/><br/>Si vous êtes résident de l'Ontario et vous cherchez à explorer des programmes d'éducation pour adultes qui sont offerts dans la province, vous êtes au bon endroit !
-            <br/>Répondez quelques questions et on vous recommandera des programmes adaptés à votre situation.</p>
-
-            <button v-if="lang == 'en'" @click="initQuiz" class="quiz-button btn">Start</button>
-            <button v-else @click="initQuiz" class="quiz-button btn">Commencez</button>
+            <br/><br/>{% blocktrans %}If you're a resident of Ontario and looking to explore adult learning programs offered in the province, you're in the right place!{% endblocktrans %}
+            <br/>{% blocktrans %}Answer a series of simple questions and we'll recommend programs that best match your situation{% endblocktrans %}.</p>
+            <button @click="initQuiz" class="quiz-button btn">{% blocktrans %}Start{% endblocktrans %}</button>
           </div>
         </div>
       </div>
