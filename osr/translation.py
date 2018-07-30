@@ -2,7 +2,7 @@
 from modeltranslation.translator import register, TranslationOptions
 from .models import Program, ProgramRegistrationSteps, ProgramBestForScenarios
 from .models import Outcome, Eligibility, Subject, Stream, Profession, Feature, Facility, Recommendation
-from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit
+from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit, ProfileSection
 
 @register(Program)
 class ProgramTranslationOptions(TranslationOptions):
@@ -34,7 +34,11 @@ class StreamTranslationOptions(TranslationOptions):
 
 @register(Recommendation)
 class RecommendationTranslationOptions(TranslationOptions):
-  fields = ('text', 'reason')   
+  fields = ('text', 'reason')  
+
+@register(ProfileSection)
+class ProfileSectionTranslationOptions(TranslationOptions):
+  fields = ('text',) 
 
 @register(Profession)
 class ProfessionTranslationOptions(TranslationOptions):
