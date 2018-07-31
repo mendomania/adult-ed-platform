@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-29 21:38-0400\n"
+"POT-Creation-Date: 2018-07-30 16:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,119 +26,119 @@ msgstr "Anglais"
 msgid "French"
 msgstr "Français"
 
-#: osr/admin.py:13
+#: osr/admin.py:14
 msgid "My administration"
 msgstr "Mon compte"
 
-#: osr/admin.py:19
+#: osr/admin.py:20
 #, fuzzy
 #| msgid "schedules"
 msgid "Schedules"
 msgstr "Horaires"
 
-#: osr/admin.py:25
+#: osr/admin.py:26
 msgid "Is this offering relevant to any specific professions?"
 msgstr ""
 "Est-ce que ce cours est pensé pour des professionnels d'une filière en "
 "spécifique?"
 
-#: osr/admin.py:31
+#: osr/admin.py:32
 #, fuzzy
 #| msgid "service provider"
 msgid "Services provided"
 msgstr "Services qu'on offre"
 
-#: osr/admin.py:37
+#: osr/admin.py:38
 #, fuzzy
 #| msgid "facilities"
 msgid "Facilities"
 msgstr "Équipements"
 
-#: osr/admin.py:42
+#: osr/admin.py:43
 #, fuzzy
 #| msgid "registration steps"
 msgid "Registration steps"
 msgstr "Étapes d'inscription"
 
-#: osr/admin.py:47
+#: osr/admin.py:48
 #, fuzzy
 #| msgid "best for scenarios"
 msgid "Best for scenarios"
 msgstr "Scénarios best for"
 
-#: osr/admin.py:52
+#: osr/admin.py:53
 msgid "Useful external links"
 msgstr ""
 
-#: osr/admin.py:56 osr/admin.py:72 osr/admin.py:115
+#: osr/admin.py:57 osr/admin.py:73 osr/admin.py:116
 msgid "BASIC INFORMATION"
 msgstr "INFORMATION DE BASE"
 
-#: osr/admin.py:57
+#: osr/admin.py:58
 msgid "COLOURS"
 msgstr "COULEURS"
 
-#: osr/admin.py:58
+#: osr/admin.py:59
 msgid "TEXT FIELDS"
 msgstr "DESCRIPTIONS"
 
-#: osr/admin.py:59
+#: osr/admin.py:60
 msgid "KEY BENEFITS"
 msgstr ""
 
-#: osr/admin.py:60
+#: osr/admin.py:61
 msgid "OPTIONS"
 msgstr ""
 
-#: osr/admin.py:61
+#: osr/admin.py:62
 msgid "ELIGIBLE IMMIGRATION STATUS"
 msgstr ""
 
-#: osr/admin.py:62
+#: osr/admin.py:63
 msgid "LOGO"
 msgstr "LOGO"
 
-#: osr/admin.py:73
+#: osr/admin.py:74
 msgid "REPRESENTATIVE OF SERVICE PROVIDER IN OUR SYSTEM"
 msgstr "RÉPRESENTANT DU FOURNISSEUR DE SERVICES DANS LE SYSTÈME"
 
-#: osr/admin.py:74
+#: osr/admin.py:75
 msgid "CONTACT"
 msgstr "CONTACT"
 
-#: osr/admin.py:75 osr/admin.py:84
+#: osr/admin.py:76 osr/admin.py:85
 msgid "ADDRESS"
 msgstr "ADRESS"
 
-#: osr/admin.py:76
+#: osr/admin.py:77
 msgid "PROGRAMS"
 msgstr "PROGRAMMES"
 
-#: osr/admin.py:82
+#: osr/admin.py:83
 msgid "MAIN BRANCH"
 msgstr "TÊTE"
 
-#: osr/admin.py:83
+#: osr/admin.py:84
 msgid "NAME OF SITE"
 msgstr "NOM DU SITE"
 
-#: osr/admin.py:116
+#: osr/admin.py:117
 msgid "SPECIFIC SUBJECTS OF THIS OFFERING"
 msgstr "MATIÈRES DE CE COURS"
 
-#: osr/admin.py:117
+#: osr/admin.py:118
 msgid "SPECIFIC OUTCOMES OF THIS OFFERING"
 msgstr "OBJECTIFS DE CE COURS"
 
-#: osr/admin.py:118
+#: osr/admin.py:119
 msgid "SPECIFIC REQUIREMENTS OF THIS OFFERING"
 msgstr "CONDITIONS DE CE COURS"
 
-#: osr/admin.py:119
+#: osr/admin.py:120
 msgid "SPECIFIC STREAMS OF THIS OFFERING"
 msgstr "GROUPES CIBLES DE CE COURS"
 
-#: osr/admin.py:120
+#: osr/admin.py:121
 msgid "CLB LEVELS"
 msgstr "NIVEAUX NCLC"
 
@@ -643,6 +643,28 @@ msgstr "professions"
 msgid "section in profile"
 msgstr ""
 
+#: osr/models.py:467
+#, fuzzy
+#| msgid "Dictionary"
+msgid "dictionary entry"
+msgstr "Dictionnaire"
+
+#: osr/models.py:468
+#, fuzzy
+#| msgid "Dictionary"
+msgid "dictionary entries"
+msgstr "Dictionnaire"
+
+#: osr/models.py:473
+msgid "key"
+msgstr ""
+
+#: osr/models.py:474
+#, fuzzy
+#| msgid "description"
+msgid "definition"
+msgstr "description"
+
 #: osr/templates/admin/osr/filter.html:2
 #, python-format
 msgid " By %(filter_title)s "
@@ -652,13 +674,14 @@ msgstr ""
 msgid "Comparison"
 msgstr "Comparaison"
 
-#: osr/templates/osr/comparison.html:36 osr/templates/osr/intro.html:35
-#: osr/templates/osr/matchmaker.html:37 osr/templates/osr/program.html:35
-#: osr/templates/osr/transition.html:34
+#: osr/templates/osr/comparison.html:36 osr/templates/osr/dictionary.html:34
+#: osr/templates/osr/intro.html:35 osr/templates/osr/matchmaker.html:37
+#: osr/templates/osr/program.html:35 osr/templates/osr/transition.html:34
 msgid "Government of Ontario home page"
 msgstr "Page d'accueil du Gouvernement de l'Ontario"
 
-#: osr/templates/osr/comparison.html:43 osr/templates/osr/intro.html:42
+#: osr/templates/osr/comparison.html:43 osr/templates/osr/dictionary.html:41
+#: osr/templates/osr/intro.html:42 osr/templates/osr/matchmaker.html:44
 #: osr/templates/osr/program.html:42 osr/templates/osr/transition.html:41
 msgid "Français"
 msgstr "English"
@@ -676,8 +699,8 @@ msgid "Key benefits"
 msgstr "Avantages clés"
 
 #: osr/templates/osr/comparison.html:104
-msgid "Who can benefit?"
-msgstr "Qui peut en bénéficier?"
+msgid "Best if:"
+msgstr ""
 
 #: osr/templates/osr/comparison.html:116
 msgid "Who can take this program?"
@@ -691,83 +714,105 @@ msgstr "Vous devez"
 msgid "Find program providers"
 msgstr "Trouver des écoles où étudier"
 
+#: osr/templates/osr/dictionary.html:10 osr/templates/osr/dictionary.html:51
+#: osr/templates/osr/intro.html:189
+msgid "Dictionary"
+msgstr "Dictionnaire"
+
+#: osr/templates/osr/dictionary.html:58
+msgid "Note"
+msgstr "Note"
+
+#: osr/templates/osr/dictionary.html:59
+msgid ""
+"The purpose of these definitions is to help people understand the terms we "
+"use on this website"
+msgstr "Ce glossaire a pour but de faciliter la compréhension des termes utilisés dans les textes affichés sur ce site Web"
+
+#: osr/templates/osr/dictionary.html:60
+msgid ""
+"They are not intended to be legal definitions, and should not be treated as "
+"such"
+msgstr "Les définitions du glossaire ne doivent pas être considérées comme des interprétations juridiques de ces termes"
+
 #: osr/templates/osr/intro.html:10 osr/templates/osr/intro.html:53
 msgid "Adult learning"
 msgstr "Formation des adultes"
 
-#: osr/templates/osr/intro.html:83 osr/templates/osr/intro.html:146
+#: osr/templates/osr/intro.html:82 osr/templates/osr/intro.html:145
 msgid "Match me"
 msgstr "Matche-moi"
 
-#: osr/templates/osr/intro.html:93
+#: osr/templates/osr/intro.html:92
 msgid "Who can benefit from adult learning programs?"
 msgstr "Qui peut bénéficier de ces programmes?"
 
-#: osr/templates/osr/intro.html:107
+#: osr/templates/osr/intro.html:106
 msgid "Adult learning programs"
 msgstr "Programmes d'éducation pour les adultes"
 
-#: osr/templates/osr/intro.html:120 osr/templates/osr/transition.html:149
+#: osr/templates/osr/intro.html:119 osr/templates/osr/transition.html:149
 msgid "Learn more"
 msgstr "En apprendre davantage"
 
-#: osr/templates/osr/intro.html:128
+#: osr/templates/osr/intro.html:127
 msgid "Compare all programs"
 msgstr "Comparez tous les programmes"
 
-#: osr/templates/osr/intro.html:136
+#: osr/templates/osr/intro.html:135
 msgid "Not sure which program is best for you?"
 msgstr "Vous n'êtes pas sûr quels programmes vous conviennent le plus?"
 
-#: osr/templates/osr/intro.html:155
+#: osr/templates/osr/intro.html:154
 msgid "Need help?"
 msgstr "Besoin d'aide?"
 
-#: osr/templates/osr/intro.html:163
+#: osr/templates/osr/intro.html:162
 msgid "Chat live with us"
 msgstr "Clavardez avec nous"
 
-#: osr/templates/osr/intro.html:170 osr/templates/osr/intro.html:172
+#: osr/templates/osr/intro.html:169 osr/templates/osr/intro.html:171
 msgid "Chat live"
 msgstr "Clavardez maintenant"
 
-#: osr/templates/osr/intro.html:179
+#: osr/templates/osr/intro.html:178
 msgid "Meet with a counsellor"
 msgstr "Rencontrez un conseiller"
 
-#: osr/templates/osr/intro.html:184
+#: osr/templates/osr/intro.html:183
 msgid "Request an appointment"
 msgstr "Demande de rendez-vous"
 
-#: osr/templates/osr/intro.html:190
-msgid "Dictionary"
-msgstr "Dictionnaire"
-
-#: osr/templates/osr/intro.html:194
+#: osr/templates/osr/intro.html:193
 msgid "Read more"
 msgstr "En apprendre davantage"
 
-#: osr/templates/osr/matchmaker.html:52 osr/templates/osr/transition.html:52
+#: osr/templates/osr/matchmaker.html:53 osr/templates/osr/transition.html:52
 msgid "Adult Learning"
 msgstr "Matchmaker de Programmes"
 
-#: osr/templates/osr/matchmaker.html:52 osr/templates/osr/transition.html:52
+#: osr/templates/osr/matchmaker.html:53 osr/templates/osr/transition.html:52
 msgid "Program Matchmaker"
 msgstr "d'Éducation des Adultes"
 
-#: osr/templates/osr/matchmaker.html:70
+#: osr/templates/osr/matchmaker.html:71
 msgid ""
 "If you're a resident of Ontario and looking to explore adult learning "
 "programs offered in the province, you're in the right place!"
-msgstr "Si vous êtes résident de l'Ontario et vous cherchez à explorer des programmes d'éducation pour adultes qui sont offerts dans la province, vous êtes au bon endroit !"
+msgstr ""
+"Si vous êtes résident de l'Ontario et vous cherchez à explorer des "
+"programmes d'éducation pour adultes qui sont offerts dans la province, vous "
+"êtes au bon endroit !"
 
-#: osr/templates/osr/matchmaker.html:71
+#: osr/templates/osr/matchmaker.html:72
 msgid ""
 "Answer a series of simple questions and we'll recommend programs that best "
 "match your situation"
-msgstr "Répondez quelques questions et on vous recommandera des programmes adaptés à votre situation"
+msgstr ""
+"Répondez quelques questions et on vous recommandera des programmes adaptés à "
+"votre situation"
 
-#: osr/templates/osr/matchmaker.html:72
+#: osr/templates/osr/matchmaker.html:73
 msgid "Start"
 msgstr "Commencez"
 
@@ -900,46 +945,49 @@ msgstr ""
 msgid "Compare programs"
 msgstr "Comparez ces programmes"
 
-#: osr/templates/osr/transition.html:168
+#: osr/templates/osr/transition.html:167
 msgid "Other Relevant Information"
 msgstr "Renseignements Utiles"
 
-#: osr/templates/osr/transition.html:178
+#: osr/templates/osr/transition.html:177
 msgid "Because you said..."
 msgstr "Puisque vous avez indiqué..."
 
-#: osr/templates/osr/transition.html:181
+#: osr/templates/osr/transition.html:180
 msgid "We recommend..."
 msgstr "On vous recommande..."
 
-#: osr/templates/osr/transition.html:209
+#: osr/templates/osr/transition.html:208
 msgid "Your Profile"
 msgstr "Votre Profil"
 
-#: osr/templates/osr/transition.html:216
+#: osr/templates/osr/transition.html:215
 msgid "Your personal information"
 msgstr "Votre information personnelle"
 
-#: osr/templates/osr/transition.html:260
+#: osr/templates/osr/transition.html:225
 msgid "Your goals"
 msgstr "Vos buts"
 
-#: osr/templates/osr/transition.html:267
+#: osr/templates/osr/transition.html:236
 msgid "Your needs"
 msgstr "Vos besoins"
 
-#: osr/templates/osr/transition.html:281
+#: osr/templates/osr/transition.html:255
 msgid "Redo quiz"
 msgstr "Refaire le quiz"
 
-#: osr/templates/osr/transition.html:282
+#: osr/templates/osr/transition.html:256
 msgid "Get results by e-mail"
 msgstr "Recevoir vos résultats par email"
 
-#: osr/templates/osr/transition.html:283
+#: osr/templates/osr/transition.html:257
 msgid "Download (PDF)"
 msgstr "Télécharger (PDF)"
 
-#: osr/templates/osr/transition.html:292
+#: osr/templates/osr/transition.html:266
 msgid "Send"
 msgstr "Envoyer"
+
+#~ msgid "Who can benefit?"
+#~ msgstr "Qui peut en bénéficier?"
