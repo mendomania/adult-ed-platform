@@ -12,7 +12,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail
 from easy_pdf.views import PDFTemplateView
 from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite 
-from .models import Recommendation, ProfileSection
+from .models import Recommendation, ProfileSection, DictionaryEntry
 
 ###########################################################################################
 #####                                      ALPHA                                      #####
@@ -41,6 +41,28 @@ def detail_program(request, program_code):
   set_lang(request)
 
   return render(request, 'osr/program.html', {'program': program})  
+
+def dictionary(request):
+  """ 
+  This view corresponds to the adult learning dictionary page.
+  This page will show definitions of terms that are difficult for adult learners to understand.
+  """
+
+  # All dictionary entries
+  entries = DictionaryEntry.objects.all().order_by('key') 
+  paramLang = "?lang=%s" % (translation.get_language())
+  return render(request, 'osr/dictionary.html', {'entries': entries, 'paramLang': paramLang})
+
+def feedback(request):
+  """ 
+  This view corresponds to the feedback page.
+  This page will show a survey form.
+  """
+
+  # All dictionary entries
+  #entries = DictionaryEntry.objects.all().order_by('key') 
+  paramLang = "?lang=%s" % (translation.get_language())
+  return render(request, 'osr/feedback.html', {'paramLang': paramLang})    
 
 def matchmaker(request):
   """ 
