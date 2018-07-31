@@ -1,0 +1,105 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Dictionary{% endblocktrans %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="row"">
+        <!-- Logo -->
+        <div class="small-6 columns">
+          <a href="https://ontario.ca/page/government-ontario">
+            <span class="logo-ontario" aria-hidden="true"></span>
+            <span class="visually-hidden">
+              {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+            </span>
+          </a>
+        </div>
+        <!-- Toggle language -->
+        <div class="small-6 columns">
+          <a onclick="toggleLanguage();" class="header-link right small">
+            {% blocktrans %}Français{% endblocktrans %}
+          </a>
+        </div> 
+      </div>
+    </header>
+
+    <!-- Feedback -->
+    <div class="minty columns small-12 text-center">
+      This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+    </div>
+    <br/>
+
+    <div>
+      <div class="row intro">
+        <div class="columns small-12 text-center">
+          <h1>
+            {% blocktrans %}Dictionary{% endblocktrans %}
+          </h1>
+        </div>
+      </div>     
+
+      <div class="row intro">
+        <div class="alert-box success columns small-12">
+          <h6>{% blocktrans %}Note{% endblocktrans %}:</h6> 
+          {% blocktrans %}The purpose of these definitions is to help people understand the terms we use on this website{% endblocktrans %}.<br/> 
+          {% blocktrans %}They are not intended to be legal definitions, and should not be treated as such{% endblocktrans %}.
+        </div>        
+        <div class="columns small-12">
+          {% for entry in entries %}
+          <hr/>
+          <h5>{{ entry.key }}</h5>
+          <p class="dico">
+            {{ entry.definition }}
+          </p>          
+          {% endfor %}
+        </div>
+      </div>                             
+    </div>  
+
+    <form name="setLangEng" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="en"/>
+    </form>
+
+    <form name="setLangFre" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="fr"/>
+    </form>   
+
+  </body>
+</html>
+
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  function toggleLanguage() {
+    if ('{{ LANGUAGE_CODE|lower }}' == 'en') {
+      document.setLangFre.submit();
+    } else {
+      document.setLangEng.submit();
+    }    
+  } 
+</script>
