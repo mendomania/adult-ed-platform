@@ -18,6 +18,10 @@ small.error {
 
 /*----- NEW -----*/
 
+.dico {
+  font-size: 1rem !important;
+}
+
 input.button-add {
   background-image: url(/images/buttons/add.png); /* 16px x 16px */
   background-color: transparent; /* make the button transparent */
