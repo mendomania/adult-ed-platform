@@ -460,3 +460,15 @@ class ProfileSection(models.Model):
   text = models.CharField(max_length=100, verbose_name=_('text'))
   order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
   section = models.CharField(max_length=12, choices=PRO_SECTIONS, verbose_name=_('section in profile'))
+
+@python_2_unicode_compatible
+class DictionaryEntry(models.Model):
+  class Meta:
+    verbose_name = _('dictionary entry')
+    verbose_name_plural = _('dictionary entries')  
+
+  def __str__(self):
+    return self.key 
+    
+  key = models.CharField(max_length=100, verbose_name=_('key'))
+  definition = models.CharField(max_length=500, verbose_name=_('definition'))
