@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from modeltranslation.translator import register, TranslationOptions
 from .models import Program, ProgramRegistrationSteps, ProgramBestForScenarios
-from .models import Outcome, Eligibility, Subject, Stream, Profession, Feature, Facility, Recommendation
-from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit, ProfileSection
+from .models import Outcome, Eligibility, Subject, Stream, Profession, Feature, Facility
+from .models import Recommendation, LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus
+from .models import Benefit, ProfileSection, DictionaryEntry
 
 @register(Program)
 class ProgramTranslationOptions(TranslationOptions):
@@ -71,3 +72,7 @@ class ImmigrationStatusTranslationOptions(TranslationOptions):
 @register(Benefit)
 class BenefitTranslationOptions(TranslationOptions):
   fields = ('text',)        
+
+@register(DictionaryEntry)
+class DictionaryEntryTranslationOptions(TranslationOptions):
+  fields = ('key', 'definition')  
