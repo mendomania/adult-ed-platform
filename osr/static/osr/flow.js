@@ -4,14 +4,10 @@ Vue.component('card', {
     template:`
 <div>
   <div class="row">
-    <div class="columns small-12 medium-10">
+    <div class="columns small-12 medium-12">
       <div class="bar-one bar-con">
         <div id="progressbar" class="bar" v-bind:style="{ width: progressBarWidth + '%' }"></div>
       </div>
-    </div>
-    <div class="columns small-12 medium-2 text-center">
-      <p v-if="lang == 'en'">{{ progressBarWidth }}% completed</p>
-      <p v-else>{{ progressBarWidth }}% complété</p>
     </div>
   </div>
   <div>
