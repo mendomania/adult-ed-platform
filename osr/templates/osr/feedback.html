@@ -47,20 +47,13 @@
 
     <div>
       <div class="row intro">
-        <div class="columns small-12 text-center">
-          <h1>
-            {% blocktrans %}Adult learning redesign feedback survey{% endblocktrans %}
-          </h1>
-        </div>
-      </div>     
-
-      <div class="row intro">
-        <div class="alert-box columns small-12">
-          <h6>{% blocktrans %}Note{% endblocktrans %}:</h6> 
-          {% blocktrans %}Share with us what you think about the new adult learning page{% endblocktrans %}.<br/> 
-          {% blocktrans %}We will use your feedback to improve future versions{% endblocktrans %}.
+        <div class="columns small-12">
+          <h1>{% blocktrans %}Adult learning redesign feedback survey{% endblocktrans %}</h1>
+          <p>{% blocktrans %}Share with us what you think about the new adult learning page{% endblocktrans %}.<br/>
+          {% blocktrans %}We will use your feedback to improve future versions{% endblocktrans %}.</p>
+          <hr/>
         </div>        
-      </div> 
+      </div>     
 
       {% if paramSuccess %}
       <div class="row intro">
@@ -86,22 +79,22 @@
         <div class="row intro">
           <div class="columns small-12">
             {% for field in form.visible_fields %}
-            <div style="margin-bottom:0.8rem;">
+            <div class="space-fields">
               <label for="{{ field.name }}"><h6>{{ field.label }}</h6></label>
 
               {% if form.is_bound %}
                 {% if field.errors %}
-                  {% render_field field style="border-color: #D90000; margin-bottom:0.5rem; margin-top:0rem;" %}
+                  {% render_field field class="space-option field-border-error" %}
                   {% for error in field.errors %}
-                    <div style="color:#D90000;">
+                    <div class="color-error">
                       {{ error }}
                     </div>
                   {% endfor %}
                 {% else %}
-                  {% render_field field style="border-color: green; margin-bottom:0.5rem; margin-top:0rem;" %}
+                  {% render_field field class="space-option field-border-green" %}
                 {% endif %}
               {% else %}
-                {% render_field field style="margin-bottom:0.5rem; margin-top:0rem;" %}
+                {% render_field field class="space-option" %}
               {% endif %}
 
               {% if field.help_text %}
