@@ -18,6 +18,27 @@ small.error {
 
 /*----- NEW -----*/
 
+.field-border-green {
+  border-color: green;
+}
+
+.color-error {
+  color: #D90000;
+}
+
+.field-border-error {
+  border-color: #D90000;
+}
+
+.space-fields {
+  margin-bottom:1.6rem;
+}
+
+.space-option {
+  margin-bottom: 0.5rem; 
+  margin-top: 0rem;
+}
+
 .dico {
   font-size: 1rem !important;
 }
