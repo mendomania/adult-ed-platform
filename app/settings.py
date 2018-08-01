@@ -147,6 +147,6 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/Users/smendoza/Documents/Dev/web/app/osr/static'
+STATIC_ROOT = 'osr/static'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
