@@ -1,0 +1,144 @@
+{% load i18n %}
+{% load static %}
+{% load widget_tweaks %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}Feedback{% endblocktrans %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/typography.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/foundation-grid.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/header.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/visibility.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/alignment.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/helpers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/colours.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/highlight-blocks.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/stats.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/buttons.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/forms.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'osr/ods/footer.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="row"">
+        <!-- Logo -->
+        <div class="small-6 columns">
+          <a href="https://ontario.ca/page/government-ontario">
+            <span class="logo-ontario" aria-hidden="true"></span>
+            <span class="visually-hidden">
+              {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+            </span>
+          </a>
+        </div>
+        <!-- Toggle language -->
+        <div class="small-6 columns">
+          <a onclick="toggleLanguage();" class="header-link right small">
+            {% blocktrans %}Français{% endblocktrans %}
+          </a>
+        </div> 
+      </div>
+    </header>
+
+    <div>
+      <div class="row intro">
+        <div class="columns small-12 text-center">
+          <h1>
+            {% blocktrans %}Adult learning redesign feedback survey{% endblocktrans %}
+          </h1>
+        </div>
+      </div>     
+
+      <div class="row intro">
+        <div class="alert-box columns small-12">
+          <h6>{% blocktrans %}Note{% endblocktrans %}:</h6> 
+          {% blocktrans %}Share with us what you think about the new adult learning page{% endblocktrans %}.<br/> 
+          {% blocktrans %}We will use your feedback to improve future versions{% endblocktrans %}.
+        </div>        
+      </div> 
+
+      {% if paramSuccess %}
+      <div class="row intro">
+        <div class="alert-box success columns small-12">
+          {% blocktrans %}Form submitted successfully. Thank you for your feedback!{% endblocktrans %}<br/> 
+        </div>        
+      </div> 
+      {% endif %}
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+            {% if form.non_field_errors %}
+              {% for error in form.non_field_errors %}
+              <div class="row intro">
+                <div class="alert-box alert columns small-12">              
+                  {{ error }}
+                </div>
+              </div>                  
+              {% endfor %}
+            {% endif %}
+
+        <div class="row intro">
+          <div class="columns small-12">
+            {% for field in form.visible_fields %}
+            <div style="margin-bottom:0.8rem;">
+              <label for="{{ field.name }}"><h6>{{ field.label }}</h6></label>
+
+              {% if form.is_bound %}
+                {% if field.errors %}
+                  {% render_field field style="border-color: #D90000; margin-bottom:0.5rem; margin-top:0rem;" %}
+                  {% for error in field.errors %}
+                    <div style="color:#D90000;">
+                      {{ error }}
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  {% render_field field style="border-color: green; margin-bottom:0.5rem; margin-top:0rem;" %}
+                {% endif %}
+              {% else %}
+                {% render_field field style="margin-bottom:0.5rem; margin-top:0rem;" %}
+              {% endif %}
+
+              {% if field.help_text %}
+                <small>{{ field.help_text }}</small>
+              {% endif %}
+            </div>
+            {% endfor %}
+
+            <button type="submit">{% blocktrans %}Submit{% endblocktrans %}</button>          
+        </div>
+      </div>
+      </form>
+    </div>  
+
+    <form name="setLangEng" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="en"/>
+    </form>
+
+    <form name="setLangFre" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="fr"/>
+    </form>   
+
+  </body>
+</html>
+
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  function toggleLanguage() {
+    if ('{{ LANGUAGE_CODE|lower }}' == 'en') {
+      document.setLangFre.submit();
+    } else {
+      document.setLangEng.submit();
+    }    
+  } 
+</script>
