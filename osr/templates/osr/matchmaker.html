@@ -49,7 +49,7 @@
 
       <!-- Feedback -->
       <div class="minty columns small-12 text-center">
-        This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+        {% blocktrans %}This page will be improved using your feedback{% endblocktrans %}. <a href="{% url 'osr:feedback' %}" target="_blank">{% blocktrans %}Please tell us what you think{% endblocktrans %}.</a>
       </div>
       <br/>      
 
@@ -90,7 +90,19 @@
         <input type="hidden" name="dico" v-model="JSON.stringify(dico)" value="dico">
       </form>        
       </div>
-    </div>     
+    </div>  
+
+    <form name="setLangEng" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="en"/>
+    </form>
+
+    <form name="setLangFre" action="/i18n/setlang/" method="POST">
+      {% csrf_token %}
+      <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+      <input type="hidden" name="language" value="fr"/>
+    </form>   
 
   </body>
 </html>
@@ -99,3 +111,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{% static 'osr/vue.min.js' %}"></script>
 <script src="{% static 'osr/flow.js' %}"></script>
+<script>
+  function toggleLanguage() {
+    if ('{{ LANGUAGE_CODE|lower }}' == 'en') {
+      document.setLangFre.submit();
+    } else {
+      document.setLangEng.submit();
+    }    
+  } 
+</script>
