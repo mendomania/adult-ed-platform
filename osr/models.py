@@ -462,13 +462,36 @@ class ProfileSection(models.Model):
   section = models.CharField(max_length=12, choices=PRO_SECTIONS, verbose_name=_('section in profile'))
 
 @python_2_unicode_compatible
-class DictionaryEntry(models.Model):
+class GlossaryEntry(models.Model):
   class Meta:
-    verbose_name = _('dictionary entry')
-    verbose_name_plural = _('dictionary entries')  
+    verbose_name = _('glossary entry')
+    verbose_name_plural = _('glossary entries')  
 
   def __str__(self):
     return self.key 
     
   key = models.CharField(max_length=100, verbose_name=_('key'))
   definition = models.CharField(max_length=500, verbose_name=_('definition'))
+
+@python_2_unicode_compatible
+class Feedback(models.Model):
+  class Meta:
+    verbose_name = _('feedback') 
+    verbose_name_plural = _('feedback') 
+    ordering = ['created'] 
+
+  def __str__(self):
+    return str(self.created)
+    
+  purpose_of_visit = models.CharField(max_length=50, verbose_name=_('What was the purpose of your visit today?'))
+  found_what_i_was_looking_for = models.CharField(max_length=10, verbose_name=_('Did you find what you were looking for?'))
+  website_easy_to_navigate = models.CharField(max_length=10, verbose_name=_('Is the adult learning website easy to navigate?'))
+  information_easy_to_understand = models.CharField(max_length=10, verbose_name=_('Is the information easy to understand?'))
+  matchmaker_easy_to_use = models.CharField(max_length=10, verbose_name=_('If you used the matchmaker, was it easy to use?'))
+  matchmaker_helpful = models.CharField(max_length=10, verbose_name=_('If you used the matchmaker, did it help you find a program?'))
+  rating = models.CharField(max_length=50, verbose_name=_('Please rate the overall experience you had with the adult learning website'))
+  type_of_user = models.CharField(max_length=50, verbose_name=_('You are visiting the adult learning website as a:'))
+  most_useful_feature = models.CharField(max_length=50, verbose_name=_('What feature helped you find a program?'))
+  content_or_feature_request = models.CharField(max_length=2000, verbose_name=_('What other information or feature would make this website more useful for you?'))
+  general_comment = models.CharField(max_length=2000, verbose_name=_('Share any comment you have about the adult learning website'))
+  created = models.DateTimeField(auto_now_add=True, verbose_name=_('Timestamp'))

@@ -10,7 +10,7 @@ urlpatterns = [
     # Matchmaker page
     url(r'matchmaker/$', views.matchmaker, name='matchmaker'),
     # Static glossary page
-    url(r'dictionary/$', views.dictionary, name='dictionary'),   
+    url(r'glossary/$', views.glossary, name='glossary'),   
     # Static feedback page
     url(r'feedback/$', views.feedback, name='feedback'),        
 
