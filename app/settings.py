@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'smart_selects',
+    'widget_tweaks',
     'easy_pdf'
 ]
 
@@ -149,4 +150,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/Users/smendoza/Documents/Dev/web/app/osr/static'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-

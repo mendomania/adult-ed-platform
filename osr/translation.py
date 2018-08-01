@@ -3,7 +3,7 @@ from modeltranslation.translator import register, TranslationOptions
 from .models import Program, ProgramRegistrationSteps, ProgramBestForScenarios
 from .models import Outcome, Eligibility, Subject, Stream, Profession, Feature, Facility
 from .models import Recommendation, LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus
-from .models import Benefit, ProfileSection, DictionaryEntry
+from .models import Benefit, ProfileSection, GlossaryEntry
 
 @register(Program)
 class ProgramTranslationOptions(TranslationOptions):
@@ -73,6 +73,6 @@ class ImmigrationStatusTranslationOptions(TranslationOptions):
 class BenefitTranslationOptions(TranslationOptions):
   fields = ('text',)        
 
-@register(DictionaryEntry)
-class DictionaryEntryTranslationOptions(TranslationOptions):
+@register(GlossaryEntry)
+class GlossaryEntryTranslationOptions(TranslationOptions):
   fields = ('key', 'definition')  

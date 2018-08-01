@@ -11,8 +11,9 @@ from django.utils import translation
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail
 from easy_pdf.views import PDFTemplateView
+from .forms import FeedbackForm
 from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite 
-from .models import Recommendation, ProfileSection, DictionaryEntry
+from .models import Recommendation, ProfileSection, GlossaryEntry, Feedback
 
 ###########################################################################################
 #####                                      ALPHA                                      #####
@@ -42,16 +43,16 @@ def detail_program(request, program_code):
 
   return render(request, 'osr/program.html', {'program': program})  
 
-def dictionary(request):
+def glossary(request):
   """ 
-  This view corresponds to the adult learning dictionary page.
+  This view corresponds to the adult learning glossary page.
   This page will show definitions of terms that are difficult for adult learners to understand.
   """
 
-  # All dictionary entries
-  entries = DictionaryEntry.objects.all().order_by('key') 
+  # All glossary entries
+  entries = GlossaryEntry.objects.all().order_by('key') 
   paramLang = "?lang=%s" % (translation.get_language())
-  return render(request, 'osr/dictionary.html', {'entries': entries, 'paramLang': paramLang})
+  return render(request, 'osr/glossary.html', {'entries': entries, 'paramLang': paramLang})
 
 def feedback(request):
   """ 
@@ -59,10 +60,33 @@ def feedback(request):
   This page will show a survey form.
   """
 
-  # All dictionary entries
-  #entries = DictionaryEntry.objects.all().order_by('key') 
+  paramSuccess = False
+  # If this is a POST request we need to process the form data
+  if request.method == 'POST':
+    # Create a form instance and populate it with data from the request
+    form = FeedbackForm(request.POST)
+    # Check whether it's valid
+    if form.is_valid():
+      feedback_record = Feedback.objects.create(
+        purpose_of_visit = form.cleaned_data.get('purpose_of_visit'),
+        found_what_i_was_looking_for = form.cleaned_data.get('found_what_i_was_looking_for'),
+        website_easy_to_navigate = form.cleaned_data.get('website_easy_to_navigate'),
+        information_easy_to_understand = form.cleaned_data.get('information_easy_to_understand'),
+        matchmaker_easy_to_use = form.cleaned_data.get('matchmaker_easy_to_use'),
+        matchmaker_helpful = form.cleaned_data.get('matchmaker_helpful'),
+        rating = form.cleaned_data.get('rating'),
+        type_of_user = form.cleaned_data.get('type_of_user'),
+        most_useful_feature = form.cleaned_data.get('most_useful_feature'),
+        content_or_feature_request = form.cleaned_data.get('content_or_feature_request'),
+        general_comment = form.cleaned_data.get('general_comment')
+      )
+      paramSuccess = True
+  # If a GET (or any other method) we'll create a blank form
+  else:
+    form = FeedbackForm()    
+
   paramLang = "?lang=%s" % (translation.get_language())
-  return render(request, 'osr/feedback.html', {'paramLang': paramLang})    
+  return render(request, 'osr/feedback.html', {'form': form, 'paramLang': paramLang, 'paramSuccess': paramSuccess})  
 
 def matchmaker(request):
   """ 
@@ -167,7 +191,7 @@ def set_lang(request):
   """ Set language that was passed in as a parameter in the URL """  
   lan_filter = request.GET.getlist('lang')
   if lan_filter and lan_filter[0]:
-    translation.activate(lan_filter[0])  
+    translation.activate(lan_filter[0])    
 
 class ResultsPDFView(PDFTemplateView):
   """ 
@@ -329,6 +353,8 @@ def save_program_matches_to_cache(dico, request):
   if 'matches' not in request.session:
     request.session['matches'] = []
 
+  print '@@@ [1]: ', request.session['matches']
+
   # Language programs
   if 'program_lang' in dico and 'lang_target' in dico:
     if dico['lang_target'] == 'English':
@@ -347,7 +373,7 @@ def save_program_matches_to_cache(dico, request):
   if 'program_cert' in dico:
     codelist.append('ADC')
     request.session['matches'].append('ADC')     
-  if 'hs_goal_work' in dico or 'hs_goal_university' in dico or 'hs_goal_college' in dico:
+  if 'profile_hs_goal_work' in dico or 'profile_hs_goal_university' in dico or 'profile_hs_goal_college' in dico:
     codelist.append('GED')
     request.session['matches'].append('GED')  
     if 'ADC' not in codelist:
@@ -359,6 +385,8 @@ def save_program_matches_to_cache(dico, request):
     codelist.append('BTP')
     request.session['matches'].append('BTP') 
 
+  print '@@@ [2]: ', request.session['matches']    
+
   print codelist
   return filter_program_matches(codelist)
 
@@ -369,7 +397,7 @@ def save_program_matches_to_cache(dico, request):
 def save_recommendations_to_cache(dico, request):
   recolist = []
 
-  if 'hs_goal_apprenticeship' in dico:
+  if 'profile_hs_goal_apprenticeship' in dico:
     recolist.append('apprenticeship')
     request.session['apprenticeship'] = 'T'
 
@@ -377,11 +405,11 @@ def save_recommendations_to_cache(dico, request):
     recolist.append('plar')
     request.session['plar'] = 'T'
 
-  if 'status_pr' in dico:
+  if 'profile_basic_status_pr' in dico:
     recolist.append('status_pr')
     request.session['status_pr'] = 'T'
 
-  if 'hs_goal_work' in dico:
+  if 'profile_hs_goal_work' in dico:
     recolist.append('hs_goal_work')
     request.session['hs_goal_work'] = 'T'        
 
@@ -401,24 +429,28 @@ def save_learner_profile_to_cache(dico, request):
   # Replace placeholders
   patObj = re.compile(r'#(.+?)#')
   for section in sections:
-    text_en = section.text_en
-    text_fr = section.text_fr
+    text_en = section.text_en.encode('utf-8')
+    text_fr = section.text_fr.encode('utf-8')
 
+    print '[EN1]:', text_en
     if '%' in text_en:
-      text_en = text_en.replace('%', dico[section.code])
+      text_en = text_en.replace('%', dico[section.code].encode('utf-8'))
     if '#' in text_en:
       matches = re.findall(patObj, text_en)
       if matches:        
         for match in matches:
-          text_en = text_en.replace('#%s#' % (match), dico[match])            
+          text_en = text_en.replace('#%s#' % (match), dico[match].encode('utf-8'))            
+    print '[EN2]:', text_en
 
+    print '[FR1]:', text_fr
     if '%' in text_fr:
-      text_fr = text_fr.replace('%', dico[section.code])
+      text_fr = text_fr.replace('%', dico[section.code].encode('utf-8'))
     if '#' in text_fr:      
       matches = re.findall(patObj, text_fr)
       if matches:        
         for match in matches:
-          text_fr = text_fr.replace('#%s#' % (match), dico[match])            
+          text_fr = text_fr.replace('#%s#' % (match), dico[match].encode('utf-8'))            
+    print '[FR2]:', text_fr
 
     if section.section == 'Information':
       profile_lines_basic.append({ 'en': text_en, 'fr': text_fr })
