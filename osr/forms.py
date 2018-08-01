@@ -17,7 +17,7 @@ class FeedbackForm(forms.Form):
       ('get matched to a program', _('Get matched to a program')),
       ('other', _('Other'))
     ),
-    label = _("What was the purpose of your visit today?")
+    label = _("1. What was the purpose of your visit today?")
   )
 
   found_what_i_was_looking_for = forms.ChoiceField(
@@ -28,7 +28,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _("Did you find what you were looking for?")
+    label = _("2. Did you find what you were looking for?")
   )  
 
   website_easy_to_navigate = forms.ChoiceField(
@@ -39,7 +39,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _("Is the adult learning website easy to navigate?")
+    label = _("3. Is the adult learning website easy to navigate?")
   )  
 
   information_easy_to_understand = forms.ChoiceField(
@@ -50,7 +50,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _("Is the information easy to understand?")
+    label = _("4. Is the information easy to understand?")
   )  
 
   matchmaker_easy_to_use = forms.ChoiceField(
@@ -61,7 +61,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _('If you used the matchmaker, was it easy to use?')
+    label = _('5. If you used the matchmaker, was it easy to use?')
   )  
 
   matchmaker_helpful = forms.ChoiceField(
@@ -72,7 +72,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _("If you used the matchmaker, did it help you find a program?")
+    label = _("6. If you used the matchmaker, did it help you find a program?")
   )  
 
   rating = forms.ChoiceField(
@@ -86,7 +86,7 @@ class FeedbackForm(forms.Form):
       ('unsatisfied', _('Unsatisfied')),
       ('very unsatisfied', _('Very unsatisfied')),
     ),
-    label = _("Please rate the overall experience you had with the adult learning website")
+    label = _("7. Please rate the overall experience you had with the adult learning website")
   )  
 
   type_of_user = forms.ChoiceField(
@@ -102,7 +102,7 @@ class FeedbackForm(forms.Form):
       ('counsellor', _('Counsellor')),
       ('other', 'Other')
     ),
-    label = _("You are visiting the adult learning website as a:")
+    label = _("8. You are visiting the adult learning website as a:")
   )  
 
   most_useful_feature = forms.ChoiceField(
@@ -116,27 +116,29 @@ class FeedbackForm(forms.Form):
       ('live chat', _('Live chat')),
       ('other', _('Other'))
     ),
-    label = _("What feature helped you find a program?")
+    label = _("9. What feature helped you find a program?")
   )                
 
   content_or_feature_request = forms.CharField(
+    required = False,
     max_length = 2000,
     widget = forms.Textarea(
       attrs = {
         'placeholder': _('Write your comment here...')
       }
     ),
-    label = _("What other information or feature would make this website more useful for you?")
+    label = _("10. What other information or feature would make this website more useful for you? (Optional)")
   )  
 
   general_comment = forms.CharField(
+    required = False,                                    
     max_length = 2000,
     widget = forms.Textarea(
       attrs = {
         'placeholder': _('Write your comment here...')
       }
     ),
-    label = _("Share any comment you have about the adult learning website")
+    label = _("11. Share any comment you have about the adult learning website (Optional)")
   )  
 
   def clean(self):
@@ -149,9 +151,7 @@ class FeedbackForm(forms.Form):
     col06 = cleaned_data.get('matchmaker_helpful')    
     col07 = cleaned_data.get('rating')
     col08 = cleaned_data.get('type_of_user')
-    col09 = cleaned_data.get('most_useful_feature')    
-    col10 = cleaned_data.get('content_or_feature_request')
-    col11 = cleaned_data.get('general_comment')        
-    if not col01 or not col02 or not col03 or not col04 or not col05 or not col06 \
-      or not col07 or not col08 or not col09 or not col10 or not col11:
+    col09 = cleaned_data.get('most_useful_feature')         
+    if not col01 or not col02 or not col03 or not col04 or not col05 \
+      or not col06 or not col07 or not col08 or not col09:
       raise forms.ValidationError(_('Please correct the errors in this form and submit it again.'))
