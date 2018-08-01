@@ -46,36 +46,28 @@
 
     <!-- Feedback -->
     <div class="minty columns small-12 text-center">
-      This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+      {% blocktrans %}This page will be improved using your feedback{% endblocktrans %}. <a href="{% url 'osr:feedback' %}" target="_blank">{% blocktrans %}Please tell us what you think{% endblocktrans %}.</a>
     </div>
     <br/>
 
-    <div>
-      <div class="row intro">
-        <div class="columns small-12 text-center">
-          <h1>
-            {% blocktrans %}Glossary{% endblocktrans %}
-          </h1>
-        </div>
-      </div>     
-
-      <div class="row intro">
-        <div class="alert-box columns small-12">
-          <h6>{% blocktrans %}Note{% endblocktrans %}:</h6> 
-          {% blocktrans %}The purpose of these definitions is to help people understand the terms we use on this website{% endblocktrans %}.<br/> 
-          {% blocktrans %}They are not intended to be legal definitions, and should not be treated as such{% endblocktrans %}.
-        </div>        
-        <div class="columns small-12">
-          {% for entry in entries %}
-          <hr/>
-          <h5>{{ entry.key }}</h5>
-          <p class="dico">
-            {{ entry.definition }}
-          </p>          
-          {% endfor %}
-        </div>
-      </div>                             
-    </div>  
+    <div class="row intro">
+      <div class="columns small-12">
+        <h1>{% blocktrans %}Glossary{% endblocktrans %}</h1>
+        <p>{% blocktrans %}The purpose of these definitions is to help you understand the terms we use when describing adult education programs{% endblocktrans %}.</p>
+        <hr/>
+        {% for entry in entries %}        
+        <h5>{{ entry.key }}</h5>
+        <p class="dico">
+          {{ entry.definition }}
+        </p>          
+        <hr/>
+        {% endfor %}
+      </div>
+      <div class="alert-box columns small-12">
+        <h6>{% blocktrans %}Note{% endblocktrans %}:</h6> 
+        {% blocktrans %}These glossary definitions are not intended to be legal definitions, and should not be treated as such{% endblocktrans %}.<br/> 
+      </div>                
+    </div>                             
 
     <form name="setLangEng" action="/i18n/setlang/" method="POST">
       {% csrf_token %}
