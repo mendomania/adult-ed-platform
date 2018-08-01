@@ -45,14 +45,19 @@
       </div>
     </header>  
 
+    <!-- Feedback -->
+    <div class="minty columns small-12 text-center">
+      This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+    </div>
+    <br/>
+
     <div class="banner-setup">      
       <br/>
       <div class="row intro banner-space">
           <div class="columns small-12">
             <br/>
             <h1>{% blocktrans %}Adult learning{% endblocktrans %}</h1>
-            <p>Adult learning offers programs for adults who want to complete their high school education, 
-            earn high school credits or improve their language or computer skills.</p>
+            <p>Adult learning offers programs for those who want to upgrade their skills, get their high school diploma, earn credits and/or improve their language skills.</p>
         </div>        
       </div>
     </div>  
@@ -64,22 +69,22 @@
     <div class="row">
       <div class="columns small-4 text-center">
         <img src="../../../static/osr/images/tutoring.png" width="75px" height="75px" alt="Refresh your skills"/>
-        <p>Upgrade your skills to gain better job opportunities, develop confidence, and to pursue further education</p>
+        <p>Upgrade your skills to get better job opportunities, develop confidence and pursue further education</p>
       </div>
       <div class="columns small-4 text-center">
         <img src="../../../static/osr/images/goal.png" width="75px" height="75px" alt="Earn an Ontario Secondary School Diploma"/>
-        <p>Get the official Ontario high school diploma and/or earn the marks needed for post-secondary education</p>
+        <p>Get your Ontario high school diploma and/or earn the marks needed for post-secondary education</p>
       </div>
       <div class="columns small-4 text-center">
         <img src="../../../static/osr/images/counselling.png" width="75px" height="75px" alt="Adapt your international skills to Canada"/>
-        <p>As a highly skilled immigrant, prepare to continue your career in Canada.</p>
+        <p>Learn English and French as an immigrant or refugee.</p>
       </div>            
     </div>  
 
     <div class="row">
       <br/>
       <div class="columns small-12 text-center">        
-        <p>Use the Adult Learning Program Matcher to find programs that match your goals</p>
+        <p>Use the Adult Learning Program Matcher to find a program that best matches your goals</p>
         <a href="{% url 'osr:matchmaker' %}{{ paramLang }}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
       </div>
     </div>  
@@ -93,10 +98,10 @@
         <h3>{% blocktrans %}Who can benefit from adult learning programs?{% endblocktrans %}</h3>
         <ul>
           <li>Adult residents of Ontario (at least 18 or 19 years of age, depending on the program).</li>
-          <li>Those who want to improve their skills towards education, employment, apprenticeship or self-confidence.</li>
-          <li>Those who want to get an Ontario high school diploma or earn credits for post-secondary education.</li>
+          <li>Those who want to improve their skills towards education, apprenticeship, employment and/or self-confidence.</li>
+          <li>Those who want to get an Ontario high school diploma and/or earn credits for post-secondary education.</li>
           <li>Immigrants who want to improve their language skills in English or French.</li>
-          <li>Highly skilled newcomers who want to continue working in their fields.</li>
+          <li>Highly skilled immigrants who want to continue working in their fields.</li>
         </ul>
       </div>
       <hr/>
@@ -133,8 +138,7 @@
       <br/>
       <div class="row">
         <div class="columns small-12 text-center">
-          <h4>{% blocktrans %}Not sure which program is best for you?{% endblocktrans %}</h4>
-          <p>Use the Adult Learning Program Matcher to find a program that best matches your goals</p>
+          <h4>{% blocktrans %}Not sure which program is best for you?{% endblocktrans %}</h4>          
         </div>      
       </div> 
       <div class="row">
@@ -142,7 +146,7 @@
           <img src="../../../static/osr/images/widget.png" width="450em" height="265em" alt="Matchmaker"/>
         </div>
         <div class="columns small-12 medium-5">
-          <p><br/><br/>This tool will help you find programs that are best suited for you based on your situation, goals and needs.</p>
+          <p><br/><br/>Use the Adult Learning Program Matcher to find a program that best matches your goals and needs.</p>
           <a href="{% url 'osr:matchmaker' %}{{ paramLang }}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
         </div>        
       </div>
@@ -187,11 +191,11 @@
       <div class="columns small-12 medium-12 large-4">
         <div class="block2">
           <br/>
-          <h6 class="text-center">{% blocktrans %}Dictionary{% endblocktrans %}</h6>
+          <h6 class="text-center">{% blocktrans %}Glossary{% endblocktrans %}</h6>
           <p>If you need help understanding some adult learning terms, have a look at the glossary.</p>          
         </div>
         <div class="text-center">
-          <a class="button">{% blocktrans %}Read more{% endblocktrans %}</a>
+          <a href="{% url 'osr:glossary' %}{{ paramLang }}" class="button">{% blocktrans %}Read more{% endblocktrans %}</a>
         </div>        
       </div>      
     </div> 

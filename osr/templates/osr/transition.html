@@ -44,6 +44,12 @@
       </div>
     </header>
 
+    <!-- Feedback -->
+    <div class="minty columns small-12 text-center">
+      This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+    </div>
+    <br/>
+
     <div>
 
       <div class="row intro">
@@ -56,7 +62,7 @@
 
       {% if wasEmailSent %}
       <div class="row">
-        <div class="columns small-12 text-center blue-bg">
+        <div class="alert-box success columns small-12 text-center">
           {% blocktrans %}E-mail sent to{% endblocktrans %} {{ emailAddress }}
         </div>
         <br/>

@@ -40,15 +40,22 @@
           </div>
           <!-- Toggle language -->
           <div class="small-6 columns">
-            <a v-if="lang == 'en'" @click="updtLang" class="header-link right small">Français</a>
-            <a v-else @click="updtLang" class="header-link right small">English</a>
-          </div>      
+            <a onclick="toggleLanguage();" class="header-link right small">
+              {% blocktrans %}Français{% endblocktrans %}
+            </a>
+          </div>       
         </div>
       </header>
 
+      <!-- Feedback -->
+      <div class="minty columns small-12 text-center">
+        This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+      </div>
+      <br/>      
+
       <div class="row intro">
         <div class="columns small-12 text-center">
-          <h1 v-if="lang == 'en'">
+          <h1>
             {% blocktrans %}Adult Learning{% endblocktrans %}<br/>{% blocktrans %}Program Matchmaker{% endblocktrans %}
           </h1>
         </div>
@@ -78,7 +85,7 @@
         <card :card="cards[currentCard]" :lang="lang" :dico="dico" :checkOpts="checkOpts" :radioOpts="radioOpts" :inputOpts="inputOpts" v-on:next="nextCard" v-on:back="backCard"></card>
       </div>         
 
-      <form id="jsform" action="/osr/transition/" method="post">
+      <form id="jsform" action="{% url 'osr:transition' %}" method="post">
         {% csrf_token %}
         <input type="hidden" name="dico" v-model="JSON.stringify(dico)" value="dico">
       </form>        

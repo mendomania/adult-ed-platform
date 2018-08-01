@@ -46,6 +46,12 @@
       </div>
     </header>
 
+    <!-- Feedback -->
+    <div class="minty columns small-12 text-center">
+      This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+    </div>
+    <br/>
+
     <div class="row intro">
       <div class="columns small-12 text-center">
         <h1>{% blocktrans %}Compare adult learning programs{% endblocktrans %}</h1>
@@ -101,7 +107,7 @@
         <div class="row10 padding-inner-h {% cycle 'c-elem1' 'c-elem2' %}">
           <br/>
           {% if forloop.first %}
-          <h5>{% blocktrans %}Who can benefit?{% endblocktrans %}</h5>
+          <h5>{% blocktrans %}Best if:{% endblocktrans %}</h5>
           {% endif %}
         </div> 
         <div class="row11 padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
