@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-01 22:38-0400\n"
+"POT-Creation-Date: 2018-08-02 14:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr "Scénarios best for"
 msgid "Useful external links"
 msgstr "Liens externes utiles"
 
-#: osr/admin.py:57 osr/admin.py:73 osr/admin.py:116
+#: osr/admin.py:57 osr/admin.py:72 osr/admin.py:115
 msgid "BASIC INFORMATION"
 msgstr "INFORMATION DE BASE"
 
@@ -92,51 +92,47 @@ msgstr "OPTIONS"
 msgid "ELIGIBLE IMMIGRATION STATUS"
 msgstr "STATUTS d'IMMIGRANT ADMISSIBLES"
 
-#: osr/admin.py:63
-msgid "LOGO"
-msgstr "LOGO"
-
-#: osr/admin.py:74
+#: osr/admin.py:73
 msgid "REPRESENTATIVE OF SERVICE PROVIDER IN OUR SYSTEM"
 msgstr "RÉPRESENTANT DU FOURNISSEUR DE SERVICES DANS LE SYSTÈME"
 
-#: osr/admin.py:75
+#: osr/admin.py:74
 msgid "CONTACT"
 msgstr "CONTACT"
 
-#: osr/admin.py:76 osr/admin.py:85
+#: osr/admin.py:75 osr/admin.py:84
 msgid "ADDRESS"
 msgstr "ADRESS"
 
-#: osr/admin.py:77
+#: osr/admin.py:76
 msgid "PROGRAMS"
 msgstr "PROGRAMMES"
 
-#: osr/admin.py:83
+#: osr/admin.py:82
 msgid "MAIN BRANCH"
 msgstr "TÊTE"
 
-#: osr/admin.py:84
+#: osr/admin.py:83
 msgid "NAME OF SITE"
 msgstr "NOM DU SITE"
 
-#: osr/admin.py:117
+#: osr/admin.py:116
 msgid "SPECIFIC SUBJECTS OF THIS OFFERING"
 msgstr "MATIÈRES DE CE COURS"
 
-#: osr/admin.py:118
+#: osr/admin.py:117
 msgid "SPECIFIC OUTCOMES OF THIS OFFERING"
 msgstr "OBJECTIFS DE CE COURS"
 
-#: osr/admin.py:119
+#: osr/admin.py:118
 msgid "SPECIFIC REQUIREMENTS OF THIS OFFERING"
 msgstr "CONDITIONS DE CE COURS"
 
-#: osr/admin.py:120
+#: osr/admin.py:119
 msgid "SPECIFIC STREAMS OF THIS OFFERING"
 msgstr "GROUPES CIBLES DE CE COURS"
 
-#: osr/admin.py:121
+#: osr/admin.py:120
 msgid "CLB LEVELS"
 msgstr "NIVEAUX NCLC"
 
@@ -378,6 +374,20 @@ msgstr "Buts"
 #: osr/models.py:16
 msgid "Needs"
 msgstr "Besoins"
+
+#: osr/models.py:22 osr/models.py:119 osr/models.py:132 osr/models.py:145
+#: osr/models.py:276
+#, fuzzy
+#| msgid "Program"
+msgid "program"
+msgstr "Programme"
+
+#: osr/models.py:23 osr/models.py:227 osr/models.py:239 osr/models.py:252
+#: osr/models.py:264
+#, fuzzy
+#| msgid "%d programs"
+msgid "programs"
+msgstr "%d programmes"
 
 #: osr/models.py:28
 msgid "official name"
@@ -848,26 +858,26 @@ msgstr "Comparaison"
 
 #: osr/templates/osr/comparison.html:36 osr/templates/osr/feedback.html:35
 #: osr/templates/osr/glossary.html:34 osr/templates/osr/intro.html:35
-#: osr/templates/osr/matchmaker.html:37 osr/templates/osr/program.html:35
-#: osr/templates/osr/transition.html:34
+#: osr/templates/osr/matchmaker.html:41 osr/templates/osr/matchmaker.html:88
+#: osr/templates/osr/program.html:35 osr/templates/osr/transition.html:34
 msgid "Government of Ontario home page"
 msgstr "Page d'accueil du Gouvernement de l'Ontario"
 
 #: osr/templates/osr/comparison.html:43 osr/templates/osr/feedback.html:42
 #: osr/templates/osr/glossary.html:41 osr/templates/osr/intro.html:42
-#: osr/templates/osr/matchmaker.html:44 osr/templates/osr/program.html:42
+#: osr/templates/osr/matchmaker.html:48 osr/templates/osr/program.html:42
 #: osr/templates/osr/transition.html:41
 msgid "Français"
 msgstr "English"
 
 #: osr/templates/osr/comparison.html:51 osr/templates/osr/glossary.html:49
-#: osr/templates/osr/intro.html:50 osr/templates/osr/matchmaker.html:52
+#: osr/templates/osr/intro.html:50 osr/templates/osr/matchmaker.html:56
 #: osr/templates/osr/program.html:50 osr/templates/osr/transition.html:49
 msgid "This page will be improved using your feedback"
 msgstr "Cette page sera améliorée à l'aide de vos commentaires"
 
 #: osr/templates/osr/comparison.html:51 osr/templates/osr/glossary.html:49
-#: osr/templates/osr/intro.html:50 osr/templates/osr/matchmaker.html:52
+#: osr/templates/osr/intro.html:50 osr/templates/osr/matchmaker.html:56
 #: osr/templates/osr/program.html:50 osr/templates/osr/transition.html:49
 msgid "Please tell us what you think"
 msgstr "Dites-nous ce que vous en pensez"
@@ -927,6 +937,7 @@ msgstr ""
 "%(number)s programmes qui pourraient vous intéresser"
 
 #: osr/templates/osr/email.html:19 osr/templates/osr/print.html:71
+#: osr/views.py:268
 msgid "My results"
 msgstr "Mes résultats"
 
@@ -938,15 +949,15 @@ msgstr "Nom du programme"
 msgid "Description and link"
 msgstr "Description et lien"
 
-#: osr/templates/osr/email.html:38 osr/templates/osr/print.html:98
+#: osr/templates/osr/email.html:39 osr/templates/osr/print.html:99
 msgid "My recommendations"
 msgstr "Mes recommandations"
 
-#: osr/templates/osr/email.html:41
+#: osr/templates/osr/email.html:42
 msgid "Because you said"
 msgstr "Puisque vous avez indiqué"
 
-#: osr/templates/osr/email.html:42
+#: osr/templates/osr/email.html:43
 msgid "We recommend"
 msgstr "On vous recommande"
 
@@ -1053,17 +1064,17 @@ msgstr "Demande de rendez-vous"
 msgid "Read more"
 msgstr "En apprendre davantage"
 
-#: osr/templates/osr/matchmaker.html:59 osr/templates/osr/print.html:59
+#: osr/templates/osr/matchmaker.html:63 osr/templates/osr/print.html:59
 #: osr/templates/osr/transition.html:58
 msgid "Adult Learning"
 msgstr "Matchmaker de Programmes"
 
-#: osr/templates/osr/matchmaker.html:59 osr/templates/osr/print.html:59
+#: osr/templates/osr/matchmaker.html:63 osr/templates/osr/print.html:59
 #: osr/templates/osr/transition.html:58
 msgid "Program Matchmaker"
 msgstr "d'Éducation des Adultes"
 
-#: osr/templates/osr/matchmaker.html:77
+#: osr/templates/osr/matchmaker.html:73
 msgid ""
 "If you're a resident of Ontario and looking to explore adult learning "
 "programs offered in the province, you're in the right place!"
@@ -1072,7 +1083,7 @@ msgstr ""
 "programmes d'éducation pour adultes qui sont offerts dans la province, vous "
 "êtes au bon endroit !"
 
-#: osr/templates/osr/matchmaker.html:78
+#: osr/templates/osr/matchmaker.html:74
 msgid ""
 "Answer a series of simple questions and we'll recommend programs that best "
 "match your situation"
@@ -1080,7 +1091,7 @@ msgstr ""
 "Répondez quelques questions et on vous recommandera des programmes adaptés à "
 "votre situation"
 
-#: osr/templates/osr/matchmaker.html:79
+#: osr/templates/osr/matchmaker.html:75
 msgid "Start"
 msgstr "Commencez"
 
@@ -1092,15 +1103,15 @@ msgstr "Vos Résultats"
 msgid "Program"
 msgstr "Programme"
 
-#: osr/templates/osr/print.html:94 osr/templates/osr/transition.html:173
+#: osr/templates/osr/print.html:95 osr/templates/osr/transition.html:173
 msgid "Other Relevant Information"
 msgstr "Renseignements Utiles"
 
-#: osr/templates/osr/print.html:101 osr/templates/osr/transition.html:183
+#: osr/templates/osr/print.html:102 osr/templates/osr/transition.html:183
 msgid "Because you said..."
 msgstr "Puisque vous avez indiqué..."
 
-#: osr/templates/osr/print.html:102 osr/templates/osr/transition.html:186
+#: osr/templates/osr/print.html:103 osr/templates/osr/transition.html:186
 msgid "We recommend..."
 msgstr "On vous recommande..."
 
@@ -1244,23 +1255,28 @@ msgstr "Télécharger (PDF)"
 msgid "Send"
 msgstr "Envoyer"
 
+#: osr/views.py:264
+msgid "results.pdf"
+msgstr "resultats.pdf"
+
+#: osr/views.py:338
+msgid "Your results and recommendations"
+msgstr "Vos résultats et recommandations"
+
+#~ msgid "LOGO"
+#~ msgstr "LOGO"
+
 #~ msgid ""
 #~ "Based on your responses, we found %%s that you might be interested in"
 #~ msgstr ""
 #~ "Compte tenu de vos réponses, nous avons trouvé %%s  qui pourrai(en)t vous "
 #~ "intéresser"
 
-msgid "Your results and recommendations"
-msgstr "Vos résultats et recommandations"
-
 #~ msgid "My Recommendations"
 #~ msgstr "Mes Recommandations"
 
 #~ msgid "%d program"
 #~ msgstr "%d programme"
-
-#~ msgid "%d programs"
-#~ msgstr "%d programmes"
 
 #~ msgid "Dictionary"
 #~ msgstr "Dictionnaire"
