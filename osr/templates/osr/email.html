@@ -1,34 +1,60 @@
+{% load i18n %}
 <html>
   <body>
     <div>
-      <h2>Adult Learning Program Matchmaker</h2>
+      <h2>{% blocktrans %}Adult Learning Program Matchmaker{% endblocktrans %}</h2>
     </div>
       <div>
-        <h3>Your results</h3>
+        <h3>{% blocktrans %}Your results{% endblocktrans %}</h3>
       </div>
       <div>
-        <h4>Based on your responses, we found %s that you might be interested in</h4>
+        {% if number == 1 %}
+        <h4>{% blocktrans %}Based on your responses, we found 1 program that you might be interested in{% endblocktrans %}</h4>
+        {% else %}
+        <h4>{% blocktrans with number as number %}Based on your responses, we found {{ number }} programs that you might be interested in{% endblocktrans %}</h4>
+        {% endif %}  
       </div>
       <table>
         <tr>
-          <td colspan='2'><h3>My results:</h3></td>
+          <td colspan='2'><h3>{% blocktrans %}My results{% endblocktrans %}:</h3></td>
         </tr>        
         <tr>
-          <th><b>Name of the program</b></th>
-          <th align="left"><b>Description and link</b></th>
+          <th><b>{% blocktrans %}Name of the program{% endblocktrans %}</b></th>
+          <th align="left"><b>{% blocktrans %}Description and link{% endblocktrans %}</b></th>
         </tr>
-        %s  
+        {% for program in programs %}  
+        <tr>
+          <td>
+            <b>{{ program.name }}</b>
+          </td>
+          <td>
+            {{ program.description }}<br/>
+            {{ program.path }}            
+          </td>
+        </tr>
+        {% endfor %}
         <br/>            
         <tr>
-          <td colspan='2'><h3>My recommendations:</h3></td>
+          <td colspan='2'><h3>{% blocktrans %}My recommendations{% endblocktrans %}:</h3></td>
         </tr>            
         <tr>
-          <th><b>Because you said...</b></th>
-          <th align="left"><b>We recommend...</b></th>
+          <th><b>{% blocktrans %}Because you said{% endblocktrans %}...</b></th>
+          <th align="left"><b>{% blocktrans %}We recommend{% endblocktrans %}...</b></th>
         </tr>
-        %s  
+        {% if recommendations %}
+        {% for recommendation in recommendations %}  
+        <tr>
+          <td>
+            {{ recommendation.reason }}
+          </td>
+          <td>
+            {{ recommendation.text }}<br/>{{ recommendation.link }}
+          </td>
+        </tr>  
+        {% endfor %}
+        {% endif %}
       </table>
-      <br/>%s
-      <br/>%s 
+      <br/>{{ results_path }}
+      <br/>{{ timestamp }}
   </body>
 </html>
