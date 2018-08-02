@@ -25,50 +25,46 @@
     <link rel="stylesheet" type="text/css" href="{% static 'osr/flow.css' %}" />
   </head>
   <body>
+    <!-- Hidden language input -->
+    <input type="hidden" id="lang" name="lang" value="{{ LANGUAGE_CODE|lower }}"/>
+
     <div id="matchmaker">
 
-      <header>
-        <div class="row">
-          <!-- logo -->
-          <div class="small-6 columns">
-            <a href="https://ontario.ca/page/government-ontario">
-              <span class="logo-ontario" aria-hidden="true"></span>
-              <span class="visually-hidden">
-                {% blocktrans %}Government of Ontario home page{% endblocktrans %}
-              </span>
-            </a>
-          </div>
-          <!-- Toggle language -->
-          <div class="small-6 columns">
-            <a onclick="toggleLanguage();" class="header-link right small">
-              {% blocktrans %}Français{% endblocktrans %}
-            </a>
-          </div>       
-        </div>
-      </header>
-
-      <!-- Feedback -->
-      <div class="minty columns small-12 text-center">
-        {% blocktrans %}This page will be improved using your feedback{% endblocktrans %}. <a href="{% url 'osr:feedback' %}" target="_blank">{% blocktrans %}Please tell us what you think{% endblocktrans %}.</a>
-      </div>
-      <br/>      
-
-      <div class="row intro">
-        <div class="columns small-12 text-center">
-          <h1>
-            {% blocktrans %}Adult Learning{% endblocktrans %}<br/>{% blocktrans %}Program Matchmaker{% endblocktrans %}
-          </h1>
-        </div>
-      </div>
-
-      <div class="row intro">
-        <div class="columns small-12">
-        </div>
-      </div>
-
-      <input type="hidden" id="lang" name="lang" value="{{ LANGUAGE_CODE|lower }}"/>
-
       <div v-if="stageIntro">
+        <header>
+          <div class="row">
+            <!-- logo -->
+            <div class="small-6 columns">
+              <a href="https://ontario.ca/page/government-ontario">
+                <span class="logo-ontario" aria-hidden="true"></span>
+                <span class="visually-hidden">
+                  {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+                </span>
+              </a>
+            </div>
+            <!-- Toggle language -->
+            <div class="small-6 columns">
+              <a onclick="toggleLanguage();" class="header-link right small">
+                {% blocktrans %}Français{% endblocktrans %}
+              </a>
+            </div>       
+          </div>
+        </header>
+
+        <!-- Feedback -->
+        <div class="minty columns small-12 text-center">
+          {% blocktrans %}This page will be improved using your feedback{% endblocktrans %}. <a href="{% url 'osr:feedback' %}" target="_blank">{% blocktrans %}Please tell us what you think{% endblocktrans %}.</a>
+        </div>
+        <br/>      
+
+        <div class="row intro">
+          <div class="columns small-12 text-center">
+            <h1>
+              {% blocktrans %}Adult Learning{% endblocktrans %}<br/>{% blocktrans %}Program Matchmaker{% endblocktrans %}
+            </h1>
+          </div>
+        </div>
+      
         <div class="row">
           <div class="columns small-12 medium-7">
             <img src="../../../static/osr/images/widget.png" width="550em" height="325em" alt="Matchmaker"/>
@@ -82,7 +78,47 @@
       </div>
 
       <div v-if="stageCards">
+        <header>
+          <div class="row">
+            <!-- logo -->
+            <div class="small-6 columns">
+              <a href="https://ontario.ca/page/government-ontario">
+                <span class="logo-ontario" aria-hidden="true"></span>
+                <span class="visually-hidden">
+                  {% blocktrans %}Government of Ontario home page{% endblocktrans %}
+                </span>
+              </a>
+            </div>
+            <!-- Toggle language -->
+            <div class="small-6 columns">
+              <a v-if="lang == 'en'" @click="updtLang" class="header-link right small">Français</a>
+              <a v-else @click="updtLang" class="header-link right small">English</a>
+            </div>        
+          </div>
+        </header>
+
+        <!-- Feedback -->
+        <div v-if="lang == 'en'" class="minty columns small-12 text-center">
+          This page will be improved using your feedback. <a href="{% url 'osr:feedback' %}" target="_blank">Please tell us what you think.</a>
+        </div>
+        <div v-else class="minty columns small-12 text-center">
+          Cette page sera améliorée à l'aide de vos commentaires. <a href="{% url 'osr:feedback' %}" target="_blank">Dites-nous ce que vous en pensez.</a>
+        </div>        
+        <br/>      
+
+        <div class="row intro">
+          <div class="columns small-12 text-center">
+            <h1 v-if="lang == 'en'">
+              Adult Learning<br/>Program Matchmaker
+            </h1>
+            <h1 v-else>
+              Matchmaker de Programmes<br/>d'Éducation des Adultes
+            </h1>
+          </div>
+        </div>
+
         <card :card="cards[currentCard]" :lang="lang" :dico="dico" :checkOpts="checkOpts" :radioOpts="radioOpts" :inputOpts="inputOpts" v-on:next="nextCard" v-on:back="backCard"></card>
+
       </div>         
 
       <form id="jsform" action="{% url 'osr:transition' %}" method="post">
