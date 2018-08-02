@@ -494,4 +494,4 @@ class Feedback(models.Model):
   most_useful_feature = models.CharField(max_length=50, verbose_name=_('What feature helped you find a program?'))
   content_or_feature_request = models.CharField(max_length=2000, verbose_name=_('What other information or feature would make this website more useful for you?'))
   general_comment = models.CharField(max_length=2000, verbose_name=_('Share any comment you have about the adult learning website'))
-  created = models.DateTimeField(auto_now_add=True, verbose_name=_('Timestamp'))
+  created = models.CharField(max_length=50, verbose_name=_('Timestamp'))
