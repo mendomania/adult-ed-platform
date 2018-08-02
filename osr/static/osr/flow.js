@@ -292,23 +292,28 @@ Vue.component('card', {
           break;
         }
         case 'INPUT_INT': {
-          console.log("***************************** [N1]");
-          console.log(this.answers);
-          console.log("***************************** [N2]");
+          // Assert an answer was provided
+          if (this.answers.length > 0) {
+            console.log("***************************** [N1]");
+            console.log(this.answers);
+            console.log("***************************** [N2]");        
 
-          this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
-          var input = { key: this.card.options[0].dico[0].key, val: this.answers };
-          this.$emit('next', { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: input });
+            this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
+            var input = { key: this.card.options[0].dico[0].key, val: this.answers };
+            this.$emit('next', { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: input });            
+          }
           break;
         }
         case 'INPUT_STR': {
-          console.log("***************************** [T1]");
-          console.log(this.answers);
-          console.log("***************************** [T2]");
+          if (this.answers.length > 0) {
+            console.log("***************************** [T1]");
+            console.log(this.answers);
+            console.log("***************************** [T2]");            
 
-          this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
-          var input = { key: this.card.options[0].dico[0].key, val: this.answers };
-          this.$emit('next', { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: input });
+            this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
+            var input = { key: this.card.options[0].dico[0].key, val: this.answers };
+            this.$emit('next', { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: input });            
+          }
           break;
         }        
       }
