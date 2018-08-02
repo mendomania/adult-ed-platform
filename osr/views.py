@@ -12,6 +12,7 @@ from django.utils import translation
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail
 from easy_pdf.views import PDFTemplateView
+from django.utils.translation import LANGUAGE_SESSION_KEY
 from django.utils.translation import ugettext_lazy as _
 from .forms import FeedbackForm
 from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite 
@@ -29,8 +30,7 @@ def intro(request):
 
   # All available programs
   programs = Program.objects.all() 
-  paramLang = "?lang=%s" % (translation.get_language())
-  return render(request, 'osr/intro.html', {'programs': programs, 'paramLang': paramLang})
+  return render(request, 'osr/intro.html', {'programs': programs})
 
 def detail_program(request, program_code):
   """ 
@@ -38,11 +38,7 @@ def detail_program(request, program_code):
   There is a program page for each program in the DB.
   This page will show details about each program.
   """  
-  program = get_object_or_404(Program, code=program_code.upper())
-
-  # Set language
-  set_lang(request)
-
+  program = get_object_or_404(Program, code=program_code.upper())  
   return render(request, 'osr/program.html', {'program': program})  
 
 def glossary(request):
@@ -52,9 +48,8 @@ def glossary(request):
   """
 
   # All glossary entries
-  entries = GlossaryEntry.objects.all().order_by('key') 
-  paramLang = "?lang=%s" % (translation.get_language())
-  return render(request, 'osr/glossary.html', {'entries': entries, 'paramLang': paramLang})
+  entries = GlossaryEntry.objects.all().order_by('key')    
+  return render(request, 'osr/glossary.html', {'entries': entries})
 
 def feedback(request):
   """ 
@@ -88,18 +83,13 @@ def feedback(request):
   else:
     form = FeedbackForm()    
 
-  paramLang = "?lang=%s" % (translation.get_language())
-  return render(request, 'osr/feedback.html', {'form': form, 'paramLang': paramLang, 'paramSuccess': paramSuccess})  
+  return render(request, 'osr/feedback.html', {'form': form, 'paramSuccess': paramSuccess})  
 
 def matchmaker(request):
   """ 
   This view corresponds to the matchmaker page.
   This page will present the user with a series of questions.
   """
-
-  # Set language
-  set_lang(request)
-
   return render(request, 'osr/matchmaker.html') 
 
 def transition(request):
@@ -146,9 +136,11 @@ def transition(request):
     print '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
     print dico
     print '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-
+    
+    # Reset cache but reactivate current django language
     reset_cache(request) 
     translation.activate(dico['lang'])  
+    request.session[LANGUAGE_SESSION_KEY] = translation.get_language()
 
     # Save program matches to cache
     programs = save_program_matches_to_cache(dico, request)
@@ -159,11 +151,9 @@ def transition(request):
     # Save learner profile to cache
     profile_lines_basic, profile_lines_goals, profile_lines_needs = save_learner_profile_to_cache(dico, request)
 
-  paramLang = "?lang=%s" % (translation.get_language())
-
   return render(request, 'osr/transition.html', 
     {'number': programs.count, 'groupOf1s': groupOf1s, 'groupOf2s': groupOf2s, 'groupOf3s': groupOf3s, 
-     'paramsPrograms': paramsPrograms, 'paramLang': paramLang, 'recommendations': recommendations, 
+     'paramsPrograms': paramsPrograms, 'recommendations': recommendations, 
      'proLinesBasic': profile_lines_basic, 'proLinesGoals': profile_lines_goals, 'proLinesNeeds': profile_lines_needs,
      'wasEmailSent': wasEmailSent, 'emailAddress': emailAddress})
 
@@ -184,17 +174,7 @@ def comparison(request):
       query = query | Q(code=val)
     programs = programs.filter(query)  
 
-  # Set language
-  set_lang(request)
-  paramLang = "?lang=%s" % (translation.get_language())
-
-  return render(request, 'osr/comparison.html', {'programs': programs, 'paramLang': paramLang})
-
-def set_lang(request):
-  """ Set language that was passed in as a parameter in the URL """  
-  lan_filter = request.GET.getlist('lang')
-  if lan_filter and lan_filter[0]:
-    translation.activate(lan_filter[0])    
+  return render(request, 'osr/comparison.html', {'programs': programs})
 
 class ResultsPDFView(PDFTemplateView):
   """ 
@@ -202,11 +182,11 @@ class ResultsPDFView(PDFTemplateView):
   It is used to create a PDF with the results of the matchmaker for a particular user.
   The info to be included in the PDF is retrieved from the cache. 
   """  
-  pdf_filename = 'results.pdf'
+  pdf_filename = _('results.pdf')
   template_name = 'osr/print.html'  
 
   def get_context_data(self, **kwargs):
-    context = super(ResultsPDFView, self).get_context_data(pagesize = "A4", title = "My results", **kwargs)
+    context = super(ResultsPDFView, self).get_context_data(pagesize = "A4", title = _("My results"), **kwargs)
 
     # Retrieve information from cache
     matches = get_program_matches_from_cache(self.request)
@@ -291,9 +271,11 @@ def group_programs(programs):
 
   # Create program parameters
   proglist = []
+  codelist = []
   for program in programs:
     proglist.append(program)   
-    prog_url = prog_url + '&p=' + program.code
+    codelist.append('p=' + program.code)
+  prog_url = '?%s' % ('&'.join(codelist))
   num = len(proglist)
 
   # Code used to format programs:
@@ -339,8 +321,7 @@ def filter_recommendations(recolist):
     query = Q()
     for code in recolist:
       query = query | Q(code=code)
-    recommendations = recommendations.filter(query)         
-    print recommendations  
+    recommendations = recommendations.filter(query)           
     return recommendations
 
 def filter_program_matches(codelist):
@@ -352,7 +333,6 @@ def filter_program_matches(codelist):
     for code in codelist:
       query = query | Q(code=code)
     programs = programs.filter(query)   
-    print programs
     return programs
 
 ###########################################################################################
@@ -363,8 +343,6 @@ def save_program_matches_to_cache(dico, request):
   codelist = []
   if 'matches' not in request.session:
     request.session['matches'] = []
-
-  print '@@@ [1]: ', request.session['matches']
 
   # Language programs
   if 'program_lang' in dico and 'lang_target' in dico:
@@ -396,9 +374,6 @@ def save_program_matches_to_cache(dico, request):
     codelist.append('BTP')
     request.session['matches'].append('BTP') 
 
-  print '@@@ [2]: ', request.session['matches']    
-
-  print codelist
   return filter_program_matches(codelist)
 
 ###########################################################################################
@@ -423,8 +398,7 @@ def save_recommendations_to_cache(dico, request):
   if 'profile_hs_goal_work' in dico:
     recolist.append('hs_goal_work')
     request.session['hs_goal_work'] = 'T'        
-
-  print recolist        
+     
   return filter_recommendations(recolist)
 
 def save_learner_profile_to_cache(dico, request):
@@ -443,7 +417,6 @@ def save_learner_profile_to_cache(dico, request):
     text_en = section.text_en.encode('utf-8')
     text_fr = section.text_fr.encode('utf-8')
 
-    print '[EN1]:', text_en
     if '%' in text_en:
       text_en = text_en.replace('%', dico[section.code].encode('utf-8'))
     if '#' in text_en:
@@ -451,9 +424,7 @@ def save_learner_profile_to_cache(dico, request):
       if matches:        
         for match in matches:
           text_en = text_en.replace('#%s#' % (match), dico[match].encode('utf-8'))            
-    print '[EN2]:', text_en
 
-    print '[FR1]:', text_fr
     if '%' in text_fr:
       text_fr = text_fr.replace('%', dico[section.code].encode('utf-8'))
     if '#' in text_fr:      
@@ -461,7 +432,6 @@ def save_learner_profile_to_cache(dico, request):
       if matches:        
         for match in matches:
           text_fr = text_fr.replace('#%s#' % (match), dico[match].encode('utf-8'))            
-    print '[FR2]:', text_fr
 
     if section.section == 'Information':
       profile_lines_basic.append({ 'en': text_en, 'fr': text_fr })
@@ -489,7 +459,6 @@ def get_program_matches_from_cache(request):
   if 'matches' in request.session:
     for match in request.session['matches']:
       codelist.append(match)
-  print codelist
   return filter_program_matches(codelist)
 
 # Get me recommendations from dico
@@ -505,14 +474,12 @@ def get_recommendations_from_cache(request):
     recolist.append('status_pr')        
   if 'hs_goal_work' in request.session:
     recolist.append('hs_goal_work')            
- 
-  print recolist    
+    
   return filter_recommendations(recolist)
 
 def reset_cache(request):
   """ Delete all variables stored in the cache """
   for key in request.session.keys():
-    print key, request.session[key]
     del request.session[key]  
 
 ###########################################################################################
