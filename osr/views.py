@@ -61,6 +61,7 @@ def feedback(request):
   This view corresponds to the feedback page.
   This page will show a survey form.
   """
+
   paramSuccess = False
   # If this is a POST request we need to process the form data
   if request.method == 'POST':
@@ -367,10 +368,10 @@ def save_program_matches_to_cache(dico, request):
 
   # Language programs
   if 'program_lang' in dico and 'lang_target' in dico:
-    if dico['lang_target'] == 'English':
+    if dico['lang_target'] == 'English' or dico['lang_target'] == 'anglais':
       codelist.append('ESL')
       request.session['matches'].append('ESL')
-    if dico['lang_target'] == 'French':
+    if dico['lang_target'] == 'French' or dico['lang_target'] == 'français':
       codelist.append('FSL')
       request.session['matches'].append('FSL')
 
