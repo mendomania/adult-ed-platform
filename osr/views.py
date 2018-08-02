@@ -139,8 +139,7 @@ def transition(request):
     
     # Reset cache but reactivate current django language
     reset_cache(request) 
-    translation.activate(dico['lang'])  
-    request.session[LANGUAGE_SESSION_KEY] = translation.get_language()
+    translation.activate(dico['lang'])      
 
     # Save program matches to cache
     programs = save_program_matches_to_cache(dico, request)
@@ -150,6 +149,8 @@ def transition(request):
     recommendations = save_recommendations_to_cache(dico, request)
     # Save learner profile to cache
     profile_lines_basic, profile_lines_goals, profile_lines_needs = save_learner_profile_to_cache(dico, request)
+
+  request.session[LANGUAGE_SESSION_KEY] = translation.get_language()
 
   return render(request, 'osr/transition.html', 
     {'number': programs.count, 'groupOf1s': groupOf1s, 'groupOf2s': groupOf2s, 'groupOf3s': groupOf3s, 
