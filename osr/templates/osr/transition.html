@@ -152,9 +152,9 @@
         <br/>
         <div class="columns small-12 text-center">
           {% if number == 1 %}
-          <a class="button" href="{% url 'osr:comparison' %}{{ paramLang }}{{ paramsPrograms }}">{% blocktrans %}Learn more{% endblocktrans %}</a>
+          <a class="button" href="{% url 'osr:comparison' %}{{ paramsPrograms }}">{% blocktrans %}Learn more{% endblocktrans %}</a>
           {% else %}
-          <a class="button" href="{% url 'osr:comparison' %}{{ paramLang }}{{ paramsPrograms }}">{% blocktrans %}Compare programs{% endblocktrans %}</a>
+          <a class="button" href="{% url 'osr:comparison' %}{{ paramsPrograms }}">{% blocktrans %}Compare programs{% endblocktrans %}</a>
           {% endif %}
         </div>
         <br/>
@@ -258,7 +258,7 @@
 
       <div class="row">
         <div class="columns small-12 text-center">
-          <a class="button" href="{% url 'osr:matchmaker' %}{{ paramLang }}">{% blocktrans %}Redo quiz{% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/redo.png" width="15px" height="15px" alt="Round arrow"/></a>
+          <a class="button" href="{% url 'osr:matchmaker' %}">{% blocktrans %}Redo quiz{% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/redo.png" width="15px" height="15px" alt="Round arrow"/></a>
           <a class="button" onclick="toggleSendButton()">{% blocktrans %}Get results by e-mail{% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/email.png" width="15px" height="15px" alt="Letter"/></a>
           <a class="button" href="/osr/print/">{% blocktrans %}Download (PDF){% endblocktrans %}&nbsp;&nbsp;<img src="../../static/osr/images/print.png" width="15px" height="15px" alt="Printer"/></a>
         </div>              

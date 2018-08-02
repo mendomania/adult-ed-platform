@@ -85,7 +85,7 @@
       <br/>
       <div class="columns small-12 text-center">        
         <p>Use the Adult Learning Program Matcher to find a program that best matches your goals</p>
-        <a href="{% url 'osr:matchmaker' %}{{ paramLang }}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
+        <a href="{% url 'osr:matchmaker' %}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
       </div>
     </div>  
 
@@ -122,7 +122,7 @@
             {{ p.description_for_comparison_page }}
           </div>
           <hr class="hr-comparison-table"/>
-          <a href="{% url 'osr:detail_program' p.code|lower %}{{ paramLang }}">{% blocktrans %}Learn more{% endblocktrans %}</a>
+          <a href="{% url 'osr:detail_program' p.code|lower %}">{% blocktrans %}Learn more{% endblocktrans %}</a>
         </div>       
       </div>
       <br/>
@@ -130,7 +130,7 @@
 
       <div class="columns small-12 text-center">  
         <br/>
-        <a href="{% url 'osr:comparison' %}{{ paramLang }}" class="button">{% blocktrans %}Compare all programs{% endblocktrans %}</a>
+        <a href="{% url 'osr:comparison' %}" class="button">{% blocktrans %}Compare all programs{% endblocktrans %}</a>
       </div>
     </div> 
 
@@ -147,7 +147,7 @@
         </div>
         <div class="columns small-12 medium-5">
           <p><br/><br/>Use the Adult Learning Program Matcher to find a program that best matches your goals and needs.</p>
-          <a href="{% url 'osr:matchmaker' %}{{ paramLang }}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
+          <a href="{% url 'osr:matchmaker' %}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
         </div>        
       </div>
       <br/>
@@ -195,7 +195,7 @@
           <p>If you need help understanding some adult learning terms, have a look at the glossary.</p>          
         </div>
         <div class="text-center">
-          <a href="{% url 'osr:glossary' %}{{ paramLang }}" class="button">{% blocktrans %}Read more{% endblocktrans %}</a>
+          <a href="{% url 'osr:glossary' %}" class="button">{% blocktrans %}Read more{% endblocktrans %}</a>
         </div>        
       </div>      
     </div> 

@@ -139,7 +139,7 @@
           <hr style="border: 0.2rem solid {{ p.background_colour }};"/>
         </div> 
         <div class="row15 text-center padding-inner-e">
-          <a class="button" href="{% url 'osr:detail_program' p.code|lower %}{{ paramLang }}">{% blocktrans %}Find program providers{% endblocktrans %}</a>
+          <a class="button" href="{% url 'osr:detail_program' p.code|lower %}">{% blocktrans %}Find program providers{% endblocktrans %}</a>
         </div>                                          
       </div>
       {% endfor %} 
