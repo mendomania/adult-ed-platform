@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-01 14:32-0400\n"
+"POT-Creation-Date: 2018-08-01 22:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,8 +31,6 @@ msgid "My administration"
 msgstr "Mon compte"
 
 #: osr/admin.py:20
-#, fuzzy
-#| msgid "schedules"
 msgid "Schedules"
 msgstr "Horaires"
 
@@ -219,8 +217,8 @@ msgstr "Pas du tout satisfait"
 msgid ""
 "7. Please rate the overall experience you had with the adult learning website"
 msgstr ""
-"7. Veuillez évaluer l'expérience générale que vous avez eu avec le site de la "
-"formation des adultes"
+"7. Veuillez évaluer l'expérience générale que vous avez eu avec le site de "
+"la formation des adultes"
 
 #: osr/forms.py:97
 msgid "Prospective learner"
@@ -278,7 +276,9 @@ msgstr "Tapez ici..."
 msgid ""
 "10. What other information or feature would make this website more useful "
 "for you? (Optional)"
-msgstr "10. Quel autre information ou outil vous aurait été utile sur le site? (Facultatif)"
+msgstr ""
+"10. Quel autre information ou outil vous aurait été utile sur le site? "
+"(Facultatif)"
 
 #: osr/forms.py:141
 msgid ""
@@ -368,10 +368,8 @@ msgid "Sunday"
 msgstr "Dimanche"
 
 #: osr/models.py:16
-#, fuzzy
-#| msgid "Financial information"
 msgid "Information"
-msgstr "Information financière"
+msgstr "Information"
 
 #: osr/models.py:16
 msgid "Goals"
@@ -381,33 +379,19 @@ msgstr "Buts"
 msgid "Needs"
 msgstr "Besoins"
 
-#: osr/models.py:22 osr/models.py:119 osr/models.py:132 osr/models.py:145
-#: osr/models.py:276
-msgid "program"
-msgstr "programme"
-
-#: osr/models.py:23 osr/models.py:227 osr/models.py:239 osr/models.py:252
-#: osr/models.py:264
-msgid "programs"
-msgstr "programmes"
-
 #: osr/models.py:28
-#, fuzzy
 msgid "official name"
 msgstr "nom officiel"
 
 #: osr/models.py:28
-#, fuzzy
 msgid "official name of the program"
 msgstr "nom officiel du programme"
 
 #: osr/models.py:29
-#, fuzzy
 msgid "branding name"
 msgstr "nom grand publique"
 
 #: osr/models.py:29
-#, fuzzy
 msgid "branding name of the program"
 msgstr "nom grand publique du programme"
 
@@ -421,7 +405,9 @@ msgstr "id ordre"
 
 #: osr/models.py:31 osr/models.py:447 osr/models.py:461
 msgid "a lower order id will show up first, min value is 1"
-msgstr "le plus inférieur l'id, le plus haut il apparaîtra sur la page, la valeur min est 1"
+msgstr ""
+"le plus inférieur l'id, le plus haut il apparaîtra sur la page, la valeur "
+"min est 1"
 
 #: osr/models.py:34
 msgid "description"
@@ -914,6 +900,56 @@ msgstr "Vous devez"
 msgid "Find program providers"
 msgstr "Trouver des écoles où étudier"
 
+#: osr/templates/osr/email.html:5
+msgid "Adult Learning Program Matchmaker"
+msgstr "Matchmaker de Programmes d'Éducation des Adultes"
+
+#: osr/templates/osr/email.html:8
+msgid "Your results"
+msgstr "Vos résultats"
+
+#: osr/templates/osr/email.html:12 osr/templates/osr/print.html:64
+#: osr/templates/osr/transition.html:77
+msgid ""
+"Based on your responses, we found 1 program that you might be interested in"
+msgstr ""
+"Compte tenu de vos réponses aux questions précédentes, nous avons trouvé 1 "
+"programme qui pourrais vous intéresser"
+
+#: osr/templates/osr/email.html:14 osr/templates/osr/print.html:66
+#: osr/templates/osr/transition.html:79
+#, python-format
+msgid ""
+"Based on your responses, we found %(number)s programs that you might be "
+"interested in"
+msgstr ""
+"Compte tenu de vos réponses aux questions précédentes, nous avons trouvé "
+"%(number)s programmes qui pourraient vous intéresser"
+
+#: osr/templates/osr/email.html:19 osr/templates/osr/print.html:71
+msgid "My results"
+msgstr "Mes résultats"
+
+#: osr/templates/osr/email.html:22
+msgid "Name of the program"
+msgstr "Nom du programme"
+
+#: osr/templates/osr/email.html:23 osr/templates/osr/print.html:75
+msgid "Description and link"
+msgstr "Description et lien"
+
+#: osr/templates/osr/email.html:38 osr/templates/osr/print.html:98
+msgid "My recommendations"
+msgstr "Mes recommandations"
+
+#: osr/templates/osr/email.html:41
+msgid "Because you said"
+msgstr "Puisque vous avez indiqué"
+
+#: osr/templates/osr/email.html:42
+msgid "We recommend"
+msgstr "On vous recommande"
+
 #: osr/templates/osr/feedback.html:11
 msgid "Feedback"
 msgstr "Sondage"
@@ -941,7 +977,7 @@ msgid "Submit"
 msgstr "Envoyer"
 
 #: osr/templates/osr/glossary.html:10 osr/templates/osr/glossary.html:55
-#: osr/templates/osr/intro.html:194
+#: osr/templates/osr/intro.html:193
 msgid "Glossary"
 msgstr "Glossaire"
 
@@ -997,7 +1033,7 @@ msgstr "Vous n'êtes pas sûr quels programmes vous conviennent le plus?"
 msgid "Need help?"
 msgstr "Besoin d'aide?"
 
-#: osr/templates/osr/intro.html:167
+#: osr/templates/osr/intro.html:166
 msgid "Chat live with us"
 msgstr "Clavardez avec nous"
 
@@ -1005,7 +1041,7 @@ msgstr "Clavardez avec nous"
 msgid "Chat live"
 msgstr "Clavardez maintenant"
 
-#: osr/templates/osr/intro.html:183
+#: osr/templates/osr/intro.html:182
 msgid "Meet with a counsellor"
 msgstr "Rencontrez un conseiller"
 
@@ -1017,11 +1053,13 @@ msgstr "Demande de rendez-vous"
 msgid "Read more"
 msgstr "En apprendre davantage"
 
-#: osr/templates/osr/matchmaker.html:59 osr/templates/osr/transition.html:58
+#: osr/templates/osr/matchmaker.html:59 osr/templates/osr/print.html:59
+#: osr/templates/osr/transition.html:58
 msgid "Adult Learning"
 msgstr "Matchmaker de Programmes"
 
-#: osr/templates/osr/matchmaker.html:59 osr/templates/osr/transition.html:58
+#: osr/templates/osr/matchmaker.html:59 osr/templates/osr/print.html:59
+#: osr/templates/osr/transition.html:58
 msgid "Program Matchmaker"
 msgstr "d'Éducation des Adultes"
 
@@ -1045,6 +1083,26 @@ msgstr ""
 #: osr/templates/osr/matchmaker.html:79
 msgid "Start"
 msgstr "Commencez"
+
+#: osr/templates/osr/print.html:62 osr/templates/osr/transition.html:75
+msgid "Your Results"
+msgstr "Vos Résultats"
+
+#: osr/templates/osr/print.html:74
+msgid "Program"
+msgstr "Programme"
+
+#: osr/templates/osr/print.html:94 osr/templates/osr/transition.html:173
+msgid "Other Relevant Information"
+msgstr "Renseignements Utiles"
+
+#: osr/templates/osr/print.html:101 osr/templates/osr/transition.html:183
+msgid "Because you said..."
+msgstr "Puisque vous avez indiqué..."
+
+#: osr/templates/osr/print.html:102 osr/templates/osr/transition.html:186
+msgid "We recommend..."
+msgstr "On vous recommande..."
 
 #: osr/templates/osr/program.html:64
 msgid "On this page"
@@ -1150,41 +1208,9 @@ msgstr "Résultats"
 msgid "E-mail sent to"
 msgstr "Email envoyé à"
 
-#: osr/templates/osr/transition.html:75
-msgid "Your Results"
-msgstr "Vos Résultats"
-
-#: osr/templates/osr/transition.html:77
-msgid ""
-"Based on your responses, we found 1 program that you might be interested in"
-msgstr ""
-"Compte tenu de vos réponses aux questions précédentes, nous avons trouvé 1 "
-"programme qui pourrais vous intéresser"
-
-#: osr/templates/osr/transition.html:79
-#, python-format
-msgid ""
-"Based on your responses, we found %(number)s programs that you might be "
-"interested in"
-msgstr ""
-"Compte tenu de vos réponses aux questions précédentes, nous avons trouvé "
-"%(number)s programmes qui pourraient vous intéresser"
-
 #: osr/templates/osr/transition.html:157
 msgid "Compare programs"
 msgstr "Comparez ces programmes"
-
-#: osr/templates/osr/transition.html:173
-msgid "Other Relevant Information"
-msgstr "Renseignements Utiles"
-
-#: osr/templates/osr/transition.html:183
-msgid "Because you said..."
-msgstr "Puisque vous avez indiqué..."
-
-#: osr/templates/osr/transition.html:186
-msgid "We recommend..."
-msgstr "On vous recommande..."
 
 #: osr/templates/osr/transition.html:214
 msgid "Your Profile"
@@ -1217,6 +1243,24 @@ msgstr "Télécharger (PDF)"
 #: osr/templates/osr/transition.html:272
 msgid "Send"
 msgstr "Envoyer"
+
+#~ msgid ""
+#~ "Based on your responses, we found %%s that you might be interested in"
+#~ msgstr ""
+#~ "Compte tenu de vos réponses, nous avons trouvé %%s  qui pourrai(en)t vous "
+#~ "intéresser"
+
+msgid "Your results and recommendations"
+msgstr "Vos résultats et recommandations"
+
+#~ msgid "My Recommendations"
+#~ msgstr "Mes Recommandations"
+
+#~ msgid "%d program"
+#~ msgstr "%d programme"
+
+#~ msgid "%d programs"
+#~ msgstr "%d programmes"
 
 #~ msgid "Dictionary"
 #~ msgstr "Dictionnaire"
