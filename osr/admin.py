@@ -59,8 +59,7 @@ class AdminProgram(TranslationAdmin):
     (_('TEXT FIELDS'),  {'fields': ['description', 'description_for_comparison_page', 'details', 'length', 'subsidies', 'support', 'funding', 'fees', 'free', 'types_of_sps']}),
     (_('KEY BENEFITS'),  {'fields': ['benefits']}),
     (_('OPTIONS'),  {'fields': ['learning_options', 'schedule_options']}),
-    (_('ELIGIBLE IMMIGRATION STATUS'),  {'fields': ['eligible_immigration_status']}),
-    (_('LOGO'),     {'fields': ['img_src', 'img_txt']})
+    (_('ELIGIBLE IMMIGRATION STATUS'),  {'fields': ['eligible_immigration_status']})
   ]    
   inlines = [
     AdminProgramRegistrationSteps,
