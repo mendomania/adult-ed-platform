@@ -3,6 +3,7 @@ import json
 import codecs
 import re
 import os.path
+from django.template import loader
 from datetime import datetime
 from django.views import generic
 from django.db.models import Q
@@ -11,6 +12,7 @@ from django.utils import translation
 from django.shortcuts import get_object_or_404, render, redirect
 from django.core.mail import send_mail
 from easy_pdf.views import PDFTemplateView
+from django.utils.translation import ugettext_lazy as _
 from .forms import FeedbackForm
 from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite 
 from .models import Recommendation, ProfileSection, GlossaryEntry, Feedback
@@ -59,7 +61,6 @@ def feedback(request):
   This view corresponds to the feedback page.
   This page will show a survey form.
   """
-
   paramSuccess = False
   # If this is a POST request we need to process the form data
   if request.method == 'POST':
@@ -78,7 +79,8 @@ def feedback(request):
         type_of_user = form.cleaned_data.get('type_of_user'),
         most_useful_feature = form.cleaned_data.get('most_useful_feature'),
         content_or_feature_request = form.cleaned_data.get('content_or_feature_request'),
-        general_comment = form.cleaned_data.get('general_comment')
+        general_comment = form.cleaned_data.get('general_comment'),
+        created = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
       )
       paramSuccess = True
   # If a GET (or any other method) we'll create a blank form
@@ -234,28 +236,36 @@ def email(request):
 
     # Variables to be included in the email
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    program_path = "%s://%s%s" % (request.scheme, request.get_host(), "/osr/program")
+    program_base = "%s://%s%s" % (request.scheme, request.get_host(), "/osr/program")
     results_path = "%s://%s%s" % (request.scheme, request.get_host(), reverse('osr:transition'))
-    number_programs = '%d program' % (len(matches)) if (len(matches) == 1) else '%d programs' % (len(matches))
 
     # Load template of HTML message with placeholders
     curr_path = os.path.abspath(os.path.dirname(__file__))
     file_path = os.path.join(curr_path, "templates/osr/email.html")
-    html_base = codecs.open(file_path, 'r', encoding='utf-8')
 
     # Fill in placeholders in HTML message
-    code_program_matches = ''
+    list_program_matches = []
     for m in matches:
-      match = "<tr><td><b>%s</b></td><td>%s<br/>%s/%s</td></tr>" % (m.name_official, m.description, program_path, m.code.lower())
-      code_program_matches = code_program_matches + match
-    code_recommendations = ''
+      program_path = '%s/%s' % (program_base, m.code.lower())
+      list_program_matches.append({ 'name': m.name_official, 'description': m.description, 'path': program_path})
+
+    list_recommendations = []
     for r in recommendations:
-      recommendation = "<tr><td>%s</td><td>%s<br/>%s</td></tr>" % (r.reason, r.text, r.link)      
-      code_recommendations = code_recommendations + recommendation
-    html_message = html_base.read() % (number_programs, code_program_matches, code_recommendations, results_path, timestamp)
-        
+      list_recommendations.append({ 'reason': r.reason, 'text': r.text, 'link': r.link })
+
+    html_message = loader.render_to_string(
+      file_path,
+      {
+        'programs': list_program_matches,
+        'recommendations':  list_recommendations, 
+        'number': len(list_program_matches),
+        'website': results_path,
+        'timestamp': timestamp
+      }
+    )        
+
     send_mail(
-      subject = 'Your results and recommendations',
+      subject = _('Your results and recommendations'),
       message = "",
       html_message = html_message,
       from_email = 'noreply@codefor.ca',
