@@ -90,6 +90,7 @@
         {% endfor %}              
       </table>
       <br/>
+      {% if recommendations %}
       <div>
         <h1>{% blocktrans %}Other Relevant Information{% endblocktrans %}</h1>
       </div>
@@ -100,15 +101,14 @@
         <tr>
           <td class="margin header bold" colspan="1">{% blocktrans %}Because you said...{% endblocktrans %}</td>
           <td class="margin header bold" colspan="3">{% blocktrans %}We recommend...{% endblocktrans %}</td>
-        </tr>
-        {% if recommendations %}
+        </tr>        
         {% for r in recommendations %}
         <tr>
           <td class="margin format" colspan="1">{{ r.reason }}</td>
           <td class="margin format" colspan="3">{{ r.text }}: <br/><span class="link">{{ r.link }}</span></td>
         </tr>
         {% endfor %}  
-        {% endif %}
+      {% endif %}
       </table>
       <br/>
       <table>

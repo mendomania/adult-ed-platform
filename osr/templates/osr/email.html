@@ -33,15 +33,15 @@
           </td>
         </tr>
         {% endfor %}
-        <br/>            
+        <br/>
+        {% if recommendations %}            
         <tr>
           <td colspan='2'><h3>{% blocktrans %}My recommendations{% endblocktrans %}:</h3></td>
         </tr>            
         <tr>
           <th><b>{% blocktrans %}Because you said{% endblocktrans %}...</b></th>
           <th align="left"><b>{% blocktrans %}We recommend{% endblocktrans %}...</b></th>
-        </tr>
-        {% if recommendations %}
+        </tr>        
         {% for recommendation in recommendations %}  
         <tr>
           <td>
