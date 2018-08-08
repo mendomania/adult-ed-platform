@@ -42,7 +42,7 @@ class Program(models.Model):
   free = models.BooleanField(default=False, verbose_name=_('free'))  
   types_of_sps = models.TextField(max_length=600, blank=True, default="", verbose_name=_('types of service providers'))  
 
-  # Map
+  # Map-related fields
   map_display = models.BooleanField(default=False, verbose_name=_('display map'), help_text=_('Should a map be displayed for this program?'))
   map_sp_label = models.CharField(max_length=50, default="", blank=True, verbose_name=_('label of map'), help_text=_('Text to be displayed on top of map'))
 
