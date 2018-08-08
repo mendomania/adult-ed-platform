@@ -39,8 +39,15 @@ class Program(models.Model):
   support = models.TextField(max_length=600, blank=True, default="", verbose_name=_('support'))
   funding = models.TextField(max_length=200, blank=True, default="", verbose_name=_('funding'))
   fees = models.TextField(max_length=200, blank=True, default="", verbose_name=_('fees'))
-  free = models.BooleanField(default=False, verbose_name=_('free'))
-  types_of_sps = models.TextField(max_length=600, blank=True, default="", verbose_name=_('types of service providers'))
+  free = models.BooleanField(default=False, verbose_name=_('free'))  
+  types_of_sps = models.TextField(max_length=600, blank=True, default="", verbose_name=_('types of service providers'))  
+
+  # Map
+  map_display = models.BooleanField(default=False, verbose_name=_('display map'), help_text=_('Should a map be displayed for this program?'))
+  map_sp_label = models.CharField(max_length=50, default="", blank=True, verbose_name=_('label of map'), help_text=_('Text to be displayed on top of map'))
+
+  ministry = models.CharField(max_length=200, default="", verbose_name=_('ministry that funds the program'))
+  eligibility_disclaimer = models.CharField(max_length=200, default="", blank=True, verbose_name=_('eligibility disclaimer'))
 
   # Many to many fields
   learning_options = models.ManyToManyField('LearningOption')
@@ -53,13 +60,14 @@ class Program(models.Model):
   background_colour = models.CharField(max_length=50, default="#FFFFFF", verbose_name=_('background colour'))
   foreground_colour = models.CharField(max_length=50, default="#000000", verbose_name=_('foreground colour'))
 
+
+
   # Get outcomes of current offerings that match the program outcomes
   def get_outcomes(self):
     outcomes = []
-    for offering in self.offering_set.all():
-      for o in offering.outcomes.all():
-        if o not in outcomes:
-          outcomes.append(o)
+    for outcome in self.outcome_set.all():
+      if outcome not in outcomes:
+        outcomes.append(outcome)
     return outcomes
 
 @python_2_unicode_compatible
