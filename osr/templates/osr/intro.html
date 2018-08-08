@@ -119,7 +119,7 @@
         <div class="text-center padding-inner-p" style="border-color: {{ p.background_colour }};">
           <div class="block1">
             <h6>{{ p.name_official }}</h6>
-            {{ p.description_for_comparison_page }}
+            {{ p.description }}
           </div>
           <hr class="hr-comparison-table"/>
           <a href="{% url 'osr:detail_program' p.code|lower %}">{% blocktrans %}Learn more{% endblocktrans %}</a>
