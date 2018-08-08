@@ -264,7 +264,7 @@
               }              
             }                                  
           ]
-        },
+        },        
         {
           "conditions": [
             {
@@ -326,7 +326,108 @@
             }                     
           ],
           "id": 2
-        }                                
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<19",
+                "fr": "<19"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },          
+            {
+              "key": "match_futr_lbs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            }
+          ],
+          "id": 2
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">17",
+                "fr": ">17"
+              }
+            }
+          ],
+          "id": 2
+        }                                                                
       ]
     },
     {
@@ -733,6 +834,18 @@
             }          
           ]          
         },
+        {
+          "conditions": [
+            {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                    
+          ],
+          "id": 3    
+        },        
         {
           "conditions": [
             {
@@ -1165,19 +1278,134 @@
           ],
           "id": 9
         },
-
-
-
-
-
-
-
-
-
-
         {
-          "conditions": [],
-          "id": 3       
+          "conditions": [
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                   
+          ],
+          "id": 19 
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_status_can_citizen",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                               
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "path_contact_eo",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ] 
+        },   
+        {
+          "conditions": [
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                               
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "path_contact_eo",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ] 
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                               
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
+              "key": "path_contact_eo",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ] 
+        },                             
+        {
+          "conditions": [
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                              
+          ],
+          "id": 23
         }                         
       ]
     },
@@ -1291,7 +1519,7 @@
       "equivalencies": [],
       "next": [
         {
-          "conditions": [
+          "conditions": [          
             {
               "key": "profile_basic_age",
               "val": {
@@ -1326,7 +1554,7 @@
           ]          
         },
         {
-          "conditions": [
+          "conditions": [        
             {
               "key": "profile_basic_age",
               "val": {
@@ -1361,7 +1589,7 @@
           ]          
         },
         {
-          "conditions": [
+          "conditions": [          
             {
               "key": "profile_basic_lang_source",
               "val": {
@@ -1373,7 +1601,7 @@
           "id": 4         
         }, 
         {
-          "conditions": [
+          "conditions": [         
             {
               "key": "profile_basic_lang_source",
               "val": {
@@ -1385,7 +1613,7 @@
           "id": 4         
         },               
         {
-          "conditions": [
+          "conditions": [           
             {
               "key": "profile_basic_lang_source",
               "val": {
@@ -1395,7 +1623,7 @@
             }                    
           ],
           "id": 5        
-        }                           
+        }                                          
       ]
     },
     {
@@ -4603,7 +4831,7 @@
     },
     {
       "id": 18,
-      "type": "CHECK",
+      "type": "RADIO",
       "title": {
         "en": "#hs_title#",
         "fr": "#hs_title#"
@@ -5564,6 +5792,1620 @@
           ]           
         }              
       ]
-    }                                             
+    },
+    {
+      "id": 19,
+      "type": "RADIO",
+      "title": {
+        "en": "Develop or refresh skills",
+        "fr": "Rafraîchir mes capacités"
+      },
+      "text": {
+        "en": {
+          "main": "What is your first language?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Quelle est votre langue maternelle?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_basic_lang_source",
+              "val": {
+                "en": "English",
+                "fr": "Anglais"
+              }
+            }           
+          ],
+          "text": {
+            "en": {
+              "main": "English",
+              "tips": []
+            },
+            "fr": {
+              "main": "Anglais",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_lang_source",
+              "val": {
+                "en": "French",
+                "fr": "Français"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "French",
+              "tips": []
+            },
+            "fr": {
+              "main": "Français",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_lang_source",
+              "val": {
+                "en": "ASL",
+                "fr": "ASL"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "American Sign Language",
+              "tips": []
+            },
+            "fr": {
+              "main": "Langue des signes américaine",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_lang_source",
+              "val": {
+                "en": "not English nor French",
+                "fr": "ni l'anglais ni le français"
+              }
+            }           
+          ],
+          "text": {
+            "en": {
+              "main": "Other",
+              "tips": []
+            },
+            "fr": {
+              "main": "Autre",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [ 3 ],
+      "next": [               
+        {
+          "conditions": [           
+            {
+              "key": "profile_basic_lang_source",
+              "val": {
+                "en": "ASL",
+                "fr": "ASL"
+              }
+            }                    
+          ],
+          "id": 21
+        },
+        {
+          "conditions": [],
+          "id": 20
+        }                                           
+      ]
+    },
+    {
+      "id": 20,
+      "type": "RADIO",
+      "title": {
+        "en": "Develop or refresh skills",
+        "fr": "Rafraîchir mes capacités"
+      },
+      "text": {
+        "en": {
+          "main": "In what language do you want to study?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Vous voulez étudier dans quelle langue?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "lang_studies",
+              "val": {
+                "en": "English",
+                "fr": "Anglais"
+              }
+            }           
+          ],
+          "text": {
+            "en": {
+              "main": "English",
+              "tips": []
+            },
+            "fr": {
+              "main": "Anglais",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "lang_studies",
+              "val": {
+                "en": "French",
+                "fr": "Français"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "French",
+              "tips": []
+            },
+            "fr": {
+              "main": "Français",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [               
+        {
+          "conditions": [],
+          "id": 22
+        }                                           
+      ]
+    },
+    {
+      "id": 21,
+      "type": "RADIO",
+      "title": {
+        "en": "Develop or refresh skills",
+        "fr": "Rafraîchir mes capacités"
+      },
+      "text": {
+        "en": {
+          "main": "In what language do you want to study?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Vous voulez étudier dans quelle langue?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "lang_studies",
+              "val": {
+                "en": "English",
+                "fr": "Anglais"
+              }
+            }           
+          ],
+          "text": {
+            "en": {
+              "main": "English",
+              "tips": []
+            },
+            "fr": {
+              "main": "Anglais",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "lang_studies",
+              "val": {
+                "en": "French",
+                "fr": "Français"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "French",
+              "tips": []
+            },
+            "fr": {
+              "main": "Français",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "lang_studies",
+              "val": {
+                "en": "ASL",
+                "fr": "ASL"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "American Sign Language",
+              "tips": []
+            },
+            "fr": {
+              "main": "Langue des signes américaine",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [               
+        {
+          "conditions": [],
+          "id": 22
+        }                                           
+      ]
+    },
+    {
+      "id": 22,
+      "type": "RADIO",
+      "title": {
+        "en": "Develop or refresh skills",
+        "fr": "Rafraîchir mes capacités"
+      },
+      "text": {
+        "en": {
+          "main": "Why do you want to develop or refresh your skills?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Pour quelles raisons voulez-vous rafraîchir vos capacités?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_refresh_goal_studies",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "link_ods_education_training",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "In preparation for further education",
+              "tips": []
+            },
+            "fr": {
+              "main": "Pour me préparer à faire des études supérieures",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_refresh_goal_employment",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "For better employment opportunities",
+              "tips": []
+            },
+            "fr": {
+              "main": "Pour trouver un premier emploi ou un meilleur emploi",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_refresh_goal_everyday",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "For self improvement",
+              "tips": []
+            },
+            "fr": {
+              "main": "Pour intérêt personnel ou pour la vie de tous les jours",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_refresh_goal_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "For other reasons",
+              "tips": []
+            },
+            "fr": {
+              "main": "Pour d'autres raisons",
+              "tips": []
+            }
+          }
+        }
+      ],      
+      "equivalencies": [],
+      "next": [               
+        {
+          "conditions": [],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_lbs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        }                                           
+      ]
+    },
+    {
+      "id": 23,
+      "type": "RADIO",
+      "title": {
+        "en": "Adapt international education and work experience to Canadian labour market",
+        "fr": "Adapter mon expérience professionnelle étrangère au Canada"
+      },
+      "text": {
+        "en": {
+          "main": "In what language do you want to study?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Vous voulez étudier dans quelle langue?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "lang_btp",
+              "val": {
+                "en": "English",
+                "fr": "Anglais"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "English",
+              "tips": []
+            },
+            "fr": {
+              "main": "Anglais",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "lang_btp",
+              "val": {
+                "en": "French",
+                "fr": "Français"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "French",
+              "tips": []
+            },
+            "fr": {
+              "main": "Français",
+              "tips": []
+            }
+          }
+        }
+      ],      
+      "equivalencies": [],
+      "next": [               
+        {
+          "conditions": [],
+          "id": 24
+        }                                           
+      ]
+    },
+    {
+      "id": 24,
+      "type": "RADIO",
+      "title": {
+        "en": "Adapt international education and work experience to Canadian labour market",
+        "fr": "Adapter mon expérience professionnelle étrangère au Canada"
+      },
+      "text": {
+        "en": {
+          "main": "Do you have a post-secondary certificate or degree from outside of Canada?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Est-ce que vous avez un diplôme ou un certificat d'études postsecondaires obtenu à l'étranger?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "id": 0,
+          "dico": [
+            {
+              "key": "profile_basic_international_edu",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Yes",
+              "tips": []
+            },
+            "fr": {
+              "main": "Oui",
+              "tips": []
+            }
+          }
+        },
+        {
+          "id": 1,
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "No",
+              "tips": []
+            },
+            "fr": {
+              "main": "Non",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_international_edu",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "id": 25
+        },
+        {
+          "conditions": [],
+          "id": -1,
+          "exit": [          
+            {
+              "key": "path_no_international_edu",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                      
+          ]
+        }        
+      ]
+    },
+    {
+      "id": 25,
+      "type": "RADIO",
+      "title": {
+        "en": "Adapt international education and work experience to Canadian labour market",
+        "fr": "Adapter mon expérience professionnelle étrangère au Canada"
+      },
+      "text": {
+        "en": {
+          "main": "Do you have international work experience?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Est-ce que vous avez de l'expérience professionnelle à l'étranger?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "id": 0,
+          "dico": [
+            {
+              "key": "profile_basic_international_job",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Yes",
+              "tips": []
+            },
+            "fr": {
+              "main": "Oui",
+              "tips": []
+            }
+          }
+        },
+        {
+          "id": 1,
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "No",
+              "tips": []
+            },
+            "fr": {
+              "main": "Non",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_international_job",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "lang_btp",
+              "val": {
+                "en": "English",
+                "fr": "Anglais"
+              }
+            }                      
+          ],
+          "id": 26
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_international_job",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "lang_btp",
+              "val": {
+                "en": "French",
+                "fr": "Français"
+              }
+            }                      
+          ],
+          "id": 27
+        },        
+        {
+          "conditions": [],
+          "id": -1,
+          "exit": [          
+            {
+              "key": "path_no_international_job",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                      
+          ]
+        }        
+      ]
+    },
+    {
+      "id": 26,
+      "type": "SELECT",
+      "title": {
+        "en": "Adapt international education and work experience to Canadian labour market",
+        "fr": "Adapter mon expérience professionnelle étrangère au Canada"
+      },
+      "text": {
+        "en": {
+          "main": "What was your field of work before arriving in Canada?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Quel était votre domaine professionel à l'étranger?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Accounting",
+              "tips": []
+            },
+            "fr": {
+              "main": "Comptabilité",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Architecture",
+              "tips": []
+            },
+            "fr": {
+              "main": "Architecture",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Business",
+              "tips": []
+            },
+            "fr": {
+              "main": "Commerce",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Engineering",
+              "tips": []
+            },
+            "fr": {
+              "main": "Ingénierie",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Environment",
+              "tips": []
+            },
+            "fr": {
+              "main": "Environnement",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Financial services",
+              "tips": []
+            },
+            "fr": {
+              "main": "Finance",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Green economy",
+              "tips": []
+            },
+            "fr": {
+              "main": "Économie verte",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Health research",
+              "tips": []
+            },
+            "fr": {
+              "main": "Recherche en santé",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Healthcare",
+              "tips": []
+            },
+            "fr": {
+              "main": "Santé",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Human resources",
+              "tips": []
+            },
+            "fr": {
+              "main": "Ressources humaines",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Information technology",
+              "tips": []
+            },
+            "fr": {
+              "main": "Technologies de l'information",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Interpreting",
+              "tips": []
+            },
+            "fr": {
+              "main": "Interprétariat",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Management",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Media and communications",
+              "tips": []
+            },
+            "fr": {
+              "main": "Médias et communications",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Mental health",
+              "tips": []
+            },
+            "fr": {
+              "main": "Santé mentale",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Midwifery",
+              "tips": []
+            },
+            "fr": {
+              "main": "Métier de sage-femme",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Nursing",
+              "tips": []
+            },
+            "fr": {
+              "main": "Profession d'infirmier ou infirmière",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Occupational health and safety",
+              "tips": []
+            },
+            "fr": {
+              "main": "Santé et sécurité au travail",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Optometry",
+              "tips": []
+            },
+            "fr": {
+              "main": "Optométrie",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Physiotherapy",
+              "tips": []
+            },
+            "fr": {
+              "main": "Physiothérapie",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Project management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Gestion de projets",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Sales and marketing",
+              "tips": []
+            },
+            "fr": {
+              "main": "Marketing",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Skilled trades",
+              "tips": []
+            },
+            "fr": {
+              "main": "Métiers spécialisés",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Social work",
+              "tips": []
+            },
+            "fr": {
+              "main": "Travail social",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Supply chain management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Gestion de la chaîne d'approvisionnement",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "other_field_of_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Other",
+              "tips": []
+            },
+            "fr": {
+              "main": "Autre",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "other_field_of_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_wrong_field_of_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },
+        {
+          "conditions": [],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_btp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "type": "SELECT",
+      "title": {
+        "en": "Adapt international education and work experience to Canadian labour market",
+        "fr": "Adapter mon expérience professionnelle étrangère au Canada"
+      },
+      "text": {
+        "en": {
+          "main": "What was your field of work before arriving in Canada?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Quel était votre domaine professionel à l'étranger?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Accounting",
+              "tips": []
+            },
+            "fr": {
+              "main": "Comptabilité",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Administration",
+              "tips": []
+            },
+            "fr": {
+              "main": "Administration",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Architecture",
+              "tips": []
+            },
+            "fr": {
+              "main": "Architecture",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Business",
+              "tips": []
+            },
+            "fr": {
+              "main": "Commerce",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Construction",
+              "tips": []
+            },
+            "fr": {
+              "main": "Construction",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Customer service and salesforce channel management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Service clients",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Engineering",
+              "tips": []
+            },
+            "fr": {
+              "main": "Ingénierie",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Environment",
+              "tips": []
+            },
+            "fr": {
+              "main": "Environnement",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Financial services",
+              "tips": []
+            },
+            "fr": {
+              "main": "Finance",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Green economy",
+              "tips": []
+            },
+            "fr": {
+              "main": "Économie verte",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Health research",
+              "tips": []
+            },
+            "fr": {
+              "main": "Recherche en santé",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Healthcare",
+              "tips": []
+            },
+            "fr": {
+              "main": "Santé",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Human resources",
+              "tips": []
+            },
+            "fr": {
+              "main": "Ressources humaines",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Information technology",
+              "tips": []
+            },
+            "fr": {
+              "main": "Technologies de l'information",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Interpreting",
+              "tips": []
+            },
+            "fr": {
+              "main": "Interprétariat",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Management",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Media and communications",
+              "tips": []
+            },
+            "fr": {
+              "main": "Médias et communications",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Mental health",
+              "tips": []
+            },
+            "fr": {
+              "main": "Santé mentale",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Midwifery",
+              "tips": []
+            },
+            "fr": {
+              "main": "Métier de sage-femme",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Nursing",
+              "tips": []
+            },
+            "fr": {
+              "main": "Profession d'infirmier ou infirmière",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Occupational health and safety",
+              "tips": []
+            },
+            "fr": {
+              "main": "Santé et sécurité au travail",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Optometry",
+              "tips": []
+            },
+            "fr": {
+              "main": "Optométrie",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Physiotherapy",
+              "tips": []
+            },
+            "fr": {
+              "main": "Physiothérapie",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Project management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Gestion de projets",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Sales and marketing",
+              "tips": []
+            },
+            "fr": {
+              "main": "Marketing",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Skilled trades",
+              "tips": []
+            },
+            "fr": {
+              "main": "Métiers spécialisés",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Social work",
+              "tips": []
+            },
+            "fr": {
+              "main": "Travail social",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Supply chain management",
+              "tips": []
+            },
+            "fr": {
+              "main": "Gestion de la chaîne d'approvisionnement",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Teaching",
+              "tips": []
+            },
+            "fr": {
+              "main": "Enseignement",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Transportation",
+              "tips": []
+            },
+            "fr": {
+              "main": "Transports",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "other_field_of_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Other",
+              "tips": []
+            },
+            "fr": {
+              "main": "Autre",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "other_field_of_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_wrong_field_of_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },
+        {
+          "conditions": [],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_btp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        }        
+      ]
+    }                                     
   ]
 }
