@@ -84,7 +84,7 @@
         <div class="row05 padding-inner-e {% cycle 'c-elem1' 'c-elem2' %}">
           <div class="text-center">
             {% if p.free %}
-            <img src="../../static/osr/images/free.png" width="100px" height="100px" alt="Free"/>
+            <img src="../../static/osr/images/free_sup.png" width="100px" height="100px" alt="Free"/>
             {% else %}
             <img src="../../static/osr/images/paid.png" width="100px" height="100px" alt="Paid"/>
             {% endif %}
@@ -146,8 +146,15 @@
     </div>               
 
     <div class="row">
-        <br/>
-    </div>      
+      <div class="columns small-12">
+        <h3 id="about-the-program">{% blocktrans %}Footnote{% endblocktrans %}</h3>  
+        <p><a id="ftn1" title="Footnote 1">
+          <sup>[1]</sup></a>
+        {% blocktrans %}The program is free if you meet the eligibility criteria {% endblocktrans %} 
+        </p>
+      </div>
+    </div> 
+    <br/>  
 
     <form name="setLangEng" action="/i18n/setlang/" method="POST">
       {% csrf_token %}
