@@ -7,7 +7,7 @@ from .models import Benefit, ProfileSection, GlossaryEntry
 
 @register(Program)
 class ProgramTranslationOptions(TranslationOptions):
-  fields = ('name_official', 'name_branding', 'description', 'description_for_comparison_page', 'details', 'length', 'subsidies', 'support', 'funding', 'fees', 'types_of_sps')
+  fields = ('name_official', 'name_branding', 'description', 'description_for_comparison_page', 'details', 'length', 'subsidies', 'support', 'funding', 'fees', 'types_of_sps', 'map_sp_label', 'ministry', 'eligibility_disclaimer')
 
 @register(ProgramRegistrationSteps)
 class ProgramRegistrationStepsTranslationOptions(TranslationOptions):
