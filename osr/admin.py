@@ -54,12 +54,13 @@ class AdminProgramProgramLinks(TranslationTabularInline):
 
 class AdminProgram(TranslationAdmin):
   fieldsets = [
-    (_('BASIC INFORMATION'), {'fields': ['name_official', 'name_branding', 'code', 'order_id']}),
+    (_('BASIC INFORMATION'), {'fields': ['name_official', 'name_branding', 'code', 'order_id', 'ministry']}),
     (_('COLOURS'),       {'fields': ['marker', 'foreground_colour', 'background_colour']}),
     (_('TEXT FIELDS'),  {'fields': ['description', 'description_for_comparison_page', 'details', 'length', 'subsidies', 'support', 'funding', 'fees', 'free', 'types_of_sps']}),
     (_('KEY BENEFITS'),  {'fields': ['benefits']}),
     (_('OPTIONS'),  {'fields': ['learning_options', 'schedule_options']}),
-    (_('ELIGIBLE IMMIGRATION STATUS'),  {'fields': ['eligible_immigration_status']})
+    (_('ELIGIBLE IMMIGRATION STATUS'),  {'fields': ['eligible_immigration_status', 'eligibility_disclaimer']}),
+    (_('MAP'),  {'fields': ['map_display', 'map_sp_label']})
   ]    
   inlines = [
     AdminProgramRegistrationSteps,
