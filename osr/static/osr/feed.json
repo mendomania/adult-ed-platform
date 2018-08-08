@@ -23,7 +23,6 @@
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "goal_language",
@@ -45,7 +44,6 @@
           }
         },
         {
-          "id": 1,
           "dico": [
             {
               "key": "goal_highschool",
@@ -53,7 +51,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }
+            },
+            {
+              "key": "hs_title",
+              "val": {
+                "en": "High school completion",
+                "fr": "Achèvement des études secondaires"
+              }
+            }            
           ],
           "text": {
             "en": {
@@ -72,34 +77,34 @@
           }
         },
         {
-          "id": 2,
           "dico": [
             {
-              "key": "goal_upgrade_credits_marks",
+              "key": "goal_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
-            }
+            },
+            {
+              "key": "hs_title",
+              "val": {
+                "en": "Enter college, university or apprenticeship",
+                "fr": "Préparer des études supérieures ou un apprentissage"
+              }
+            }            
           ],
           "text": {
             "en": {
-              "main": "Earn missing credits or upgrade marks to enter college, university or apprenticeship",
-              "tips": [
-                {
-                  "key": "credits",
-                  "tip": "A record of a completion of a course"
-                }
-              ]
+              "main": "Enter college, university or apprenticeship",
+              "tips": []
             },
             "fr": {
-              "main": "Obtenir de nouveaux crédits ou améliorer des notes pour faire des études supérieures ou préparer l'apprentissage d'un métier spécialisé",
+              "main": "Faire des études supérieures ou préparer l'apprentissage d'un métier spécialisé",
               "tips": []
             }
           }
         },
         {
-          "id": 3,
           "dico": [
             {
               "key": "goal_refresh_skills",
@@ -126,7 +131,6 @@
           }
         },
         {
-          "id": 4,
           "dico": [
             {
               "key": "goal_canadian_xp",
@@ -186,7 +190,6 @@
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "profile_basic_age",
@@ -215,6 +218,13 @@
       "next": [
         {
           "conditions": [
+            {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
             {
               "key": "profile_basic_age",
               "val": {
@@ -258,6 +268,13 @@
         {
           "conditions": [
             {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
               "key": "profile_basic_age",
               "val": {
                 "en": "18",
@@ -270,6 +287,13 @@
         {
           "conditions": [
             {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
               "key": "profile_basic_age",
               "val": {
                 "en": ">18",
@@ -278,12 +302,36 @@
             }                      
           ],
           "id": 2
-        }                
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                     
+          ],
+          "id": 2
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                     
+          ],
+          "id": 2
+        }                                
       ]
     },
     {
       "id": 2,
-      "type": "CHECK",
+      "type": "RADIO",
       "title": {
         "en": "Plan your future education",
         "fr": "Votre parcours d'éducation"
@@ -299,12 +347,11 @@
         }
       },
       "instructions": {
-        "en": "Select all that apply",
-        "fr": "Sélectionnez toutes les cases pertinentes"
+        "en": "Pick one",
+        "fr": "Sélectionnez la case pertinente"
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "profile_basic_status_can_citizen",
@@ -331,7 +378,6 @@
           }
         },
         {
-          "id": 1,
           "dico": [
             {
               "key": "profile_basic_status_nat_citizen",
@@ -341,7 +387,7 @@
               }              
             },
             {
-              "key": "link_settlement",
+              "key": "link_settlement_nat_citizen",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -370,7 +416,6 @@
           }
         },
         {
-          "id": 2,
           "dico": [
             {
               "key": "profile_basic_status_pr",
@@ -380,7 +425,7 @@
               }              
             },
             {
-              "key": "link_settlement",
+              "key": "link_settlement_pr",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -399,7 +444,6 @@
           }
         },
         {
-          "id": 3,
           "dico": [
             {
               "key": "profile_basic_status_refugee",
@@ -409,7 +453,7 @@
               }              
             },
             {
-              "key": "link_settlement",
+              "key": "link_settlement_refugee",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -428,7 +472,6 @@
           }
         },
         {
-          "id": 4,
           "dico": [
             {
               "key": "profile_basic_status_claimant",
@@ -438,7 +481,7 @@
               }              
             },
             {
-              "key": "link_settlement",
+              "key": "link_settlement_claimant",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -457,46 +500,6 @@
           }
         },
         {
-          "id": 5,
-          "dico": [
-            {
-              "key": "profile_basic_status_approval",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }              
-            },
-            {
-              "key": "link_settlement",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }              
-            }            
-          ],
-          "text": {
-            "en": {
-              "main": "Have a letter of initial approval of PR from Immigration Refugee and Citizenship Canada",
-              "tips": [
-                {
-                  "key": "PR",
-                  "tip": "Permanent residence"
-                }
-              ]
-            },
-            "fr": {
-              "main": "J'ai une lettre d'approbation initiale de status de RP de Citoyenneté et Immigration Canada",
-              "tips": [
-                {
-                  "key": "RP",
-                  "tip": "Résidence permanente"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "id": 6,
           "dico": [
             {
               "key": "profile_basic_status_caregiver",
@@ -506,7 +509,7 @@
               }              
             },
             {
-              "key": "link_settlement",
+              "key": "link_settlement_caregiver",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -525,7 +528,6 @@
           }
         },
         {
-          "id": 7,
           "dico": [
             {
               "key": "profile_basic_status_nominee",
@@ -535,7 +537,7 @@
               }              
             },
             {
-              "key": "link_settlement",
+              "key": "link_settlement_nominee",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -554,7 +556,6 @@
           }
         },
         {
-          "id": 8,
           "dico": [
             {
               "key": "profile_basic_status_other",
@@ -580,6 +581,13 @@
       "next": [
         {
           "conditions": [
+            {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
             {
               "key": "profile_basic_age",
               "val": {
@@ -616,6 +624,13 @@
         {
           "conditions": [
             {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
               "key": "profile_basic_age",
               "val": {
                 "en": "18",
@@ -651,6 +666,13 @@
         {
           "conditions": [
             {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
               "key": "profile_basic_age",
               "val": {
                 "en": ">18",
@@ -679,6 +701,13 @@
         {
           "conditions": [
             {
+              "key": "goal_language",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },          
+            {
               "key": "profile_basic_age",
               "val": {
                 "en": ">18",
@@ -705,8 +734,449 @@
           ]          
         },
         {
-          "conditions": [                   
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }       
           ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_contact_school_board",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }       
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_contact_school_board",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                       
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }       
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_contact_school_board",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                       
+          ]          
+        }, 
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }       
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_contact_school_board",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                       
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }       
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_contact_school_board",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                       
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            }       
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_contact_school_board",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                       
+          ]          
+        },                        
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }       
+          ],
+          "id": 7          
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }       
+          ],
+          "id": 7          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }       
+          ],
+          "id": 7          
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }       
+          ],
+          "id": 7          
+        },          
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }       
+          ],
+          "id": 7          
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }, 
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }       
+          ],
+          "id": 7          
+        },
+        {
+          "conditions": [
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }       
+          ],
+          "id": 8
+        }, 
+        {
+          "conditions": [
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }       
+          ],
+          "id": 9
+        },
+
+
+
+
+
+
+
+
+
+
+        {
+          "conditions": [],
           "id": 3       
         }                         
       ]
@@ -734,7 +1204,6 @@
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "profile_basic_lang_source",
@@ -756,7 +1225,6 @@
           }
         },
         {
-          "id": 1,
           "dico": [
             {
               "key": "profile_basic_lang_source",
@@ -778,7 +1246,6 @@
           }
         },
         {
-          "id": 2,
           "dico": [
             {
               "key": "profile_basic_lang_source",
@@ -800,7 +1267,6 @@
           }
         },
         {
-          "id": 3,
           "dico": [
             {
               "key": "profile_basic_lang_source",
@@ -955,7 +1421,6 @@
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "lang_target",
@@ -984,7 +1449,6 @@
           }
         },
         {
-          "id": 1,
           "dico": [
             {
               "key": "lang_target",
@@ -1255,7 +1719,6 @@
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "lang_target",
@@ -1284,7 +1747,6 @@
           }
         },
         {
-          "id": 1,
           "dico": [
             {
               "key": "lang_target",
@@ -1313,7 +1775,6 @@
           }
         },
         {
-          "id": 2,
           "dico": [
             {
               "key": "lang_target",
@@ -1549,7 +2010,6 @@
       },
       "options": [
         {
-          "id": 0,
           "dico": [
             {
               "key": "profile_lang_goal_everyday",
@@ -1571,7 +2031,6 @@
           }
         },
         {
-          "id": 1,
           "dico": [
             {
               "key": "profile_lang_goal_studies",
@@ -1622,7 +2081,7 @@
               "tips": []
             },
             "fr": {
-              "main": "Pour me préparer à avoir un premier emploi ou un meilleur emploi",
+              "main": "Pour trouver un premier emploi ou un meilleur emploi",
               "tips": []
             }
           }
@@ -1719,6 +2178,3392 @@
           "id": -1
         }
       ]
-    }    
+    }, 
+    {
+      "id": 7,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "What is your immediate next goal after obtaining your highschool diploma or certificate?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Quel est votre but immédiat après avoir obtenu un diplôme d'études secondaires?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                        
+          ],
+          "text": {
+            "en": {
+              "main": "Work",
+              "tips": []
+            },
+            "fr": {
+              "main": "Trouver un premier emploi ou un meilleur emploi",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_university",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_ods_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "path_pre_uni_access",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                    
+          ],
+          "text": {
+            "en": {
+              "main": "Study in university",
+              "tips": []
+            },
+            "fr": {
+              "main": "Faire des études à l'université",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_ods_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },           
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                                          
+          ],
+          "text": {
+            "en": {
+              "main": "Study in college",
+              "tips": []
+            },
+            "fr": {
+              "main": "Faire des études au collège",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_ods_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                    
+          ],
+          "text": {
+            "en": {
+              "main": "Do an apprenticeship",
+              "tips": []
+            },
+            "fr": {
+              "main": "Faire un apprentissage",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },                     
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },
+        {
+          "conditions": [],
+          "id": -1
+        }               
+      ]
+    },
+    {
+      "id": 8,
+      "type": "CHECK",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Why do you want to obtain your highschool diploma?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Pourquoi voulez-vous obtenir votre diplôme d'études secondaires?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "Select all that apply",
+        "fr": "Sélectionnez toutes les cases pertinentes"
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_employment_ontario",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "For work",
+              "tips": []
+            },
+            "fr": {
+              "main": "Pour trouver un premier emploi ou un meilleur emploi",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_studies",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "For further education",
+              "tips": []
+            },
+            "fr": {
+              "main": "Pour me préparer à faire des études dans l'avenir",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "profile_hs_goal_studies",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 9         
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 10         
+        }        
+      ]
+    },
+    {
+      "id": 9,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Which one of these are you the most interested in pursuing next?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Quel est votre but immédiat?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "Pick one",
+        "fr": "Sélectionnez la case pertinente"
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_university",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_ods_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ],
+          "text": {
+            "en": {
+              "main": "Study in university",
+              "tips": []
+            },
+            "fr": {
+              "main": "Faire des études à l'université",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_ods_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                        
+          ],
+          "text": {
+            "en": {
+              "main": "Study in college",
+              "tips": []
+            },
+            "fr": {
+              "main": "Faire des études au collège",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "link_ods_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                        
+          ],
+          "text": {
+            "en": {
+              "main": "Do an apprenticeship",
+              "tips": []
+            },
+            "fr": {
+              "main": "Faire un apprentissage",
+              "tips": []
+            }
+          }
+        }        
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [],
+          "id": 10         
+        }        
+      ]
+    },
+    {
+      "id": 10,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Have you previously attended high school?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Est-ce que vous avez déjà commencé des études secondaires?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "hs_started",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Yes",
+              "tips": []
+            },
+            "fr": {
+              "main": "Oui",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "No",
+              "tips": []
+            },
+            "fr": {
+              "main": "Non",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "hs_started",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 11
+        },
+        {
+          "conditions": [],
+          "id": 16
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Did you graduate high school?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Est-ce que vous avez fini vos études secondaires?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_complete",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "hs_completion",
+              "val": {
+                "en": "graduate",
+                "fr": "fini"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Yes",
+              "tips": []
+            },
+            "fr": {
+              "main": "Oui",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_incomplete",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "hs_completion",
+              "val": {
+                "en": "go to",
+                "fr": "commencé"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "No",
+              "tips": []
+            },
+            "fr": {
+              "main": "Non",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [],
+          "id": 12
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Where did you #hs_completion# high school?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Où est-ce que vous avez #hs_completion# vos études secondaires?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Ontario",
+              "tips": []
+            },
+            "fr": {
+              "main": "En Ontario",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "link_ods_plar",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Another province in Canada",
+              "tips": []
+            },
+            "fr": {
+              "main": "Dans une autre province au Canada",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "link_ods_plar",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Outside of Canada",
+              "tips": []
+            },
+            "fr": {
+              "main": "En dehors du Canada",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "link_ods_plar",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 16
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_hs_incomplete",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 16
+        },
+        {
+          "conditions": [],
+          "id": 13
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Which high school diploma or certificate do you have?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Vous avez quel diplôme d'études secondaires?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_diploma_ossd",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Ontario Secondary School Diploma (OSSD)",
+              "tips": []
+            },
+            "fr": {
+              "main": "Diplôme d'études secondaires de l'Ontario (DESO)",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_diploma_ossc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Ontario Secondary School Certificate (OSSC)",
+              "tips": []
+            },
+            "fr": {
+              "main": "Certificat d'études secondaires de l'Ontario (CESO)",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_diploma_none",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "text": {
+            "en": {
+              "main": "None",
+              "tips": []
+            },
+            "fr": {
+              "main": "Aucun des deux",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_hs_diploma_ossd",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 14
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_hs_diploma_ossc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 15
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_hs_diploma_none",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 16
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Since you have your OSSD, what do you want to do next?",
+          "tips": [
+            {
+              "key": "OSSD",
+              "tip": "Ontario Secondary School Diploma"
+            }
+          ]
+        },
+        "fr": {
+          "main": "Puisque vous avez déjà votre DESO, quel est votre prochain objectif?",
+          "tips": [
+            {
+              "key": "DESO",
+              "tip": "Diplôme d'études secondaires de l'Ontario"
+            }
+          ]
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "hs_credits_or_marks",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "text": {
+            "en": {
+              "main": "Earn new credits or improve my existing marks",
+              "tips": [
+                {
+                  "key": "credits",
+                  "tip": "A record of a completion of a course"
+                }
+              ]
+            },
+            "fr": {
+              "main": "Obtenir de nouveaux crédits ou améliorer mes notes actuelles",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }           
+          ],
+          "text": {
+            "en": {
+              "main": "I'm not sure yet. Show me all relevant options",
+              "tips": []
+            },
+            "fr": {
+              "main": "Je ne suis pas sûr. Montre-moi toutes les options pertinentes",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "hs_credits_or_marks",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_ossd_proof",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_university",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },          
+            {
+              "key": "path_pre_uni_access",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        }                                                                
+      ]
+    },
+    {
+      "id": 15,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Since you have your OSSC, what do you want to do next?",
+          "tips": [
+            {
+              "key": "OSSC",
+              "tip": "Ontario Secondary School Certificate"
+            }
+          ]
+        },
+        "fr": {
+          "main": "Puisque vous avez déjà votre CESO, quel est votre prochain objectif?",
+          "tips": [
+            {
+              "key": "CESO",
+              "tip": "Certificat d'études secondaires de l'Ontario"
+            }
+          ]
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "hs_upgrade_ossc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "text": {
+            "en": {
+              "main": "Upgrade my OSSC to an OSSD",
+              "tips": []
+            },
+            "fr": {
+              "main": "Passer d'un CESO à un DESO",
+              "tips": []
+            }
+          }
+        },      
+        {
+          "dico": [
+            {
+              "key": "hs_credits_or_marks",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "text": {
+            "en": {
+              "main": "Earn new credits or improve my existing marks",
+              "tips": [
+                {
+                  "key": "credits",
+                  "tip": "A record of a completion of a course"
+                }
+              ]
+            },
+            "fr": {
+              "main": "Obtenir de nouveaux crédits ou améliorer mes notes actuelles",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }           
+          ],
+          "text": {
+            "en": {
+              "main": "I'm not sure yet. Show me all relevant options",
+              "tips": []
+            },
+            "fr": {
+              "main": "Je ne suis pas sûr. Montre-moi toutes les options pertinentes",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "hs_upgrade_ossc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },      
+        {
+          "conditions": [
+            {
+              "key": "hs_credits_or_marks",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_ossc_proof",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_university",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },          
+            {
+              "key": "path_pre_uni_access",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                       
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                   
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        }                                                                
+      ]
+    },
+    {
+      "id": 16,
+      "type": "RADIO",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Do you have a GED or an ACE?",
+          "tips": [
+            {
+              "key": "GED",
+              "tip": "A group of four subject tests which, when passed, provide certification that the test taker has Canadian high school-level academic skills"
+            },
+            {
+              "key": "ACE",
+              "tip": "Academic Career Entrance"
+            }            
+          ]
+        },
+        "fr": {
+          "main": "Est-ce que vous avez un GED ou un ACE?",
+          "tips": [
+            {
+              "key": "GED",
+              "tip": "Ensemble de quatre examens matières qui, lorsque réussis, affirme qu'une personne détient des compétences académiques de niveau secondaire"
+            },
+            {
+              "key": "ACE",
+              "tip": "Accès Carrières Études"
+            }            
+          ]
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "id": 0,
+          "dico": [
+            {
+              "key": "hs_equivalent",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "Yes",
+              "tips": []
+            },
+            "fr": {
+              "main": "Oui",
+              "tips": []
+            }
+          }
+        },
+        {
+          "id": 1,
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "No",
+              "tips": []
+            },
+            "fr": {
+              "main": "Non",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "hs_equivalent",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 17
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_hs_goal_university",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "path_pre_uni_access",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },   
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                     
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },    
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                    
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        }                
+      ]
+    },
+    {
+      "id": 17,
+      "type": "CHECK",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Which one do you have?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Vous avez lequel?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "Select all that apply",
+        "fr": "Sélectionnez toutes les cases pertinentes"
+      },
+      "options": [
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "ACE",
+              "tips": []
+            },
+            "fr": {
+              "main": "ACE",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "GED",
+              "tips": []
+            },
+            "fr": {
+              "main": "GED",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [],
+          "id": 18
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "type": "CHECK",
+      "title": {
+        "en": "#hs_title#",
+        "fr": "#hs_title#"
+      },
+      "text": {
+        "en": {
+          "main": "Are you looking for alternatives beyond what you have?",
+          "tips": []
+        },
+        "fr": {
+          "main": "Cherchez-vous des façons alternatives de prouver vos connaissances de niveau secondaire?",
+          "tips": []
+        }
+      },
+      "instructions": {
+        "en": "",
+        "fr": ""
+      },
+      "options": [
+        {
+          "dico": [],
+          "text": {
+            "en": {
+              "main": "Yes",
+              "tips": []
+            },
+            "fr": {
+              "main": "Oui",
+              "tips": []
+            }
+          }
+        },
+        {
+          "dico": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "text": {
+            "en": {
+              "main": "No",
+              "tips": []
+            },
+            "fr": {
+              "main": "Non",
+              "tips": []
+            }
+          }
+        }
+      ],
+      "equivalencies": [],
+      "next": [
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "path_hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                 
+          ]           
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                             
+          ]           
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                             
+          ]           
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                             
+          ]           
+        },        
+        {
+          "conditions": [          
+            {
+              "key": "profile_hs_goal_university",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "path_pre_uni_access",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                    
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                                
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },   
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                                
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                      
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                                
+            {
+              "key": "path_contact_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                    
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                                
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },   
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                                
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                      
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                                
+            {
+              "key": "path_contact_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        }              
+      ]
+    }                                             
   ]
 }
