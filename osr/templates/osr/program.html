@@ -59,20 +59,36 @@
       </div>
     </div>
 
+    {% if program.map_display %}
     <div class="row h4">
       <div class="columns small-12">
         <h3>{% blocktrans %}On this page{% endblocktrans %}</h3>
         <div class="columns small-6">
           <span>1. <a href="#about-the-program">{% blocktrans %}About the program{% endblocktrans %}</a></span><br/>
           <span>2. <a href="#eligibility">{% blocktrans %}Eligibility{% endblocktrans %}</a></span><br/>
-          <span>3. <a href="#financial-information">{% blocktrans %}Financial information{% endblocktrans %}</a></span><br/>
+          <span>3. <a href="#financial-information">{% blocktrans %}Program cost{% endblocktrans %}</a></span><br/>
         </div>
         <div class="columns small-6">
           <span>4. <a href="#how-to-register">{% blocktrans %}How to register{% endblocktrans %}</a></span><br/>          
-          <span>5. <a href="#service-provider-locations">{% blocktrans %}Service provider locations{% endblocktrans %}</a></span><br/>          
+          <span>5. <a href="#service-provider-locations">{{ program.map_sp_label }}</a></span><br/>          
         </div>
       </div>
-    </div>
+    </div>    
+    {% else %}
+    <div class="row h4">
+      <div class="columns small-12">
+        <h3>{% blocktrans %}On this page{% endblocktrans %}</h3>
+        <div class="columns small-6">
+          <span>1. <a href="#about-the-program">{% blocktrans %}About the program{% endblocktrans %}</a></span><br/>
+          <span>2. <a href="#eligibility">{% blocktrans %}Eligibility{% endblocktrans %}</a></span><br/>          
+        </div>
+        <div class="columns small-6">
+          <span>3. <a href="#financial-information">{% blocktrans %}Program cost{% endblocktrans %}</a></span><br/>
+          <span>4. <a href="#how-to-register">{% blocktrans %}How to register{% endblocktrans %}</a></span><br/>          
+        </div>
+      </div>
+    </div>    
+    {% endif %}
 
     <div class="row">
       <div class="columns small-12">
@@ -176,6 +192,9 @@
             </ul>
         {% endif %}            
         </ol>
+        {% if program.eligibility_disclaimer %}
+        <p>{{ program.eligibility_disclaimer }}</p>
+        {% endif %}
       </div>
     </div>
 
@@ -187,7 +206,7 @@
 
     <div class="row">
       <div class="columns small-12">
-        <h3 id="financial-information">{% blocktrans %}Financial information{% endblocktrans %}</h3>
+        <h3 id="financial-information">{% blocktrans %}Program cost{% endblocktrans %}</h3>
         <br/>
       </div>
     </div>
@@ -260,6 +279,7 @@
       </div>
     </div>
 
+    {% if program.map_display %}
     <div class="row">
       <div class="columns small-12">
         <hr/>
@@ -268,13 +288,14 @@
 
     <div class="row">
       <div class="columns small-12">
-        <h3 id="service-provider-locations">{% blocktrans %}Service provider locations{% endblocktrans %}</h3>
+        <h3 id="service-provider-locations">{{ program.map_sp_label }}</h3>
         <br/>
         <div class="text-center">
         <iframe id="map" width="800" height="450" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col26+from+1ljG-Pww0VwGWBAYrmQofnMqMZTaYfyReL9GvzKAS&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=13&l=col26&y=2&tmplt=2&hml=TWO_COL_LAT_LNG"></iframe>      
         </div>
       </div>
     </div>  
+    {% endif %}
 
     <div class="row">
       <div class="columns small-12">
@@ -282,35 +303,11 @@
       </div>
     </div>    
 
-    <!--<div class="row">
-      <br>
-      <div class="columns small-12 text-center">
-        <a class="button" href="https://www.ontario.ca/page/government">Show me schools near me</a>
-      </div>
-    </div>-->
-
-   <!--<div class="row">
-      <div class="columns small-12">
-        <hr/>
-      </div>
-    </div>-->
-
-    <!--{% if program.types_of_sps %}
-    <div class="row">
-      <div class="columns small-12">
-        <h3 id="types-of-service-providers">Service providers</h3>
-        <p>{{ program.types_of_sps|linebreaks }}</p>
-      </div>
-    </div> 
-    <br/>
-    <br/>   
-    {% endif %}-->
-
     <footer class="light-grey-bg bottom-padding">
 
       <div class="row h3">
         <div class="small-12 columns">
-          <h2 class="top-margin">{% blocktrans %}Ministry of Training, Colleges and Universities{% endblocktrans %}</h2>
+          <h2 class="top-margin">{{ program.ministry }}</h2>
           <h2 class="visually-hidden">{% blocktrans %}Legal notices{% endblocktrans %}</h2>
           <ul class="inline-list smaller top-margin-double">
             <li>
