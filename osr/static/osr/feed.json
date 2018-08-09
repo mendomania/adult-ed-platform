@@ -215,7 +215,7 @@
         }
       ],
       "equivalencies": [],
-      "next": [
+      "next": [            
         {
           "conditions": [
             {
@@ -264,7 +264,7 @@
               }              
             }                                  
           ]
-        },        
+        },
         {
           "conditions": [
             {
@@ -3187,7 +3187,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 13,
       "type": "RADIO",
       "title": {
         "en": "#hs_title#",
