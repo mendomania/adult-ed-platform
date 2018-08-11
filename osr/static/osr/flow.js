@@ -1,4 +1,5 @@
-const data = 'https://api.myjson.com/bins/omp8i';
+const data = 'https://api.myjson.com/bins/1fg410';
+// const data = 'https://raw.githubusercontent.com/mendomania/adult-ed-platform/edaf00c2e2f6faeac82bfc742b1fa93977476f44/osr/static/osr/feed.json';
 
 Vue.component('card', {
     template:`
@@ -13,7 +14,7 @@ Vue.component('card', {
   <div>
     <div class="row">
       <div class="columns small-12">
-        <h6>{{ titleWithoutPlaceholders }}</h6>
+        {{ card.id }} - <h6>{{ titleWithoutPlaceholders }}</h6>
       </div>
     </div>
     <div class="row">
@@ -126,20 +127,7 @@ Vue.component('card', {
     // The presence of flag will signal the end of the matchmaker
     if (this.dico['flag'] && ( this.dico['flag'] == 'T')) {
       this.submitForm();
-    }
-    
-    // TODO:
-    // if (this.checkOpts) {
-    //   for (var i = 0; i < this.checkOpts.length; i++) {
-    //     alert("[X]: " + this.checkOpts[i].id);
-    //   }   
-    // }
-    // if (this.radioOpts) {
-    //   alert("[X]: " + this.radioOpts[i].id);
-    // }
-    // if (this.inputOpts) {
-    //   alert("[X]: " + this.inputOpts);
-    // }    
+    }   
   },     
   computed: {
     titleWithoutPlaceholders() {
@@ -180,7 +168,7 @@ Vue.component('card', {
       return options;
     },         
   },     
-  props: ['card', 'dico', 'lang', 'checkOpts', 'radioOpts', 'inputOpts'],
+  props: ['card', 'dico', 'lang'],
   methods: {
     /** 
     * Placeholders are variable names in between # symbols. If a string contains 
@@ -230,25 +218,7 @@ Vue.component('card', {
     /** Moves back to the previous card */
     backCard:function() {  
       this.progressBarWidth = Math.round(this.progressBarWidth - (100/15)); 
-      this.$emit('back');        
-
-      // console.log("+++++++++++++++");
-      // console.log(this.checkOpts);
-      // console.log(this.radioOpts);
-      // console.log(this.inputOpts);
-      // console.log("+++++++++++++++");
-      // if (this.checkOpts) {
-      //   for (var i = 0; i < this.checkOpts.length; i++) {
-      //     alert("[X]: " + this.checkOpts[i].id);
-      //   }   
-      // }
-      // if (this.radioOpts) {
-      //   alert("[X]: " + this.radioOpts[i].id);
-      // }
-      // if (this.inputOpts) {
-      //   alert("[X]: " + this.inputOpts);
-      // }            
-
+      this.$emit('back');              
     },
     /** Moves on to the next card */
     nextCard:function() {
@@ -256,10 +226,6 @@ Vue.component('card', {
         case 'RADIO': {    
           // Assert some options were checked
           if (this.answers) {  
-            console.log("***************************** [R1]");
-            console.log(this.answers);
-            console.log("***************************** [R2]");
-
             this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
             var obj = { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: this.answers };
             this.$emit('next', obj);
@@ -269,10 +235,6 @@ Vue.component('card', {
         case 'CHECK': { 
           // Assert some options were checked
           if (this.answers.length > 0) {
-            console.log("***************************** [C1]");
-            console.log(this.answers);
-            console.log("***************************** [C2]");
-
             this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
             var obj = { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: this.answers };
             this.$emit('next', obj);
@@ -281,10 +243,6 @@ Vue.component('card', {
         }
         case 'SELECT': {
           if (this.answers) {
-            console.log("***************************** [S1]");
-            console.log(this.answers);
-            console.log("***************************** [S2]");
-
             this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
             var obj = { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: this.answers };
             this.$emit('next', obj);
@@ -293,11 +251,7 @@ Vue.component('card', {
         }
         case 'INPUT_INT': {
           // Assert an answer was provided
-          if (this.answers.length > 0) {
-            console.log("***************************** [N1]");
-            console.log(this.answers);
-            console.log("***************************** [N2]");        
-
+          if (this.answers.length > 0) {      
             this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
             var input = { key: this.card.options[0].dico[0].key, val: this.answers };
             this.$emit('next', { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: input });            
@@ -306,10 +260,6 @@ Vue.component('card', {
         }
         case 'INPUT_STR': {
           if (this.answers.length > 0) {
-            console.log("***************************** [T1]");
-            console.log(this.answers);
-            console.log("***************************** [T2]");            
-
             this.progressBarWidth = Math.round(this.progressBarWidth + (100/15));
             var input = { key: this.card.options[0].dico[0].key, val: this.answers };
             this.$emit('next', { id: this.card.id, lang: this.lang, next: this.card.next, type: this.card.type, answers: input });            
@@ -354,12 +304,7 @@ const matchmaker = new Vue({
       // Stack that stores the state of the matchmaker for every card 
       // that is visited so that the user can freely go back and forth
       // between cards in the matchmaker
-      stack: [],
-
-      // TODO:
-      checkOpts: [], 
-      radioOpts: '',
-      inputOpts: ''
+      stack: []
     }
   },
   created() {
@@ -410,7 +355,7 @@ const matchmaker = new Vue({
     * given card to the matchmaker dictionary that will persist throughout
     * the whole quiz experience.
     */
-    addValuesToDictionary(e) {
+    addCardValuesToDictionary(e) {
       switch (e.type) {
         case 'RADIO': {
           for (var i = 0; i < e.answers.dico.length; i++) {
@@ -441,38 +386,68 @@ const matchmaker = new Vue({
           break;
         }             
       }       
-    },       
+    }, 
+
+    // TODO:
+    addExitValuesToDictionary(exit, lang) {
+      for (var i = 0; i < exit.length; i++) {
+        this.dico[exit[i].key] = exit[i].val[lang];
+      }         
+    },             
+
+    // TODO:
+    isConditionMet(key, val) {
+      if (!(this.dico[key])) {
+        return false;
+      }
+
+      if (val.charAt(0) == '<') {
+        return parseInt(this.dico[key]) < parseInt(val.slice(1));
+      } else if (val.charAt(0) == '>') {
+        return parseInt(this.dico[key]) > parseInt(val.slice(1));
+      } else {
+        return (this.dico[key] == val);
+      }
+    },
 
     /** 
     * Determines what should be the next card to present to the user based 
     * on the "next" array of the current card, which contains all possible
     * paths and the conditions that should be met to trigger each of them.
     */    
-    determineNextCard(e) {
+    determineNextCard(next, lang) {
       // If there is only one possible path, then take it
-      if (e.next.length == 1) {
-        return e.next[0].id;
+      if (next.length == 1) {
+        // Add 'exit' values to the matchmaker dictionary, if any
+        if (next[0].exit) {
+          this.addExitValuesToDictionary(next[0].exit, lang);
+        } 
+        return next[0];
       }
 
       // If there are several possible paths...
       else {        
         // Loop through all possible paths
-        for (var i = 0; i < e.next.length; i++) {
+        for (var i = 0; i < next.length; i++) {
           var bool = true;
-          var next = null;
+          var curr = null;
 
           // If a path has no conditions, then take it
-          if (e.next[i].conditions.length == 0) {
-            return e.next[i].id;
+          if (next[i].conditions.length == 0) {
+            
+            // Add 'exit' values to the matchmaker dictionary, if any
+            if (next[i].exit) {
+              this.addExitValuesToDictionary(next[i].exit, lang);
+            } 
+            return next[i];
           }
 
           // Otherwise: Loop through conditions for the path
-          for (var j = 0; j < e.next[i].conditions.length; j++) {
+          for (var j = 0; j < next[i].conditions.length; j++) {
             // Keep going if a condition is met
-            if (this.dico[e.next[i].conditions[j].key] && 
-                this.dico[e.next[i].conditions[j].key] == e.next[i].conditions[j].val[e.lang]) {
-              next = e.next[i].id;
-            } 
+            if (this.isConditionMet(next[i].conditions[j].key, next[i].conditions[j].val[lang])) {
+              curr = next[i];
+            }
             // Skip path if a condition is not met
             else {
               bool = false;
@@ -481,8 +456,12 @@ const matchmaker = new Vue({
           }
 
           // If all conditions are met, take that path
-          if (bool) {
-            return next;
+          if (bool) {            
+            // Add 'exit' values to the matchmaker dictionary, if any
+            if (curr.exit) {
+              this.addExitValuesToDictionary(curr.exit, lang);
+            }
+            return curr;
           }
         }
       }
@@ -493,6 +472,9 @@ const matchmaker = new Vue({
     * one of them has been visited before. 
     */        
     wasVisitedBefore(cardNo) {
+      if (this.visited.indexOf(cardNo) > 0) {
+        return true;
+      }      
       for (var x = 0; x < this.cards[cardNo].equivalencies.length; x++) {        
         if (this.visited.indexOf(this.cards[cardNo].equivalencies[x]) > 0) {
           return true;
@@ -507,30 +489,8 @@ const matchmaker = new Vue({
     * in the previous card, which is the value at the top of the stack.
     */   
     backCard() {
-      // TODO:
       var state = Object.assign({}, this.stack[this.stack.length - 1]);
       this.stack.pop();
-      // Get CHECK + RADIO + INPUT from here and SWITCH
-      // Activate values in HTML based on these
-      // if (state['check']) {
-      //   this.checkOpts = state['check'];
-      //   for (var i = 0; i < this.checkOpts.length; i++) {
-      //     alert("[Y]: " + this.checkOpts[i].id);
-      //   }        
-      // } 
-      // if (state['radio']) {
-      //   this.radioOpts = state['radio'];
-      //   alert("[Y]: " + this.radioOpts.id);
-      // } 
-      // if (state['input']) {
-      //   console.log("@@@@@@@@@@");
-      //   console.log(state['input']);
-      //   console.log("@@@@@@@@@@");        
-      //   this.inputOpts = state['input']['val'];
-      //   alert("[Y]: " + this.inputOpts);
-      // }                  
-      // console.log(document.getElementsByTagName('body')[0].innerHTML);
-      //document.getElementById("1").checked = true;
 
       var state = Object.assign({}, this.stack[this.stack.length - 1]);
       this.stageIntro = state['stageIntro'];
@@ -538,8 +498,6 @@ const matchmaker = new Vue({
       this.visited = Object.assign([], state['visited']);
       this.dico = Object.assign({}, state['dico']);
       this.currentCard = state['currentCard'];    
-
-      console.log("-----------------------------");
     },
 
     /** 
@@ -550,13 +508,18 @@ const matchmaker = new Vue({
       // Adds current card to array of visited cards
       this.visited.push(e.id);
       // Adds all values from current card to the matchmaker dictionary
-      this.addValuesToDictionary(e);  
+      this.addCardValuesToDictionary(e);  
 
+
+      // Resolves next card
       var me = this;
+      var curr = null;
       var promise = new Promise(function(resolve, reject) {
-        me.currentCard = me.determineNextCard(e);
+        curr = me.determineNextCard(e.next, e.lang);
+        me.currentCard = curr.id;
         while ((me.currentCard != -1) && (me.wasVisitedBefore(me.currentCard))) {
-          me.currentCard = me.determineNextCard(me.cards[me.currentCard]);
+          curr = me.determineNextCard(me.cards[me.currentCard].next, e.lang);
+          me.currentCard = curr.id;
         }    
 
         if ((me.currentCard == -1) || (!me.wasVisitedBefore(me.currentCard))) {
@@ -581,7 +544,6 @@ const matchmaker = new Vue({
         "dico": Object.assign({}, this.dico), 
         "type": e.type,
         "answers": e.answers });
-        //"check": e.check, "radio": e.radio, "input": e.input }); 
     }
   }
 });
