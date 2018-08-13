@@ -313,12 +313,19 @@
               }              
             },
             {
-              "key": "match_futr_language",
+              "key": "match_futr_esl",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
-            }                                  
+            },
+            {
+              "key": "match_futr_fsl",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                              
           ]
         },
         {
@@ -362,7 +369,14 @@
               }              
             },
             {
-              "key": "match_futr_language",
+              "key": "match_futr_esl",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_fsl",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -411,7 +425,14 @@
               }              
             },
             {
-              "key": "match_futr_language",
+              "key": "match_futr_esl",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_fsl",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -460,7 +481,14 @@
               }              
             },
             {
-              "key": "match_futr_language",
+              "key": "match_futr_esl",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_fsl",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -502,7 +530,14 @@
               }              
             },
             {
-              "key": "match_futr_language",
+              "key": "match_futr_esl",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_fsl",
               "val": {
                 "en": "T",
                 "fr": "T"
