@@ -2,8 +2,9 @@
 from modeltranslation.translator import register, TranslationOptions
 from .models import Program, ProgramRegistrationSteps, ProgramBestForScenarios
 from .models import Outcome, Eligibility, Subject, Stream, Profession, Feature, Facility
-from .models import Recommendation, LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus
-from .models import Benefit, ProfileSection, GlossaryEntry
+from .models import ExternalLink, LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus
+from .models import Benefit, ProfileSection, GlossaryEntry, Recommendation 
+from .models import GoalPath, UnhappyPath, FutureMatch
 
 @register(Program)
 class ProgramTranslationOptions(TranslationOptions):
@@ -33,9 +34,25 @@ class SubjectTranslationOptions(TranslationOptions):
 class StreamTranslationOptions(TranslationOptions):
   fields = ('text',)  
 
+@register(ExternalLink)
+class ExternalLinkTranslationOptions(TranslationOptions):
+  fields = ('text', 'reason')
+
 @register(Recommendation)
 class RecommendationTranslationOptions(TranslationOptions):
-  fields = ('text', 'reason')  
+  fields = ('text',)
+
+@register(GoalPath)
+class GoalPathTranslationOptions(TranslationOptions):
+  fields = ('text',)
+
+@register(UnhappyPath)
+class UnhappyPathTranslationOptions(TranslationOptions):
+  fields = ('text',)
+
+@register(FutureMatch)
+class FutureMatchTranslationOptions(TranslationOptions):
+  fields = ('text',)          
 
 @register(ProfileSection)
 class ProfileSectionTranslationOptions(TranslationOptions):
