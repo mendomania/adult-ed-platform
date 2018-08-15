@@ -306,21 +306,21 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_esl",
+              "key": "match_futr_esl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_fsl",
+              "key": "match_futr_fsl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -362,21 +362,21 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_esl",
+              "key": "match_futr_esl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_fsl",
+              "key": "match_futr_fsl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -418,21 +418,21 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_esl",
+              "key": "match_futr_esl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_fsl",
+              "key": "match_futr_fsl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -474,21 +474,21 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_esl",
+              "key": "match_futr_esl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_fsl",
+              "key": "match_futr_fsl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -523,21 +523,21 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_esl",
+              "key": "match_futr_esl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_fsl",
+              "key": "match_futr_fsl_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -690,7 +690,7 @@
               }              
             },          
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_skills",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -718,7 +718,7 @@
               }              
             },          
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_skills",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1108,7 +1108,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1150,7 +1150,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1192,7 +1192,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1234,7 +1234,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1269,7 +1269,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1311,7 +1311,7 @@
               }              
             },
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1353,7 +1353,7 @@
               }              
             },
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1395,7 +1395,7 @@
               }              
             },
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1437,7 +1437,7 @@
               }              
             },
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1472,7 +1472,7 @@
               }              
             },
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2102,7 +2102,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }                   
+            },
+           {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
           ],
           "id": 3,
           "exit": [
@@ -2114,14 +2121,14 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2129,6 +2136,62 @@
             }            
           ]          
         },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        }, 
         {
           "conditions": [
             {
@@ -2151,7 +2214,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }                   
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
           ],
           "id": 4,
           "exit": [
@@ -2163,14 +2233,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },               
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2193,7 +2319,14 @@
                 "en": "<18",
                 "fr": "<18"
               }
-            }       
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                   
           ],
           "id": -1,
           "exit": [
@@ -2205,14 +2338,63 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_caregiver",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                   
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2242,7 +2424,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }                   
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
           ],
           "id": 3,
           "exit": [
@@ -2254,14 +2443,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },                        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2291,7 +2536,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }                   
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
           ],
           "id": 4,
           "exit": [
@@ -2303,14 +2555,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2333,7 +2641,14 @@
                 "en": "<18",
                 "fr": "<18"
               }
-            }       
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                   
           ],
           "id": -1,
           "exit": [
@@ -2345,14 +2660,112 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                   
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },               
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_nominee",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                   
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2382,7 +2795,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }                   
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
           ],
           "id": 3,
           "exit": [
@@ -2394,14 +2814,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2431,7 +2907,14 @@
                 "en": "T",
                 "fr": "T"
               }              
-            }                   
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
           ],
           "id": 4,
           "exit": [
@@ -2443,14 +2926,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                               
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2473,7 +3012,14 @@
                 "en": "<18",
                 "fr": "<18"
               }
-            }       
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                   
           ],
           "id": -1,
           "exit": [
@@ -2485,14 +3031,63 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }            
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_status_other",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                   
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "msg_contact_sb",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3301,7 +3896,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3343,7 +3938,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3385,7 +3980,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3427,7 +4022,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3462,7 +4057,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3833,7 +4428,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3882,7 +4477,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3931,7 +4526,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3980,7 +4575,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4022,7 +4617,7 @@
               }              
             }, 
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4333,7 +4928,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4368,7 +4963,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4403,7 +4998,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4438,7 +5033,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4466,7 +5061,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "match_futr_lbs",
+              "key": "match_futr_lbs_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5209,12 +5804,61 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },      
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5244,19 +5888,26 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }
             }          
           ]
-        },              
+        },        
         {
           "conditions": [
             {
@@ -5272,12 +5923,96 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },                      
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5307,12 +6042,61 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5342,12 +6126,19 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5370,12 +6161,96 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }          
+          ]
+        },                
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5405,12 +6280,61 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 3,
           "exit": [
             {
-              "key": "match_curr_ace",
+              "key": "match_curr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5440,12 +6364,19 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 4,
           "exit": [
             {
-              "key": "match_curr_ace",
+              "key": "match_curr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5468,12 +6399,96 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": -1,
           "exit": [
             {
-              "key": "match_curr_ace",
+              "key": "match_curr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },                
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5503,12 +6518,61 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 3,
           "exit": [
             {
-              "key": "match_curr_ace",
+              "key": "match_curr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },        
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5538,12 +6602,19 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 4,
           "exit": [
             {
-              "key": "match_curr_ace",
+              "key": "match_curr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5566,12 +6637,96 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": -1,
           "exit": [
             {
-              "key": "match_curr_ace",
+              "key": "match_curr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]          
+        },                
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": ">18",
+                "fr": ">18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6745,7 +7900,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -6757,14 +7919,84 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6808,7 +8040,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -6820,14 +8059,14 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6864,7 +8103,84 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        }, 
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -6876,14 +8192,77 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },               
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6927,6 +8306,13 @@
                 "en": "T",
                 "fr": "T"
               }
+            },            
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
             }            
           ],
           "id": 3,
@@ -6939,77 +8325,14 @@
               }              
             },            
             {
-              "key": "match_curr_ged",
+              "key": "match_curr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }              
-            },                        
-            {
-              "key": "msg_pre_col_access_pse",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }              
-            }                                  
-          ]           
-        },
-        {
-          "conditions": [     
-            {
-              "key": "profile_basic_age",
-              "val": {
-                "en": "18",
-                "fr": "18"
-              }
-            },              
-            {
-              "key": "hs_all_relevant_options",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }
-            },
-            {
-              "key": "profile_hs_goal_college",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }
-            },
-            {
-              "key": "goal_canadian_xp",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }
-            }            
-          ],
-          "id": 4,
-          "exit": [
-            {
-              "key": "match_curr_adc",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }              
-            },            
-            {
-              "key": "match_curr_ged",
-              "val": {
-                "en": "T",
-                "fr": "T"
-              }              
-            },
-            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7053,7 +8376,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -7065,14 +8395,14 @@
               }              
             },            
             {
-              "key": "match_curr_ged",
+              "key": "match_curr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7116,7 +8446,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -7128,14 +8465,14 @@
               }              
             },            
             {
-              "key": "match_curr_ged",
+              "key": "match_curr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7172,7 +8509,364 @@
                 "en": "T",
                 "fr": "T"
               }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
             }
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },  
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },              
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -7191,7 +8885,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7417,7 +9174,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -7429,14 +9193,84 @@
               }              
             }, 
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7480,7 +9314,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -7492,14 +9333,14 @@
               }              
             }, 
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7536,7 +9377,84 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -7548,14 +9466,77 @@
               }              
             }, 
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7599,7 +9580,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -7618,7 +9606,77 @@
               }              
             }, 
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7662,7 +9720,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -7681,7 +9746,7 @@
               }              
             }, 
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7718,7 +9783,84 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -7737,7 +9879,70 @@
               }              
             }, 
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9804,7 +12009,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -9816,14 +12028,77 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },   
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                     
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },   
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9860,7 +12135,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -9872,14 +12154,14 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },   
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9909,7 +12191,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },   
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                     
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -9921,14 +12273,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },   
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                     
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },   
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9965,7 +12373,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -9984,7 +12399,70 @@
               }              
             },    
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                    
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },    
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10021,7 +12499,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -10040,7 +12525,7 @@
               }              
             },    
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10054,7 +12539,7 @@
               }              
             }                                  
           ]           
-        },        
+        },
         {
           "conditions": [     
             {
@@ -10070,7 +12555,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },    
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                    
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -10089,7 +12644,63 @@
               }              
             },    
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                    
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },    
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10287,7 +12898,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -10299,14 +12917,77 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10343,7 +13024,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -10355,14 +13043,14 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10392,7 +13080,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -10404,14 +13162,70 @@
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                               
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10448,7 +13262,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -10467,7 +13288,70 @@
               }              
             }, 
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10504,7 +13388,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -10523,7 +13414,7 @@
               }              
             }, 
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10553,7 +13444,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },  
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -10572,7 +13533,63 @@
               }              
             }, 
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                                              
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },              
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }, 
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12332,7 +15349,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -12344,14 +15368,77 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12388,7 +15475,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -12400,14 +15494,14 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12437,7 +15531,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        }, 
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -12449,14 +15613,70 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },               
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12500,7 +15720,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 3,
           "exit": [
@@ -12512,7 +15739,70 @@
               }              
             },
            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12556,7 +15846,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 4,
           "exit": [
@@ -12568,7 +15865,70 @@
               }              
             },
            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12605,7 +15965,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": -1,
           "exit": [
@@ -12617,7 +15984,63 @@
               }              
             },
            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12654,7 +16077,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -12673,7 +16103,70 @@
               }              
             },  
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12710,7 +16203,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -12729,7 +16229,7 @@
               }              
             },  
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12759,7 +16259,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -12778,7 +16348,63 @@
               }              
             },  
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "msg_pre_col_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_college",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13459,7 +17085,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -13471,14 +17104,77 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13515,7 +17211,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -13527,14 +17230,14 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13564,7 +17267,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -13576,14 +17349,70 @@
               }              
             },
             {
-              "key": "match_futr_ged",
+              "key": "match_futr_ged_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
               }              
             },
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "<18",
+                "fr": "<18"
+              }
+            },
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13627,7 +17456,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 3,
           "exit": [
@@ -13639,7 +17475,70 @@
               }              
             },
            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13683,7 +17582,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                        
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
           ],
           "id": 4,
           "exit": [
@@ -13695,7 +17601,7 @@
               }              
             },
            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13732,7 +17638,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                    
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },   
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": -1,
           "exit": [
@@ -13744,7 +17720,63 @@
               }              
             },
            {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                        
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },             
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },
+           {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13781,7 +17813,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
@@ -13800,7 +17839,70 @@
               }              
             },  
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },        
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13837,7 +17939,14 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
@@ -13856,7 +17965,7 @@
               }              
             },  
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13886,7 +17995,77 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
@@ -13905,7 +18084,63 @@
               }              
             },  
             {
-              "key": "match_futr_ace",
+              "key": "match_futr_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },                      
+            {
+              "key": "msg_pre_app_access_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                                  
+          ]           
+        },                
+        {
+          "conditions": [     
+            {
+              "key": "profile_basic_age",
+              "val": {
+                "en": "18",
+                "fr": "18"
+              }
+            },              
+            {
+              "key": "profile_hs_goal_apprenticeship",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "match_curr_adc",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },            
+            {
+              "key": "match_curr_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            },  
+            {
+              "key": "match_futr_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
