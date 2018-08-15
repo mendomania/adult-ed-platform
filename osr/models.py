@@ -439,6 +439,36 @@ class ServiceDeliverySiteFacility(models.Model):
   facility = models.ForeignKey(Facility, on_delete=models.CASCADE, verbose_name=_('facility'))
 
 @python_2_unicode_compatible
+class GoalPath(models.Model):
+  class Meta:
+    verbose_name = _('goal path')
+    verbose_name_plural = _('goal paths')  
+    ordering = ['order_id']
+
+  def __str__(self):
+    return self.code 
+    
+  code = models.CharField(max_length=100, verbose_name=_('code'))
+  text = models.CharField(max_length=500, verbose_name=_('text'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))  
+
+@python_2_unicode_compatible
+class ExternalLink(models.Model):
+  class Meta:
+    verbose_name = _('external link')
+    verbose_name_plural = _('external links')  
+    ordering = ['order_id']
+
+  def __str__(self):
+    return self.code 
+    
+  code = models.CharField(max_length=100, verbose_name=_('code'))
+  reason = models.CharField(max_length=500, verbose_name=_('reason'))
+  text = models.CharField(max_length=500, verbose_name=_('text'))
+  link = models.CharField(max_length=50, verbose_name=_('link'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
+
+@python_2_unicode_compatible
 class Recommendation(models.Model):
   class Meta:
     verbose_name = _('recommendation')
@@ -449,10 +479,38 @@ class Recommendation(models.Model):
     return self.code 
     
   code = models.CharField(max_length=100, verbose_name=_('code'))
-  reason = models.CharField(max_length=100, verbose_name=_('reason'))
-  text = models.CharField(max_length=100, verbose_name=_('text'))
-  link = models.CharField(max_length=50, verbose_name=_('link'))
-  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
+  text = models.CharField(max_length=500, verbose_name=_('text'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))  
+
+@python_2_unicode_compatible
+class UnhappyPath(models.Model):
+  class Meta:
+    verbose_name = _('unhappy path')
+    verbose_name_plural = _('unhappy paths')  
+    ordering = ['order_id']
+
+  def __str__(self):
+    return self.code 
+    
+  goal = models.ForeignKey(GoalPath, on_delete=models.CASCADE, verbose_name=_('goal path'))
+  code = models.CharField(max_length=100, verbose_name=_('code'))
+  text = models.CharField(max_length=500, verbose_name=_('text'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))    
+
+@python_2_unicode_compatible
+class FutureMatch(models.Model):
+  class Meta:
+    verbose_name = _('future match')
+    verbose_name_plural = _('future matches')  
+    ordering = ['order_id']
+
+  def __str__(self):
+    return self.code 
+    
+  goal = models.ForeignKey(GoalPath, on_delete=models.CASCADE, verbose_name=_('goal path'))
+  code = models.CharField(max_length=100, verbose_name=_('code'))
+  text = models.CharField(max_length=500, verbose_name=_('text'))
+  order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))    
 
 @python_2_unicode_compatible
 class ProfileSection(models.Model):
@@ -465,7 +523,7 @@ class ProfileSection(models.Model):
     return self.code 
     
   code = models.CharField(max_length=100, verbose_name=_('code'))
-  text = models.CharField(max_length=100, verbose_name=_('text'))
+  text = models.CharField(max_length=500, verbose_name=_('text'))
   order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
   section = models.CharField(max_length=12, choices=PRO_SECTIONS, verbose_name=_('section in profile'))
 
