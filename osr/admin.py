@@ -3,11 +3,11 @@ from __future__ import unicode_literals
 from django.contrib import admin
 from django.forms import TextInput, Textarea
 from django.db.models import Q
-from .models import Program, ServiceProvider, ServiceDeliverySite, Outcome, Eligibility, Subject, Stream, Recommendation
+from .models import Program, ServiceProvider, ServiceDeliverySite, Outcome, Eligibility, Subject, Stream
 from .models import Offering, OfferingSchedule, Profession, OfferingProfession, Feature, OfferingFeature
 from .models import Facility, ServiceDeliverySiteFacility, ProgramRegistrationSteps, ProgramBestForScenarios
 from .models import LearningOption, ScheduleOption, ProgramLinks, ImmigrationStatus, Benefit, ProfileSection
-from .models import GlossaryEntry, Feedback
+from .models import GlossaryEntry, Feedback, ExternalLink, Recommendation, GoalPath, UnhappyPath, FutureMatch
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
 from django.utils.translation import ugettext_lazy as _
 
@@ -193,8 +193,16 @@ class FeatureAdmin(TranslationAdmin):
   pass  
 class FacilityAdmin(TranslationAdmin):
   pass  
+class ExternalLinkAdmin(TranslationAdmin):
+  pass
 class RecommendationAdmin(TranslationAdmin):
   pass
+class GoalPathAdmin(TranslationAdmin):
+  pass
+class UnhappyPathAdmin(TranslationAdmin):
+  pass    
+class FutureMatchAdmin(TranslationAdmin):
+  pass      
 class GlossaryEntryAdmin(TranslationAdmin):
   pass   
 class ProfileSectionAdmin(TranslationAdmin):
@@ -224,6 +232,10 @@ admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Profession, ProfessionAdmin)
 admin.site.register(Feature, FeatureAdmin)
 admin.site.register(Facility, FacilityAdmin)
+admin.site.register(ExternalLink, ExternalLinkAdmin)
+admin.site.register(GoalPath, GoalPathAdmin)
+admin.site.register(UnhappyPath, UnhappyPathAdmin)
+admin.site.register(FutureMatch, FutureMatchAdmin)
 admin.site.register(Recommendation, RecommendationAdmin)
 admin.site.register(ProfileSection, ProfileSectionAdmin)
 admin.site.register(LearningOption, LearningOptionAdmin)
