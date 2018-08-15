@@ -43,7 +43,7 @@
           </a>
         </div>
       </div>
-    </header>  
+    </header>
 
     <!-- Feedback -->
     <div class="minty columns small-12 text-center">
@@ -51,16 +51,16 @@
     </div>
     <br/>
 
-    <div class="banner-setup">      
+    <div class="banner-setup">
       <br/>
       <div class="row intro banner-space">
           <div class="columns small-12">
             <br/>
             <h1>{% blocktrans %}Adult learning{% endblocktrans %}</h1>
             <p>Adult learning offers programs for those who want to upgrade their skills, get their high school diploma, earn credits and/or improve their language skills.</p>
-        </div>        
+        </div>
       </div>
-    </div>  
+    </div>
 
     <div class="row">
       <hr/>
@@ -73,35 +73,35 @@
       </div>
       <div class="columns small-4 text-center">
         <img src="../../../static/osr/images/goal.png" width="75px" height="75px" alt="Earn an Ontario Secondary School Diploma"/>
-        <p>Get your Ontario high school diploma and/or earn the marks needed for post-secondary education</p>
+        <p>Earn your Ontario high school diploma and/or earn the marks needed for post-secondary education.</p>
       </div>
       <div class="columns small-4 text-center">
         <img src="../../../static/osr/images/counselling.png" width="75px" height="75px" alt="Adapt your international skills to Canada"/>
         <p>Learn English and French as an immigrant or refugee.</p>
-      </div>            
-    </div>  
+      </div>
+    </div>
 
     <div class="row">
       <br/>
-      <div class="columns small-12 text-center">        
+      <div class="columns small-12 text-center">
         <p>Use the Adult Learning Program Matcher to find a program that best matches your goals</p>
         <a href="{% url 'osr:matchmaker' %}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
       </div>
-    </div>  
+    </div>
 
     <div class="row">
       <hr/>
-    </div>   
-    
+    </div>
+
     <div class="row">
       <div class="columns small-12">
         <h3>{% blocktrans %}Who can benefit from adult learning programs?{% endblocktrans %}</h3>
         <ul>
           <li>Adult residents of Ontario (at least 18 or 19 years of age, depending on the program).</li>
-          <li>Those who want to improve their skills towards education, apprenticeship, employment and/or self-confidence.</li>
-          <li>Those who want to get an Ontario high school diploma and/or earn credits for post-secondary education.</li>
+          <li>Those who want to improve their skills towards further education, apprenticeship training, employment and/or self-confidence.</li>
+          <li>Those who want to get an Ontario high school diploma and/or earn credits for post-secondary education, apprenticeship and the workplace.</li>
           <li>Immigrants who want to improve their language skills in English or French.</li>
-          <li>Highly skilled immigrants who want to continue working in their fields.</li>
+          <li>Highly skilled immigrants who want to continue working in their field or in a related field.</li>
         </ul>
       </div>
       <hr/>
@@ -113,9 +113,9 @@
         <br/>
       </div>
 
-      {% for p in programs %}       
+      {% for p in programs %}
       <div class="columns small-12 medium-12 large-6">
-        <div class="text-center padding-inner-t" style="color: {{ p.foreground_colour }}; background-color: {{ p.background_colour }};"></div>         
+        <div class="text-center padding-inner-t" style="color: {{ p.foreground_colour }}; background-color: {{ p.background_colour }};"></div>
         <div class="text-center padding-inner-p" style="border-color: {{ p.background_colour }};">
           <div class="block1">
             <h6>{{ p.name_official }}</h6>
@@ -123,24 +123,24 @@
           </div>
           <hr class="hr-comparison-table"/>
           <a href="{% url 'osr:detail_program' p.code|lower %}">{% blocktrans %}Learn more{% endblocktrans %}</a>
-        </div>       
+        </div>
       </div>
       <br/>
       {% endfor %}
 
-      <div class="columns small-12 text-center">  
+      <div class="columns small-12 text-center">
         <br/>
         <a href="{% url 'osr:comparison' %}" class="button">{% blocktrans %}Compare all programs{% endblocktrans %}</a>
       </div>
-    </div> 
+    </div>
 
     <div class="grey-in-table-bg">
       <br/>
       <div class="row">
         <div class="columns small-12 text-center">
-          <h4>{% blocktrans %}Not sure which program is best for you?{% endblocktrans %}</h4>          
-        </div>      
-      </div> 
+          <h4>{% blocktrans %}Not sure which program is best for you?{% endblocktrans %}</h4>
+        </div>
+      </div>
       <div class="row">
         <div class="columns small-12 medium-7">
           <img src="../../../static/osr/images/widget.png" width="450em" height="265em" alt="Matchmaker"/>
@@ -148,7 +148,7 @@
         <div class="columns small-12 medium-5">
           <p><br/><br/>Use the Adult Learning Program Matcher to find a program that best matches your goals and needs.</p>
           <a href="{% url 'osr:matchmaker' %}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
-        </div>        
+        </div>
       </div>
       <br/>
     </div>
@@ -157,55 +157,55 @@
       <br/>
       <div class="columns small-12">
         <h3>{% blocktrans %}Need help?{% endblocktrans %}</h3>
-      </div>   
+      </div>
     </div>
 
     <div class="row">
       <div class="columns small-12 medium-12 large-4">
         <br/>
         <h6 class="text-center">{% blocktrans %}Chat live with us{% endblocktrans %}</h6>
-        <div class="block2">                    
+        <div class="block2">
           <p>Talk to someone online to get help.<br/>
-          Weekdays<br/>8:30am - 5:00pm ET</p>          
+          Weekdays<br/>8:30am - 5:00pm ET</p>
           <br/>
-        </div>             
+        </div>
         <div class="text-center">
           {% if LANGUAGE_CODE == 'en' %}
           <a href="https://www.ontario.ca/page/employment-ontario-live-chat" class="button">{% blocktrans %}Chat live{% endblocktrans %}</a>
           {% else %}
           <a href="https://www.ontario.ca/fr/page/clavardage-avec-emploi-ontario" class="button">{% blocktrans %}Chat live{% endblocktrans %}</a>
-          {% endif %}          
-        </div> 
+          {% endif %}
+        </div>
       </div>
       <div class="columns small-12 medium-12 large-4">
         <br/>
         <h6 class="text-center">{% blocktrans %}Meet with a counsellor{% endblocktrans %}</h6>
-        <div class="block2">                
-          <p>Schedule a meeting with a counsellor to discuss your goals and needs.</p>          
+        <div class="block2">
+          <p>Schedule a meeting with a counsellor to discuss your goals and needs.</p>
           <br/>
         </div>
         <div class="text-center">
           <a href="https://www.eoss.tcu.gov.on.ca/CitizenPortal/infoAboutYou.do?programCode=LBS&lang={{ LANGUAGE_CODE|lower }}" class="button">{% blocktrans %}Request an appointment{% endblocktrans %}</a>
-        </div>        
+        </div>
       </div>
       <div class="columns small-12 medium-12 large-4">
         <br/>
         <h6 class="text-center">{% blocktrans %}Glossary{% endblocktrans %}</h6>
-        <div class="block2">                    
-          <p>If you need help understanding some adult learning terms, have a look at the glossary.</p>          
+        <div class="block2">
+          <p>Get help understanding some adult learning terms.</p>
         </div>
         <div class="text-center">
           <a href="{% url 'osr:glossary' %}" class="button">{% blocktrans %}Read more{% endblocktrans %}</a>
-        </div>        
-      </div>      
-    </div> 
+        </div>
+      </div>
+    </div>
 
     <div class="row">
       <br/>
-    </div> 
+    </div>
     <div class="row">
       <br/>
-    </div>                     
+    </div>
 
     <form name="setLangEng" action="/i18n/setlang/" method="POST">
       {% csrf_token %}
@@ -217,7 +217,7 @@
       {% csrf_token %}
       <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
       <input type="hidden" name="language" value="fr"/>
-    </form> 
+    </form>
 
   </body>
 </html>
@@ -229,7 +229,7 @@
     var maxHeight = Math.max.apply(null, $(commonClass).map(function ()
     {
       return $(this).height();
-    }).get()); 
+    }).get());
     return maxHeight;
   }
 
@@ -238,12 +238,12 @@
       document.setLangFre.submit();
     } else {
       document.setLangEng.submit();
-    }    
+    }
   }
 
   $(document).ready(function() {
     // Resize elements to be of the same height
-    // The height of the tallest element in each row    
+    // The height of the tallest element in each row
     $('.block1').height(getMaxHeightOfAllElemsOfClass('.block1'));
     $('.block2').height(getMaxHeightOfAllElemsOfClass('.block2'));
 
@@ -255,6 +255,6 @@
      window.dispatchEvent(evt);
     } else {
        window.dispatchEvent(new Event('resize'));
-    }        
-  });   
+    }
+  });
 </script>
