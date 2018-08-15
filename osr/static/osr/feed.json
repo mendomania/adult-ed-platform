@@ -292,7 +292,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -348,7 +348,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -404,7 +404,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -460,7 +460,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -509,7 +509,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -683,7 +683,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_skills",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -711,7 +711,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_skills",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -802,7 +802,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_highschool",
+              "key": "err_age_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1101,7 +1101,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1143,7 +1143,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1185,7 +1185,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1227,7 +1227,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1262,7 +1262,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1304,7 +1304,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_immigration_status",
+              "key": "err_ca_status_other_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1346,7 +1346,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_immigration_status",
+              "key": "err_ca_status_other_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1388,7 +1388,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_immigration_status",
+              "key": "err_ca_status_other_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1430,7 +1430,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_immigration_status",
+              "key": "err_ca_status_other_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -1465,7 +1465,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_immigration_status",
+              "key": "err_ca_status_other_lang",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2107,7 +2107,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2156,7 +2156,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2198,7 +2198,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2247,7 +2247,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2296,7 +2296,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2338,7 +2338,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2387,7 +2387,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2436,7 +2436,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -2478,7 +2478,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_contact_school_board",
+              "key": "msg_contact_sb",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3088,7 +3088,7 @@
               }
             },          
             {
-              "key": "path_contact_eo",
+              "key": "msg_status_contact_eo_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3116,7 +3116,7 @@
               }
             },          
             {
-              "key": "path_contact_eo",
+              "key": "msg_status_contact_eo_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3144,7 +3144,7 @@
               }
             },          
             {
-              "key": "path_contact_eo",
+              "key": "msg_status_contact_eo_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3294,7 +3294,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3336,7 +3336,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3378,7 +3378,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3420,7 +3420,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3455,7 +3455,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3497,7 +3497,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3539,7 +3539,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3581,7 +3581,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3623,7 +3623,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3658,7 +3658,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3826,7 +3826,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3875,7 +3875,7 @@
           "id": 2,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3924,7 +3924,7 @@
           "id": 3,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -3973,7 +3973,7 @@
           "id": 4,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4015,7 +4015,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -4057,7 +4057,7 @@
           "id": 12,
           "exit": [
             {
-              "key": "path_adc_lang",
+              "key": "match_curr_adc",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5089,7 +5089,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -5131,7 +5131,7 @@
               }              
             },           
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6381,12 +6381,19 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
             {
-              "key": "path_ossd_proof",
+              "key": "err_ossd_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6411,17 +6418,108 @@
               }
             },
             {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "err_ossd_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },  
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
               "key": "goal_canadian_xp",
               "val": {
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 4,
           "exit": [
             {
-              "key": "path_ossd_proof",
+              "key": "err_ossd_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },              
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                         
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_ossd_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6444,12 +6542,19 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
             {
-              "key": "path_ossd_proof",
+              "key": "err_ossd_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6457,6 +6562,41 @@
             }                      
           ]           
         },
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_ossd_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },        
         {
           "conditions": [         
             {
@@ -6491,7 +6631,7 @@
               }              
             },          
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6533,7 +6673,7 @@
               }              
             },          
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6568,7 +6708,7 @@
               }              
             },          
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6631,7 +6771,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6694,7 +6834,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6750,7 +6890,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6813,7 +6953,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6876,7 +7016,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -6939,7 +7079,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7002,7 +7142,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7058,7 +7198,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7121,7 +7261,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7184,7 +7324,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7240,7 +7380,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7303,7 +7443,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7366,7 +7506,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7422,7 +7562,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7485,7 +7625,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7548,7 +7688,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7604,7 +7744,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7667,7 +7807,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7730,7 +7870,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7786,7 +7926,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8075,12 +8215,19 @@
                 "en": "T",
                 "fr": "T"
               }
-            }            
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
           "id": 3,
           "exit": [
             {
-              "key": "path_ossc_proof",
+              "key": "err_ossc_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8105,17 +8252,24 @@
               }
             },
             {
-              "key": "goal_canadian_xp",
+              "key": "goal_refresh_skills",
               "val": {
                 "en": "T",
                 "fr": "T"
               }
-            }             
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                        
           ],
-          "id": 4,
+          "id": 3,
           "exit": [
             {
-              "key": "path_ossc_proof",
+              "key": "err_ossc_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8138,12 +8292,103 @@
                 "en": "T",
                 "fr": "T"
               }
-            }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                         
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_ossc_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },  
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                         
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_ossc_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },              
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
           ],
           "id": -1,
           "exit": [
             {
-              "key": "path_ossc_proof",
+              "key": "err_ossc_hs",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8151,6 +8396,41 @@
             }                      
           ]           
         },
+        {
+          "conditions": [         
+            {
+              "key": "hs_all_relevant_options",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_hs_goal_work",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }            
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_ossc_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }                      
+          ]           
+        },        
         {
           "conditions": [         
             {
@@ -8185,7 +8465,7 @@
               }              
             },          
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8227,7 +8507,7 @@
               }              
             },          
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8262,7 +8542,7 @@
               }              
             },          
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8311,7 +8591,7 @@
               }              
             },
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8360,7 +8640,7 @@
               }              
             },
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8402,7 +8682,7 @@
               }              
             },
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8458,7 +8738,7 @@
               }              
             },            
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8514,7 +8794,7 @@
               }              
             },            
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8563,7 +8843,7 @@
               }              
             },            
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8626,7 +8906,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8689,7 +8969,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8745,7 +9025,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8794,7 +9074,7 @@
               }              
             },                       
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8843,7 +9123,7 @@
               }              
             },                       
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8885,7 +9165,7 @@
               }              
             },                       
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8941,7 +9221,7 @@
               }              
             },                                   
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -8997,7 +9277,7 @@
               }              
             },                                   
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9046,7 +9326,7 @@
               }              
             },                                   
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9109,7 +9389,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9172,7 +9452,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9228,7 +9508,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9431,7 +9711,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9466,7 +9746,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9494,7 +9774,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9550,7 +9830,7 @@
               }              
             },                     
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9606,7 +9886,7 @@
               }              
             },                     
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9655,7 +9935,7 @@
               }              
             },                     
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9711,7 +9991,7 @@
               }              
             },                    
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9767,7 +10047,7 @@
               }              
             },                    
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9816,7 +10096,7 @@
               }              
             },                    
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9872,7 +10152,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9928,7 +10208,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -9977,7 +10257,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10033,7 +10313,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10089,7 +10369,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10138,7 +10418,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10194,7 +10474,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10250,7 +10530,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10299,7 +10579,7 @@
               }              
             },                                              
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10355,7 +10635,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10411,7 +10691,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10460,7 +10740,7 @@
               }              
             },                                               
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10617,12 +10897,348 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                      
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
           ],
           "id": 3,
           "exit": [
             {
-              "key": "path_hs_no_alternatives",
+              "key": "err_alternatives_multiple_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },      
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "err_alternatives_multiple_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "err_alternatives_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "err_alternatives_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "err_alternatives_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },                
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_refresh_skills",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 3,
+          "exit": [
+            {
+              "key": "err_alternatives_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        }, 
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_alternatives_multiple_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },        
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                                          
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_alternatives_multiple_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10645,12 +11261,68 @@
                 "en": "T",
                 "fr": "T"
               }
-            }                      
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                              
           ],
           "id": 4,
           "exit": [
             {
-              "key": "path_hs_no_alternatives",
+              "key": "err_alternatives_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },        
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                              
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_alternatives_ged_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -10666,12 +11338,300 @@
                 "en": "T",
                 "fr": "T"
               }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                              
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_alternatives_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
             }          
+          ]
+        },                                       
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_canadian_xp",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                              
+          ],
+          "id": 4,
+          "exit": [
+            {
+              "key": "err_alternatives_ace_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                              
           ],
           "id": -1,
           "exit": [
             {
-              "key": "path_hs_no_alternatives",
+              "key": "err_alternatives_multiple_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },        
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                              
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_alternatives_multiple_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                  
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_alternatives_ged_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },        
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                  
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_alternatives_ged_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        }, 
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_highschool",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                  
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_alternatives_ace_hs",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }              
+            }          
+          ]
+        },                       
+        {
+          "conditions": [
+            {
+              "key": "hs_no_alternatives",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "goal_pse",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }                                  
+          ],
+          "id": -1,
+          "exit": [
+            {
+              "key": "err_alternatives_ace_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11280,7 +12240,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11315,7 +12275,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11343,7 +12303,7 @@
               }              
             },
             {
-              "key": "path_pre_uni_access",
+              "key": "msg_pre_uni_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11399,7 +12359,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11455,7 +12415,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11504,7 +12464,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11560,7 +12520,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11616,7 +12576,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11665,7 +12625,7 @@
               }              
             },                        
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11721,7 +12681,7 @@
               }              
             },                      
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11777,7 +12737,7 @@
               }              
             },                      
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11826,7 +12786,7 @@
               }              
             },                      
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11882,7 +12842,7 @@
               }              
             },                                    
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11938,7 +12898,7 @@
               }              
             },                                    
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -11987,7 +12947,7 @@
               }              
             },                                    
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12043,7 +13003,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12099,7 +13059,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12148,7 +13108,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12204,7 +13164,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12260,7 +13220,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12309,7 +13269,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12365,7 +13325,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12421,7 +13381,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12470,7 +13430,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_college",
+              "key": "msg_pre_col_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12526,7 +13486,7 @@
               }              
             },                        
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12582,7 +13542,7 @@
               }              
             },                        
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12631,7 +13591,7 @@
               }              
             },                        
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12687,7 +13647,7 @@
               }              
             },                        
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12743,7 +13703,7 @@
               }              
             },                        
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12792,7 +13752,7 @@
               }              
             },                        
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12848,7 +13808,7 @@
               }              
             },                      
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12904,7 +13864,7 @@
               }              
             },                      
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -12953,7 +13913,7 @@
               }              
             },                      
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13009,7 +13969,7 @@
               }              
             },                                    
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13065,7 +14025,7 @@
               }              
             },                                    
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13114,7 +14074,7 @@
               }              
             },                                    
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13170,7 +14130,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13226,7 +14186,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13275,7 +14235,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13331,7 +14291,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13387,7 +14347,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13436,7 +14396,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13492,7 +14452,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13548,7 +14508,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -13597,7 +14557,7 @@
               }              
             },                                                
             {
-              "key": "path_contact_apprenticeship",
+              "key": "msg_pre_app_access_pse",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -14209,7 +15169,7 @@
           "id": -1,
           "exit": [          
             {
-              "key": "path_no_international_edu",
+              "key": "err_no_intl_edu_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -14328,7 +15288,7 @@
           "id": -1,
           "exit": [          
             {
-              "key": "path_no_international_job",
+              "key": "err_no_intl_job_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -14729,7 +15689,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_wrong_field_of_work",
+              "key": "err_wrong_field_of_work_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -15208,7 +16168,7 @@
           "id": -1,
           "exit": [
             {
-              "key": "path_wrong_field_of_work",
+              "key": "err_wrong_field_of_work_caxp",
               "val": {
                 "en": "T",
                 "fr": "T"
