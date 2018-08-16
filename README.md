@@ -20,7 +20,7 @@ Django packages:<br />
 
 Django tutorial
 ======
-If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Otherwise refer to the section <b>Django 101</b> below for an overview of the most important Python files in Django and how they interact with each other and with the database. And also a summary of the most commonly-used Django commands to make changes to the project.
+If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Also refer to the section <b>Django 101</b> below for an overview of the most important Python files in Django and how they interact with each other and with the database. As well as a summary of the most commonly-used Django commands that will be needed to make updates to the project, including updating translations.
 
 Installation
 ======
