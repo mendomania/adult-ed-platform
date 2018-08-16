@@ -69,3 +69,6 @@ Setup
     adultedu=# \q    
 
 #### Django ####
+<p align="center">
+<img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
+</p>
