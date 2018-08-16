@@ -18,7 +18,7 @@ Django packages:<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
 
-Setup
+Installation
 ======
 In order to run the project you will need to download and/or install the software and packages specified above. Follow this guide to get you started. 
 
@@ -27,12 +27,11 @@ Python 3 is the most recent version of the programming language but Python 2 com
 
 
 #### PostgreSQL ####
-
 [Here](https://wiki.postgresql.org/wiki/Detailed_installation_guides) you can find a list of detailed PostgreSQL installation guides for different operating systems. <br />
 For Mac OS X, I recommend installing PostgreSQL via [Homebrew](https://brew.sh/) by running two commands:
 
-    brew update
-    brew install postgresql
+    $ brew update
+    $ brew install postgresql
 Follow the instructions at the end of the install to initialize the DB, add startup items, and start PostgreSQL. <br />
 
 #### Django ####
@@ -43,3 +42,23 @@ To install the required Django packages, refer to the links to their repositorie
 
 #### Vue.js ####
 [Here](https://vuejs.org/v2/guide/installation.html) are the installation guides of Vue.js. In this project we're using the direct `<script>` include for Vue.js 2.5.16 (released in March 2018).
+
+Setup
+======
+#### PostgreSQL ####
+• Django works with different data stores. The [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file specifies that for this project we're using PostgreSQL (look for the `DATABASES` section in the file) and that our database will be called `adultedu`. The first step is thus to create this database in PostgreSQL. You can do this with the following command in your command line:  
+
+    $ createdb adultedu    
+    
+• Load this database with this DB [dump](https://github.com/mendomania/adult-ed-platform/blob/master/pgbackup.dump) with the following command:  
+
+    $ pg_restore -d adultedu pgbackup.dump
+    
+• You can test the database exists and it contains information by starting the PostgreSQL interactive terminal and listing all of the tables it contains with the commands:  
+
+    $ psql adultedu
+    adultedx=# \dt
+    
+• Exit the PostgreSQL interactive terminal with the command:  
+
+    adultedx=# \q    
