@@ -57,8 +57,8 @@ Setup
 • You can test the database exists and it contains information by starting the PostgreSQL interactive terminal and listing all of the tables it contains with the commands:  
 
     $ psql adultedu
-    adultedx=# \dt
+    adultedu=# \dt
     
 • Exit the PostgreSQL interactive terminal with the command:  
 
-    adultedx=# \q    
+    adultedu=# \q    
