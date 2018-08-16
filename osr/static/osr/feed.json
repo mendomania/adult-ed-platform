@@ -7157,7 +7157,7 @@
         {
           "dico": [
             {
-              "key": "link_ods_plar",
+              "key": "msg_plar",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7178,7 +7178,7 @@
         {
           "dico": [
             {
-              "key": "link_ods_plar",
+              "key": "msg_plar",
               "val": {
                 "en": "T",
                 "fr": "T"
@@ -7202,7 +7202,7 @@
         {
           "conditions": [
             {
-              "key": "link_ods_plar",
+              "key": "msg_plar",
               "val": {
                 "en": "T",
                 "fr": "T"
