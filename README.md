@@ -63,3 +63,5 @@ Setup
 • <b>4:</b> Exit the PostgreSQL interactive terminal with the command:  
 
     adultedu=# \q    
+
+#### Django ####
