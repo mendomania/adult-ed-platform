@@ -23,7 +23,7 @@ Setup
 In order to run the project you will need to download and/or install the software and packages specified above. Follow this guide to get you started. 
 
 #### Python ####
-Python 3 is the most recent version of the programming language but Python 2 comes preinstalled in most Linux distributions and is available as a package in all others. Furthermore, there are third-party libraries and packages that are still not compatible with Python 3 as of today. We will be using Python 2.7 in particular because most recent versions of Macs come with it preinstalled. If Python is not preinstalled in your computer, get Python 2.7 [here](https://www.python.org/downloads/) or with your operating system's package manager. <br />
+Python 3 is the most recent version of the programming language but Python 2 comes preinstalled in most Linux distributions and is available as a package in all others. Furthermore, there are third-party libraries and packages that are still not compatible with Python 3 as of today. We will be using Python 2.7 in particular because most recent versions of Macs come with it preinstalled. If Python is not preinstalled in your computer, get Python 2.7.14 (released in September 2017) [here](https://www.python.org/downloads/) or with your operating system's package manager. <br />
 
 
 #### PostgreSQL ####
@@ -37,3 +37,6 @@ Follow the instructions at the end of the install to initialize the DB, add star
 
 #### Django ####
 The official Django [docs](https://docs.djangoproject.com/en/1.11/topics/install/) provide detailed instructions on how to install Django. We will use Django 11.1 (released in April 2017) because it is the latest Django version that works with Python 2.7.
+
+#### Vue.js ####
+[Here](https://vuejs.org/v2/guide/installation.html) are the installation guides of Vue.js. In this project we're using the direct `<script>` include for Vue.js 2.5.16 (released in March 2018).
