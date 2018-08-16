@@ -71,6 +71,17 @@ Setup
 
 Django 101
 ======
+Here is a diagram of the most important Django files. The section below will explain in more detail what they do and when you would need to make changes to them.
 <p align="center">
 <img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
 </p>
+
+• <b>settings.py</b>: A<br />
+• <b>models.py</b>: A<br />
+• <b>translation.py</b>: A<br />
+• <b>admin.py</b>: A<br />
+• <b>urls.py</b>: A<br />
+• <b>views.py</b>: A<br />
+
+• <b>django.po</b>: A<br />
+• <b>django.mo</b>: A<br />
