@@ -13835,8 +13835,74 @@
       "equivalencies": [],
       "next": [
         {
-          "conditions": [],
-          "id": 24
+          "conditions": [
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            },
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 24,
+        "exit": [
+            {
+              "key": "title_alternatives",
+              "val": {
+                "en": "your ACE or GED",
+                "fr": "ton ACE ou ton GED"
+              }              
+            }          
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "key": "profile_basic_hs_ace",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 24,
+        "exit": [
+            {
+              "key": "title_alternatives",
+              "val": {
+                "en": "your ACE",
+                "fr": "ton ACE"
+              }              
+            }          
+          ]
+        },
+          {
+          "conditions": [
+            {
+              "key": "profile_basic_hs_ged",
+              "val": {
+                "en": "T",
+                "fr": "T"
+              }
+            }
+          ],
+          "id": 24,
+        "exit": [
+            {
+              "key": "title_alternatives",
+              "val": {
+                "en": "your GED",
+                "fr": "ton GED"
+              }              
+            }          
+          ]
         }
       ]
     },
@@ -13849,11 +13915,11 @@
       },
       "text": {
         "en": {
-          "main": "Are you looking for alternatives beyond what you have?",
+          "main": "Are you looking for alternatives beyond #title_alternatives#?",
           "tips": []
         },
         "fr": {
-          "main": "Cherchez-vous des façons alternatives de prouver vos connaissances de niveau secondaire?",
+          "main": "Cherchez-vous des façons alternatives à part #title_alternatives#?",
           "tips": []
         }
       },
