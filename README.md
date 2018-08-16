@@ -21,7 +21,7 @@ Django packages:<br />
 
 Django tutorial
 ======
-If you're new to Django, read this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) to quickly get up and running.
+If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Otherwise refer to the section <b>Django 101</b> below for an overview of the most important Python files in Django and how they interact with each other and with the database. And also a summary of the most commonly-used Django commands to make changes to the project.
 
 Installation
 ======
@@ -69,6 +69,9 @@ Setup
     adultedu=# \q    
 
 #### Django ####
+
+Django 101
+======
 <p align="center">
 <img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
 </p>
