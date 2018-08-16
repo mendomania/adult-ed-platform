@@ -38,5 +38,8 @@ Follow the instructions at the end of the install to initialize the DB, add star
 #### Django ####
 The official Django [docs](https://docs.djangoproject.com/en/1.11/topics/install/) provide detailed instructions on how to install Django. We will use Django 11.1 (released in April 2017) because it is the latest Django version that works with Python 2.7.
 
+#### Django packages ####
+To install the required Django packages, refer to the links to their repositories provided above.
+
 #### Vue.js ####
 [Here](https://vuejs.org/v2/guide/installation.html) are the installation guides of Vue.js. In this project we're using the direct `<script>` include for Vue.js 2.5.16 (released in March 2018).
