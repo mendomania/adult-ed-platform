@@ -14,6 +14,7 @@ Vue.js (2.5.16)<br />
 
 Django packages:<br />
 • [Model translation](https://djangopackages.org/packages/p/django-modeltranslation/) (0.12.2)<br />
+<i>This package is </i><br />
 • [Smart selects](https://djangopackages.org/packages/p/django-smart-selects/) (1.5.4)<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
@@ -46,19 +47,19 @@ To install the required Django packages, refer to the links to their repositorie
 Setup
 ======
 #### PostgreSQL ####
-• Django works with different data stores. The [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file specifies that for this project we're using PostgreSQL (look for the `DATABASES` section in the file) and that our database will be called `adultedu`. The first step is thus to create this database in PostgreSQL. You can do this with the following command in your command line:  
+• <b>1:</b> Django works with different data stores. The [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file specifies that for this project we're using PostgreSQL (look for the `DATABASES` section in the file) and that our database will be called `adultedu`. The first step is thus to create this database in PostgreSQL. You can do this with the following command in your command line:  
 
     $ createdb adultedu    
     
-• Load this database with this DB [dump](https://github.com/mendomania/adult-ed-platform/blob/master/pgbackup.dump) with the following command:  
+• <b>2:</b> Load this database with this DB [dump](https://github.com/mendomania/adult-ed-platform/blob/master/pgbackup.dump) with the following command:  
 
     $ pg_restore -d adultedu pgbackup.dump
     
-• You can test the database exists and it contains information by starting the PostgreSQL interactive terminal and listing all of the tables it contains with the commands:  
+• <b>3:</b> You can test the database exists and it contains information by starting the PostgreSQL interactive terminal and listing all of the tables it contains with the commands:  
 
     $ psql adultedu
     adultedu=# \dt
     
-• Exit the PostgreSQL interactive terminal with the command:  
+• <b>4:</b> Exit the PostgreSQL interactive terminal with the command:  
 
     adultedu=# \q    
