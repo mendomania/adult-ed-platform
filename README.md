@@ -14,11 +14,16 @@ Vue.js (2.5.16)<br />
 
 Django packages:<br />
 • [Model translation](https://djangopackages.org/packages/p/django-modeltranslation/) (0.12.2)<br />
+<i>This package is </i><br />
 • [Smart selects](https://djangopackages.org/packages/p/django-smart-selects/) (1.5.4)<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
 
-Setup
+Django tutorial
+======
+If you're new to Django, read this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) to quickly get up and running.
+
+Installation
 ======
 In order to run the project you will need to download and/or install the software and packages specified above. Follow this guide to get you started. 
 
@@ -27,12 +32,11 @@ Python 3 is the most recent version of the programming language but Python 2 com
 
 
 #### PostgreSQL ####
-
 [Here](https://wiki.postgresql.org/wiki/Detailed_installation_guides) you can find a list of detailed PostgreSQL installation guides for different operating systems. <br />
 For Mac OS X, I recommend installing PostgreSQL via [Homebrew](https://brew.sh/) by running two commands:
 
-    brew update
-    brew install postgresql
+    $ brew update
+    $ brew install postgresql
 Follow the instructions at the end of the install to initialize the DB, add startup items, and start PostgreSQL. <br />
 
 #### Django ####
@@ -42,4 +46,26 @@ The official Django [docs](https://docs.djangoproject.com/en/1.11/topics/install
 To install the required Django packages, refer to the links to their repositories provided above.
 
 #### Vue.js ####
-[Here](https://vuejs.org/v2/guide/installation.html) are the installation guides of Vue.js. In this project we're using the direct `<script>` include for Vue.js 2.5.16 (released in March 2018).
+For this project we're using the direct `<script>` include for Vue.js version 2.5.16 (released in March 2018), which is found in this [folder](https://github.com/mendomania/adult-ed-platform/tree/master/osr/static/osr), so you don't have to download or install anything. If you're curious, [here](https://vuejs.org/v2/guide/installation.html) are the official installation guides for Vue.js. 
+
+Setup
+======
+#### PostgreSQL ####
+• <b>1:</b> Django works with different data stores. The [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file specifies that for this project we're using PostgreSQL (look for the `DATABASES` section in the file) and that our database will be called `adultedu`. The first step is thus to create this database in PostgreSQL. You can do this with the following command in your command line:  
+
+    $ createdb adultedu    
+    
+• <b>2:</b> Load this database with this DB [dump](https://github.com/mendomania/adult-ed-platform/blob/master/pgbackup.dump) with the following command:  
+
+    $ pg_restore -d adultedu pgbackup.dump
+    
+• <b>3:</b> You can test the database exists and it contains information by starting the PostgreSQL interactive terminal and listing all of the tables it contains with the commands:  
+
+    $ psql adultedu
+    adultedu=# \dt
+    
+• <b>4:</b> Exit the PostgreSQL interactive terminal with the command:  
+
+    adultedu=# \q    
+
+#### Django ####
