@@ -14,7 +14,6 @@ Vue.js (2.5.16)<br />
 
 Django packages:<br />
 • [Model translation](https://djangopackages.org/packages/p/django-modeltranslation/) (0.12.2)<br />
-<i>This package is </i><br />
 • [Smart selects](https://djangopackages.org/packages/p/django-smart-selects/) (1.5.4)<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
