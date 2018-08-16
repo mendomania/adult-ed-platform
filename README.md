@@ -19,6 +19,10 @@ Django packages:<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
 
+Django tutorial
+======
+If you're new to Django, read this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) to quickly get up and running.
+
 Installation
 ======
 In order to run the project you will need to download and/or install the software and packages specified above. Follow this guide to get you started. 
@@ -42,7 +46,7 @@ The official Django [docs](https://docs.djangoproject.com/en/1.11/topics/install
 To install the required Django packages, refer to the links to their repositories provided above.
 
 #### Vue.js ####
-[Here](https://vuejs.org/v2/guide/installation.html) are the installation guides of Vue.js. In this project we're using the direct `<script>` include for Vue.js 2.5.16 (released in March 2018).
+For this project we're using the direct `<script>` include for Vue.js version 2.5.16 (released in March 2018), which is found in this [folder](https://github.com/mendomania/adult-ed-platform/tree/master/osr/static/osr), so you don't have to download or install anything. If you're curious, [here](https://vuejs.org/v2/guide/installation.html) are the official installation guides for Vue.js. 
 
 Setup
 ======
