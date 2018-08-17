@@ -38,13 +38,23 @@ This file specifies the fields and behaviours of the data that we want to store.
        order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, 
          help_text=_('a lower order id will show up first, min value is 1'))    
 
-This code snippet was taken from the [models](https://github.com/mendomania/adult-ed-platform/blob/master/osr/models.py) file in this project. It defines a database table called `FutureMatch` with a foreign key (`goal`) to another table called `GoalPath`, two char fields (`code` and `text`), and a positive small integer field (`order_id`). Note how all strings in this class as tagged as translatable. Please refer to the <b>Translation</b> section below for more details on this.<br /> 
-The variables `verbose_name` and `help_text` refer to the strings that will be shown in the admin interface next to their corresponding  fields whenever a user performs any CRUD operation (create, read, update, delete) on the `FutureMatch` table through the admin interface (that is shown in the diagram as the window with the <b>Private</b> label under it). Please refer to the description of the admin file below for more details on this.<br />
+This code snippet was taken from the [models](https://github.com/mendomania/adult-ed-platform/blob/master/osr/models.py) file of this project. It defines a database table called `FutureMatch` with a foreign key (`goal`) to another table called `GoalPath`, two char fields (`code` and `text`), and a positive small integer field (`order_id`). Note how all strings in this class as tagged as translatable. Please refer to the <b>Translation</b> section below for more details on this.<br /><br /> 
+The variables `verbose_name` and `help_text` refer to the strings that will be shown in the admin interface next to their corresponding  fields whenever a user performs any CRUD operation (create, read, update, delete) on the `FutureMatch` table through the admin interface (that is shown in the diagram as the window with the <b>Private</b> label under it). Please refer to the description of the admin file below for more details on this.<br /><br />
 [Here](https://docs.djangoproject.com/en/2.1/topics/db/models/) are the official docs for models in Django.<br />
 
 • <b>The admin file</b> (`admin.py`)<br />
 Once the models file is created and the `migrate` and `makemigrations` commands are run (more on this below), Django will automatically provide an admin interface that works out-of-the-box and allows authenticated users to perform CRUD operations on database tables (note that groups and permissions can be created such that some users have access and CRUD permissions on only certain tables, more on this [here](https://docs.djangoproject.com/en/2.1/topics/auth/)).<br /><br />
 The admin file can then be used to define `ModelAdmin` classes. These are representations of a model in the admin interface. In a nutshell, this file is used to customise the admin interface. For example, by deciding which fields of each model should even show up in this interface (perhaps there are fields that we don't want to show to users), to group together certain fields in a section with a specific label (so it's easier for users to go through the process of adding a new record in a certain table) or to make sure a certain user or group of users can only see the records they have created.
+
+     class FutureMatchAdmin(TranslationAdmin):
+       pass
+     admin.site.register(FutureMatch, FutureMatchAdmin)  
+
+This code snippet was taken from the [admin](https://github.com/mendomania/adult-ed-platform/blob/master/osr/admin.py) file of this project. Here you can see that for the `FutureMatch` table no special processing is done in the admin file, other than defining a subclass of the base class `TranslationAdmin` (which is part of the <b>django-modeltranslation</b> package) that is called `FutureMatchAdmin` and then registering `FutureMatch` to this `ModelAdmin` class.
+<p align="center">
+<img src="https://github.com/mendomania/adult-ed-platform/blob/master/example_admin.png" align="center">
+</p>
+Here is a screenshot of how this looks in the admin interface. Note how the four `FutureMatch` fields defined in the models section above show up in the admin interface with the `verbose_name` and `help_text` values that were defined. Also note how the field `Text` appears twice, in English and in French. This is because it was tagged as a translatable field. Please refer to the <b>Translation</b> section below for more details on this.
 
 • <b>The URLs file</b> (`urls.py`)<br /><br />
 • <b>The views file</b> (`views.py`)<br /><br />
