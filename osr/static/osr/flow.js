@@ -1,16 +1,8 @@
-const data = 'https://api.myjson.com/bins/1fg410';
-// const data = 'https://raw.githubusercontent.com/mendomania/adult-ed-platform/edaf00c2e2f6faeac82bfc742b1fa93977476f44/osr/static/osr/feed.json';
+const data = 'https://raw.githubusercontent.com/mendomania/adult-ed-platform/master/osr/static/osr/feed.json';
 
 Vue.component('card', {
     template:`
 <div>
-  <div class="row">
-    <div class="columns small-12 medium-12">
-      <div class="bar-one bar-con">
-        <div id="progressbar" class="bar" v-bind:style="{ width: progressBarWidth + '%' }"></div>
-      </div>
-    </div>
-  </div>
   <div>
     <div class="row">
       <div class="columns small-12">
@@ -114,7 +106,6 @@ Vue.component('card', {
     return {      
       // V-model for answers that were selected in current card
       answers: [],
-      progressBarWidth: 0,
     }
   },
   created() {},  
