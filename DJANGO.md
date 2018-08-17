@@ -38,14 +38,20 @@ This file specifies the fields and behaviours of the data that we want to store.
        order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, 
          help_text=_('a lower order id will show up first, min value is 1'))    
 
-This code snippet defines a database table called `FutureMatch` with a foreign key (`goal`) to another table called `GoalPath`, two char fields (`code` and `text`), and a positive small integer field (`order_id`). Note how all strings in this class as tagged as translatable. Please refer to the <b>Translation</b> section below for more details on this. The variables `verbose_name` and `help_text` refer to the strings that will be shown in the admin interface next to their corresponding  fields whenever a user performs any CRUD operation (create, read, update, delete) on the `FutureMatch` table through the admin interface (that is shown in the diagram as the window with the <b>Private</b> label under it). Please refer to the description of the admin file below for more details on this.
+This code snippet was taken from the [models](https://github.com/mendomania/adult-ed-platform/blob/master/osr/models.py) file in this project. It defines a database table called `FutureMatch` with a foreign key (`goal`) to another table called `GoalPath`, two char fields (`code` and `text`), and a positive small integer field (`order_id`). Note how all strings in this class as tagged as translatable. Please refer to the <b>Translation</b> section below for more details on this.<br /> 
+The variables `verbose_name` and `help_text` refer to the strings that will be shown in the admin interface next to their corresponding  fields whenever a user performs any CRUD operation (create, read, update, delete) on the `FutureMatch` table through the admin interface (that is shown in the diagram as the window with the <b>Private</b> label under it). Please refer to the description of the admin file below for more details on this.<br />
+[Here](https://docs.djangoproject.com/en/2.1/topics/db/models/) are the official docs for models in Django.<br />
 
-• <b>The translation file</b> (`translation.py`)<br /><br />
+• <b>The admin file</b> (`admin.py`)<br />
+Once the models file is created and the `migrate` and `makemigrations` commands are run (more on this below), Django will automatically provide an admin interface that works out-of-the-box and allows authenticated users to perform CRUD operations on database tables (note that groups and permissions can be created such that some users have access and CRUD permissions on only certain tables, more on this [here](https://docs.djangoproject.com/en/2.1/topics/auth/)).<br /><br />
+The admin file can then be used to define `ModelAdmin` classes. These are representations of a model in the admin interface. In a nutshell, this file is used to customise the admin interface. For example, by deciding which fields of each model should even show up in this interface (perhaps there are fields that we don't want to show to users), to group together certain fields in a section with a specific label (so it's easier for users to go through the process of adding a new record in a certain table) or to make sure a certain user or group of users can only see the records they have created.
 
-• <b>The admin file</b> (`admin.py`)<br /><br />
 • <b>The URLs file</b> (`urls.py`)<br /><br />
 • <b>The views file</b> (`views.py`)<br /><br />
 
 #### Translation ####
+• <b>The translation file</b> (`translation.py`)<br /><br />
 • <b>The message file</b> (`django.po`)<br /><br />
 • <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
+
+#### Useful commands ####
