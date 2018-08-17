@@ -180,11 +180,11 @@ msgid "4. Is the information easy to understand?"
 msgstr "4. Les informations, sont-elles faciles à comprendre?"
 
 #: osr/forms.py:64
-msgid "5. If you used the matchmaker, was it easy to use?"
+msgid "5. If you used the matcher, was it easy to use?"
 msgstr "5. Si vous avez utilisé le matcheur, était-il facile à utiliser?"
 
 #: osr/forms.py:75
-msgid "6. If you used the matchmaker, did it help you find a program?"
+msgid "6. If you used the matcher, did it help you find a program?"
 msgstr ""
 "6. Si vous avez utilisé le matcheur, est-ce qu'il vous a aidé à trouver un "
 "programme?"
@@ -249,7 +249,7 @@ msgid "Comparison table"
 msgstr "Le tableau comparatif"
 
 #: osr/forms.py:114
-msgid "Matchmaker"
+msgid "Matcher"
 msgstr "Le matcheur"
 
 #: osr/forms.py:115
@@ -911,8 +911,8 @@ msgid "Find program providers"
 msgstr "Trouver des écoles où étudier"
 
 #: osr/templates/osr/email.html:5
-msgid "Adult Learning Program Matchmaker"
-msgstr "Matchmaker de Programmes d'Éducation des Adultes"
+msgid "Adult Learning Program Matcher"
+msgstr "Matcheur de Programmes d'Éducation des Adultes"
 
 #: osr/templates/osr/email.html:8
 msgid "Your results"
@@ -1067,11 +1067,11 @@ msgstr "En apprendre davantage"
 #: osr/templates/osr/matchmaker.html:63 osr/templates/osr/print.html:59
 #: osr/templates/osr/transition.html:58
 msgid "Adult Learning"
-msgstr "Matchmaker de Programmes"
+msgstr "Matcheur de Programmes"
 
 #: osr/templates/osr/matchmaker.html:63 osr/templates/osr/print.html:59
 #: osr/templates/osr/transition.html:58
-msgid "Program Matchmaker"
+msgid "Program Matcher"
 msgstr "d'Éducation des Adultes"
 
 #: osr/templates/osr/matchmaker.html:73
