@@ -25,7 +25,6 @@ LANGUAGES = (
 This file specifies the fields and behaviours of the data that we want to store. Each model maps to a single database table. In that way, this file defines the <b>database schema</b> for this project. Here is one example table, `FutureMatch`.
 
 ```python
-@python_2_unicode_compatible
 class FutureMatch(models.Model):
    class Meta:
       verbose_name = _('future match')
