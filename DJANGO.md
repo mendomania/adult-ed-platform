@@ -160,7 +160,10 @@ send_mail(
 ```
 2. Once all static strings have been tagged for translation, the message file for French translations (`django.po`) needs to be updated with the new translatable strings.<br /> 
 This is done by running this command from the root directory of the Django project.<br />
-```django-admin makemessages -l fr```
+
+```
+    $ django-admin makemessages -l fr
+```
 
 3. Translations can then be manually added to the `django.po` file.<br /> 
 It'll look like in the following example.<br />
@@ -172,17 +175,12 @@ msgstr "Veuillez corregir les erreurs dans le formulaire et le resoumettre"
 
 4. Each time we make changes to the `django.po` message file it needs to be recompiled to create a binary file (`django.mo`) that will be optimized to provide translations.<br /> 
 This is done by running this command from the root directory of the Django project.<br />
-```django-admin compilemessages```
 
-https://docs.djangoproject.com/en/2.1/topics/i18n/translation/
+```
+    $ django-admin compilemessages
+```
 
-• <b>The translation file</b> (`translation.py`)<br /><br />
-• <b>The message file</b> (`django.po`)<br /><br />
-• <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
 
 ## E-mail ##
-• <b>The translation file</b> (`translation.py`)<br /><br />
-• <b>The message file</b> (`django.po`)<br /><br />
-• <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
 
 ## Useful commands ##
