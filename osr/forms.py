@@ -61,7 +61,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _('5. If you used the matchmaker, was it easy to use?')
+    label = _('5. If you used the matcher, was it easy to use?')
   )  
 
   matchmaker_helpful = forms.ChoiceField(
@@ -72,7 +72,7 @@ class FeedbackForm(forms.Form):
       ('yes', _('Yes')), 
       ('no', _('No'))
     ),
-    label = _("6. If you used the matchmaker, did it help you find a program?")
+    label = _("6. If you used the matcher, did it help you find a program?")
   )  
 
   rating = forms.ChoiceField(
@@ -111,7 +111,7 @@ class FeedbackForm(forms.Form):
     ), 
     choices = (
       ('comparison table', _('Comparison table')), 
-      ('matchmaker', _('Matchmaker')),
+      ('matchmaker', _('Matcher')),
       ('program page', _('Program page')),
       ('live chat', _('Live chat')),
       ('other', _('Other'))
