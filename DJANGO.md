@@ -117,6 +117,65 @@ class FutureMatchTranslationOptions(TranslationOptions):
 For instance, the previous code snippet (taken from the [translation](https://github.com/mendomania/adult-ed-platform/blob/master/osr/translation.py) file of this project) specifies that the field `text` of the `FutureMatch` table should be translatable. Django will add columns `text_en` and `text_fr` to the `FutureMatch` table (this is why in the admin interface screenshot shown above it appears twice, in English and in French). The original column `text` will be retained though. You don't never have to worry about having to access either `text_en` or `text_fr` though; you only need to access the original fields defined in the models file, and in the case of a translatable field, Django will make sure to provide you with either the English or the French version of it by taking a look at a user's current language preferences.       
 
 ## Translation ##
+As mentioned previously, this project is setup to work in English and in French.<br /> 
+It requires three types of translations:<br /><br />
+• <b>Database content (or dynamic text)</b><br /><br />
+A lot of the data that users see when they visit the different pages of this web app comes straight from the database. As such, by means of the <b>django-modeltranslation</b> package, this data is stored in the DB in both English and French. Django will look at the user's current language preferences to make the decision as to the language the data should be presented in (as explained in the previous section).<br />
+If you need to create or update a table and you want some of its fields to be translatable, follow five three steps:<br />
+1. Define the model in `models.py`
+2. Run the `migrate` and `makemigrations` commands (Django will then create the table in PostgreSQL; more on this in the <b>Useful commands</b> section)
+3. Tag the fields you want to be translatable as such in `translation.py`
+4. Run the `migrate` and `makemigrations` commands again (Django will then update the table to add the new columns, suffixes indicate the language)
+5. Register the model as a subclass of `TranslationAdmin` (just like for `FutureMatch` and `FutureMatchAdmin` above)
+<br />
+
+• <b>Static text</b><br /><br />
+The rest of the text users see when they visit the different webpages corresponds to either static text in the HTML pages (template code) or strings that come straight from the Python code. These strings need to be first be tagged as translatable, then translated, and finally their translations must be compiled. [Here](https://docs.djangoproject.com/en/2.1/topics/i18n/translation/) are the official Django docs that describe this process in detail.<br />
+
+We want to translate strings in a lazy fashion (that is, translate strings every time we access the name of an attribute on a model). This is because a user might be looking at the model in different languages since Django started.<br /><br />
+1.A For HTML pages, static text is tagged as translatable with `{% blocktrans %}` template tags. <br />
+The code snippet below links to the feedback page and it is included in all webpages of the project.
+
+```html
+<!-- Feedback -->
+<div class="minty columns small-12 text-center">
+   {% blocktrans %}This page will be improved using your feedback{% endblocktrans %}. 
+   <a href="{% url 'osr:feedback' %}" target="_blank">
+      {% blocktrans %}Please tell us what you think{% endblocktrans %}.
+   </a>
+</div>
+```
+1.B For Python code, a string is tagged as translatable by calling `ugettext_lazy`. <br />
+The code snippet below is taken from the [views](https://github.com/mendomania/adult-ed-platform/blob/master/osr/views.py) file.
+```python
+from django.utils.translation import ugettext_lazy as _
+
+send_mail(
+   subject = _('Your results and recommendations'),
+   message = "",
+   html_message = html_message,
+   from_email = 'noreply@codefor.ca',
+   recipient_list = [email_address],
+) 
+```
+2. Once all static strings have been tagged for translation, the message file for French translations (`django.po`) needs to be updated with the new translatable strings.<br /> 
+This is done by running this command from the root directory of the Django project.<br />
+```django-admin makemessages -l fr```
+
+3. Translations can then be manually added to the `django.po` file.<br /> 
+It'll look like in the following example.<br />
+```python
+#: osr/forms.py:157
+msgid "Please correct the errors in this form and submit it again"
+msgstr "Veuillez corregir les erreurs dans le formulaire et le resoumettre"
+```
+
+4. Each time we make changes to the `django.po` message file it needs to be recompiled to create a binary file (`django.mo`) that will be optimized to provide translations.<br /> 
+This is done by running this command from the root directory of the Django project.<br />
+```django-admin compilemessages```
+
+https://docs.djangoproject.com/en/2.1/topics/i18n/translation/
+
 • <b>The translation file</b> (`translation.py`)<br /><br />
 • <b>The message file</b> (`django.po`)<br /><br />
 • <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
