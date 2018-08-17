@@ -1,7 +1,7 @@
 Django 101
 ======
 ## Diagram ##
-Here is a diagram of the most important Django files for this project. The section below will explain in more detail what they do and when you would need to make changes to them.
+Here is a diagram of the most important Django files for this project and how they interact with each other, with the database and with the private and public-facing set of web pages. The section below will explain in more detail what all of these files do and when you would need to make changes to them.
 <p align="center">
 <img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
 </p>
@@ -58,10 +58,51 @@ This code snippet was taken from the [admin](https://github.com/mendomania/adult
 Here is a screenshot of how this looks in the admin interface. Note how the four `FutureMatch` fields defined in the models section above show up in the admin interface with the `verbose_name` and `help_text` values that were defined. Also note how the char field `Text` appears twice, in English and in French. This is because it was tagged as a translatable field. Please refer to the <b>Translation</b> section below for more details on this.<br /><br />
 [Here](https://docs.djangoproject.com/en/2.1/ref/contrib/admin/) are the official docs for the Django admin interface.<br />
 
-• <b>The URLs file</b> (`urls.py`)<br /><br />
-• <b>The views file</b> (`views.py`)<br /><br />
+• <b>The views file</b> (`views.py`)<br />
+A view is a Python function that takes a web request and returns a web response. For this project, there is a view definition for each of the public-facing webpages as well as two special ones that correspond to the print and e-mail functionalities. 
+     
+     def comparison(request):
+       """ 
+       This view corresponds to the comparison page.
+       This page will present the user with a carousel showing programs to be compared.
+       """
+
+       # Show all programs by default
+       programs = Program.objects.all()
+
+       # If some programs are passed as parameters then show only those programs
+       pro_filter = request.GET.getlist('p')
+       if pro_filter and pro_filter[0]:
+         query = Q()
+         for val in pro_filter:
+           query = query | Q(code=val)
+         programs = programs.filter(query)  
+
+       return render(request, 'osr/comparison.html', {'programs': programs})
+
+This code snippet corresponds to the view that controls the [comparison](https://github.com/mendomania/adult-ed-platform/blob/master/osr/templates/osr/comparison.html) page. As you can see, it queries the database, does some very basic filtering, and then combines the comparison page template with a variable called `programs` and returns an HttpResponse object. The comparison page template will then use that `programs` object to display program information to the user.<br /><br />
+Most of the code in the views file either queries the PostgreSQL database or performs some processing with the data before attaching it to an HTML template an returning an HttpResponse object. And so, while the code is in Python, it does not make use of any advanced libraries; it merely consists of manipulating basic data structures.<br /><br />
+[Here](https://docs.djangoproject.com/en/2.1/topics/http/views/) are the official docs for views in Django.<br />
+
+• <b>The URL dispatcher</b> (`urls.py`)<br />
+This file maps URL path expressions to Django views (which in turn map to HTML templates, as explained in the preceding section). Regular expressions are used to define URL path expressions. For instance, the example below shows that the URL path `comparison` maps to the `comparison` view definition (as shown in the previous section) and that the URL path `program` followed by a `program_code` made up of at least one lowercase letter maps to the `detail_program` view.
+
+     # Comparison page
+     url(r'comparison/$', views.comparison, name='comparison'),
+     
+     # Dynamic program pages
+     # ex: /program/lbs/
+     url(r'program/(?P<program_code>[a-z]+)/$', views.detail_program, name='detail_program'),     
+
+[Here](https://docs.djangoproject.com/en/2.1/topics/http/urls/) are the official docs for the URL dispatcher in Django.<br />
+
 
 ## Translation ##
+• <b>The translation file</b> (`translation.py`)<br /><br />
+• <b>The message file</b> (`django.po`)<br /><br />
+• <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
+
+## E-mail ##
 • <b>The translation file</b> (`translation.py`)<br /><br />
 • <b>The message file</b> (`django.po`)<br /><br />
 • <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
