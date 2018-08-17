@@ -66,7 +66,7 @@ command in your command line:
 
 #### Django ####
 
-• <b>1:</b>: Run this command from the root directory of the Django project (`adult-ed-platform/`) to start the development server. By default, it'll be on the internal IP at port 8000. Please note that this Django development server should not be used for production. It's OK for when you want to run your own local copy of Django in your computer. There are a few [tweaks](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment) that need to be done before deploying Django to production. 
+• <b>1</b>: Run this command from the root directory of the Django project (`adult-ed-platform/`) to start the development server. By default, it'll be on the internal IP at port 8000. Please note that this Django development server should not be used for production. It's OK for when you want to run your own local copy of Django in your computer. There are a few [tweaks](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment) that need to be done before deploying Django to production. 
 
     $ python manage.py runserver
     
