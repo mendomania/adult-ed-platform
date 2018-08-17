@@ -85,7 +85,7 @@ Most of the code in the views file either queries the PostgreSQL database or per
 [Here](https://docs.djangoproject.com/en/2.1/topics/http/views/) are the official docs for views in Django.<br />
 
 • <b>The URL dispatcher</b> (`urls.py`)<br />
-This file maps URL path expressions to Django views (which in turn map to HTML templates, as explained in the preceding section). Regular expressions are used to define URL path expressions. For instance, the example below shows that the URL path `comparison` maps to the `comparison` view definition (as shown in the previous section) and that the URL path `program` followed by a `program_code` made up of at least one lowercase letter maps to the `detail_program` view.
+This file maps URL path expressions to Django views (which in turn map to HTML templates, as explained in the preceding section). Regular expressions are used to define URL path expressions. For instance, the example below (taken from the URL [dispatcher](https://github.com/mendomania/adult-ed-platform/blob/master/osr/urls.py) of this project) shows that the URL path `comparison` maps to the `comparison` view definition (as shown in the previous section) and that the URL path `program` followed by a `program_code` made up of at least one lowercase letter maps to the `detail_program` view.
 
      # Comparison page
      url(r'comparison/$', views.comparison, name='comparison'),
@@ -96,6 +96,14 @@ This file maps URL path expressions to Django views (which in turn map to HTML t
 
 [Here](https://docs.djangoproject.com/en/2.1/topics/http/urls/) are the official docs for the URL dispatcher in Django.<br />
 
+• <b>The DB translation file</b> (`translation.py`)<br />
+This file is required by the <b>django-modeltranslation</b> package and allows to tag fields of tables as translatable. Once a certain field is tagged as translatable and the `migrate` and `makemigrations` commands are run (more on this below), Django will update a table schema and add extra fields to it corresponding to the languages of the web app (which are defined in the settings file, as explained above). 
+
+     @register(FutureMatch)
+     class FutureMatchTranslationOptions(TranslationOptions):
+       fields = ('text',)
+       
+For instance, the previous code snippet (taken from the [translation](https://github.com/mendomania/adult-ed-platform/blob/master/osr/translation.py) file of this project) specifies that the field `text` of the `FutureMatch` table should be translatable. Django will add columns `text_en` and `text_fr` to the `FutureMatch` table (this is why in the admin interface screenshot shown above it appears twice, in English and in French). The original column `text` will be retained though. You don't never have to worry about having to access either `text_en` or `text_fr` though; you only need to access the original fields defined in the models file, and in the case of a translatable field, Django will make sure to provide you with either the English or the French version of it by taking a look at a user's current language preferences.       
 
 ## Translation ##
 • <b>The translation file</b> (`translation.py`)<br /><br />
