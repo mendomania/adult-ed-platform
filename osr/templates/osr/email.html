@@ -9,15 +9,19 @@
         <h3>{% blocktrans %}Your results{% endblocktrans %}</h3>
       </div>
       <div>
-        {% if number == 1 %}
+        {% if number == 0 %}
+        <h4>{% blocktrans %}We did not find suitable programs for you based on your responses{% endblocktrans %}.<br/>{% blocktrans %}But here is some useful information for you to consider{% endblocktrans %}.</h4>
+        {% elif number == 1 %}
         <h4>{% blocktrans %}Based on your responses, we found 1 program that you might be interested in{% endblocktrans %}</h4>
         {% else %}
         <h4>{% blocktrans with number as number %}Based on your responses, we found {{ number }} programs that you might be interested in{% endblocktrans %}</h4>
         {% endif %}  
       </div>
+
+      {% if number > 0 %}
       <table>
         <tr>
-          <td colspan='2'><h3>{% blocktrans %}My results{% endblocktrans %}:</h3></td>
+          <td colspan='2'><h3>{% blocktrans %}Program matches{% endblocktrans %}:</h3></td>
         </tr>        
         <tr>
           <th><b>{% blocktrans %}Name of the program{% endblocktrans %}</b></th>
@@ -34,27 +38,50 @@
           </td>
         </tr>
         {% endfor %}
-        <br/>
-        {% if recommendations %}            
+      </table>
+      <br/>
+      {% endif %}
+
+      {% if messages %}   
+      {% for message in messages %}
+      <p><b>Goal Path</b>: {{ message.goal }}</p>
+        {% for path in message.paths %}
+        <p>&bull; {{ path }}</p>
+        {% endfor %}
+        {% for match in message.future_matches %}
+        <p><b>In the future</b>: {{ match }}</p>
+        {% endfor %}          
+      {% endfor %}        
+      <br/>
+      {% endif %}
+
+      {% if links or recos %}            
+      <table>
         <tr>
-          <td colspan='2'><h3>{% blocktrans %}My recommendations{% endblocktrans %}:</h3></td>
+          <td colspan='2'><h3>{% blocktrans %}Recommendations{% endblocktrans %}:</h3></td>
         </tr>            
         <tr>
           <th><b>{% blocktrans %}Because you said{% endblocktrans %}...</b></th>
           <th align="left"><b>{% blocktrans %}We recommend{% endblocktrans %}...</b></th>
         </tr>        
-        {% for recommendation in recommendations %}  
+        {% for link in links %}  
         <tr>
           <td>
-            {{ recommendation.reason }}
+            {{ link.reason }}
           </td>
           <td>
-            {{ recommendation.text }}<br/>{{ recommendation.link }}
+            {{ link.text }}<br/>{{ link.link }}
           </td>
         </tr>  
         {% endfor %}
-        {% endif %}
-      </table>
+        {% for reco in recos %}
+        <tr>
+          <td colspan='2'>{{ reco.text }}</td>
+        </tr>
+        {% endfor %}  
+      </table>       
+      {% endif %}
+
       <br/>{{ website }}
       <br/>{{ timestamp }}
   </body>
