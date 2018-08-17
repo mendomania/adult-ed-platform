@@ -51,9 +51,9 @@ Once the models file is created and the `migrate` and `makemigrations` commands 
 The admin file can then be used to define `ModelAdmin` classes. These are representations of a model in the admin interface. In a nutshell, this file is used to customise the admin interface. For example, by deciding which fields of each model should even show up in this interface (perhaps there are fields that we don't want to show to users), to group together certain fields in a section with a specific label (so it's easier for users to go through the process of adding a new record in a certain table) or to make sure a certain user or group of users can only see the records they have created.
 
 ```python
-   class FutureMatchAdmin(TranslationAdmin):
-      pass
-   admin.site.register(FutureMatch, FutureMatchAdmin)  
+class FutureMatchAdmin(TranslationAdmin):
+   pass
+admin.site.register(FutureMatch, FutureMatchAdmin)  
 ```
 
 This code snippet was taken from the [admin](https://github.com/mendomania/adult-ed-platform/blob/master/osr/admin.py) file of this project. Here you can see that for the `FutureMatch` table no special processing is done in the admin file, other than defining a subclass of the base class `TranslationAdmin` (which is part of the <b>django-modeltranslation</b> package) that is called `FutureMatchAdmin` and then registering `FutureMatch` to this `ModelAdmin` class.
@@ -68,24 +68,24 @@ Here is a screenshot of how this looks in the admin interface. Note how the four
 A view is a Python function that takes a web request and returns a web response. For this project, there is a view definition for each of the public-facing webpages as well as two special ones that correspond to the print and e-mail functionalities. 
 
 ```python
-   def comparison(request):
-   """ 
-   This view corresponds to the comparison page.
-   This page will present the user with a carousel showing programs to be compared.
-   """
+def comparison(request):
+""" 
+This view corresponds to the comparison page.
+This page will present the user with a carousel showing programs to be compared.
+"""
 
-   # Show all programs by default
-   programs = Program.objects.all()
+# Show all programs by default
+programs = Program.objects.all()
 
-   # If some programs are passed as parameters then show only those programs
-   pro_filter = request.GET.getlist('p')
-   if pro_filter and pro_filter[0]:
-      query = Q()
-      for val in pro_filter:
-         query = query | Q(code=val)
-      programs = programs.filter(query)  
+# If some programs are passed as parameters then show only those programs
+pro_filter = request.GET.getlist('p')
+if pro_filter and pro_filter[0]:
+   query = Q()
+   for val in pro_filter:
+      query = query | Q(code=val)
+   programs = programs.filter(query)  
 
-   return render(request, 'osr/comparison.html', {'programs': programs})
+return render(request, 'osr/comparison.html', {'programs': programs})
 ```
 
 This code snippet corresponds to the view that controls the [comparison](https://github.com/mendomania/adult-ed-platform/blob/master/osr/templates/osr/comparison.html) page. As you can see, it queries the database, does some very basic filtering, and then combines the comparison page template with a variable called `programs` and returns an HttpResponse object. The comparison page template will then use that `programs` object to display program information to the user.<br /><br />
