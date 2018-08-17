@@ -286,7 +286,6 @@ class Offering(models.Model):
   str_date = models.DateField(verbose_name=_('start date'))
   end_date = models.DateField(verbose_name=_('end date'))
 
-  # TODO:
   class_size = models.CharField(max_length=10, choices=CSIZE_RANGES, verbose_name=_('class size'))
   learning_style = models.CharField(max_length=10, choices=LEARN_STYLES, verbose_name=_('learning style'))
 
@@ -303,8 +302,6 @@ class Offering(models.Model):
     verbose_name=_('requirements'),
     chained_field="program",
     chained_model_field="programs")
-    #chained_model_field="programs",
-    #blank=True)
 
   streams = ChainedManyToManyField(
     Stream,
