@@ -18,10 +18,6 @@ Django packages:<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
 
-Django tutorial
-======
-If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Otherwise refer to the section <b>Django 101</b> below for an overview of the most important Python files in Django and how they interact with each other and with the database. And also a summary of the most commonly-used Django commands to make changes to the project.
-
 Installation
 ======
 In order to run the project you will need to download and/or install the software and packages specified above. Follow this guide to get you started. 
@@ -50,7 +46,8 @@ For this project we're using the direct `<script>` include for Vue.js version 2.
 Setup
 ======
 #### PostgreSQL ####
-• <b>1:</b> Django works with different data stores. The [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file specifies that for this project we're using PostgreSQL (look for the `DATABASES` section in the file) and that our database will be called `adultedu`. The first step is thus to create this database in PostgreSQL. You can do this with the following command in your command line:  
+• <b>1:</b> Django works with different data stores. The [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file specifies that for this project we're using PostgreSQL (look for the `DATABASES` section in the file) and that our database will be called `adultedu`. The first step is thus to create this database in PostgreSQL. You can do this with 
+command in your command line:  
 
     $ createdb adultedu    
     
@@ -69,8 +66,6 @@ Setup
 
 #### Django ####
 
-Django 101
+Django tutorial
 ======
-<p align="center">
-<img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
-</p>
+If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Also refer to this other document [DJANGO.md](https://github.com/mendomania/adult-ed-platform/blob/master/DJANGO.md) for an overview of the most important Python files in Django for this project and how they interact with each other and with the database. It also provides a summary of the most commonly-used Django commands that will be needed to make updates to the project, including updating translations.
