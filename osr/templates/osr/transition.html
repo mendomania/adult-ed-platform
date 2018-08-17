@@ -73,7 +73,9 @@
       <div class="row">
         <div class="columns small-12 text-center">
           <h4>{% blocktrans %}Your Results{% endblocktrans %}</h4>
-          {% if number == 1 %}
+          {% if number == 0 %}
+          <p>{% blocktrans %}We did not find suitable programs for you based on your responses{% endblocktrans %}.<br/>{% blocktrans %}But here is some useful information for you to consider{% endblocktrans %}.</p>
+          {% elif number == 1 %}
           <p>{% blocktrans %}Based on your responses, we found 1 program that you might be interested in{% endblocktrans %}</p>
           {% else %}
           <p>{% blocktrans with number as number %}Based on your responses, we found {{ number }} programs that you might be interested in{% endblocktrans %}</p>
@@ -162,7 +164,26 @@
       {% endif %} 
     </div>     
 
-    {% if recommendations %}
+    {% if messages %}
+    <div class="row">
+      <div class="columns small-12 medium-12 large-12">
+        {% for message in messages %}
+          <h6>{% blocktrans %}Goal Path{% endblocktrans %}: {{ message.goal }}</h6>
+          <ul>
+          {% for path in message.paths %}
+            <li>{{ path }}</li>
+          {% endfor %}
+          </ul>
+          {% for match in message.future_matches %}
+            <b>{% blocktrans %}In the future{% endblocktrans %}</b>: {{ match }}<br/>
+          {% endfor %}          
+        {% endfor %}
+      </div>
+    </div>
+    <br/>
+    {% endif %}
+
+    {% if links or recos %}
     <div class="white-bg">
       <div class="row">
         <br/>
@@ -176,24 +197,26 @@
 
       <div class="row">
         <br/>
-      </div>  
+      </div>   
 
+      {% for link in links %}
       <div class="row">
         <div class="large-offset-2 columns small-12 medium-12 large-4">
-          <h5>{% blocktrans %}Because you said...{% endblocktrans %}</h5>            
+          <p> {{ link.reason }} </p>      
         </div>
         <div class="columns small-12 medium-12 large-4 end">
-          <h5>{% blocktrans %}We recommend...{% endblocktrans %}</h5>     
+          <a href="{{ link.link }}" target="_blank"> {{ link.text }} </a>  
         </div>
-      </div> 
+        {% if not forloop.last or recos %}
+        <hr/>
+        {% endif %}
+      </div>
+      {% endfor %} 
 
-      {% for recommendation in recommendations %}
+      {% for reco in recos %}
       <div class="row">
-        <div class="large-offset-2 columns small-12 medium-12 large-4">
-          <p> {{ recommendation.reason }} </p>      
-        </div>
-        <div class="columns small-12 medium-12 large-4 end">
-          <a href="{{ recommendation.link }}" target="_blank"> {{ recommendation.text }} </a>  
+        <div class="large-offset-12 columns small-12 medium-12 large-12">
+          <p> {{ reco.text }} </p>      
         </div>
         {% if not forloop.last %}
         <hr/>
@@ -205,7 +228,7 @@
         <br/>
       </div> 
     </div>       
-    {% endif %}
+    {% endif %}    
 
     <div class="lblue-bg">
       <div class="row">
