@@ -72,7 +72,7 @@ command in your command line:
 
 Django 101
 ======
-Here is a diagram of the most important Django files. The section below will explain in more detail what they do and when you would need to make changes to them.
+Here is a diagram of the most important Django files for this project. The section below will explain in more detail what they do and when you would need to make changes to them.
 <p align="center">
 <img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
 </p>
