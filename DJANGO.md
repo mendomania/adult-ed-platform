@@ -55,7 +55,8 @@ This code snippet was taken from the [admin](https://github.com/mendomania/adult
 <img src="https://github.com/mendomania/adult-ed-platform/blob/master/example_admin.png" align="center">
 </p>
 
-Here is a screenshot of how this looks in the admin interface. Note how the four `FutureMatch` fields defined in the models section above show up in the admin interface with the `verbose_name` and `help_text` values that were defined. Also note how the char field `Text` appears twice, in English and in French. This is because it was tagged as a translatable field. Please refer to the <b>Translation</b> section below for more details on this.
+Here is a screenshot of how this looks in the admin interface. Note how the four `FutureMatch` fields defined in the models section above show up in the admin interface with the `verbose_name` and `help_text` values that were defined. Also note how the char field `Text` appears twice, in English and in French. This is because it was tagged as a translatable field. Please refer to the <b>Translation</b> section below for more details on this.<br />
+[Here](https://docs.djangoproject.com/en/2.1/ref/contrib/admin/) are the official docs for the Django admin interface.<br />
 
 • <b>The URLs file</b> (`urls.py`)<br /><br />
 • <b>The views file</b> (`views.py`)<br /><br />
