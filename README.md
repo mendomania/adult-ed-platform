@@ -18,10 +18,6 @@ Django packages:<br />
 • [Easy PDF](https://djangopackages.org/packages/p/django-easy-pdf/) (0.1.1)<br />
 • [Widget tweaks](https://djangopackages.org/packages/p/django-widget-tweaks/) (1.4.2)<br />
 
-Django tutorial
-======
-If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Also refer to this other document [DJANGO.md](https://github.com/mendomania/adult-ed-platform/blob/master/DJANGO.md) for an overview of the most important Python files in Django for this project and how they interact with each other and with the database. It also provides a summary of the most commonly-used Django commands that will be needed to make updates to the project, including updating translations.
-
 Installation
 ======
 In order to run the project you will need to download and/or install the software and packages specified above. Follow this guide to get you started. 
@@ -69,3 +65,7 @@ command in your command line:
     adultedu=# \q    
 
 #### Django ####
+
+Django tutorial
+======
+If you're new to Django, this very throughout [tutorial](https://docs.djangoproject.com/en/1.11/intro/tutorial01/) can quickly get up and running. Also refer to this other document [DJANGO.md](https://github.com/mendomania/adult-ed-platform/blob/master/DJANGO.md) for an overview of the most important Python files in Django for this project and how they interact with each other and with the database. It also provides a summary of the most commonly-used Django commands that will be needed to make updates to the project, including updating translations.
