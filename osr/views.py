@@ -16,7 +16,8 @@ from django.utils.translation import LANGUAGE_SESSION_KEY
 from django.utils.translation import ugettext_lazy as _
 from .forms import FeedbackForm
 from .models import Offering, Program, Outcome, Eligibility, Feature, Facility, ServiceDeliverySite 
-from .models import Recommendation, ProfileSection, GlossaryEntry, Feedback
+from .models import ProfileSection, GlossaryEntry, Feedback
+from .models import GoalPath, Recommendation, ExternalLink, UnhappyPath, FutureMatch
 
 ###########################################################################################
 #####                                      ALPHA                                      #####
@@ -104,10 +105,9 @@ def transition(request):
 
   # Matching programs will be stored in different lists to be easily displayed in the page
   groupOf1s, groupOf2s, groupOf3s = [], [], []
-  programs = Program.objects.all()
 
   # Recommendations will be retrieved from the DB
-  recommendations = Recommendation.objects.none()
+  recommendations = ExternalLink.objects.none()
 
   # Variables used to display a message when the user chooses to e-mail themselves their results
   wasEmailSent = False
@@ -119,11 +119,11 @@ def transition(request):
       emailAddress = request.session['emailAddress']
 
     # If there are cached vars then proceed normally
-    if 'matches' in request.session:
+    if 'curr_matches' in request.session or 'futr_matches' in request.session or \
+       'link_list' in request.session or 'path_list' in request.session or 'reco_list' in request.session:
       # TODO: Do these make sense? The template could load them straight from the cache
-      programs = get_program_matches_from_cache(request)
-      recommendations = get_recommendations_from_cache(request)
-      groupOf1s, groupOf2s, groupOf3s, paramsPrograms = group_programs(programs)
+      curr_programs, links, recos, messages = get_learner_matches_from_cache(request)
+      groupOf1s, groupOf2s, groupOf3s, paramsPrograms = group_programs(curr_programs)
       profile_lines_basic, profile_lines_goals, profile_lines_needs = get_learner_profile_from_cache(request)
 
     # If there are no cached vars then redirect user to the matchmaker page  
@@ -142,19 +142,26 @@ def transition(request):
     translation.activate(dico['lang'])      
 
     # Save program matches to cache
-    programs = save_program_matches_to_cache(dico, request)
+    curr_programs, links, recos, messages = save_learner_matches_to_cache(dico, request)
+
+    print '$$$$$$$$$$$$$$$$$$$'
+    print '[C]:', curr_programs
+    print '[L]:', links
+    print '[R]:', recos
+    print '[M]:', messages
+    print '$$$$$$$$$$$$$$$$$$$'
+
     # Group programs
-    groupOf1s, groupOf2s, groupOf3s, paramsPrograms = group_programs(programs)
-    # Save recommendations to cache
-    recommendations = save_recommendations_to_cache(dico, request)
+    groupOf1s, groupOf2s, groupOf3s, paramsPrograms = group_programs(curr_programs)
+    # TODO:
     # Save learner profile to cache
     profile_lines_basic, profile_lines_goals, profile_lines_needs = save_learner_profile_to_cache(dico, request)
 
   request.session[LANGUAGE_SESSION_KEY] = translation.get_language()
 
   return render(request, 'osr/transition.html', 
-    {'number': programs.count, 'groupOf1s': groupOf1s, 'groupOf2s': groupOf2s, 'groupOf3s': groupOf3s, 
-     'paramsPrograms': paramsPrograms, 'recommendations': recommendations, 
+    {'number': curr_programs.count, 'groupOf1s': groupOf1s, 'groupOf2s': groupOf2s, 'groupOf3s': groupOf3s, 
+     'paramsPrograms': paramsPrograms, 'links': links, 'recos': recos, 'messages': messages,
      'proLinesBasic': profile_lines_basic, 'proLinesGoals': profile_lines_goals, 'proLinesNeeds': profile_lines_needs,
      'wasEmailSent': wasEmailSent, 'emailAddress': emailAddress})
 
@@ -190,12 +197,13 @@ class ResultsPDFView(PDFTemplateView):
     context = super(ResultsPDFView, self).get_context_data(pagesize = "A4", title = _("My results"), **kwargs)
 
     # Retrieve information from cache
-    matches = get_program_matches_from_cache(self.request)
-    recommendations = get_recommendations_from_cache(self.request)
+    curr_matches, links, recos, messages = get_learner_matches_from_cache(self.request)
     
     # Variables to be passed in to the HTML to render the PDF
-    context['matches'] = matches
-    context['recommendations'] = recommendations
+    context['matches'] = curr_matches
+    context['recos'] = recos
+    context['links'] = links
+    context['messages'] = messages
     context['program_path'] = "%s://%s%s" % (self.request.scheme, self.request.get_host(), "/osr/program")
     context['results_path'] = "%s://%s%s" % (self.request.scheme, self.request.get_host(), reverse('osr:transition'))
     return context
@@ -213,8 +221,7 @@ def email(request):
     email_address = params[0]
 
     # Retrieve information from cache
-    matches = get_program_matches_from_cache(request)
-    recommendations = get_recommendations_from_cache(request)
+    curr_matches, links, recos, messages = get_learner_matches_from_cache(request)
 
     # Variables to be included in the email
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -227,19 +234,25 @@ def email(request):
 
     # Fill in placeholders in HTML message
     list_program_matches = []
-    for m in matches:
+    for m in curr_matches:
       program_path = '%s/%s' % (program_base, m.code.lower())
       list_program_matches.append({ 'name': m.name_official, 'description': m.description, 'path': program_path})
 
-    list_recommendations = []
-    for r in recommendations:
-      list_recommendations.append({ 'reason': r.reason, 'text': r.text, 'link': r.link })
+    list_recos = []
+    for reco in recos:
+      list_recos.append({ 'text': reco.text })
+
+    list_links = []
+    for link in links:
+      list_links.append({ 'reason': link.reason, 'text': link.text, 'link': link.link })
 
     html_message = loader.render_to_string(
       file_path,
       {
         'programs': list_program_matches,
-        'recommendations':  list_recommendations, 
+        'links':  list_links,
+        'recos':  list_recos, 
+        'messages':  messages, 
         'number': len(list_program_matches),
         'website': results_path,
         'timestamp': timestamp
@@ -314,18 +327,51 @@ def group_programs(programs):
 #####                                      TODO                                       #####
 ###########################################################################################
 
-def filter_recommendations(recolist):
-  if not recolist:
+def get_links_from_db(link_list):
+  if not link_list:
+    return ExternalLink.objects.none()
+  else:
+    links = ExternalLink.objects.all()
+    query = Q()
+    for code in link_list:
+      query = query | Q(code=code)
+    links = links.filter(query)           
+    return links
+
+def get_paths_from_db(path_list):
+  if not path_list:
+    return UnhappyPath.objects.none()
+  else:
+    paths = UnhappyPath.objects.all()
+    query = Q()
+    for code in path_list:
+      query = query | Q(code=code)
+    paths = paths.filter(query)           
+    return paths    
+
+def get_recos_from_db(reco_list):
+  if not reco_list:
     return Recommendation.objects.none()
   else:
-    recommendations = Recommendation.objects.all()
+    recos = Recommendation.objects.all()
     query = Q()
-    for code in recolist:
+    for code in reco_list:
       query = query | Q(code=code)
-    recommendations = recommendations.filter(query)           
-    return recommendations
+    recos = recos.filter(query)           
+    return recos
 
-def filter_program_matches(codelist):
+def get_futr_program_matches_from_db(futr_list):
+  if not futr_list:
+    return FutureMatch.objects.none()
+  else:
+    matches = FutureMatch.objects.all()
+    query = Q()
+    for code in futr_list:
+      query = query | Q(code=code)
+    matches = matches.filter(query)           
+    return matches        
+
+def get_curr_program_matches_from_db(codelist):
   if not codelist:
     return Program.objects.none()
   else:
@@ -340,76 +386,104 @@ def filter_program_matches(codelist):
 #####                                      TODO                                       #####
 ###########################################################################################
 
-def save_program_matches_to_cache(dico, request):
-  codelist = []
-  if 'matches' not in request.session:
-    request.session['matches'] = []
+def get_learner_matches_from_cache(request):
+  # (Current program matches, Links, Recos, Messages)
+  return (
+    get_curr_program_matches_from_db(request.session['curr_matches']), 
+    get_links_from_db(request.session['link_list']),
+    get_recos_from_db(request.session['reco_list']),
+    format_messages(get_paths_from_db(request.session['path_list']), get_futr_program_matches_from_db(request.session['futr_matches'])))    
 
-  # Language programs
-  if 'program_lang' in dico and 'lang_target' in dico:
-    if dico['lang_target'] == 'English' or dico['lang_target'] == 'anglais':
-      codelist.append('ESL')
-      request.session['matches'].append('ESL')
-    if dico['lang_target'] == 'French' or dico['lang_target'] == 'français':
-      codelist.append('FSL')
-      request.session['matches'].append('FSL')
+def save_learner_matches_to_cache(dico, request):
+  curr_list, futr_list, reco_list, link_list, path_list = [], [], [], [], []
+  if 'curr_matches' not in request.session and 'futr_matches' not in request.session and \
+     'reco_list' not in request.session and 'link_list' not in request.session and \
+     'path_list' not in request.session:
 
-  # LBS
-  if 'program_upgr' in dico:
-    codelist.append('LBS')
-    request.session['matches'].append('LBS')
+    request.session['curr_matches'] = []
+    request.session['futr_matches'] = []
+    request.session['reco_list'] = []
+    request.session['link_list'] = []
+    request.session['path_list'] = []
 
-  # Credential programs 
-  if 'program_cert' in dico:
-    codelist.append('ADC')
-    request.session['matches'].append('ADC')     
-  if 'profile_hs_goal_work' in dico or 'profile_hs_goal_university' in dico or 'profile_hs_goal_college' in dico:
-    codelist.append('GED')
-    request.session['matches'].append('GED')  
-    if 'ADC' not in codelist:
-      codelist.append('ADC')
-      request.session['matches'].append('ADC') 
+    for key in dico.keys():
+      # Current program matches
+      # Variables that represent current program matches follow the format
+      # "match_curr_" + 3-letter code of the program
+      if key.startswith('match_curr'):
+        curr_list.append(key.split('_')[2].upper())
 
-  # BTP 
-  if 'program_obtp' in dico:
-    codelist.append('BTP')
-    request.session['matches'].append('BTP') 
+      # Future program matches
+      # Variables that represent future program matches follow the format
+      # "match_futr_" + 3-letter code of the program    
+      if key.startswith('match_futr'):
+        futr_list.append(key)
 
-  return filter_program_matches(codelist)
+      # External links
+      # Variables that represent external links follow the format: "link_" + name
+      if key.startswith('link'):
+        link_list.append(key)  
 
-###########################################################################################
-#####                                      TODO                                       #####
-###########################################################################################
+      # Recommendations
+      # Variables that represent recommendations follow the format: "msg_" + name
+      if key.startswith('msg'):
+        reco_list.append(key) 
 
-def save_recommendations_to_cache(dico, request):
-  recolist = []
+      # Unhappy paths
+      # Variables that represent unhappy path messages follow the format: "err_" + name
+      if key.startswith('err'):
+        path_list.append(key)                        
 
-  if 'profile_hs_goal_apprenticeship' in dico:
-    recolist.append('apprenticeship')
-    request.session['apprenticeship'] = 'T'
+    request.session['curr_matches'] = curr_list
+    request.session['futr_matches'] = futr_list
+    request.session['reco_list'] = reco_list
+    request.session['link_list'] = link_list
+    request.session['path_list'] = path_list                      
 
-  if 'plar' in dico:
-    recolist.append('plar')
-    request.session['plar'] = 'T'
+  # (Current program matches, Links, Recos, Messages)
+  return (
+    get_curr_program_matches_from_db(curr_list),     
+    get_links_from_db(link_list),
+    get_recos_from_db(reco_list),
+    format_messages(get_paths_from_db(path_list), get_futr_program_matches_from_db(futr_list)))
 
-  if 'profile_basic_status_pr' in dico:
-    recolist.append('status_pr')
-    request.session['status_pr'] = 'T'
+def format_messages(paths, futr_programs):
+  # Get current set of goals
+  goals = []
+  for path in paths:
+    if path.goal not in goals:
+      goals.append(path.goal)
+  for prog in futr_programs:
+    if prog.goal not in goals:
+      goals.append(prog.goal)      
+  print "### GOALS ###", goals
 
-  if 'profile_hs_goal_work' in dico:
-    recolist.append('hs_goal_work')
-    request.session['hs_goal_work'] = 'T'        
-     
-  return filter_recommendations(recolist)
+  # Create goal-related messages to be sent to template
+  # message = { 'goal': 'X', 'future_matches': [], 'paths': [] }
+  messages = []
+  for goal in goals:
+    message = { 'goal': goal.text, 'future_matches': [], 'paths': [] }
+    for path in paths:
+      if goal == path.goal:
+        message['paths'].append(path.text)
+    for prog in futr_programs:
+      if goal == prog.goal:
+        message['future_matches'].append(prog.text) 
+    messages.append(message) 
+
+  return messages
 
 def save_learner_profile_to_cache(dico, request):
   sections = ProfileSection.objects.all()
   profile_lines_basic, profile_lines_goals, profile_lines_needs = [], [], []
 
   query = Q()
+  print '$$$$$'
   for key in dico:
+    print key
     if key.startswith('profile'):  
       query = query | Q(code=key)
+  print '$$$$$'      
   sections = sections.filter(query)
 
   # Replace placeholders
@@ -452,176 +526,7 @@ def get_learner_profile_from_cache(request):
           request.session['profile_lines_goals'], 
           request.session['profile_lines_needs'])
 
-# TODO: 
-# Get me matches from dico
-def get_program_matches_from_cache(request):
-  # Program matches
-  codelist = []
-  if 'matches' in request.session:
-    for match in request.session['matches']:
-      codelist.append(match)
-  return filter_program_matches(codelist)
-
-# Get me recommendations from dico
-def get_recommendations_from_cache(request):
-  # Recommendations
-  recolist = []
-
-  if 'apprenticeship' in request.session:
-    recolist.append('apprenticeship')
-  if 'plar' in request.session:
-    recolist.append('plar')  
-  if 'status_pr' in request.session:
-    recolist.append('status_pr')        
-  if 'hs_goal_work' in request.session:
-    recolist.append('hs_goal_work')            
-    
-  return filter_recommendations(recolist)
-
 def reset_cache(request):
   """ Delete all variables stored in the cache """
   for key in request.session.keys():
     del request.session[key]  
-
-###########################################################################################
-#####                                      BETA                                       #####
-###########################################################################################
-
-def detail_sds(request, sds_id):
-  service_delivery_site = get_object_or_404(ServiceDeliverySite, id=sds_id)
-  return render(request, 'osr/sds.html', {'sds': service_delivery_site})     
-
-class OfferingsView(generic.ListView):
-  template_name = 'osr/offerings.html'
-  context_object_name = 'offerings'
-  paginate_by = 5
-
-  def get_queryset(self):
-    """ Return offerings """
-    items = Offering.objects.order_by('-id')
-
-    pro_filter = self.request.GET.getlist('program')
-    print 'PRO:', pro_filter
-    ele_filter = self.request.GET.getlist('e')
-    print 'ELE:', ele_filter
-    fea_filter = self.request.GET.getlist('f')
-    print 'FEA:', fea_filter
-    ser_filter = self.request.GET.getlist('s')
-    print 'SER:', ser_filter
-    out_filter = self.request.GET.getlist('o')
-    print 'OUT:', out_filter
-
-    programs = Program.objects.order_by('name_official')
-
-    # Filter offerings by programs selected
-    if pro_filter and pro_filter[0]:
-      query = Q()
-      for val in pro_filter:
-        query = query | Q(program=val)
-      items = items.filter(query)
-
-    # Filter offerings by eligibility requirements selected
-    if ele_filter and ele_filter[0]:
-      reqs = []
-      for val in ele_filter:
-        reqs.append(str(val))
-      print reqs
-      for req in reqs:
-        items = items.filter(requirements__id=req)   
-    print items
-
-    # Filter offerings by features
-    if fea_filter and fea_filter[0]:
-      feas = []
-      for val in fea_filter:
-        feas.append(str(val))
-      print feas
-      for fea in feas:
-        items = items.filter(offeringfeature__feature_id=fea)
-    print items
-
-    # Filter offerings by services (facilities)
-    if ser_filter and ser_filter[0]:
-      sers = []
-      for val in ser_filter:
-        sers.append(str(val))
-      print sers
-      #items = items.filter(service_delivery_site__servicedeliverysitefacility__facility_id__in=sers)
-      for ser in sers:
-        items = items.filter(service_delivery_site__servicedeliverysitefacility__facility_id=ser)
-
-    # Filter offerings by outcomes selected
-    if out_filter and out_filter[0]:
-      outs = []
-      for val in out_filter:
-        outs.append(str(val))
-      print outs
-      # In [30]: Photo.objects.filter(tags__in=[t1, t2]).annotate(num_tags=Count('tags')).filter(num_tags=2)
-      # AND: items = items.filter(outcomes__in=outs).annotate(num_outs=Count('outcomes')).filter(num_outs=len(outs))
-      items = items.filter(outcomes__in=outs)
-    else:
-      items = Offering.objects.none()
-
-    items = items.distinct();
-    print items
-    services = []
-    for item in items:
-      for service in item.offeringfeature_set.all():
-        services.append(service.id)
-
-    return items
-
-  def get_context_data(self, **kwargs):
-    context = super(OfferingsView, self).get_context_data(**kwargs)
-
-    # Init
-    context['start'] = True
-    context['count'] = self.get_queryset().count()
-    context['outcomes'] = Outcome.objects.order_by('text')
-    context['programs'] = Program.objects.none()
-    context['eligibilities'] = Eligibility.objects.none()
-    context['features'] = Feature.objects.none()
-    context['services'] = Facility.objects.none()
-
-    out_filter = self.request.GET.getlist('o')
-
-    # >>> From OUTCOMEs let's get PROGRAMs and ELIGIBILITIEs
-    outcomes = Outcome.objects.all();
-    print outcomes
-
-    if out_filter and out_filter[0]:
-      context['start'] = False
-      # Filter outcomes
-      query = Q()
-      for val in out_filter:
-        query = query | Q(id=val)
-      outcomes = outcomes.filter(query)
-
-      if outcomes:
-        programs = Program.objects.none();
-        requirements = Eligibility.objects.none();
-        features = Feature.objects.all();
-        services = Facility.objects.all();
-        for outcome in outcomes:
-          programs = (programs | outcome.programs.all())
-        programs = programs.distinct()
-
-        query1 = Q()
-        query2 = Q()
-        for program in programs:
-          requirements = (requirements | program.eligibility_set.all())
-          for offering in program.offering_set.all():
-            for val in offering.offeringfeature_set.all():
-              query1 = query1 | Q(id=val.feature.id)
-            for val in offering.service_delivery_site.servicedeliverysitefacility_set.all():
-              query2 = query2 | Q(id=val.facility_id)
-
-        features = features.filter(query1)
-        services = services.filter(query2)
-
-        context['features'] = features.order_by('text').distinct()
-        context['services'] = services.order_by('text').distinct()
-        context['programs'] = programs.order_by('name_official').distinct()
-        context['eligibilities'] = requirements.order_by('text').distinct()
-
-    return context
