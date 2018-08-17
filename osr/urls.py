@@ -27,9 +27,4 @@ urlpatterns = [
     # Email functionality
     url(r'email/$', views.email, name='email'),
 
-    # Deprecated: Dynamic offering page
-    url(r'offerings/$', views.OfferingsView.as_view(), name='offerings'),
-    # Deprecated: Dynamic service provider pages
-    url(r'site/(?P<sds_id>[0-9]+)/$', views.detail_sds, name='detail_sds'), 
-
 ]
