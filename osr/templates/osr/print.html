@@ -18,6 +18,7 @@
     }  
     p {
       font-size:12px;
+      line-height: 2px;
     }  
     .title {
       font-size:24px;
@@ -61,15 +62,19 @@
       </div>
       <div>
         <h1>{% blocktrans %}Your Results{% endblocktrans %}</h1>
-        {% if matches.count == 1 %}
+        {% if matches.count == 0 %}
+        <h2>{% blocktrans %}We did not find suitable programs for you based on your responses{% endblocktrans %}.<br/>{% blocktrans %}But here is some useful information for you to consider{% endblocktrans %}.</h2>
+        {% elif matches.count == 1 %}
         <h2>{% blocktrans %}Based on your responses, we found 1 program that you might be interested in{% endblocktrans %}</h2>
         {% else %}
         <h2>{% blocktrans with matches.count as number %}Based on your responses, we found {{ number }} programs that you might be interested in{% endblocktrans %}</h2>
         {% endif %}        
       </div>
+
+      {% if matches.count > 0 %}
       <table border="1">
         <tr>
-          <td class="margin header bold" colspan="4"><h1>{% blocktrans %}My results{% endblocktrans %}</h1></td>
+          <td class="margin header bold" colspan="4"><h1>{% blocktrans %}Program matches{% endblocktrans %}</h1></td>
         </tr>        
         <tr>
           <td class="margin header bold" colspan="1">{% blocktrans %}Program{% endblocktrans %}</td>
@@ -91,27 +96,48 @@
         {% endfor %}              
       </table>
       <br/>
-      {% if recommendations %}
+      {% endif %}
+
+      {% if messages %}   
+      {% for message in messages %}
+      <p><b>Goal Path</b>: {{ message.goal }}</p>
+        {% for path in message.paths %}
+        <p>&bull; {{ path }}</p>
+        {% endfor %}
+        {% for match in message.future_matches %}
+        <p><b>In the future</b>: {{ match }}</p>
+        {% endfor %}          
+      {% endfor %}        
+      <br/>
+      {% endif %}
+
+      {% if links or recos %}
       <div>
         <h1>{% blocktrans %}Other Relevant Information{% endblocktrans %}</h1>
       </div>
       <table border="1"> 
         <tr>
-          <td class="margin header bold" colspan="4"><h1>{% blocktrans %}My recommendations{% endblocktrans %}</h1></td>
+          <td class="margin header bold" colspan="4"><h1>{% blocktrans %}Recommendations{% endblocktrans %}</h1></td>
         </tr>            
         <tr>
           <td class="margin header bold" colspan="1">{% blocktrans %}Because you said...{% endblocktrans %}</td>
           <td class="margin header bold" colspan="3">{% blocktrans %}We recommend...{% endblocktrans %}</td>
         </tr>        
-        {% for r in recommendations %}
+        {% for link in links %}
         <tr>
-          <td class="margin format" colspan="1">{{ r.reason }}</td>
-          <td class="margin format" colspan="3">{{ r.text }}: <br/><span class="link">{{ r.link }}</span></td>
+          <td class="margin format" colspan="1">{{ link.reason }}</td>
+          <td class="margin format" colspan="3">{{ link.text }}: <br/><span class="link">{{ link.link }}</span></td>
         </tr>
         {% endfor %}  
-      {% endif %}
+        {% for reco in recos %}
+        <tr>
+          <td class="margin format" colspan="4">{{ reco.text }}</td>
+        </tr>
+        {% endfor %}        
       </table>
       <br/>
+      {% endif %}            
+
       <table>
         <tr>
           <td class="margin format">{{ results_path }}</td>
