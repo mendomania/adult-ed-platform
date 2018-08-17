@@ -7,7 +7,7 @@ Here is a diagram of the most important Django files for this project and how th
 </p>
 
 ## Python files ##
-• <b>The settings file</b> (`settings.py`)<br />
+• <b>The settings file</b> (`settings.py`)<br /><br />
 This file contains all the configuration of a Django installation. It is composed of a series of variable definitions. Because it contains sensitive information, access to it should be limited. [Here](https://docs.djangoproject.com/en/2.1/topics/settings/) are the official docs for this file. These are some of the variables it contains:<br /><br />
 • `INSTALLED_APPS`: A list of strings designating all applications that are enabled in this Django installation. All Django packages that are needed for a project will be listed here, for instance. For this project, you can see that `django-modeltranslation`, `django-smart-selects`, `django-easy-pdf` and `django-widget-tweaks` are listed in the [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py).<br /><br />
 • `DATABASES`: A Python dictionary containing the settings for all databases to be used with Django. One `default` database must be specified. Other databases could then optionally be specified too. For this project, we only define the `default` database, and that is PostgreSQL. If you wanted to use a different data store with Django, here is where you would make the change. Note that the database permissions are also specified here.<br /><br />
@@ -19,7 +19,7 @@ This file contains all the configuration of a Django installation. It is compose
        ('fr', _('French')),
      )
 
-• <b>The models file</b> (`models.py`)<br />
+• <b>The models file</b> (`models.py`)<br /><br />
 This file specifies the fields and behaviours of the data that we want to store. Each model maps to a single database table. In that way, this file defines the <b>database schema</b> for this project. Here is one example table, `FutureMatch`.
      
      @python_2_unicode_compatible
@@ -42,7 +42,7 @@ This code snippet was taken from the [models](https://github.com/mendomania/adul
 The variables `verbose_name` and `help_text` refer to the strings that will be shown in the admin interface next to their corresponding  fields whenever a user performs any CRUD operation (create, read, update, delete) on the `FutureMatch` table through the admin interface (that is shown in the diagram as the window with the <b>Private</b> label under it). Please refer to the description of the admin file below for more details on this.<br /><br />
 [Here](https://docs.djangoproject.com/en/2.1/topics/db/models/) are the official docs for models in Django.<br />
 
-• <b>The admin file</b> (`admin.py`)<br />
+• <b>The admin file</b> (`admin.py`)<br /><br />
 Once the models file is created and the `migrate` and `makemigrations` commands are run (more on this below), Django will automatically provide an admin interface that works out-of-the-box and allows authenticated users to perform CRUD operations on database tables (note that groups and permissions can be created such that some users have access and CRUD permissions on only certain tables, more on this [here](https://docs.djangoproject.com/en/2.1/topics/auth/)).<br /><br />
 The admin file can then be used to define `ModelAdmin` classes. These are representations of a model in the admin interface. In a nutshell, this file is used to customise the admin interface. For example, by deciding which fields of each model should even show up in this interface (perhaps there are fields that we don't want to show to users), to group together certain fields in a section with a specific label (so it's easier for users to go through the process of adding a new record in a certain table) or to make sure a certain user or group of users can only see the records they have created.
 
@@ -58,7 +58,7 @@ This code snippet was taken from the [admin](https://github.com/mendomania/adult
 Here is a screenshot of how this looks in the admin interface. Note how the four `FutureMatch` fields defined in the models section above show up in the admin interface with the `verbose_name` and `help_text` values that were defined. Also note how the char field `Text` appears twice, in English and in French. This is because it was tagged as a translatable field. Please refer to the <b>Translation</b> section below for more details on this.<br /><br />
 [Here](https://docs.djangoproject.com/en/2.1/ref/contrib/admin/) are the official docs for the Django admin interface.<br />
 
-• <b>The views file</b> (`views.py`)<br />
+• <b>The views file</b> (`views.py`)<br /><br />
 A view is a Python function that takes a web request and returns a web response. For this project, there is a view definition for each of the public-facing webpages as well as two special ones that correspond to the print and e-mail functionalities. 
      
      def comparison(request):
@@ -84,7 +84,7 @@ This code snippet corresponds to the view that controls the [comparison](https:/
 Most of the code in the views file either queries the PostgreSQL database or performs some processing with the data before attaching it to an HTML template an returning an HttpResponse object. And so, while the code is in Python, it does not make use of any advanced libraries; it merely consists of manipulating basic data structures.<br /><br />
 [Here](https://docs.djangoproject.com/en/2.1/topics/http/views/) are the official docs for views in Django.<br />
 
-• <b>The URL dispatcher</b> (`urls.py`)<br />
+• <b>The URL dispatcher</b> (`urls.py`)<br /><br />
 This file maps URL path expressions to Django views (which in turn map to HTML templates, as explained in the preceding section). Regular expressions are used to define URL path expressions. For instance, the example below (taken from the URL [dispatcher](https://github.com/mendomania/adult-ed-platform/blob/master/osr/urls.py) of this project) shows that the URL path `comparison` maps to the `comparison` view definition (as shown in the previous section) and that the URL path `program` followed by a `program_code` made up of at least one lowercase letter maps to the `detail_program` view.
 
      # Comparison page
@@ -96,7 +96,7 @@ This file maps URL path expressions to Django views (which in turn map to HTML t
 
 [Here](https://docs.djangoproject.com/en/2.1/topics/http/urls/) are the official docs for the URL dispatcher in Django.<br />
 
-• <b>The DB translation file</b> (`translation.py`)<br />
+• <b>The DB translation file</b> (`translation.py`)<br /><br />
 This file is required by the <b>django-modeltranslation</b> package and allows to tag fields of tables as translatable. Once a certain field is tagged as translatable and the `migrate` and `makemigrations` commands are run (more on this below), Django will update a table schema and add extra fields to it corresponding to the languages of the web app (which are defined in the settings file, as explained above). 
 
      @register(FutureMatch)
