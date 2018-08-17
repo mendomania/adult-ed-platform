@@ -174,15 +174,7 @@ msgstr "Veuillez corregir les erreurs dans le formulaire et le resoumettre"
 This is done by running this command from the root directory of the Django project.<br />
 ```django-admin compilemessages```
 
-https://docs.djangoproject.com/en/2.1/topics/i18n/translation/
-
-• <b>The translation file</b> (`translation.py`)<br /><br />
-• <b>The message file</b> (`django.po`)<br /><br />
-• <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
 
 ## E-mail ##
-• <b>The translation file</b> (`translation.py`)<br /><br />
-• <b>The message file</b> (`django.po`)<br /><br />
-• <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
 
 ## Useful commands ##
