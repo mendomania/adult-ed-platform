@@ -1,12 +1,14 @@
 Django 101
 ======
-#### Diagram ####
+## Diagram ##
+-----
 Here is a diagram of the most important Django files for this project. The section below will explain in more detail what they do and when you would need to make changes to them.
 <p align="center">
 <img src="https://github.com/mendomania/adult-ed-platform/blob/master/django101.png" align="center">
 </p>
 
-#### Python files ####
+## Python files ##
+-----
 • <b>The settings file</b> (`settings.py`)<br />
 This file contains all the configuration of a Django installation. It is composed of a series of variable definitions. Because it contains sensitive information, access to it should be limited. [Here](https://docs.djangoproject.com/en/2.1/topics/settings/) are the official docs for this file. These are some of the variables it contains:<br /><br />
 • `INSTALLED_APPS`: A list of strings designating all applications that are enabled in this Django installation. All Django packages that are needed for a project will be listed here, for instance. For this project, you can see that `django-modeltranslation`, `django-smart-selects`, `django-easy-pdf` and `django-widget-tweaks` are listed in the [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py).<br /><br />
@@ -61,9 +63,11 @@ Here is a screenshot of how this looks in the admin interface. Note how the four
 • <b>The URLs file</b> (`urls.py`)<br /><br />
 • <b>The views file</b> (`views.py`)<br /><br />
 
-#### Translation ####
+## Translation ##
+-----
 • <b>The translation file</b> (`translation.py`)<br /><br />
 • <b>The message file</b> (`django.po`)<br /><br />
 • <b>The compiled version of the message file</b> (`django.mo`)<br /><br />
 
-#### Useful commands ####
+## Useful commands ##
+-----
