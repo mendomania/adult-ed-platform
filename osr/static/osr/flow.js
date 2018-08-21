@@ -6,7 +6,7 @@ Vue.component('card', {
   <div>
     <div class="row">
       <div class="columns small-12">
-        {{ card.id }} - <h6>{{ titleWithoutPlaceholders }}</h6>
+        <h6>{{ titleWithoutPlaceholders }}</h6>
       </div>
     </div>
     <div class="row">
