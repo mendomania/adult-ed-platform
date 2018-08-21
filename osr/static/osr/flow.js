@@ -1,4 +1,4 @@
-const data = 'https://raw.githubusercontent.com/mendomania/adult-ed-platform/master/osr/static/osr/feed.json';
+const data = 'https://raw.githubusercontent.com/mendomania/adult-ed-platform/master/osr/static/osr/flow.json';
 
 Vue.component('card', {
     template:`

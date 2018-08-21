@@ -129,7 +129,7 @@ If you need to create or update a table and you want some of its fields to be tr
 5. Register the model as a subclass of `TranslationAdmin` (just like for `FutureMatch` and `FutureMatchAdmin` above)
 <br />
 
-• <b>Static text</b><br /><br />
+• <b>Static text in web app</b><br /><br />
 The rest of the text users see when they visit the different webpages corresponds to either static text in the HTML pages (template code) or strings that come straight from the Python code. These strings need to be first be tagged as translatable, then translated, and finally their translations must be compiled. [Here](https://docs.djangoproject.com/en/2.1/topics/i18n/translation/) are the official Django docs that describe this process in detail.<br />
 
 We want to translate strings in a lazy fashion (that is, translate strings every time we access the name of an attribute on a model). This is because a user might be looking at the model in different languages since Django started.<br /><br />
@@ -180,6 +180,8 @@ This is done by running this command from the root directory of the Django proje
     $ django-admin compilemessages
 ```
 
+• <b>Static text in matchmaker</b><br /><br />
+The content of the matchmaker is independent of the web app and translations have to be added directly into the JSON [file](https://github.com/mendomania/adult-ed-platform/blob/master/osr/static/osr/flow.json) that powers it.<br />
 
 ## E-mail ##
 
