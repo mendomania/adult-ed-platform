@@ -64,12 +64,12 @@
     <div class="row h4">
       <div class="columns small-12">
         <h3>{% blocktrans %}On this page{% endblocktrans %}</h3>
-        <div class="columns small-6">
+        <div class="columns small-12 medium-6 large-6">
           <span>1. <a href="#about-the-program">{% blocktrans %}About the program{% endblocktrans %}</a></span><br/>
           <span>2. <a href="#eligibility">{% blocktrans %}Eligibility{% endblocktrans %}</a></span><br/>
           <span>3. <a href="#financial-information">{% blocktrans %}Program cost{% endblocktrans %}</a></span><br/>
         </div>
-        <div class="columns small-6">
+        <div class="columns small-12 medium-6 large-6">
           <span>4. <a href="#how-to-register">{% blocktrans %}How to register{% endblocktrans %}</a></span><br/>          
           <span>5. <a href="#service-provider-locations">{{ program.map_sp_label }}</a></span><br/>          
         </div>
@@ -79,11 +79,11 @@
     <div class="row h4">
       <div class="columns small-12">
         <h3>{% blocktrans %}On this page{% endblocktrans %}</h3>
-        <div class="columns small-6">
+        <div class="columns small-12 medium-6 large-6">
           <span>1. <a href="#about-the-program">{% blocktrans %}About the program{% endblocktrans %}</a></span><br/>
           <span>2. <a href="#eligibility">{% blocktrans %}Eligibility{% endblocktrans %}</a></span><br/>          
         </div>
-        <div class="columns small-6">
+        <div class="columns small-12 medium-6 large-6">
           <span>3. <a href="#financial-information">{% blocktrans %}Program cost{% endblocktrans %}</a></span><br/>
           <span>4. <a href="#how-to-register">{% blocktrans %}How to register{% endblocktrans %}</a></span><br/>          
         </div>
@@ -104,7 +104,7 @@
         {% if program.programlinks_set.all %}
         <ul>
           {% for link in program.programlinks_set.all %}
-            <li>{{ link.text }} ({% blocktrans %}see{% endblocktrans %} <a href="{{ link.link }}">{% blocktrans %}link{% endblocktrans %}</a>)</li>
+            <li>{{ link.text }} ({% blocktrans %}see{% endblocktrans %} <a target="_blank" href="{{ link.link }}">{% blocktrans %}link{% endblocktrans %}</a>)</li>
           {% endfor %}
         </ul> 
         {% endif %}        
@@ -114,7 +114,7 @@
       </div>      
 
       {% if program.learning_options.all and program.schedule_options.all and program.length %}
-      <div class="small-12 medium-6 large-4 columns">
+      <div class="small-12 medium-6 large-4 columns center-small">
         <img src="../../../static/osr/images/book.png" width="60px" height="60px" alt="Book"/>
         <h5>{% blocktrans %}Learning options{% endblocktrans %}</h5>
         <ul class="no-bullet">
@@ -123,7 +123,7 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="small-12 medium-6 large-4 columns">
+      <div class="small-12 medium-6 large-4 columns center-small">
         <img src="../../../static/osr/images/schedule.png" width="60px" height="60px" alt="Calendar"/>
         <h5>{% blocktrans %}Schedule options{% endblocktrans %}</h5>
         <ul class="no-bullet">
@@ -132,7 +132,7 @@
           {% endfor %}
         </ul>
       </div>
-      <div class="small-12 medium-6 large-4 columns">
+      <div class="small-12 medium-6 large-4 columns center-small">
         <img src="../../../static/osr/images/time.png" width="60px" height="60px" alt="Clock"/>
         <h5>{% blocktrans %}Program length{% endblocktrans %}</h5>
         <ul class="no-bullet">
@@ -213,7 +213,7 @@
     </div>
 
     <div class="row">
-      <div class="columns small-6">
+      <div class="columns small-12 medium-6 large-6">
         {% if program.free %}
         <img src="../../../static/osr/images/free.png" width="80px" height="80px" alt="Free"/>
         {% else %}
@@ -222,7 +222,7 @@
         <p>{{ program.funding }}</p>
       </div>
       {% if program.fees %}
-      <div class="callout columns small-6">
+      <div class="callout columns small-12 medium-6 large-6">
           <div class="columns small-9">            
             <h6>{% blocktrans %}Disclaimer{% endblocktrans %}</h6>
             {{ program.fees }}
@@ -260,23 +260,23 @@
 
     <div class="row">
 
-      <div class="columns small-6">
+      <div class="columns small-12 medium-6 large-6">
         <h3 id="how-to-register">{% blocktrans %}How to register{% endblocktrans %}</h3>
         <br/>
         {% for s in program.programregistrationsteps_set.all %}
           <div class="row stats">
-            <div class="columns small-2">
+            <div class="columns small-3 medium-2 large-2">
               <div class="circle--small yellow-bg dark-text"><span class="number">{{ forloop.counter }}</span></div>
             </div>
-            <div class="columns small-10 stats-font">
+            <div class="columns small-9 medium-10 large-10 stats-font">
               <p>{{ s.text }}</p>
             </div>
           </div>
         {% endfor %}
       </div>
 
-      <div class="columns small-6">
-        <img src="../../../static/osr/images/registration.png" width="470px" height="400px" alt="Registration"/>
+      <div class="columns small-12 medium-6 large-6">
+        <img class="img-registration" src="../../../static/osr/images/registration.png" alt="Registration"/>
       </div>
     </div>
 
@@ -292,7 +292,7 @@
         <h3 id="service-provider-locations">{{ program.map_sp_label }}</h3>
         <br/>
         <div class="text-center">
-        <iframe id="map" width="800" height="450" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col26+from+1ljG-Pww0VwGWBAYrmQofnMqMZTaYfyReL9GvzKAS&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=13&l=col26&y=2&tmplt=2&hml=TWO_COL_LAT_LNG"></iframe>      
+        <iframe id="map" class="map-program" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col26+from+1ljG-Pww0VwGWBAYrmQofnMqMZTaYfyReL9GvzKAS&viz=MAP&h=false&lat=43.660872&lng=-79.373564&t=1&z=13&l=col26&y=2&tmplt=2&hml=TWO_COL_LAT_LNG"></iframe>      
         </div>
       </div>
     </div>  
