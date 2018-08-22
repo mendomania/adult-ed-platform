@@ -67,16 +67,16 @@
     </div>
 
     <div class="row">
-      <div class="columns small-4 text-center">
-        <img src="../../../static/osr/images/tutoring.png" width="75px" height="75px" alt="Refresh your skills"/>
+      <div class="columns small-12 medium-4 large-4 text-center">
+        <img src="../../../static/osr/images/tutoring.png" width="75px" height="75px" alt="Upgrade your skills to get better job opportunities, develop confidence and pursue further education"/>
         <p>Upgrade your skills to get better job opportunities, develop confidence and pursue further education.</p>
       </div>
-      <div class="columns small-4 text-center">
-        <img src="../../../static/osr/images/goal.png" width="75px" height="75px" alt="Earn an Ontario Secondary School Diploma"/>
+      <div class="columns small-12 medium-4 large-4 text-center">
+        <img src="../../../static/osr/images/goal.png" width="75px" height="75px" alt="Earn your Ontario high school diploma and/or earn the marks needed for post-secondary education"/>
         <p>Earn your Ontario high school diploma and/or earn the marks needed for post-secondary education.</p>
       </div>
-      <div class="columns small-4 text-center">
-        <img src="../../../static/osr/images/counselling.png" width="75px" height="75px" alt="Adapt your international skills to Canada"/>
+      <div class="columns small-12 medium-4 large-4 text-center">
+        <img src="../../../static/osr/images/counselling.png" width="75px" height="75px" alt="Learn English and French as an immigrant or refugee"/>
         <p>Learn English and French as an immigrant or refugee.</p>
       </div>
     </div>
@@ -142,10 +142,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="columns small-12 medium-7">
-          <img src="../../../static/osr/images/widget.png" width="450em" height="265em" alt="Matcher"/>
+        <div class="columns small-12 medium-7 center-small">
+          <img class="img-matchmaker-intro" src="../../../static/osr/images/widget.png" alt="A student using a computer"/>
         </div>
-        <div class="columns small-12 medium-5">
+        <div class="columns small-12 medium-5 center-small">
           <p><br/><br/>Use the Adult Learning Program Matcher to find a program that best matches your goals and needs.</p>
           <a href="{% url 'osr:matchmaker' %}" class="button">{% blocktrans %}Match me{% endblocktrans %}</a>
         </div>
@@ -164,34 +164,34 @@
       <div class="columns small-12 medium-12 large-4">
         <br/>
         <h6 class="text-center">{% blocktrans %}Chat live with us{% endblocktrans %}</h6>
-        <div class="block2">
+        <div class="block2 center-small">
           <p>Talk to someone online to get help.<br/>
           Weekdays<br/>8:30am - 5:00pm ET</p>
           <br/>
         </div>
         <div class="text-center">
           {% if LANGUAGE_CODE == 'en' %}
-          <a href="https://www.ontario.ca/page/employment-ontario-live-chat" class="button">{% blocktrans %}Chat live{% endblocktrans %}</a>
+          <a target="_blank" href="https://www.ontario.ca/page/employment-ontario-live-chat" class="button">{% blocktrans %}Chat live{% endblocktrans %}</a>
           {% else %}
-          <a href="https://www.ontario.ca/fr/page/clavardage-avec-emploi-ontario" class="button">{% blocktrans %}Chat live{% endblocktrans %}</a>
+          <a target="_blank" href="https://www.ontario.ca/fr/page/clavardage-avec-emploi-ontario" class="button">{% blocktrans %}Chat live{% endblocktrans %}</a>
           {% endif %}
         </div>
       </div>
       <div class="columns small-12 medium-12 large-4">
         <br/>
         <h6 class="text-center">{% blocktrans %}Meet with a counsellor{% endblocktrans %}</h6>
-        <div class="block2">
+        <div class="block2 center-small">
           <p>Schedule a meeting with a counsellor to discuss your goals and needs.</p>
           <br/>
         </div>
         <div class="text-center">
-          <a href="https://www.eoss.tcu.gov.on.ca/CitizenPortal/infoAboutYou.do?programCode=LBS&lang={{ LANGUAGE_CODE|lower }}" class="button">{% blocktrans %}Request an appointment{% endblocktrans %}</a>
+          <a target="_blank" href="https://www.eoss.tcu.gov.on.ca/CitizenPortal/infoAboutYou.do?programCode=LBS&lang={{ LANGUAGE_CODE|lower }}" class="button">{% blocktrans %}Request an appointment{% endblocktrans %}</a>
         </div>
       </div>
       <div class="columns small-12 medium-12 large-4">
         <br/>
         <h6 class="text-center">{% blocktrans %}Glossary{% endblocktrans %}</h6>
-        <div class="block2">
+        <div class="block2 center-small">
           <p>Get help understanding some adult learning terms.</p>
         </div>
         <div class="text-center">
