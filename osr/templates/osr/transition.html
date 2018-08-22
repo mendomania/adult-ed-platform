@@ -154,9 +154,9 @@
         <br/>
         <div class="columns small-12 text-center">
           {% if number == 1 %}
-          <a class="button" href="{% url 'osr:comparison' %}{{ paramsPrograms }}">{% blocktrans %}Learn more{% endblocktrans %}</a>
+          <a class="button" target="_blank" href="{% url 'osr:comparison' %}{{ paramsPrograms }}">{% blocktrans %}Learn more{% endblocktrans %}</a>
           {% else %}
-          <a class="button" href="{% url 'osr:comparison' %}{{ paramsPrograms }}">{% blocktrans %}Compare programs{% endblocktrans %}</a>
+          <a class="button" target="_blank" href="{% url 'osr:comparison' %}{{ paramsPrograms }}">{% blocktrans %}Compare programs{% endblocktrans %}</a>
           {% endif %}
         </div>
         <br/>
