@@ -462,7 +462,7 @@ class ExternalLink(models.Model):
   code = models.CharField(max_length=100, verbose_name=_('code'))
   reason = models.CharField(max_length=500, verbose_name=_('reason'))
   text = models.CharField(max_length=500, verbose_name=_('text'))
-  link = models.CharField(max_length=50, verbose_name=_('link'))
+  link = models.CharField(max_length=150, verbose_name=_('link'))
   order_id = models.PositiveSmallIntegerField(verbose_name=_('order id'), default=1, help_text=_('a lower order id will show up first, min value is 1'))
 
 @python_2_unicode_compatible
