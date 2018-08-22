@@ -168,6 +168,64 @@ input.button-add {
   }
 }
 
+.img-matchmaker-start {
+  width: 550px;
+  height: 325px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-matchmaker-start {
+    width: 325px;
+    height: 190px;
+  }
+}
+
+.img-matchmaker-intro {
+  width: 450px;
+  height: 265px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-matchmaker-intro {
+    width: 325px;
+    height: 190px;
+  }
+}
+
+.img-registration {
+  width: 470px;
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-registration {
+    width: 340px;
+    height: 285px;
+  }
+}
+
+.map-program {
+  width: 800;
+  height: 450;
+}
+
+@media screen and (max-width: 768px) {
+  .map-program {
+    width: 200;
+    height: 112;
+  }
+}
+
+.center-small {
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .center-small {
+    text-align: center;
+  }
+}
+
 .c-elem1 {
   background-color: #FFFFFF;
 }
