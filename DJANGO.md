@@ -184,5 +184,6 @@ This is done by running this command from the root directory of the Django proje
 The content of the matchmaker is independent of the web app and translations have to be added directly into the JSON [file](https://github.com/mendomania/adult-ed-platform/blob/master/osr/static/osr/flow.json) that powers it.<br />
 
 ## E-mail ##
+SendGrid was used as the e-mail service for this development phase. I followed this [tutorial](https://sendgrid.com/docs/Integrate/Frameworks/django.html) to set it up. I didn't push its corresponding setting values in the [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file here on GitHub because my SendGrid account is a trial one, and it allows to send only 100 e-mails a day. Make sure you follow the official [docs](https://docs.djangoproject.com/en/2.1/topics/email/) on sending e-mail in Django if you want to use a different e-mail service.
 
 ## Useful commands ##
