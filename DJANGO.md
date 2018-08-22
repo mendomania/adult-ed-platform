@@ -187,3 +187,44 @@ The content of the matchmaker is independent of the web app and translations hav
 SendGrid was used as the e-mail service for this development phase. I followed this [tutorial](https://sendgrid.com/docs/Integrate/Frameworks/django.html) to set it up. I didn't push its corresponding setting values in the [settings](https://github.com/mendomania/adult-ed-platform/blob/master/app/settings.py) file here on GitHub because my SendGrid account is a trial one, and it allows to send only 100 e-mails a day. Make sure you follow the official [docs](https://docs.djangoproject.com/en/2.1/topics/email/) on sending e-mail in Django if you want to use a different e-mail service.
 
 ## Useful commands ##
+A lot of Django's most useful commands for a web app are run from the root directory of that specific Django project (the directory where [manage.py](https://github.com/mendomania/adult-ed-platform/blob/master/manage.py) is located). For a list of all available commands, refer to the official [documentation](https://docs.djangoproject.com/en/2.1/ref/django-admin/). <br /><br />
+
+• <b>createsuperuser</b>
+```python
+python manage.py createsuperuser
+```
+
+• <b>runserver</b>
+```python
+python manage.py runserver
+```
+
+• <b>migrate</b>
+```python
+python manage.py migrate
+```
+
+• <b>makemigrations</b>
+```python
+python manage.py makemigrations osr
+```
+
+• <b>collectstatic</b>
+```python
+python manage.py collectstatic
+```
+
+• <b>makemessages</b>
+```python
+python manage.py makemessages -l fr
+```
+
+• <b>compilemessages</b>
+```python
+python manage.py compilemessages
+```
+
+• <b>sendtestemail</b>
+```python
+python manage.py sendtestemail foo@example.com bar@example.com
+```
